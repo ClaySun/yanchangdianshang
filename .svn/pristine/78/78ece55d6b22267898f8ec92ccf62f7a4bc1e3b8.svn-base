@@ -1,0 +1,156 @@
+
+/*商品条目*/
+.total_ul li {
+	float: left;
+	padding: 4px 10px 4px 10px;
+	border: 1px solid #ccc;
+	margin: 0px 4px 0px 4px;
+}
+
+.lbg_list_ul {
+	width: 1220px;
+	margin: 0 auto;
+	overflow: hidden;
+	padding: 0px 0px 20px 0px;
+}
+
+.lbg_list_all{ width: 1200px; overflow: hidden; margin:0 auto;}
+.lbg_list_ul li {
+	width: 222px;
+	float: left;
+	border: 1px solid #ccc;
+	overflow: hidden;
+	position: relative;
+	font-size: 14px;
+	margin-top: 20px;
+}
+
+.logo_span img {
+	width: 141px;
+	height: 79px;
+}
+
+.lbg_list_ul li:hover {
+	border: 1px solid #ff0000;
+}
+.lbg_list_ul li img {
+	transition: all .2s ease-in 0s;
+}
+.lbg_list_ul li:hover img {
+	transform: scale(1.02,1.02);
+}
+
+.lbg_list_ul li span i {
+	color: #818181;
+}
+.lbg_title_h1 {
+	font-size: 22px;
+	text-align: center;
+	color: #386097;
+}
+.prize_span {
+	border-bottom: 1px dashed #ccc;
+	font-size: 18px;
+	padding: 10px 0px 10px 0px;
+	margin-top: 20px;
+}
+.prize_span b {
+	color: #FF6600;
+	padding: 0px 10px 0px 0px;
+	font-size: 22px;
+}
+.kucun_span {
+	font-size: 14px;
+	font-weight: bold;
+	color: #FF0000;
+}
+
+.kucun_span i {
+	font-weight: normal;
+}
+.link_em {
+	display: block;
+	width: 200px;
+	height: 35px;
+	line-height: 35px;
+	background: #FD7636
+	color: #fff;
+	text-align: center;
+	border-radius: 4px;
+	margin: 0 auto;
+}
+.goods-content {
+	padding-bottom: 8px;
+}
+.goods-content dd {
+	margin-left: 8px;
+	margin-right: 8px;
+}
+.goods-content dd .font1{ font-size: 12px; line-height: 22px;}
+.goods-content dd .float_left span{ color:#FF0000; font-size:18px;}
+.goods-content dd .float_left .tit12{}
+.goods-content dd .float_left .qjd{ color:#888;}
+.goods-content dd span{ color: #FD7636;}
+.goods-content img {
+	width: 240px;
+	height: 240px;
+}
+.post {
+	padding: 1px 6px 2px 6px;
+	background-color: #098400;
+	color: #fff;
+	font-size: 12px;
+	border-radius: 4px;
+}
+
+/*分页*/
+.pagebar {
+	width: 1200px;
+	margin: 0 auto;
+	overflow: hidden;
+	font-size: 14px;
+	margin-top:20px;
+}
+.pagebar .total_left{ float: left;}
+.pagebar .total_right{ float: right;}
+.total_right .first_span{ float: left;}
+.total_right li{ float: left;}
+.total_right .last_span{float: left;}
+.total_right .total_span{float: left;}
+.total_right .total_ul{ float:left;}
+.total_right .jump_span{ float:left;}
+
+.total {
+	padding-top: 5px;
+}
+.first_span {
+	border: 1px solid #ccc;
+	padding: 4px 10px 4px 10px;
+}
+.last_span {
+	border: 1px solid #ccc;
+	padding: 4px 10px 4px 10px;
+}
+.total_span {
+	display: block;
+	margin-left: 10px;
+	padding: 4px 10px 4px 10px;
+}
+.jump_span {
+	display: block;
+	margin-left: 10px;
+}
+.jump_span input {
+	width: 60px;
+	height: 30px;
+	margin: 0px 4px 0px 4px;
+	padding: 0px 5px 0px 5px;
+}
+.block {
+	display: block;
+}
+.pagebar a {
+	color: #333;
+}
+
+

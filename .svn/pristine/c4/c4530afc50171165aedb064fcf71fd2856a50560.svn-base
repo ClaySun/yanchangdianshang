@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>延长物流配送信息</title>
+		<link rel="stylesheet" href="./css/index-style.css" />
+		<link rel="stylesheet" type="text/css" href="./css/common.css">
+		<link rel="stylesheet" href="./css/mycss1.css" />
+		<!------客户信息------->
+		<link href="./css/layer.css" type="text/css" rel="stylesheet">
+		<link href="./css/public-style.css" rel="stylesheet" type="text/css">
+		<link href="./css/tradaccount.css" rel="stylesheet" type="text/css">
+		<script type="text/javascript" src="js/jquery.min.js"></script>
+		<script type="text/javascript" src="layer/layer.js"></script>
+		<script type="text/javascript" src="js/main.js"></script>
+		<script language="javascript" type="text/javascript">
+			$(function() {
+				$("input[name='wtype']").click(function() {
+					if (this.value == 0 || this.value == 2) {
+						$("#dlselect").hide();
+						$("#hzdm").val("");
+						$("#hzname").val("");
+					} else {
+						$("#dlselect").show();
+					}
+				});
+			});
+		</script>
+		<!------查看保密协议------->
+		<script>
+			$(function() {
+				//初始化
+				initdq();
+				//地区编辑时初始化
+				function initdq() {
+				}
+
+				/*----------查看订单3--------*/
+				$(".search-btn").click(function() {
+					layer.open({
+						type : 1,
+						title : '<h2 style=" width:100%; height: 40px;line-height: 40px;font-size: 18px;font-weight: bold; text-align:center; color: #fff;background-color: #f00;">' + '第三方物流商选择' + '</h2>',
+						area : ['650px', '600px'], //宽高
+						content : $('.dxhy')
+					});
+				})
+				$("#vip-cancel").live("click", function() {
+					layer.closeAll()
+				})
+				$("#vip-ok").live("click", function() {
+					layer.closeAll()
+				})
+				$(".layui-layer-close").live("click", function() {
+					layer.closeAll()
+				})
+				//	    		$(".table-vip td").live("mouseenter",function(){
+				//	    			$(".table-vip tr").removeClass("bg-eee")
+				//	    			$(this).parent("tr").addClass("bg-eee")
+				//	    		})
+				$(".table-vip td").live("click", function() {
+					$(".table-vip tr").removeClass("bg-eee")
+					$(this).parent("tr").addClass("bg-eee")
+					$(this).parent("tr").find("input").attr("checked", "checked")
+				})
+				$(".table-vip #title-talbevip").live("click", function() {
+					$(".table-vip tr").removeClass("bg-ddd")
+					$(this).parent("tr").addClass("bg-ddd")
+				})
+			})
+		</script>
+	</head>
+	<body>
+		<!-----------侧边栏-------->
+		<div class="topbar">
+			<div class="topbar-body">
+				<ul class="topbar-bd-l">
+					<li>
+						交易时间：<a style="color:#ec0000;">7:30-17:30（工作日）</a>
+					</li>
+					<li>
+						客服热线：029-88990909
+					</li>
+				</ul>
+				<ul class="topbar-bd-r">
+					<li class="login-info unlogin">
+						您好 ！欢迎来到延长电商贸易平台
+					</li>
+					<li class="unlogin">
+						<a class="tb-m-a2 blue user-login" href="login.html">请登录</a>
+					</li>
+					<li class="unlogin">
+						<a class="tb-m-a2 blue" href="register.html">免费注册</a>
+					</li>
+					<li>
+						<div class="menu-hd">
+							<a href="my-admin.html">我的平台</a><i><s>◇</s></i>
+						</div>
+						<div class="menu-bd">
+							<div class="menu-bd-panel menu-bd-panel1">
+								<div class="content1 ">
+									<a class="content1-infor1" href="#"><img src="images/banner1.jpg"></a>
+									<div class="content1-infor2 unlogin">
+										<div class="line1">
+											<a href="#">您好，请登录！</a>
+										</div>
+									</div>
+									<!--<div class="content1-infor2 logon">
+										<div class="line1">
+											Hi，<a class="user-name" href="#"></a>！
+										</div>
+										<a href="#" class="line2 user-tel"></a>
+									</div>-->
+								</div>
+								<div class="content2">
+									<div>
+										<a class="first" href="#" target="_top">我的订单</a><a href="" target="_top">积分管理</a>
+									</div>
+									<div>
+										<a class="first" href="#" target="_top">会员认证</a><a href="" target="_top">上传资源单</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="menu-hd">
+							<a href="#">我的设置</a><i><s>◇</s></i>
+						</div>
+						<div class="menu-bd">
+							<div class="menu-bd-panel menu-bd-panel3">
+								<a class="first" target="_top" href="#">订单管理</a><a target="_top" href="#">资源管理</a>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="menu-hd">
+							<a href="#">财物车</a><i><s>◇</s></i>
+						</div>
+						<div class="menu-bd">
+							<div class="menu-bd-panel menu-bd-panel3">
+								<a class="first" target="_top" href="#">任你花</a><a target="_top" href="#">帮你采</a>
+								<a target="_top" href="#">随你押</a>
+							</div>
+						</div>
+					</li>
+					<!--<li class="tb-m-line">|</li>!-->
+					<li>
+						<div class="menu-hd">
+							<a href="#">帮助中心</a><i><s>◇</s></i>
+						</div>
+						<div class="menu-bd">
+							<div class="menu-bd-panel menu-bd-panel3">
+								<a class="first" target="_top" href="#">帮助中心</a><a target="_top" href="#">帮助中心</a><a class="first" target="_top" href="#">帮助中心</a><a target="_top" href="#">帮助中心</a>
+							</div>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class="header">
+			<div class="logo">
+				<a hidefocus="true" href="#"></a>
+			</div>
+			<div class="hd-search">
+				<div class="search-bd">
+					<div class="search-triggers">
+						<ul>
+							<li>
+								<a>超市 </a>
+							</li>
+							<li>
+								<a href="#">全部</a>
+							</li>
+							<li>
+								<a href="#">超市</a>
+							</li>
+							<li>
+								<a href="#">集市</a>
+							</li>
+						</ul>
+						<i></i>
+					</div>
+					<div class="search-i">
+						<form class="f-cb" method="post" onSubmit="return checkKwInput();" action="#" id="search" name="search">
+							<div class="search-button">
+								<button id="resSeachButton" class="btn-search s-search" type="submit">
+									搜一下
+								</button>
+							</div>
+							<div class="search-combobox">
+								<div class="search-combobox-input">
+									<input type="hidden" value="" name="ci" id="ci_code">
+									<input id="kwInput1" placeholder="请输入关键词查询" autocomplete="off" onFocus="this.style.color='#666';" onBlur="this.style.color='#666';" x-webkit-speech="" x-webkit-grammar="builtin:translate">
+									<input type="hidden" name="kw" id="kwInput2">
+								</div>
+							</div>
+						</form>
+					</div>
+					<div class="search-result">
+						<!-- 当前搜索  -->
+						<!-- 类似搜索  -->
+						<ul class="sear-res">
+							<li>
+								<a href="#"><span class="sear-res-l">螺纹钢</span></a>
+							</li>
+							<li>
+								<a href="#"><span class="sear-res-l">HRB400</span></a>
+							</li>
+							<li>
+								<a href="#"><span class="sear-res-l">HRB400E</span></a>
+							</li>
+							<li>
+								<a href="#"><span class="sear-res-l">Q235</span></a>
+							</li>
+							<li>
+								<a href="#"><span class="sear-res-l">Q235B</span></a>
+							</li>
+						</ul>
+						<!-- 搜索历史  -->
+						<ul class="sear-history">
+							<li>
+								<a href="#"><span class="sear-res-l">HRB400</span><span class="sear-res-r">搜索历史</span></a>
+							</li>
+							<li>
+								<a href="#"><span class="sear-res-l">HRB400B</span><span class="sear-res-r">搜索历史</span></a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="header-nav-btn">
+				<!--<a class="header-nav-btn1 mn-ico1" href="#"><i></i>积分商城</a>!-->
+				<a class="header-nav-btn1 mn-ico2" href="shop-car.html"><i></i>我的购物车<span class="count" id="rcart">0</span></a>
+				<div class="cart-panel">
+					<div class="cartlist">
+						共选中 <b class="orange"><span id="itemTotalTemp">0</span></b> 件货物（<b class="orange"><span id="averageQtyTotalTemp">0</span></b> 吨）&nbsp;
+						<br />
+						总价 <b><span id="priceTotalTemp">0</span></b>元
+					</div>
+					<a class="shop-car.html" href="cart_list.html">查看购物车</a>
+				</div>
+			</div>
+			<div class="header-app">
+				<div class="menu-bd-panel2">
+					<ul>
+						<li class="mrgR10"><img src="images/app.gif">
+						</li>
+						<li><img src="images/app.gif">
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="m-nav">
+			<div class="auto">
+				<ul class="main-nav">
+					<li class="nav-main">
+						<a href="index.html">首页</a>
+					</li>
+					<li class="nav-main">
+						<a href="big-company.html">大企业专场</a>
+					</li>
+					<li class="nav-main">
+						<a href="purchase-big.html">大宗商品市场</a>
+					</li>
+					<li class="nav-main">
+						<a href="gongyepin_market.html">工业品市场</a>
+					</li>
+					<li class="nav-main">
+						<a href="caigou_session.html">采购专场</a>
+					</li>
+					<!--<li class="nav-main"><a class="nav-process" href="#">竞价专场</a></li>-->
+					<li class="nav-main">
+						<a href="#">电子招投标</a>
+					</li>
+					<li class="nav-main">
+						<a href="supermarkets.html">电子商城</a>
+					</li>
+					<li class="nav-main">
+						<a href="purchase02.html">民生超市</a>
+					</li>
+					<li class="nav-main">
+						<a href="#">金融服务</a>
+					</li>
+					<li class="nav-main">
+						<a href="#">社区</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<!-------------------我的平台------------------->
+		<div class="breadcrumbNav">
+			<a href="my-daichuli.html">销售订单</a>
+			<span class="bGray">></span>
+			<a href="my-daichuli.html">物流跟踪</a>
+			<span class="bGray">></span>
+			<span class="bGray">物流配送</span>
+		</div>
+		<!-------------------订单详细------------------->
+		<div class="wlpsxx1">
+			<div class="wlpsxx-tit1">
+				<a href="#">物流配送信息</a>
+			</div>
+			<!-------------------发货人------------------->
+			<div class="fl creder_box">
+				<div class="wlpsxx-fhr">
+					<dl>
+						<dt>
+							发货人信息
+						</dt>
+						<dd class="fh1">
+							<em>*</em>发&nbsp;&nbsp;货&nbsp;人：
+							<input type="text" id="txt" class="txt" name="txt" onfocus="showAndHide('List1','show');" onblur="showAndHide('List1','hide');">
+						</dd>
+						<dd class="fh1">
+							<em>*</em>发货地址：
+							<select size="1" name="fcode01" id="fcode01"  class="fcode01" doChangeDq(this.options[this.options.selectedIndex].value,&#39;&#39;);>
+								<option value="">=请选择=</option>
+								<option value="110000">北京</option>
+								<option value="340000">安徽省</option>
+								<option value="350000">福建省</option>
+								<option value="620000">甘肃省</option>
+								<option value="440000">广东省</option>
+							</select>
+							<select size="1" name="fcode02" id="fcode02" onchange="doChangeXj(this.options[this.options.selectedIndex].value,&#39;&#39;);">
+								<option value="">=请选择=</option>
+							</select>
+							<select size="1" name="fcode03" id="fcode03">
+								<option value="">=请选择=</option>
+							</select>
+							<input name="faddr00" maxlength="100" id="faddr00" type="text" class="consignee_inp" value="" autocomplete="off">
+						</dd>
+						<dd class="fh1">
+							<em>*</em>联系电话：
+							<input type="text" id="ftel" name="ftel" value="" autocomplete="off">
+							请输入固定电话（可以包含分机号，以“-”号隔开）或手机号码
+						</dd>
+					</dl>
+				</div>
+				<!-------------------配送信息------------------->
+				<div class="wlpsxx-fhr">
+					<dl>
+						<dt>
+							配送信息
+						</dt>
+						<dd class="fh1">
+							运抵时间：
+							<input type="text" id="txt" class="txt" name="txt" onfocus="showAndHide('List1','show');" onblur="showAndHide('List1','hide');">
+						</dd>
+						<dd class="fh1">
+							配送要求：
+							<input type="text" id="txt1" class="txt1" name="txt1" onfocus="showAndHide('List1','show');" onblur="showAndHide('List1','hide');">
+						</dd>
+						<dd class="fh1">
+							备&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;注：
+							<input type="text" id="txt1" class="txt1" name="txt1" onfocus="showAndHide('List1','show');" onblur="showAndHide('List1','hide');">
+						</dd>
+					</dl>
+				</div>
+				<!-------------------收货人信息------------------->
+				<div class="wlpsxx-fhr">
+					<dl>
+						<dt>
+							收货人信息
+						</dt>
+						<dd class="fh1">
+							收 货 人 ：阿斌斌
+						</dd>
+						<dd class="fh1">
+							交货地址：北京北京市昌平区12
+						</dd>
+						<dd class="fh1">
+							联系电话：13312121212
+						</dd>
+					</dl>
+				</div>
+				<!-------------------物流方式------------------->
+				<div class="creder_box creder_boxline wlpsxx-fhr">
+					<dl>
+						<dt>
+							物流选择
+						</dt>
+						<dd class="creder_consignee">
+							<table width="100%">
+								<tbody>
+									<tr>
+										<td width="75" valign="middle" height="25"><em>*</em>配送方式： </td>
+										<td valign="middle">
+										<input class="consignee_ina" name="wtype" id="pwaya" value="0" type="radio">
+										<label for="pwaya"> 委托平台 </label>
+										<input class="consignee_ina" name="wtype" id="pwayb" value="1" type="radio">
+										<label for="pwayb"> 委托第三方 </label>
+										<input class="consignee_ina" checked="checked" name="wtype" id="pwayc" value="2" type="radio">
+										<label for="pwayc"> 自营配送 </label></td>
+									</tr>
+									<tr>
+										<td colspan="2" height="20"></td>
+									</tr>
+								</tbody>
+							</table>
+						</dd>
+					</dl>
+				</div>
+				<div style="clear: both;"></div>
+				<div class="creder_box creder_boxline wlpsxx-fhr" id="dlselect" style="display: none;">
+					<dl>
+						<dt>
+							第三方选择
+						</dt>
+						<dd class="creder_consignee">
+							<table width="100%">
+								<tbody>
+									<tr>
+										<td width="75" valign="middle" height="25"> 选择物流商： </td>
+										<td valign="middle">
+										<input id="textVip" class="input-attr02" value="" />
+										<span class="search-btn">查找</span></td>
+									</tr>
+									<tr>
+										<td colspan="2" height="20"></td>
+									</tr>
+								</tbody>
+							</table>
+						</dd>
+					</dl>
+				</div>
+				<div style="clear: both;"></div>
+				<!-------------------商品清单------------------->
+				<div class="wlpsxx-qd">
+					<h4>商品清单</h4>
+					<table class="shop-table1" border="0" cellspacing="0" cellpadding="0">
+						<tr>
+							<th width="30%">商品信息</th>
+							<th width="20%">规格</th>
+							<th width="15%">单价</th>
+							<th width="15%">数量</th>
+							<th width="20%">小计</th>
+						</tr>
+						<tr>
+							<td class="biao-tu" style="text-align:center"><img src="images/goods01.png" >Casio/卡西欧 EX-TR350EX/</td>
+							<td>笔记本电脑</td>
+							<td>7800.00元</td>
+							<td>1台</td>
+							<td>7800.00元</td>
+						</tr>
+					</table>
+					<div class="cgf">
+						<p>
+							采购方备注：
+							<input class="cgf1"  value=""  type="text" placeholder="选填，可告诉供应商您的特殊要求">
+						</p>
+						<p>
+							供应商备注：
+							<input class="cgf1"  value="" type="text" placeholder="选填，可告诉供应商您的特殊要求">
+						</p>
+					</div>
+				</div>
+				<!--------------总额提交-------------------->
+				<div class="tijiao">
+					<dl>
+						<dt>
+							总商品运费：<em>￥</em><span>
+								<input class="yfje"  value=""  type="text">
+							</span>
+						</dt>
+						<dd>
+							<a class="tjdd" href="shop-car.html">确定</a>
+						</dd>
+						<dd>
+							<a class="fhgwc" href="shop-car.html">返回</a>
+						</dd>
+					</dl>
+					<div style="clear: both;"></div>
+				</div>
+			</div>
+		</div>
+		<div style="clear: both;"></div>
+		<!------------------网站底部------------------->
+		<!------------底部开始-------------->
+		<div class="footer">
+			<div class="footer-nav">
+				<a href="#">首页</a>| <a href="#">关于我们</a>| <a href="#">帮助中心</a>| <a href="#">联系我们</a>
+			</div>
+			<div class="addr">
+				地址：陕西省西安市雁塔区沣惠南路中华世纪城（东门）商住楼8号楼二层 电话：029-88990909 传真：029-89286898 邮编：710065
+			</div>
+			<div class="copyright">
+				上海石油交易所西部有限公司 版权所有 陕ICP备09004887号<img src="images/police.png" class="police" />陕公网安备 61019002000027号
+			</div>
+		</div>
+		<!--<div class="footer">
+			<div class="service-box">
+				<p align="center">
+					地 址：陕西省西安市雁塔区沣惠南路中华世纪城（东门）商住楼8号楼二层　邮 编：710065　电 话：029-89199820 029-88990909
+				</p>
+				<p align="center">
+					上海石油交易所西部交易中心 版权所有　陕ICP备09004887号　技术支持：高达软件　陕公网安备61019002000027号
+				</p>
+			</div>
+		</div>-->
+		<!-------定向会员选择-------->
+		<div class="dxhy" style="display:none;">
+			<table class="table-vip">
+				<tr id="title-talbevip" class="bg-ddd">
+					<td width="60">选择</td>
+					<td width="120">会员代码</td>
+					<td width="470">会员名称</td>
+				</tr>
+				<tr>
+					<td>
+					<input type="radio" name="vip" value="四川延长石油销售有限公司"/>
+					</td>
+					<td>009</td>
+					<td>四川延长石油销售有限公司</td>
+				</tr>
+				<tr>
+					<td>
+					<input type="radio" name="vip" value="四川延长石油销售有限公司9"/>
+					</td>
+					<td>008</td>
+					<td>长城日华钢材制品有限公司</td>
+				</tr>
+				<tr>
+					<td>
+					<input type="radio" name="vip" />
+					</td>
+					<td>007</td>
+					<td>四川延长石油销售有限公司四川延长石油销售有限公司</td>
+				</tr>
+				<tr>
+					<td>
+					<input type="radio" name="vip" />
+					</td>
+					<td>006</td>
+					<td>四川延长石油销售有限公司</td>
+				</tr>
+				<tr>
+					<td>
+					<input type="radio" name="vip" />
+					</td>
+					<td>005</td>
+					<td>长城日华钢材制品有限公司长城日华钢材制品有限公司</td>
+				</tr>
+				<tr>
+					<td>
+					<input type="radio" name="vip" />
+					</td>
+					<td>004</td>
+					<td>长城日华钢材制品有限公司</td>
+				</tr>
+				<tr>
+					<td>
+					<input type="radio" name="vip" />
+					</td>
+					<td>003</td>
+					<td>四川延长石油销售有限公司</td>
+				</tr>
+				<tr>
+					<td>
+					<input type="radio" name="vip" />
+					</td>
+					<td>002</td>
+					<td>四川延长石油销售有限公司</td>
+				</tr>
+				<tr>
+					<td>
+					<input type="radio" name="vip" />
+					</td>
+					<td>001</td>
+					<td>四川延长石油销售有限公司</td>
+				</tr>
+				<tr>
+					<td>
+					<input type="radio" name="vip" />
+					</td>
+					<td>000</td>
+					<td>四川延长石油销售有限公司</td>
+				</tr>
+			</table>
+			<div class="page-table">
+				<ul style=" margin-right: 21px; margin-left: 20px;">
+					<li>
+						上一页
+					</li>
+					<li>
+						尾页
+					</li>
+				</ul>
+				<ul>
+					<li>
+						1
+					</li>
+					<li>
+						2
+					</li>
+					<li>
+						3
+					</li>
+					<li>
+						4
+					</li>
+				</ul>
+				<ul style=" margin-right: 20px; margin-left: 20px;">
+					<li>
+						首页
+					</li>
+					<li>
+						下一页
+					</li>
+				</ul>
+				<div class="clearfix"></div>
+			</div>
+			<div style=" margin-left: 20px; margin-top: 8px;">
+				<span>过滤：</span>
+				<input style=" padding: 3px 0;" />
+				<span style=" margin: 0 4px; padding: 4px 8px; color: #fff; background-color: #f00; cursor: pointer;">查询</span>
+				<span style=" margin: 0 4px; padding: 4px 8px; color: #fff; background-color: #999; cursor: pointer;">清空</span>
+			</div>
+			<div style=" margin-right: 25px; margin-top: 8px;">
+				<span id="vip-cancel" style=" float: right; padding: 4px 16px; color: #fff; background-color: #f00; cursor: pointer;">取消</span>
+				<span id="vip-ok" style=" float: right; margin-right: 16px; padding: 4px 16px; color: #fff; background-color: #f00; cursor: pointer;">确定</span>
+			</div>
+		</div>
+	</body>
+</html>

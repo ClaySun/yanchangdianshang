@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>延长电商贸易平台</title>
+		<link rel="stylesheet" href="./css/style.css" />
+		<link rel="stylesheet" href="./css/iconfont.css" />
+		<link rel="stylesheet" href="./css/swiper.min.css" />
+		
+	</head>
+	<body>
+		<div class="top">
+			<div class="top-content">
+				<div class="top-content-left">
+					<span class="marRight8 font12">您好！欢迎来到延长电商贸易平台</span>
+					<a href="#" class="marRight8 font12">请登录</a>|
+					<a href="#" class="marRight8 font12">免费注册</a>
+				</div>
+				<div class="top-content-right">
+					<a href="#" class="marLeft8 font12">我的平台</a>
+					<a href="#" class="marLeft8 font12">个人中心</a>
+					<a href="#" class="marLeft8 font12">购物车</a>
+					<a href="#" class="marLeft8 font12">帮助中心</a>
+					<span class="marLeft8 font12">联系客服：029-88990909</span>
+				</div>
+				<div class="clearfix"></div>
+			</div>
+		</div>
+		<div class="header">
+			<img src="images/logo2.jpg" class="logo">
+			<div class="search">
+				<div class="input-area">
+					<input type="text" class="input-index" placeholder="请输入您要查询的商品" />
+					<div class="input-search">搜索</div>
+					<div class="clearfix"></div>
+					<div class="input-index-down">						
+						<a href="#">化工品</a>|
+						<a href="#">打印机</a>|
+						<a href="#">笔记本电脑</a>|
+						<a href="#">安全帽</a>
+					</div>
+				</div>
+			</div>
+			<div class="gwc"><a href="#">购物车（<i>0</i>）</a></div>
+			<div class="code">
+				<img src="images/code.jpg" class="code-area">
+				<img src="images/code.jpg" class="code-area">
+				<div class="clearfix"></div>
+			</div>
+			<div class="clearfix"></div>
+		</div>
+		<div class="nav">
+			<dl class="nav-content">
+				<!--<dt>所有商品分类</dt>-->
+				<dd><a href="index.html">首页</a></dd>
+				<dd><a href="big-company.html">大企业专场</a></dd>
+				<dd><a href="purchase-big.html">大宗商品专场</a></dd>
+				<dd><a href="gongyepin_market.html">工业品市场</a></dd>
+				<dd><a href="caigou_session.html">采购专场</a></dd>
+				<dd><a href="jingjia_session.html">竞价专场</a></dd>
+				<dd><a href="#">电子招投标</a></dd>
+				<dd><a href="supermarkets.html">电子商城</a></dd>
+				<dd><a href="purchase02.html">民生超市</a></dd>
+				<dd><a href="#">金融服务</a></dd>
+				<dd><a href="#">社区</a></dd>
+				<div class="clearfix"></div>
+			</dl>
+		</div>
+		<div class="banner">
+		</div>
+		<div class="primary-company">
+			<div class="floor4-title1"><a href="#">更多>></a>推荐信息</div>
+			<div class="primary-company-each marRight15">
+				<div class="img-content">
+					<img src="images/VIP01.jpg" />
+					<div class="content-img">
+						<a href="#">
+							<span class="floatL font12 color-fff">好货不等人，快来报价</span>
+							<span class="floatR font12 color-fff">2016-09-01</span>
+							<div class="clearfix"></div>
+						</a>
+					</div>
+				</div>
+				<div class="content-company">
+					<!--<div class="content-company-left floatL">推荐</div>-->
+					<div class="content-company-right floatL">
+						<ul class="company-news">
+							<li>
+								<a href="#">
+									<span class="floatL font12">好货不等人，快来报价</span>
+									<span class="floatR font12">2016-09-01</span>
+									<div class="clearfix"></div>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<span class="floatL font12">好货不等人，快来报价</span>
+									<span class="floatR font12">2016-09-01</span>
+									<div class="clearfix"></div>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<span class="floatL font12">好货不等人，快来报价</span>
+									<span class="floatR font12">2016-09-01</span>
+									<div class="clearfix"></div>
+								</a>
+							</li>
+						</ul>
+						<a href="#" class="marLeft16 font12">更多...</a>
+					</div>
+				</div>
+			</div>
+			<div class="primary-company-each marRight15">
+				<div class="img-content">
+					<img src="images/VIP01.jpg" />
+					<div class="content-img">
+						<a href="#">
+							<span class="floatL font12 color-fff">好货不等人，快来报价</span>
+							<span class="floatR font12 color-fff">2016-09-01</span>
+							<div class="clearfix"></div>
+						</a>
+					</div>
+				</div>
+				<div class="content-company">
+					<!--<div class="content-company-left floatL">推荐</div>-->
+					<div class="content-company-right floatL">
+						<ul class="company-news">
+							<li>
+								<a href="#">
+									<span class="floatL font12">好货不等人，快来报价</span>
+									<span class="floatR font12">2016-09-01</span>
+									<div class="clearfix"></div>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<span class="floatL font12">好货不等人，快来报价</span>
+									<span class="floatR font12">2016-09-01</span>
+									<div class="clearfix"></div>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<span class="floatL font12">好货不等人，快来报价</span>
+									<span class="floatR font12">2016-09-01</span>
+									<div class="clearfix"></div>
+								</a>
+							</li>
+						</ul>
+						<a href="#" class="marLeft16 font12">更多...</a>
+					</div>
+				</div>
+			</div>
+			<div class="primary-company-each">
+				<div class="img-content">
+					<img src="images/VIP01.jpg" />
+					<div class="content-img">
+						<a href="#">
+							<span class="floatL font12 color-fff">好货不等人，快来报价</span>
+							<span class="floatR font12 color-fff">2016-09-01</span>
+							<div class="clearfix"></div>
+						</a>
+					</div>
+				</div>
+				<div class="content-company">
+					<!--<div class="content-company-left floatL">推荐</div>-->
+					<div class="content-company-right floatL">
+						<ul class="company-news">
+							<li>
+								<a href="#">
+									<span class="floatL font12">好货不等人，快来报价</span>
+									<span class="floatR font12">2016-09-01</span>
+									<div class="clearfix"></div>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<span class="floatL font12">好货不等人，快来报价</span>
+									<span class="floatR font12">2016-09-01</span>
+									<div class="clearfix"></div>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<span class="floatL font12">好货不等人，快来报价</span>
+									<span class="floatR font12">2016-09-01</span>
+									<div class="clearfix"></div>
+								</a>
+							</li>
+						</ul>
+						<a href="#" class="marLeft16 font12">更多...</a>
+					</div>
+				</div>
+			</div>
+			<div class="clearfix"></div>
+		</div>	
+		<div class="minor-company">
+			<div class="minor-company-each floatL">
+				<div class="minor-company-title">
+					<div class="badge floatL">石油企业</div>
+					<div class="new-company floatL">最新入驻：西安热力总公司，延长石油产品经销公司，西安热力总公司</div>
+					<div class="clearfix"></div>
+				</div>
+				<div class="img-logo">
+					<table width="580">
+						<tr>
+							<td align="center" height="100">
+								<img src="images/partner01.jpg" />
+							</td>
+							<td align="center">
+								<img src="images/partner02.jpg" />
+							</td>
+							</tr>
+						<tr>
+						<tr>
+							<td align="center" height="100">
+								<img src="images/partner03.jpg" />
+							</td>
+							<td align="center">
+								<img src="images/partner04.jpg" />
+							</td>
+						</tr>
+						<tr>
+							<td align="center" height="100">
+								<img src="images/partner05.jpg" />
+							</td>
+							<td align="center">
+								<img src="images/partner06.jpg" />
+							</td>
+						</tr>
+					</table>
+				</div>
+				<a href="#" class="floatR marRight20">更多...</a>
+				<div class="clearfix"></div>
+			</div>
+			<div class="minor-company-each floatR">
+				<div class="minor-company-title">
+					<div class="badge floatL">电商企业</div>
+					<div class="new-company floatL">最新入驻：西安热力总公司，延长石油产品经销公司，西安热力总公司</div>
+					<div class="clearfix"></div>
+				</div>
+				<div class="img-logo">
+					<table width="580">
+						<tr>
+							<td align="center" height="100">
+								<img src="images/partner07.jpg" />
+							</td>
+							<td align="center">
+								<img src="images/partner08.jpg" />
+							</td>
+							</tr>
+						<tr>
+						<tr>
+							<td align="center" height="100">
+								<img src="images/partner09.jpg" />
+							</td>
+							<td align="center">
+								<img src="images/partner10.jpg" />
+							</td>
+						</tr>
+						<tr>
+							<td align="center" height="100">
+								<img src="images/partner11.jpg" />
+							</td>
+							<td align="center">
+								<img src="images/partner12.jpg" />
+							</td>
+						</tr>
+					</table>
+					<a href="#" class="floatR marRight20">更多...</a>
+					<div class="clearfix"></div>
+				</div>
+			</div>
+			<div class="clearfix"></div>
+		</div>
+		<div class="friends">
+			<div class="friends-title">合作伙伴</div>
+			<img src="images/partner01.jpg" />
+			<img src="images/partner02.jpg" />
+			<img src="images/partner03.jpg" />
+			<img src="images/partner04.jpg" />
+			<img src="images/partner05.jpg" />
+			<img src="images/partner06.jpg" />
+			<div class="clearfix"></div>
+			<img src="images/partner07.jpg" />
+			<img src="images/partner08.jpg" />
+			<img src="images/partner09.jpg" />
+			<img src="images/partner10.jpg" />
+			<img src="images/partner11.jpg" />
+			<img src="images/partner12.jpg" />
+			<div class="clearfix"></div>
+		</div>
+		<div class="footer">
+			<div class="footer-nav">
+				<a href="#">首页</a>|
+				<a href="#">关于我们</a>|
+				<a href="#">帮助中心</a>|
+				<a href="#">联系我们</a>
+			</div>
+			<div class="addr">地址：陕西省西安市雁塔区沣惠南路中华世纪城（东门）商住楼8号楼二层 邮编：710065 电话：029-89199820 029-88990909</div>
+			<div class="copyright">上海石油交易所西部有限公司 版权所有 陕ICP备09004887号<img src="images/police.png" class="police" />陕公网安备 61019002000027号</div>
+		</div>
+	</body>
+</html>

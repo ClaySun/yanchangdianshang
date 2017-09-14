@@ -1,0 +1,56 @@
+/**下拉列的选中样式**/
+.gd_selected_style {background-Color: #102681;color: #FF0000;}
+img{ border:0; margin-right:0px; _behavior:url('iepngfix.htc');}
+/**弹出选择框按钮样式**/
+.gd_selected_button{background:url('../images/searchbox_button.png') no-repeat center;border-style:none;}
+
+/**下拉列只读的情况下的文本框样式（有个下拉箭头）**/
+.gd_dropinput{background:url(../images/downxia.gif) right #fff no-repeat;}
+
+/**必填项星号样式**/
+.must_input {color:#FF0000;}
+
+.redFont{ color:#BA020F;}
+.priceFont{ color:#FF5500;}
+/**************文本过长浮动显示***************/
+.spanFloat{padding-left:0px;overflow: hidden; display: block; white-space: nowrap;text-overflow:ellipsis; -o-text-overflow:ellipsis;font: 12px/18px "Microsoft YaHei";}
+
+/**************新弹出框公共样式 start***************/
+.xubox_title_0{
+	background: none repeat scroll 0 0 #FF0000 !important;
+    height: 50px !important;
+    line-height: 50px !important;
+    text-align: center !important;
+}
+.xubox_title_0 em{
+	color: #fff !important;
+   	display: inline-block !important;
+   	font: bold 17px/50px "Microsoft YaHei" !important;
+   	top: 0px !important;
+   	height: 50px !important;
+   	line-height: 50px !important;
+   	width: auto !important;
+}
+.xubox_title em{
+	position: static !important;
+	vertical-align:middle;
+}
+
+.xubox_title_0 i{
+	background: url("../images/tcpic/opbo_tit4.jpg") no-repeat scroll 0 0 #FF0000 !important;
+	top: 0px !important;
+	height: 47px !important;
+	width: 25px !important;
+	display: inline-block !important;
+	vertical-align:middle;
+}
+.xubox_title i{
+	position:static !important;
+}
+.xubox_msg{
+	top: 77px !important;
+}
+.xubox_text{
+	top: 80px !important;
+}
+/**************新弹出框公共样式 end***************/

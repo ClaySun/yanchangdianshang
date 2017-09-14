@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>延长电商贸易平台</title>
+		<link rel="stylesheet" href="./css/style.css" />
+		<link rel="stylesheet" href="./css/iconfont.css" />
+		<link rel="stylesheet" href="./css/swiper.min.css" />
+		<script type="text/javascript" src="./js/jquery.js"></script>
+		<script type="text/javascript" src="./js/swiper.min.js"></script>
+		
+	</head>
+	<body>
+		<div class="top">
+			<div class="top-content">
+				<div class="top-content-left">
+					<span class="marRight8 font12">您好！欢迎来到延长电商贸易平台</span>
+					<a href="#" class="marRight8 font12">请登录</a>
+					<a href="#" class="marRight8 font12">免费注册</a>
+				</div>
+				<div class="top-content-right">
+					<a href="#" class="marLeft8 font12">我的平台</a>
+					<a href="#" class="marLeft8 font12">个人中心</a>
+					<a href="#" class="marLeft8 font12">购物车</a>
+					<a href="#" class="marLeft8 font12">帮助中心</a>
+					<span class="marLeft8 font12">联系客服：029-88990909</span>
+				</div>
+				<div class="clearfix"></div>
+			</div>
+		</div>
+		<div class="header">
+			<img src="images/partner02.jpg" class="logo">
+			<div class="search">
+				<div class="input-area">
+					<input type="text" class="input-index" placeholder="请输入您要查询的商品" />
+					<div class="input-search">搜索</div>
+					<div class="clearfix"></div>
+					<div class="input-index-down">						
+						<a href="#">化工品</a>|
+						<a href="#">打印机</a>|
+						<a href="#">笔记本电脑</a>|
+						<a href="#">安全帽</a>
+					</div>
+				</div>
+			</div>
+			<div class="code">
+				<img src="images/code.jpg" class="code-area">
+				<img src="images/code.jpg" class="code-area">
+				<div class="clearfix"></div>
+			</div>
+			<div class="clearfix"></div>
+		</div>
+		<div class="nav">
+			<dl class="nav-content02">
+				<dd><a href="#">电商平台</a></dd>
+				<dd><a href="purchase.html">延长采购专区</a></dd>
+				<dd><a href="sell.html">延长销售专区</a></dd>
+				<dd><a href="introduce.html">公司介绍</a></dd>
+				<div class="clearfix"></div>
+			</dl>
+		</div>
+		<div class="banner">
+			
+		</div>
+		<div class="content">
+			<div class="contact">
+				<img src="images/contact.jpg" />
+				<div class="contact-list">
+					<div class="contact-list-title">公司名称：</div>
+					<div class="contact-list-content">延长石油产品经销公司</div>
+					<div class="clearfix"></div>
+				</div>
+				<div class="contact-list">
+					<div class="contact-list-title">地址：</div>
+					<div class="contact-list-content">西安市雁塔区高新2路10号</div>
+					<div class="clearfix"></div>
+				</div>
+				<div class="contact-list">
+					<div class="contact-list-title">联系人：</div>
+					<div class="contact-list-content">李先生</div>
+					<div class="clearfix"></div>
+				</div>
+				<div class="contact-list">
+					<div class="contact-list-title">电话：</div>
+					<div class="contact-list-content">029-87458255</div>
+					<div class="clearfix"></div>
+				</div>
+				<div class="contact-list">
+					<div class="contact-list-title">传真：</div>
+					<div class="contact-list-content">029-87458255</div>
+					<div class="clearfix"></div>
+				</div>
+				<div class="contact-list">
+					<div class="contact-list-title">手机：</div>
+					<div class="contact-list-content">18214159888</div>
+					<div class="clearfix"></div>
+				</div>
+			</div>
+			<div class="intro">
+				<div class="intro-title">公司简介</div>
+				<div class="intro-content">
+					       产品经销公司成立于2009年11月，是陕西延长石油（集团）有限责任公司所属的专业板块之一，主要负责延长石油集团成品油、天然气、化工产品的二级批发以及终端零售市场的开发与建设。公司注册及办公地址在西安市高新区光泰路1号。
+				</div>
+				<div class="intro-content">公司下设投资规划部、化工品销售部、油气销售部、安全环保质监部、企业管理部（法律事务部）、信息管理部、财务资产部、人力资源部、办公室、党群工作部、审计监察部、工会办公室12个职能部（室）和延安销售服务中心、榆林销售服务中心；监管5个全资公司：陕西延长新能源有限责任公司、陕西省石油化工工业贸易公司、延长石油化工销售（上海）有限公司、延长石油湖北销售有限公司、延长石油天津销售有限公司；4个控股公司：延长壳牌石油有限公司、延长壳牌（四川）石油有限公司、延长壳牌（广东）石油有限公司、上海石油交易所西部有限公司；3个参股公司：陕西高速延长石油有限责任公司、陕西交通延长石油有限公司及西安交通燃气有限责任公司。公司现有各类员工10167人。
+
+				</div>
+			</div>
+			<div class="clearfix"></div>
+		</div>
+		<div class="footer">
+			<div class="footer-nav">
+				<a href="#">首页</a>|
+				<a href="#">关于我们</a>|
+				<a href="#">帮助中心</a>|
+				<a href="#">联系我们</a>
+			</div>
+			<div class="addr">地址：陕西省西安市雁塔区沣惠南路中华世纪城（东门）商住楼8号楼二层 邮编：710065 电话：029-89199820 029-88990909</div>
+			<div class="copyright">上海石油交易所西部交易中心 版权所有 陕ICP备09004887号 技术支持：高达软件 <img src="images/police.png" class="police" />陕公网安备 61019002000027号</div>
+		</div>
+	</body>
+</html>

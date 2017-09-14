@@ -1,0 +1,1168 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>延长电商贸易平台</title>
+		<link rel="stylesheet" href="./css/style.css" />
+		<link rel="stylesheet" href="./css/iconfont.css" />
+		<link rel="stylesheet" href="./css/swiper.min.css" />
+		<link rel="stylesheet" href="css/spmak.css">
+		<link rel="stylesheet" type="text/css" href="./css/common.css">
+		<script type="text/javascript" src="./js/jquery.js"></script>
+		<script type="text/javascript" src="./js/swiper.min.js"></script>
+		<script type="text/javascript" src="js/jquery-1.8.0.min.js"></script>
+		<script type="text/javascript" src="js/script.js"></script>
+		<script type="text/javascript" src="js/common.js"></script>
+		<script type="text/javascript" src="js/main.js"></script>
+		<script type="text/javascript" src="js/jquery.superslide.2.1.1.js"></script>
+		<script type="text/javascript">
+			$(function() {
+				$('.tabPanel ul li').click(function() {
+					$(this).addClass('hit').siblings().removeClass('hit');
+					$('.panes>div:eq(' + $(this).index() + ')').show().siblings().hide();
+				})
+			})
+		</script>
+	</head>
+	<body>
+		<div class="topbar">
+			<div class="topbar-body">
+				<ul class="topbar-bd-l">
+					<li>
+						交易时间：<a style="color:#ec0000;">7:30-17:30（工作日）</a>
+					</li>
+					<li>
+						客服热线：029-88990909
+					</li>
+				</ul>
+				<ul class="topbar-bd-r">
+					<li class="login-info unlogin">
+						您好 ！欢迎来到延长电商贸易平台
+					</li>
+					<li class="unlogin">
+						<a class="tb-m-a2 blue user-login" href="login.html">请登录</a>
+					</li>
+					<li class="unlogin">
+						<a class="tb-m-a2 blue" href="register.html">免费注册</a>
+					</li>
+					<li>
+						<div class="menu-hd">
+							<a href="my-admin.html">我的平台</a><i><s>◇</s></i>
+						</div>
+						<div class="menu-bd">
+							<div class="menu-bd-panel menu-bd-panel1">
+								<div class="content1 ">
+									<a class="content1-infor1" href="#"><img src="images/banner1.jpg"></a>
+									<div class="content1-infor2 unlogin">
+										<div class="line1">
+											<a href="#">您好，请登录！</a>
+										</div>
+									</div>
+									<!--<div class="content1-infor2 logon">
+										<div class="line1">
+											Hi，<a class="user-name" href="#"></a>！
+										</div>
+										<a href="#" class="line2 user-tel"></a>
+									</div>-->
+								</div>
+								<div class="content2">
+									<div>
+										<a class="first" href="#" target="_top">我的订单</a><a href="" target="_top">积分管理</a>
+									</div>
+									<div>
+										<a class="first" href="#" target="_top">会员认证</a><a href="" target="_top">上传资源单</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="menu-hd">
+							<a href="#">我的设置</a><i><s>◇</s></i>
+						</div>
+						<div class="menu-bd">
+							<div class="menu-bd-panel menu-bd-panel3">
+								<a class="first" target="_top" href="#">订单管理</a><a target="_top" href="#">资源管理</a>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="menu-hd">
+							<a href="#">财物车</a><i><s>◇</s></i>
+						</div>
+						<div class="menu-bd">
+							<div class="menu-bd-panel menu-bd-panel3">
+								<a class="first" target="_top" href="#">任你花</a><a target="_top" href="#">帮你采</a>
+								<a target="_top" href="#">随你押</a>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="menu-hd">
+							<a href="#">帮助中心</a><i><s>◇</s></i>
+						</div>
+						<div class="menu-bd">
+							<div class="menu-bd-panel menu-bd-panel3">
+								<a class="first" target="_top" href="#">帮助中心</a><a target="_top" href="#">帮助中心</a><a class="first" target="_top" href="#">帮助中心</a><a target="_top" href="#">帮助中心</a>
+							</div>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class="header">
+			<div class="logo">
+				<a hidefocus="true" href="#"></a>
+			</div>
+			<div class="hd-search">
+				<div class="search-bd">
+					<div class="search-triggers">
+						<ul>
+							<li>
+								<a>超市 </a>
+							</li>
+							<li>
+								<a href="#">全部</a>
+							</li>
+							<li>
+								<a href="#">超市</a>
+							</li>
+							<li>
+								<a href="#">集市</a>
+							</li>
+						</ul>
+						<i></i>
+					</div>
+					<div class="search-i">
+						<form class="f-cb" method="post" onSubmit="return checkKwInput();" action="#" id="search" name="search">
+							<div class="search-button">
+								<button id="resSeachButton" class="btn-search s-search" type="submit">
+									搜一下
+								</button>
+							</div>
+							<div class="search-combobox">
+								<div class="search-combobox-input">
+									<input type="hidden" value="" name="ci" id="ci_code">
+									<input id="kwInput1" placeholder="请输入关键词查询" autocomplete="off" onFocus="this.style.color='#666';" onBlur="this.style.color='#666';" x-webkit-speech="" x-webkit-grammar="builtin:translate">
+									<input type="hidden" name="kw" id="kwInput2">
+								</div>
+							</div>
+						</form>
+					</div>
+					<div class="search-result">
+						<!-- 当前搜索  -->
+						<!-- 类似搜索  -->
+						<ul class="sear-res">
+							<li>
+								<a href="#"><span class="sear-res-l">螺纹钢</span></a>
+							</li>
+							<li>
+								<a href="#"><span class="sear-res-l">HRB400</span></a>
+							</li>
+							<li>
+								<a href="#"><span class="sear-res-l">HRB400E</span></a>
+							</li>
+							<li>
+								<a href="#"><span class="sear-res-l">Q235</span></a>
+							</li>
+							<li>
+								<a href="#"><span class="sear-res-l">Q235B</span></a>
+							</li>
+						</ul>
+						<!-- 搜索历史  -->
+						<ul class="sear-history">
+							<li>
+								<a href="#"><span class="sear-res-l">HRB400</span><span class="sear-res-r">搜索历史</span></a>
+							</li>
+							<li>
+								<a href="#"><span class="sear-res-l">HRB400B</span><span class="sear-res-r">搜索历史</span></a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="header-nav-btn">
+				<!--<a class="header-nav-btn1 mn-ico1" href="#"><i></i>积分商城</a>!-->
+				<a class="header-nav-btn1 mn-ico2" href="shop-car.html"><i></i>我的购物车<span class="count" id="rcart">0</span></a>
+				<div class="cart-panel">
+					<div class="cartlist">
+						共选中 <b class="orange"><span id="itemTotalTemp">0</span></b> 件货物（<b class="orange"><span id="averageQtyTotalTemp">0</span></b> 吨）&nbsp;
+						<br />
+						总价 <b><span id="priceTotalTemp">0</span></b>元
+					</div>
+					<a class="shop-car.html" href="cart_list.html">查看购物车</a>
+				</div>
+			</div>
+			<div class="header-app">
+				<div class="menu-bd-panel2">
+					<ul>
+						<li class="mrgR10"><img src="images/app.gif">
+						</li>
+						<li><img src="images/app.gif">
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="m-nav">
+			<div class="auto">
+				<dl class="main-nav">
+					<dt class="nav-main" style=" width: 200px; font-size: 15px; text-align: center; color: #fff; line-height: 38px;">
+						所有商品分类
+					</dt>
+					<dd class="nav-main">
+						<a href="index.html">首页</a>
+					</dd>
+					<dd class="nav-main">
+						<a href="big-company.html">大企业专场</a>
+					</dd>
+					<dd class="nav-main">
+						<a href="purchase-big.html">大宗商品专场</a>
+					</dd>
+					<dd class="nav-main">
+						<a href="gongyepin_market.html">工业品市场</a>
+					</dd>
+					<dd class="nav-main">
+						<a href="caigou_session.html">采购专场</a>
+					</dd>
+					<dd class="nav-main">
+						<a href="#">电子招投标</a>
+					</dd>
+					<dd class="nav-main">
+						<a href="supermarkets.html">电子商城</a>
+					</dd>
+					<dd class="nav-main">
+						<a href="purchase02.html">民生超市</a>
+					</dd>
+					<dd class="nav-main">
+						<a href="#">金融服务</a>
+					</dd>
+					<dd class="nav-main">
+						<a href="#">社区</a>
+					</dd>
+				</dl>
+			</div>
+		</div>
+		<!-------------------我的平台------------------->
+		<div id="content">
+			<div class="sm-banner">
+				<div class="sm-banner-on">
+					<div class="sm-banner-on-left">
+						<ul class="sm-banner-on-left-list">
+							<li>
+								<div class="sm-banner-on-left-list-each">
+									<a href="sm-list.html"> <span class="floatL">办公设备</span> <span class="floatR">></span> </a>
+									<!--<a href="#">无机化工原料</a>
+									<a href="#">有机化工原料</a>-->
+									<div class="sm-list-details">
+										<a href="sm-list.html" class="list-details-title">办公设备</a>
+										<ul class="list-details-details">
+											<li>
+												<a href="#">电话机</a>
+											</li>
+											<li>
+												<a href="#">打印机</a>
+											</li>
+											<div class="clearfix"></div>
+										</ul>
+									</div>
+								</div>
+							</li>
+							<li>
+								<div class="sm-banner-on-left-list-each">
+									<a href="sm-list.html"> <span class="floatL">劳保用品</span> <span class="floatR">></span> </a>
+									<div class="clearfix"></div>
+									<!--<a href="#">原料用煤</a>
+									<a href="#">H型钢</a>-->
+									<div class="sm-list-details">
+										<a href="sm-list.html" class="list-details-title">劳保用品</a>
+										<ul class="list-details-details">
+											<li>
+												<a href="#">安全帽</a>
+											</li>
+											<li>
+												<a href="#">劳保服</a>
+											</li>
+											<div class="clearfix"></div>
+										</ul>
+									</div>
+								</div>
+							</li>
+							<li>
+								<div class="sm-banner-on-left-list-each">
+									<a href="sm-list.html"> <span class="floatL">电脑数码</span> <span class="floatR">></span> </a>
+									<div class="clearfix"></div>
+									<!--<a href="#">原料用煤</a>
+									<a href="#">H型钢</a>-->
+									<div class="sm-list-details">
+										<a href="sm-list.html" class="list-details-title">电脑数码</a>
+										<ul class="list-details-details">
+											<li>
+												<a href="#">笔记本电脑</a>
+											</li>
+											<li>
+												<a href="#">相机</a>
+											</li>
+											<div class="clearfix"></div>
+										</ul>
+									</div>
+								</div>
+							</li>
+							<li>
+								<div class="sm-banner-on-left-list-each">
+									<a href="sm-list.html"> <span class="floatL">配件及耗材</span> <span class="floatR">></span> </a>
+									<div class="clearfix"></div>
+									<!--<a href="#">原料用煤</a>
+									<a href="#">H型钢</a>-->
+									<div class="sm-list-details">
+										<a href="sm-list.html" class="list-details-title">配件及耗材</a>
+										<ul class="list-details-details">
+											<li>
+												<a href="#">减压器</a>
+											</li>
+											<li>
+												<a href="#">继电器</a>
+											</li>
+											<div class="clearfix"></div>
+										</ul>
+									</div>
+								</div>
+							</li>
+						</ul>
+					</div>
+					<div class="sm-banner-on-center">
+						<ul class="banner_n">
+							<a href="#" target="_blank"><li style=" background:url(images/banner1.jpg) no-repeat center top;"></li></a>
+							<a href="#" target="_blank"><li style=" background:url(images/banner1.jpg) no-repeat center top;"></li></a>
+							<a href="#" target="_blank"><li style=" background:url(images/banner1.jpg) no-repeat center top;"></li></a>
+						</ul>
+						<a class="prev" href="javascript:void(0)"></a>
+						<a class="next" href="javascript:void(0)"></a>
+						<div class="num">
+							<ul></ul>
+						</div>
+					</div>
+					<script>
+						/*鼠标移过，左右按钮显示*/
+						$(".sm-banner-on-center").hover(function() {
+							$(this).find(".prev,.next").fadeTo("show", 0.1);
+						}, function() {
+							$(this).find(".prev,.next").hide();
+						})
+						/*鼠标移过某个按钮 高亮显示*/
+						$(".prev,.next").hover(function() {
+							$(this).fadeTo("show", 0.7);
+						}, function() {
+							$(this).fadeTo("show", 0.1);
+						})
+						$(".sm-banner-on-center").slide({
+							titCell : ".num ul",
+							mainCell : ".banner_n",
+							effect : "fold",
+							autoPlay : true,
+							delayTime : 700,
+							autoPage : true
+						});
+					</script>
+					<div class="sm-banner-on-right">
+						<div class="sm-notice-area">
+							<div class="notice-title floatL">
+								商城公告
+							</div>
+							<div class="notice-title-blank floatL">
+								>
+							</div>
+							<div class="clearfix"></div>
+							<ul class="notice-list">
+								<li>
+									<a href="#">【通知】国庆节期间放假说明</a>
+								</li>
+								<li>
+									<a href="#">【通知】中秋节期间放假说明</a>
+								</li>
+								<li>
+									<a href="#">【通知】五一节期间放假说明</a>
+								</li>
+								<li>
+									<a href="#">【通知】国庆节期间放假说明</a>
+								</li>
+								<li>
+									<a href="#">【通知】中秋节期间放假说明</a>
+								</li>
+								<li>
+									<a href="#">【通知】五一节期间放假说明</a>
+								</li>
+								<li>
+									<a href="#">【通知】国庆节期间放假说明</a>
+								</li>
+								<li>
+									<a href="#">【通知】中秋节期间放假说明</a>
+								</li>
+								<li>
+									<a href="#">【通知】五一节期间放假说明</a>
+								</li>
+								<li>
+									<a href="#">【通知】国庆节期间放假说明</a>
+								</li>
+								<li>
+									<a href="#">【通知】中秋节期间放假说明</a>
+								</li>
+								<li>
+									<a href="#">【通知】五一节期间放假说明</a>
+								</li>
+								<li>
+									<a href="#">【通知】国庆节期间放假说明</a>
+								</li>
+								<li>
+									<a href="#">【通知】中秋节期间放假说明</a>
+								</li>
+								<li>
+									<a href="#">【通知】五一节期间放假说明</a>
+								</li>
+								<li>
+									<a href="#">【通知】国庆节期间放假说明</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div class="clearfix"></div>
+				</div>
+			</div>
+			<div style="clear:both"></div>
+			<!---------下面--------->
+			<!--<div class="tuijian">
+			<a href="#" class="tj_rm">
+			<b>热门推荐</b>
+			<p>开业大礼</p>
+			<span>爆款直降</span>
+			<em>马上抢购</em>
+			<img src="images/rmqg1.jpg">
+			</a>
+			<a href="#" class="tj_rm">
+			<b>热门推荐</b>
+			<p>开业大礼</p>
+			<span>爆款直降</span>
+			<em>马上抢购</em>
+			<img src="images/rmqg2.jpg">
+			</a>
+			<a href="#" class="tj_rm">
+			<b>热门推荐</b>
+			<p>开业大礼</p>
+			<span>爆款直降</span>
+			<em>马上抢购</em>
+			<img src="images/rmqg1.jpg">
+			</a>
+			<a href="#" class="tj_rm">
+			<b>热门推荐</b>
+			<p>开业大礼</p>
+			<span>爆款直降</span>
+			<em>马上抢购</em>
+			<img src="images/rmqg2.jpg">
+			</a>
+			</div>
+			<div style="clear:both"></div> ------->
+			<div class="tuijian">
+				<div class="tj_rm">
+					<h3>热门推荐</h3>
+					<a href="goods-details.html" class="tj_rm1">
+					<p>
+						开业大礼
+					</p> <span>爆款直降</span> <img src="images/sm/dn2.jpg"> <em>马上抢购</em> </a>
+					<a href="goods-details.html" class="tj_rm1">
+					<p>
+						开业大礼
+					</p> <span>爆款直降</span> <img src="images/rmqg2.jpg"> <em>马上抢购</em> </a>
+					<a href="goods-details.html" class="tj_rm1">
+					<p>
+						开业大礼
+					</p> <span>爆款直降</span> <img src="images/sm/dn4.jpg"> <em>马上抢购</em> </a>
+				</div>
+				<div class="tj_rm2">
+					<h3>优惠促销</h3>
+					<a href="goods-details.html" class="tj_rm1">
+					<p>
+						开业大礼
+					</p> <span>爆款直降</span> <img src="images/sm/bg2.jpg"> <em>马上抢购</em> </a>
+					<a href="goods-details.html" class="tj_rm1">
+					<p>
+						开业大礼
+					</p> <span>爆款直降</span> <img src="images/sm/pj2.jpg"> <em>马上抢购</em> </a>
+					<a href="goods-details.html" class="tj_rm1">
+					<p>
+						开业大礼
+					</p> <span>爆款直降</span> <img src="images/sm/pj2.jpg"> <em>马上抢购</em> </a>
+				</div>
+			</div>
+			<div style="clear:both"></div>
+			<!---------楼层------------>
+			<div class="main" >
+				<!-------1F开始------>
+				<div id="item1" class="main_f1 item">
+					<div class="main_f1_left">
+						<h2 class="f_ys1"><span>1F</span><b><a href="#">办公设备</a></b></h2>
+						<div style="clear:both"></div>
+						<div class="tabPanel">
+							<ul>
+								<li class="hit">
+									品牌
+								</li>
+								<li>
+									品类
+								</li>
+							</ul>
+							<div class="panes">
+								<div class="pane" style="display:block;">
+									<a href="#"><img src="images/sm/pp1.jpg" width="64" height="30"/></a>
+									<a href="#"><img src="images/sm/pp1.jpg" width="64" height="30"/></a>
+									<a href="#"><img src="images/sm/pp1.jpg" width="64" height="30"/></a>
+								</div>
+								<div class="pane">
+									<a href="#"><img src="images/sm/pp1.jpg" width="64" height="30"/></a>
+								</div>
+							</div>
+						</div>
+						<div style="clear:both"></div>
+						<div class="ditu"><img src="images/sm/dt2.jpg" width="150" height="100" style="padding:10px 0;">
+						</div>
+					</div>
+					<div class="main_tu">
+						<div class="banner_1">
+							<ul class="banner_n_1">
+								<li>
+									<a href="#" target="_blank"><img src="images/sm/banner11.jpg" width="495" height="350"/></a>
+								</li>
+								<li>
+									<a href="#" target="_blank"><img src="images/sm/banner22.jpg" width="495" height="350"/></a>
+								</li>
+								<li>
+									<a href="#" target="_blank"><img src="images/sm/banner33.jpg" width="495" height="350"/></a>
+								</li>
+							</ul>
+							<a class="prev" href="javascript:void(0)"></a>
+							<a class="next" href="javascript:void(0)"></a>
+							<div class="num">
+								<ul></ul>
+							</div>
+						</div>
+						<script>
+							/*鼠标移过，左右按钮显示*/
+							$(".banner_1").hover(function() {
+								$(this).find(".prev,.next").fadeTo("show", 0.1);
+							}, function() {
+								$(this).find(".prev,.next").hide();
+							})
+							/*鼠标移过某个按钮 高亮显示*/
+							$(".prev,.next").hover(function() {
+								$(this).fadeTo("show", 0.7);
+							}, function() {
+								$(this).fadeTo("show", 0.1);
+							})
+							$(".banner_1").slide({
+								titCell : ".num ul",
+								mainCell : ".banner_n_1",
+								effect : "fold",
+								autoPlay : true,
+								delayTime : 700,
+								autoPage : true
+							});
+						</script>
+						<div class="banner_2">
+							<ul class="banner_n_2">
+								<li>
+									<a href="#" target="_blank"><img src="images/banner1.jpg" width="495" height="350"/></a>
+								</li>
+								<li>
+									<a href="#" target="_blank"><img src="images/banner1.jpg" width="495" height="350"/></a>
+								</li>
+								<li>
+									<a href="#" target="_blank"><img src="images/banner1.jpg" width="495" height="350"/></a>
+								</li>
+							</ul>
+							<a class="prev" href="javascript:void(0)"></a>
+							<a class="next" href="javascript:void(0)"></a>
+							<div class="num">
+								<ul></ul>
+							</div>
+						</div>
+						<script>
+							/*鼠标移过，左右按钮显示*/
+							$(".banner_2").hover(function() {
+								$(this).find(".prev,.next").fadeTo("show", 0.1);
+							}, function() {
+								$(this).find(".prev,.next").hide();
+							})
+							/*鼠标移过某个按钮 高亮显示*/
+							$(".prev,.next").hover(function() {
+								$(this).fadeTo("show", 0.7);
+							}, function() {
+								$(this).fadeTo("show", 0.1);
+							})
+							$(".banner_2").slide({
+								titCell : ".num ul",
+								mainCell : ".banner_n_2",
+								effect : "fold",
+								autoPlay : true,
+								delayTime : 700,
+								autoPage : true
+							});
+						</script>
+					</div>
+					<!--------最右--------->
+					<div class="f1_zuiyou">
+						<div class="f1_zuiyou_left">
+							<a href="goods-details.html" class="tj_rm"> <b>三星SL-230</b>
+							<p>
+								碎纸机
+							</p> <img src="images/sm/bg2.jpg"> </a>
+							<a href="goods-details.html" class="tj_rm2"> <b>佳能-C125</b>
+							<p>
+								高速扫描机
+							</p> <img src="images/sm/bg1.jpg"> </a>
+						</div>
+						<div class="f1_zuiyou_right">
+							<a href="goods-details.html" class="tj_rm"> <b>爱普生</b>
+							<p>
+								彩色打印机
+							</p> <img src="images/sm/bg3.jpg"> </a>
+							<a href="goods-details.html" class="tj_rm"> <b>热门推荐</b>
+							<p>
+								开业大礼
+							</p> <span>爆款直降</span> <img src="images/sm/bg2.jpg"> </a>
+							<a href="goods-details.html" class="tj_rm"> <b>热门推荐</b>
+							<p>
+								开业大礼
+							</p> <span>爆款直降</span> <img src="images/sm/bg3.jpg"> </a>
+						</div>
+						<div style="clear:both"></div>
+					</div>
+				</div>
+				<!-------2F开始------>
+				<div style="clear:both" id="item2"></div>
+				<div class="main_f1">
+					<div class="main_f1_left">
+						<h2 class="f_ys2"><span>2F</span><b><a href="#">劳保用品</a></b></h2>
+						<div style="clear:both"></div>
+						<div class="tabPanel">
+							<ul>
+								<li class="hit">
+									品牌
+								</li>
+								<li>
+									品类
+								</li>
+							</ul>
+							<div class="panes">
+								<div class="pane" style="display:block;">
+									<a href="#"><img src="images/sm/pp4.jpg" width="64" height="30"/></a>
+									<a href="#"><img src="images/sm/pp5.jpg" width="64" height="30"/></a>
+									<a href="#"><img src="images/sm/pp6.jpg" width="64" height="30"/></a>
+									<div style="clear:both"></div>
+								</div>
+								<div class="pane">
+									<a href="#"><img src="images/sm/pp2.jpg" width="64" height="30"/></a>
+									<a href="#"><img src="images/sm/pp2.jpg" width="64" height="30"/></a>
+									<a href="#"><img src="images/sm/pp2.jpg" width="64" height="30"/></a>
+									<div style="clear:both"></div>
+								</div>
+							</div>
+						</div>
+						<div style="clear:both"></div>
+						<div class="ditu"><img src="images/sm/lb4.jpg" width="150" height="100" style="padding:10px 0;">
+						</div>
+						<!-- <div class="ditu"><img src="images/sm/dt1.jpg" width="100"></div>-->
+					</div>
+					<div class="main_tu">
+						<div class="banner_1">
+							<ul class="banner_n_1">
+								<li>
+									<a href="#" target="_blank"><img src="images/sm/banner111.jpg" width="495" height="350"/></a>
+								</li>
+								<li>
+									<a href="#" target="_blank"><img src="images/sm/banner222.jpg" width="495" height="350"/></a>
+								</li>
+								<li>
+									<a href="#" target="_blank"><img src="images/sm/banner333.jpg" width="495" height="350"/></a>
+								</li>
+							</ul>
+							<a class="prev" href="javascript:void(0)"></a>
+							<a class="next" href="javascript:void(0)"></a>
+							<div class="num">
+								<ul></ul>
+							</div>
+						</div>
+						<script>
+							/*鼠标移过，左右按钮显示*/
+							$(".banner_1").hover(function() {
+								$(this).find(".prev,.next").fadeTo("show", 0.1);
+							}, function() {
+								$(this).find(".prev,.next").hide();
+							})
+							/*鼠标移过某个按钮 高亮显示*/
+							$(".prev,.next").hover(function() {
+								$(this).fadeTo("show", 0.7);
+							}, function() {
+								$(this).fadeTo("show", 0.1);
+							})
+							$(".banner_1").slide({
+								titCell : ".num ul",
+								mainCell : ".banner_n_1",
+								effect : "fold",
+								autoPlay : true,
+								delayTime : 700,
+								autoPage : true
+							});
+						</script>
+						<div class="banner_2">
+							<ul class="banner_n_2">
+								<li>
+									<a href="#" target="_blank"><img src="images/banner1.jpg" width="495" height="350"/></a>
+								</li>
+								<li>
+									<a href="#" target="_blank"><img src="images/banner1.jpg" width="495" height="350"/></a>
+								</li>
+								<li>
+									<a href="#" target="_blank"><img src="images/banner1.jpg" width="495" height="350"/></a>
+								</li>
+							</ul>
+							<a class="prev" href="javascript:void(0)"></a>
+							<a class="next" href="javascript:void(0)"></a>
+							<div class="num">
+								<ul></ul>
+							</div>
+						</div>
+						<script>
+							/*鼠标移过，左右按钮显示*/
+							$(".banner_2").hover(function() {
+								$(this).find(".prev,.next").fadeTo("show", 0.1);
+							}, function() {
+								$(this).find(".prev,.next").hide();
+							})
+							/*鼠标移过某个按钮 高亮显示*/
+							$(".prev,.next").hover(function() {
+								$(this).fadeTo("show", 0.7);
+							}, function() {
+								$(this).fadeTo("show", 0.1);
+							})
+							$(".banner_2").slide({
+								titCell : ".num ul",
+								mainCell : ".banner_n_2",
+								effect : "fold",
+								autoPlay : true,
+								delayTime : 700,
+								autoPage : true
+							});
+						</script>
+					</div>
+					<!--------最右--------->
+					<div class="f1_zuiyou">
+						<div class="f1_zuiyou_left">
+							<a href="goods-details.html" class="tj_rm"> <b>三星SL-230</b>
+							<p>
+								碎纸机
+							</p> <img src="images/sm/lb5.jpg"> </a>
+							<a href="goods-details.html" class="tj_rm2 tj_da"> <b>佳能-C125</b>
+							<p>
+								高速扫描机
+							</p> <img src="images/sm/lb1.jpg"> </a>
+						</div>
+						<div class="f1_zuiyou_right">
+							<a href="goods-details.html" class="tj_rm"> <b>爱普生</b>
+							<p>
+								彩色打印机
+							</p> <img src="images/sm/lb2.jpg"> </a>
+							<a href="goods-details.html" class="tj_rm"> <b>热门推荐</b>
+							<p>
+								开业大礼
+							</p> <span>爆款直降</span> <img src="images/sm/lb4.jpg"> </a>
+							<a href="goods-details.html" class="tj_rm"> <b>热门推荐</b>
+							<p>
+								开业大礼
+							</p> <span>爆款直降</span> <img src="images/sm/lb3.jpg"> </a>
+						</div>
+						<div style="clear:both"></div>
+					</div>
+				</div>
+				<div style="clear:both"></div>
+				<!-------3F开始------>
+				<div id="item3" class="main_f1 item">
+					<div class="main_f1_left">
+						<h2 class="f_ys3"><span>3F</span><b><a href="#">电脑数码</a></b></h2>
+						<div style="clear:both"></div>
+						<div class="tabPanel">
+							<ul>
+								<li class="hit">
+									品牌
+								</li>
+								<li>
+									品类
+								</li>
+							</ul>
+							<div class="panes">
+								<div class="pane" style="display:block;">
+									<a href="#"><img src="images/sm/pp1.jpg" width="64" height="30"/></a>
+									<a href="#"><img src="images/sm/pp2.jpg" width="64" height="30"/></a>
+									<a href="#"><img src="images/sm/pp3.jpg" width="64" height="30"/></a>
+									<div style="clear:both"></div>
+								</div>
+								<div class="pane">
+									<a href="#"><img src="images/sm/pp1.jpg" width="64" height="30"/></a>
+									<a href="#"><img src="images/sm/pp1.jpg" width="64" height="30"/></a>
+									<a href="#"><img src="images/sm/pp1.jpg" width="64" height="30"/></a>
+									<div style="clear:both"></div>
+								</div>
+							</div>
+						</div>
+						<div style="clear:both"></div>
+						<div class="ditu"><img src="images/sm/dt1.jpg" width="150" height="100" style="padding:10px 0;">
+						</div>
+					</div>
+					<div class="main_tu">
+						<div class="banner_1">
+							<ul class="banner_n_1">
+								<li>
+									<a href="#" target="_blank"><img src="images/sm/banner1111.jpg" width="495" height="350"/></a>
+								</li>
+								<li>
+									<a href="#" target="_blank"><img src="images/sm/banner2222.jpg" width="495" height="350"/></a>
+								</li>
+								<li>
+									<a href="#" target="_blank"><img src="images/sm/banner3333.jpg" width="495" height="350"/></a>
+								</li>
+							</ul>
+							<a class="prev" href="javascript:void(0)"></a>
+							<a class="next" href="javascript:void(0)"></a>
+							<div class="num">
+								<ul></ul>
+							</div>
+						</div>
+						<script>
+							/*鼠标移过，左右按钮显示*/
+							$(".banner_1").hover(function() {
+								$(this).find(".prev,.next").fadeTo("show", 0.1);
+							}, function() {
+								$(this).find(".prev,.next").hide();
+							})
+							/*鼠标移过某个按钮 高亮显示*/
+							$(".prev,.next").hover(function() {
+								$(this).fadeTo("show", 0.7);
+							}, function() {
+								$(this).fadeTo("show", 0.1);
+							})
+							$(".banner_1").slide({
+								titCell : ".num ul",
+								mainCell : ".banner_n_1",
+								effect : "fold",
+								autoPlay : true,
+								delayTime : 700,
+								autoPage : true
+							});
+						</script>
+						<div class="banner_2">
+							<ul class="banner_n_2">
+								<li>
+									<a href="#" target="_blank"><img src="images/banner1.jpg" width="495" height="350"/></a>
+								</li>
+								<li>
+									<a href="#" target="_blank"><img src="images/banner1.jpg" width="495" height="350"/></a>
+								</li>
+								<li>
+									<a href="#" target="_blank"><img src="images/banner1.jpg" width="495" height="350"/></a>
+								</li>
+							</ul>
+							<a class="prev" href="javascript:void(0)"></a>
+							<a class="next" href="javascript:void(0)"></a>
+							<div class="num">
+								<ul></ul>
+							</div>
+						</div>
+						<script>
+							/*鼠标移过，左右按钮显示*/
+							$(".banner_2").hover(function() {
+								$(this).find(".prev,.next").fadeTo("show", 0.1);
+							}, function() {
+								$(this).find(".prev,.next").hide();
+							})
+							/*鼠标移过某个按钮 高亮显示*/
+							$(".prev,.next").hover(function() {
+								$(this).fadeTo("show", 0.7);
+							}, function() {
+								$(this).fadeTo("show", 0.1);
+							})
+							$(".banner_2").slide({
+								titCell : ".num ul",
+								mainCell : ".banner_n_2",
+								effect : "fold",
+								autoPlay : true,
+								delayTime : 700,
+								autoPage : true
+							});
+						</script>
+					</div>
+					<!--------最右--------->
+					<div class="f1_zuiyou">
+						<div class="f1_zuiyou_left">
+							<a href="#" class="tj_rm"> <b>三星SL-230</b>
+							<p>
+								碎纸机
+							</p> <img src="images/sm/dn2.jpg"> </a>
+							<a href="#" class="tj_rm2"> <b>佳能-C125</b>
+							<p>
+								高速扫描机
+							</p> <img src="images/sm/dn1.jpg"> </a>
+						</div>
+						<div class="f1_zuiyou_right">
+							<a href="#" class="tj_rm"> <b>爱普生</b>
+							<p>
+								彩色打印机
+							</p> <img src="images/sm/dn3.jpg"> </a>
+							<a href="#" class="tj_rm"> <b>热门推荐</b>
+							<p>
+								开业大礼
+							</p> <span>爆款直降</span> <img src="images/sm/dn4.jpg"> </a>
+							<a href="#" class="tj_rm"> <b>热门推荐</b>
+							<p>
+								开业大礼
+							</p> <span>爆款直降</span> <img src="images/sm/dn2.jpg"> </a>
+						</div>
+						<div style="clear:both"></div>
+					</div>
+				</div>
+				<!-------4F开始------>
+				<div style="clear:both" id="item4"></div>
+				<div class="main_f1">
+					<div class="main_f1_left">
+						<h2 class="f_ys4"><span>4F</span><b><a href="#">配件及耗材</a></b></h2>
+						<div style="clear:both"></div>
+						<div class="tabPanel">
+							<ul>
+								<li class="hit">
+									品牌
+								</li>
+								<li>
+									品类
+								</li>
+							</ul>
+							<div class="panes">
+								<div class="pane" style="display:block;">
+									<a href="#"><img src="images/sm/pp11.jpg" width="64" height="30"/></a>
+									<a href="#"><img src="images/sm/pp22.jpg" width="64" height="30"/></a>
+									<a href="#"><img src="images/sm/pp33.jpg" width="64" height="30"/></a>
+									<div style="clear:both"></div>
+								</div>
+								<div class="pane">
+									<a href="#"><img src="images/sm/pp1.jpg" width="64" height="30"/></a>
+									<a href="#"><img src="images/sm/pp1.jpg" width="64" height="30"/></a>
+									<a href="#"><img src="images/sm/pp1.jpg" width="64" height="30"/></a>
+									<div style="clear:both"></div>
+								</div>
+							</div>
+						</div>
+						<div style="clear:both"></div>
+						<div class="ditu"><img src="images/sm/pj1.jpg" width="150" height="100" style="padding:10px 0;">
+						</div>
+						<!-- <div class="ditu"><img src="images/sm/dt1.jpg" width="100"></div>-->
+					</div>
+					<div class="main_tu">
+						<div class="banner_1">
+							<ul class="banner_n_1">
+								<li>
+									<a href="#" target="_blank"><img src="images/sm/banner11.jpg" width="495" height="350"/></a>
+								</li>
+								<li>
+									<a href="#" target="_blank"><img src="images/sm/banner22.jpg" width="495" height="350"/></a>
+								</li>
+								<li>
+									<a href="#" target="_blank"><img src="images/sm/banner33.jpg" width="495" height="350"/></a>
+								</li>
+							</ul>
+							<a class="prev" href="javascript:void(0)"></a>
+							<a class="next" href="javascript:void(0)"></a>
+							<div class="num">
+								<ul></ul>
+							</div>
+						</div>
+						<script>
+							/*鼠标移过，左右按钮显示*/
+							$(".banner_1").hover(function() {
+								$(this).find(".prev,.next").fadeTo("show", 0.1);
+							}, function() {
+								$(this).find(".prev,.next").hide();
+							})
+							/*鼠标移过某个按钮 高亮显示*/
+							$(".prev,.next").hover(function() {
+								$(this).fadeTo("show", 0.7);
+							}, function() {
+								$(this).fadeTo("show", 0.1);
+							})
+							$(".banner_1").slide({
+								titCell : ".num ul",
+								mainCell : ".banner_n_1",
+								effect : "fold",
+								autoPlay : true,
+								delayTime : 700,
+								autoPage : true
+							});
+						</script>
+						<div class="banner_2">
+							<ul class="banner_n_2">
+								<li>
+									<a href="#" target="_blank"><img src="images/banner1.jpg" width="495" height="350"/></a>
+								</li>
+								<li>
+									<a href="#" target="_blank"><img src="images/banner1.jpg" width="495" height="350"/></a>
+								</li>
+								<li>
+									<a href="#" target="_blank"><img src="images/banner1.jpg" width="495" height="350"/></a>
+								</li>
+							</ul>
+							<a class="prev" href="javascript:void(0)"></a>
+							<a class="next" href="javascript:void(0)"></a>
+							<div class="num">
+								<ul></ul>
+							</div>
+						</div>
+						<script>
+							/*鼠标移过，左右按钮显示*/
+							$(".banner_2").hover(function() {
+								$(this).find(".prev,.next").fadeTo("show", 0.1);
+							}, function() {
+								$(this).find(".prev,.next").hide();
+							})
+							/*鼠标移过某个按钮 高亮显示*/
+							$(".prev,.next").hover(function() {
+								$(this).fadeTo("show", 0.7);
+							}, function() {
+								$(this).fadeTo("show", 0.1);
+							})
+							$(".banner_2").slide({
+								titCell : ".num ul",
+								mainCell : ".banner_n_2",
+								effect : "fold",
+								autoPlay : true,
+								delayTime : 700,
+								autoPage : true
+							});
+						</script>
+					</div>
+					<!--------最右--------->
+					<div class="f1_zuiyou">
+						<div class="f1_zuiyou_left">
+							<a href="#" class="tj_rm"> <b>三星SL-230</b>
+							<p>
+								碎纸机
+							</p> <img src="images/sm/pj1.jpg"> </a>
+							<a href="#" class="tj_rm2"> <b>佳能-C125</b>
+							<p>
+								高速扫描机
+							</p> <img src="images/sm/pj5.jpg"> </a>
+						</div>
+						<div class="f1_zuiyou_right">
+							<a href="#" class="tj_rm"> <b>爱普生</b>
+							<p>
+								彩色打印机
+							</p> <img src="images/sm/pj2.jpg"> </a>
+							<a href="#" class="tj_rm"> <b>热门推荐</b>
+							<p>
+								开业大礼
+							</p> <span>爆款直降</span> <img src="images/sm/pj3.jpg"> </a>
+							<a href="#" class="tj_rm"> <b>热门推荐</b>
+							<p>
+								开业大礼
+							</p> <span>爆款直降</span> <img src="images/sm/pj4.jpg"> </a>
+						</div>
+						<div style="clear:both"></div>
+					</div>
+				</div>
+				<div style="clear:both"></div>
+			</div>
+			<div class="footer">
+				<div class="footer-nav">
+					<a href="#">首页</a>| <a href="#">关于我们</a>| <a href="#">帮助中心</a>| <a href="#">联系我们</a>
+				</div>
+				<div class="addr">
+					地址：陕西省西安市雁塔区沣惠南路中华世纪城（东门）商住楼8号楼二层 邮编：710065 电话：029-89199820 029-88990909
+				</div>
+				<div class="copyright">
+					上海石油交易所西部有限公司 版权所有 陕ICP备09004887号<img src="images/police.png" class="police" />陕公网安备 61019002000027号
+				</div>
+			</div>
+			<div class="elevator">
+				<ul class="elevator-list">
+					<li class="bgcolor-f00 border-none turn-top ">
+						<span class="color-fff font18" style=" line-height: 48px;">导航</span>
+					</li>
+					<li>
+						<a href="#" style=" line-height: 48px;" class="first"> 客服 </a>
+						<a href="#" style=" line-height: 48px;" class="second"> <span class="iconfont icon-kefu"></span> </a>
+					</li>
+					<li>
+						<a href="shop-car.html" style=" line-height: 48px;" class="first"> 购物车 </a>
+						<a href="#" style=" line-height: 48px;" class="second"> <span class="iconfont icon-gouwuche03"></span> </a>
+					</li>
+					<li>
+						<a href="#item1" class="first"> <span>办公</span>
+						<br />
+						<span>设备</span> </a>
+						<a href="#item1" style=" line-height: 48px;" class="second"> <span class="iconfont icon-bangong"></span> </a>
+					</li>
+					<li>
+						<a href="#item2" class="first"> <span>劳保</span>
+						<br />
+						<span>用品</span> </a>
+						<a href="#item2" style=" line-height: 48px;" class="second"> <span class="iconfont icon-tubiao245"></span> </a>
+					</li>
+					<li>
+						<a href="#item3" class="first"> <span>电脑</span>
+						<br />
+						<span>数码</span> </a>
+						<a href="#item3" style=" line-height: 48px;" class="second"> <span class="iconfont icon-shuma"></span> </a>
+					</li>
+					<li class="border-none">
+						<a href="#item4" class="first"> <span>配件及</span>
+						<br />
+						<span>耗材</span> </a>
+						<a href="#item4" style=" line-height: 48px;" class="second"> <span class="iconfont icon-3cpeijian"></span> </a>
+					</li>
+					<li class="bgcolor-f00 border-none turn-top">
+						<a href="#floor-top" class="font18 color-fff" style=" line-height: 48px;">top</a>
+					</li>
+				</ul>
+			</div>
+	</body>
+	<script type="text/javascript">
+		//导航详细菜单的显示和隐藏
+		$(".sm-list-details").hide()
+		$(".sm-banner-on-left-list>li").mouseenter(function() {
+			$(this).find(".sm-list-details").show()
+		}).mouseleave(function() {
+			$(this).find(".sm-list-details").hide()
+		})
+		//登录和注册按钮背景变化
+		$(".login-btn").mouseenter(function() {
+			$(this).find(".icon-denglu").removeClass("color-fd7636").addClass("color-fff")
+		}).mouseleave(function() {
+			$(this).find(".icon-denglu").removeClass("color-fff").addClass("color-fd7636")
+		})
+		$(".register-btn").mouseenter(function() {
+			$(this).find(".icon-zhuce").removeClass("color-fd7636").addClass("color-fff")
+		}).mouseleave(function() {
+			$(this).find(".icon-zhuce").removeClass("color-fff").addClass("color-fd7636")
+		})
+		//招标公告和招标结果按钮切换
+		$(".inner-title").click(function() {
+			$(this).addClass("inner-title-acitve").siblings().removeClass("inner-title-acitve")
+		})
+		$(".wide-inner-title").click(function() {
+			$(this).addClass("inner-title-acitve").siblings().removeClass("inner-title-acitve")
+		})
+		//电梯导航
+		$(".elevator-list>li>.first").hide()
+		$(".elevator-list>li").mouseenter(function() {
+			$(this).find(".first").show()
+			$(this).find(".second").hide()
+		}).mouseleave(function() {
+			$(this).find(".second").show()
+			$(this).find(".first").hide()
+		})
+	</script>
+</html>

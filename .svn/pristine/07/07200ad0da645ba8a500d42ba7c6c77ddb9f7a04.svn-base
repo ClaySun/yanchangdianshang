@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>延长电商贸易平台</title>
+		<link rel="stylesheet" href="./css/index-style.css" />
+		<link rel="stylesheet" href="./css/iconfont.css" />
+		<link rel="stylesheet" href="./css/swiper.min.css" />
+		<link rel="stylesheet" href="./css/mycss1.css" />
+		<link rel="stylesheet" type="text/css" href="./css/common.css">
+		<link rel="stylesheet" href="./css/mycss1.css" />
+		<link rel="stylesheet" href="./css/style.css" />
+		<script type="text/javascript" src="./js/jquery.js"></script>
+		<script type="text/javascript" src="./js/swiper.min.js"></script>
+		<script type="text/javascript" src="./js/app.js"></script>
+		<script type="text/javascript" src="js/main.js"></script>	
+		<script type="text/javascript" src="./js/jquery.kxbdMarquee.js"></script>	
+	</head>
+	<body style=" position: relative;">
+		<div class="topbar" id="floor-top">
+			<div class="topbar-body">
+				<ul class="topbar-bd-l">
+					<li>
+						交易时间：<a style="color:#ec0000;">7:30-17:30（工作日）</a>
+					</li>
+					<li>
+						客服热线：029-88990909
+					</li>
+				</ul>
+				<ul class="topbar-bd-r">
+					<li class="login-info unlogin">
+						您好 ！欢迎来到延长电商贸易平台
+					</li>
+					<li class="unlogin">
+						<a class="tb-m-a2 blue user-login" href="login.html">请登录</a>
+					</li>
+					<li class="unlogin">
+						<a class="tb-m-a2 blue" href="zcym.html">免费注册</a>
+					</li>
+					<li>
+						<div class="menu-hd">
+							<a href="my-admin.html">我的平台</a><i><s>◇</s></i>
+						</div>
+						<div class="menu-bd">
+							<div class="menu-bd-panel menu-bd-panel1">
+								<div class="content1 ">
+									<a class="content1-infor1" href="#"><img src="images/banner1.jpg"></a>
+									<div class="content1-infor2 unlogin">
+										<div class="line1">
+											<a href="#">您好，请登录！</a>
+										</div>
+									</div>
+									<!--<div class="content1-infor2 logon">
+										<div class="line1">
+											Hi，<a class="user-name" href="#"></a>！
+										</div>
+										<a href="#" class="line2 user-tel"></a>
+									</div>-->
+								</div>
+								<div class="content2">
+									<div>
+										<a class="first" href="#" target="_top">我的订单</a><a href="" target="_top">积分管理</a>
+									</div>
+									<div>
+										<a class="first" href="#" target="_top">会员认证</a><a href="" target="_top">上传资源单</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="menu-hd">
+							<a href="#">我的设置</a><i><s>◇</s></i>
+						</div>
+						<div class="menu-bd">
+							<div class="menu-bd-panel menu-bd-panel3">
+								<a class="first" target="_top" href="#">订单管理</a><a target="_top" href="#">资源管理</a>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="menu-hd">
+							<a href="#">财物车</a><i><s>◇</s></i>
+						</div>
+						<div class="menu-bd">
+							<div class="menu-bd-panel menu-bd-panel3">
+								<a class="first" target="_top" href="#">任你花</a><a target="_top" href="#">帮你采</a>
+								<a target="_top" href="#">随你押</a>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="menu-hd">
+							<a href="#">帮助中心</a><i><s>◇</s></i>
+						</div>
+						<div class="menu-bd">
+							<div class="menu-bd-panel menu-bd-panel3">
+								<a class="first" target="_top" href="#">帮助中心</a><a target="_top" href="#">帮助中心</a><a class="first" target="_top" href="#">帮助中心</a><a target="_top" href="#">帮助中心</a>
+							</div>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class="header">
+			<div class="logo">
+				<a hidefocus="true" href="#"></a>
+			</div>
+			<div class="hd-search">
+				<div class="search-bd">
+					<div class="search-triggers">
+						<ul>
+							<li>
+								<a>超市 </a>
+							</li>
+							<li>
+								<a href="#">全部</a>
+							</li>
+							<li>
+								<a href="#">商城</a>
+							</li>
+							<li>
+								<a href="#">市场</a>
+							</li>
+						</ul>
+						<i></i>
+					</div>
+					<div class="search-i">
+						<form class="f-cb" method="post" onSubmit="return checkKwInput();" action="#" id="search" name="search">
+							<div class="search-button">
+								<button id="resSeachButton" class="btn-search s-search" type="submit">
+									搜一下
+								</button>
+							</div>
+							<div class="search-combobox">
+								<div class="search-combobox-input">
+									<input type="hidden" value="" name="ci" id="ci_code">
+									<input id="kwInput1" placeholder="请输入关键词查询" autocomplete="off" onFocus="this.style.color='#666';" onBlur="this.style.color='#666';" x-webkit-speech="" x-webkit-grammar="builtin:translate">
+									<input type="hidden" name="kw" id="kwInput2">
+								</div>
+							</div>
+						</form>
+					</div>
+					<div class="search-result">
+						<!-- 当前搜索  -->
+						<!-- 类似搜索  -->
+						<ul class="sear-res">
+							<li>
+								<a href="#"><span class="sear-res-l">螺纹钢</span></a>
+							</li>
+							<li>
+								<a href="#"><span class="sear-res-l">HRB400</span></a>
+							</li>
+							<li>
+								<a href="#"><span class="sear-res-l">HRB400E</span></a>
+							</li>
+							<li>
+								<a href="#"><span class="sear-res-l">Q235</span></a>
+							</li>
+							<li>
+								<a href="#"><span class="sear-res-l">Q235B</span></a>
+							</li>
+						</ul>
+						<!-- 搜索历史  -->
+						<ul class="sear-history">
+							<li>
+								<a href="#"><span class="sear-res-l">HRB400</span><span class="sear-res-r">搜索历史</span></a>
+							</li>
+							<li>
+								<a href="#"><span class="sear-res-l">HRB400B</span><span class="sear-res-r">搜索历史</span></a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="header-nav-btn">
+				<!--<a class="header-nav-btn1 mn-ico1" href="#"><i></i>积分商城</a>!-->
+				<a class="header-nav-btn1 mn-ico2" href="shop-car.html"><i></i>我的购物车<span class="count" id="rcart">0</span></a>
+				<div class="cart-panel">
+					<div class="cartlist">
+						共选中 <b class="orange"><span id="itemTotalTemp">0</span></b> 件货物（<b class="orange"><span id="averageQtyTotalTemp">0</span></b> 吨）&nbsp;
+						<br />
+						总价 <b><span id="priceTotalTemp">0</span></b>元
+					</div>
+					<a class="shop-car.html" href="cart_list.html">查看购物车</a>
+				</div>
+			</div>
+			<div class="header-app">
+				<div class="menu-bd-panel2">
+					<ul>
+						<li class="mrgR10"><img src="images/app.gif">
+						</li>
+						<li><img src="images/app.gif">
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div style=" border-bottom: 1px solid #ddd;"></div>
+		<div style=" width: 1200px; margin: 0 auto;">
+			<div class="getpassword-title">找回密码</div>
+			<div class="getpassword-area">
+				<dl>
+					<dt class="dt01 getpw-bgpro02">
+						<span class="visited">1</span>
+					</dt>
+					<dd>填写账户名</dd>
+				</dl>
+				<dl>
+					<dt class="dt02 getpw-bgpro02">
+						<span class="visited">2</span>
+					</dt>
+					<dd>验证身份</dd>
+				</dl>
+				<dl>
+					<dt class="dt02 getpw-bgpro01">
+						<span class="active">3</span>
+					</dt>
+					<dd>设置新密码</dd>
+				</dl>
+				<dl>
+					<dt class="dt03 getpw-bgpro03">
+						<span>√</span>
+					</dt>
+					<dd>完成</dd>
+				</dl>
+				<div class="clearfix"></div>
+			</div>
+			<div class="input-list">
+				<span>输入新密码:</span>
+				<input type="text" />
+				<div class="clearfix"></div>
+			</div>
+			<div class="input-list">
+				<span>再次输入:</span>
+				<input type="text" />
+				<div class="clearfix"></div>
+			</div>			
+			<div style=" margin-left: 472px;">两次输入密码不一致</div>	
+			<a href="getpassword04.html" class="getpassword-btn">提 交</a>
+		</div>
+		<div class="friends">
+			<div class="friends-title">
+				合作伙伴
+			</div>
+			<div id="marquee">
+    			<ul class="partnerLists">	                
+	                <li><a href="#"><img src="images/partner01.jpg"></a></li>
+	                <li><a href="#"><img src="images/partner02.jpg"></a></li>
+	                <li><a href="#"><img src="images/partner03.jpg"></a></li>
+	                <li><a href="#"><img src="images/partner04.jpg"></a></li>
+	                <li><a href="#"><img src="images/partner05.jpg"></a></li>
+	                <li><a href="#"><img src="images/partner06.jpg"></a></li>
+	                <li><a href="#"><img src="images/partner07.jpg"></a></li>
+	                <li><a href="#"><img src="images/partner08.jpg"></a></li>
+	                <li><a href="#"><img src="images/partner09.jpg"></a></li>
+	                <li><a href="#"><img src="images/partner10.jpg"></a></li>
+	            </ul>
+    		</div>
+			<div class="clearfix"></div>
+		</div>
+				
+		<!--新的底部页脚-->
+		<footer>
+			<div class="footer-top">
+				<div class="footer-top-box">
+					<div class="footer-top-left">
+						<dl>
+							<dt>平台规则</dt>
+							<dd><a href="">这里是平台规则</a></dd>
+							<dd><a href="">这里是平台规则</a></dd>
+							<dd><a href="">这里是平台规则</a></dd>
+							<dd><a href="">这里是平台规则</a></dd>
+							<dd><a href="">这里是平台规则</a></dd>
+						</dl>
+						<dl>
+							<dt>买家指南</dt>
+							<dd><a href="">这里是买家指南</a></dd>
+							<dd><a href="">这里是买家指南</a></dd>
+							<dd><a href="">这里是买家指南</a></dd>
+							<dd><a href="">这里是买家指南</a></dd>
+							<dd><a href="">这里是买家指南</a></dd>
+						</dl>
+						<dl>
+							<dt>资金问题</dt>
+							<dd><a href="">这里是资金问题</a></dd>
+							<dd><a href="">这里是资金问题</a></dd>
+							<dd><a href="">这里是资金问题</a></dd>
+							<dd><a href="">这里是资金问题</a></dd>
+							<dd><a href="">这里是资金问题</a></dd>
+						</dl>
+						<dl>
+							<dt>常见问题</dt>
+							<dd><a href="">这里是常见问题</a></dd>
+							<dd><a href="">这里是常见问题</a></dd>
+							<dd><a href="">这里是常见问题</a></dd>
+							<dd><a href="">这里是平台规则</a></dd>
+							<dd><a href="">这里是平台规则</a></dd>
+						</dl>
+					</div>
+					<div class="footer-top-right">
+						<img src="images/foot-tel.jpg">
+					</div>
+				</div>
+			</div>
+			<div class="footer-bottom">
+				<p>地址：陕西省西安市雁塔区沣惠南路中华世纪城（东门）商住楼8号楼二层 电话：029-88990909 传真：029-89286898 邮编：710065 </p>
+				<p>上海石油交易所西部有限公司 版权所有 陕ICP备09004887号 <img src="images/police.png" class="police" />陕公网安备 61019002000027号</p>
+				<div class="foot-img-box">
+					<a><img src="images/foot-img1.jpg"></a>
+					<a><img src="images/foot-img2.jpg"></a>
+					<a><img src="images/foot-img3.jpg"></a>
+					<a><img src="images/foot-img4.jpg"></a>
+				</div>
+			</div>
+		</footer>		
+	</body>
+	<script type="text/javascript">	
+		//底部合作伙伴轮播
+		$("#marquee").kxbdMarquee(
+			{
+				isEqual:true,
+				loop:0,
+				direction:"left",
+				scrollAmount:1,
+				scrollDelay:40								
+			}							
+		);
+	</script>
+	
+</html>

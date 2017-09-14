@@ -1,0 +1,1939 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>延长电商贸易平台</title>
+		<link rel="stylesheet" href="./css/iconfont.css" />
+		<link rel="stylesheet" href="./css/swiper.min.css" />
+		<link rel="stylesheet" href="css/spmak.css">
+		<link rel="stylesheet" type="text/css" href="./css/common.css">
+		<link rel="stylesheet" href="./css/index-style.css" />
+		<link rel="stylesheet" href="./css/style.css" />
+		<script type="text/javascript" src="./js/jquery.js"></script>
+		<script type="text/javascript" src="./js/swiper.min.js"></script>
+		<script type="text/javascript" src="js/jquery-1.8.0.min.js"></script>
+		<script type="text/javascript" src="js/script.js"></script>
+		<script type="text/javascript" src="js/common.js"></script>
+		<script type="text/javascript" src="js/main.js"></script>
+		<script type="text/javascript" src="js/jquery.superslide.2.1.1.js"></script>
+		<script type="text/javascript">
+			$(function() {
+				$('.tabPanel ul li').click(function() {
+					$(this).addClass('hit').siblings().removeClass('hit');
+					$('.panes>div:eq(' + $(this).index() + ')').show().siblings().hide();
+				})
+			})
+		</script>
+	</head>
+	<body>
+		<div class="topbar" id="floor-top">
+			<div class="topbar-body">
+				<ul class="topbar-bd-l">
+					<li>
+						交易时间：<a style="color:#ec0000;">7:30-17:30（工作日）</a>
+					</li>
+					<li>
+						客服热线：029-88990909
+					</li>
+				</ul>
+				<ul class="topbar-bd-r">
+					<li class="login-info unlogin">
+						您好 ！欢迎来到延长电商贸易平台
+					</li>
+					<li class="unlogin">
+						<a class="tb-m-a2 blue user-login" href="login.html">请登录</a>
+					</li>
+					<li class="unlogin">
+						<a class="tb-m-a2 blue" href="register.html">免费注册</a>
+					</li>
+					<li>
+						<div class="menu-hd">
+							<a href="my-admin.html">我的平台</a><i><s>◇</s></i>
+						</div>
+						<div class="menu-bd">
+							<div class="menu-bd-panel menu-bd-panel1">
+								<div class="content1 ">
+									<a class="content1-infor1" href="#"><img src="images/banner1.jpg"></a>
+									<div class="content1-infor2 unlogin">
+										<div class="line1">
+											<a href="#">您好，请登录！</a>
+										</div>
+									</div>
+									<!--<div class="content1-infor2 logon">
+										<div class="line1">
+											Hi，<a class="user-name" href="#"></a>！
+										</div>
+										<a href="#" class="line2 user-tel"></a>
+									</div>-->
+								</div>
+								<div class="content2">
+									<div>
+										<a class="first" href="#" target="_top">我的订单</a><a href="" target="_top">积分管理</a>
+									</div>
+									<div>
+										<a class="first" href="#" target="_top">会员认证</a><a href="" target="_top">上传资源单</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="menu-hd">
+							<a href="#">我的设置</a><i><s>◇</s></i>
+						</div>
+						<div class="menu-bd">
+							<div class="menu-bd-panel menu-bd-panel3">
+								<a class="first" target="_top" href="#">订单管理</a><a target="_top" href="#">资源管理</a>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="menu-hd">
+							<a href="#">财物车</a><i><s>◇</s></i>
+						</div>
+						<div class="menu-bd">
+							<div class="menu-bd-panel menu-bd-panel3">
+								<a class="first" target="_top" href="#">任你花</a><a target="_top" href="#">帮你采</a>
+								<a target="_top" href="#">随你押</a>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="menu-hd">
+							<a href="#">帮助中心</a><i><s>◇</s></i>
+						</div>
+						<div class="menu-bd">
+							<div class="menu-bd-panel menu-bd-panel3">
+								<a class="first" target="_top" href="#">帮助中心</a><a target="_top" href="#">帮助中心</a><a class="first" target="_top" href="#">帮助中心</a><a target="_top" href="#">帮助中心</a>
+							</div>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class="header">
+			<div class="logo">
+				<a hidefocus="true" href="#"></a>
+			</div>
+			<div class="hd-search">
+				<div class="search-bd">
+					<div class="search-triggers">
+						<ul>
+							<li>
+								<a>超市 </a>
+							</li>
+							<li>
+								<a href="#">全部</a>
+							</li>
+							<li>
+								<a href="#">商城</a>
+							</li>
+							<li>
+								<a href="#">市场</a>
+							</li>
+						</ul>
+						<i></i>
+					</div>
+					<div class="search-i">
+						<form class="f-cb" method="post" onSubmit="return checkKwInput();" action="#" id="search" name="search">
+							<div class="search-button">
+								<button id="resSeachButton" class="btn-search s-search" type="submit">
+									搜一下
+								</button>
+							</div>
+							<div class="search-combobox">
+								<div class="search-combobox-input">
+									<input type="hidden" value="" name="ci" id="ci_code">
+									<input id="kwInput1" placeholder="请输入关键词查询" autocomplete="off" onFocus="this.style.color='#666';" onBlur="this.style.color='#666';" x-webkit-speech="" x-webkit-grammar="builtin:translate">
+									<input type="hidden" name="kw" id="kwInput2">
+								</div>
+							</div>
+						</form>
+					</div>
+					<div class="search-result">
+						<!-- 当前搜索  -->
+						<!-- 类似搜索  -->
+						<ul class="sear-res">
+							<li>
+								<a href="#"><span class="sear-res-l">螺纹钢</span></a>
+							</li>
+							<li>
+								<a href="#"><span class="sear-res-l">HRB400</span></a>
+							</li>
+							<li>
+								<a href="#"><span class="sear-res-l">HRB400E</span></a>
+							</li>
+							<li>
+								<a href="#"><span class="sear-res-l">Q235</span></a>
+							</li>
+							<li>
+								<a href="#"><span class="sear-res-l">Q235B</span></a>
+							</li>
+						</ul>
+						<!-- 搜索历史  -->
+						<ul class="sear-history">
+							<li>
+								<a href="#"><span class="sear-res-l">HRB400</span><span class="sear-res-r">搜索历史</span></a>
+							</li>
+							<li>
+								<a href="#"><span class="sear-res-l">HRB400B</span><span class="sear-res-r">搜索历史</span></a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="header-nav-btn">
+				<!--<a class="header-nav-btn1 mn-ico1" href="#"><i></i>积分商城</a>!-->
+				<a class="header-nav-btn1 mn-ico2" href="shop-car.html"><i></i>我的购物车<span class="count" id="rcart">0</span></a>
+				<div class="cart-panel">
+					<div class="cartlist">
+						共选中 <b class="orange"><span id="itemTotalTemp">0</span></b> 件货物（<b class="orange"><span id="averageQtyTotalTemp">0</span></b> 吨）&nbsp;
+						<br />
+						总价 <b><span id="priceTotalTemp">0</span></b>元
+					</div>
+					<a class="shop-car.html" href="cart_list.html">查看购物车</a>
+				</div>
+			</div>
+			<div class="header-app">
+				<div class="menu-bd-panel2">
+					<ul>
+						<li class="mrgR10"><img src="images/app.gif">
+						</li>
+						<li><img src="images/app.gif">
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="m-nav">
+			<div class="auto">
+				<dl class="main-nav">
+					<dd class="nav-main">
+						<a href="index.html">首页</a>
+					</dd>
+					<dd class="nav-main">
+						<a href="big-company.html">大企业专场</a>
+					</dd>
+					<dd class="nav-main">
+						<a href="purchase-big.html">大宗商品市场</a>
+					</dd>
+					<dd class="nav-main">
+						<a href="gongyepin_market.html">工业品市场</a>
+					</dd>
+					<dd class="nav-main">
+						<a href="caigou_session.html">采购专场</a>
+					</dd>
+					<dd class="nav-main">
+						<a href="#">电子招投标</a>
+					</dd>
+					<dd class="nav-main">
+						<a class="active-a" href="supermarkets.html">电子商城</a>
+					</dd>
+					<dd class="nav-main">
+						<a href="purchase02.html">民生超市</a>
+					</dd>
+					<dd class="nav-main">
+						<a href="jrfw.html">金融服务</a>
+					</dd>
+					<dd class="nav-main">
+						<a href="sq-about.html">社区</a>
+					</dd>
+				</dl>
+			</div>
+		</div>
+		<!-------------------我的平台------------------->
+		<div id="content">
+			<div class="swiper-container">
+			<div class="banner-on">
+				<div class="banner-on-left">
+					<div class="nav-main product-menu">
+						<span class="nav-icon1 iconfont icon-suoyou color-f00"></span>所有商品分类
+					</div>
+					<ul class="banner-on-left-list">
+						<li>
+							<div class="banner-on-left-list-each">
+								<span class="nav-icon2 iconfont icon-shiyouxingye"></span>
+								<a href="#"> 									
+									<span class="floatL">石油产品</span><span class="floatR jiantou-span">></span> </a>
+								<div class="clearfix"></div>
+								<div class="list-details">
+									<a href="#" class="list-details-title">润滑油</a>
+									<ul class="list-details-details">
+										<li>
+											<a href="#">氯化镁</a>
+										</li>
+										<li>
+											<a href="#">氯化钙</a>
+										</li>
+										<li>
+											<a href="#">氯化铵</a>
+										</li>
+										<li>
+											<a href="#">三氯化铁</a>
+										</li>
+										<li>
+											<a href="#">氯化锂</a>
+										</li>
+										<li>
+											<a href="#">氯化钾</a>
+										</li>
+										<li>
+											<a href="#">氯化亚锡</a>
+										</li>
+										<li>
+											<a href="#">工业盐</a>
+										</li>
+										<li>
+											<a href="#">乙二醇</a>
+										</li>
+										<li>
+											<a href="#">聚乙二醇</a>
+										</li>
+										<li>
+											<a href="#">三氯化磷</a>
+										</li>
+										<li>
+											<a href="#">磷酸三钠</a>
+										</li>
+										<div class="clearfix"></div>
+									</ul>
+									<a href="#" class="list-details-title">燃料油</a>
+									<ul class="list-details-details">
+										<li>
+											<a href="#">一氧化碳</a>
+										</li>
+										<li>
+											<a href="#">甲烷</a>
+										</li>
+										<li>
+											<a href="#">氯化铵</a>
+										</li>
+										<li>
+											<a href="#">乙烯</a>
+										</li>
+										<li>
+											<a href="#">乙炔</a>
+										</li>
+										<li>
+											<a href="#">丙烯</a>
+										</li>
+										<li>
+											<a href="#">脂肪烃</a>
+										</li>
+										<li>
+											<a href="#">苯</a>
+										</li>
+										<li>
+											<a href="#">甲苯</a>
+										</li>
+										<li>
+											<a href="#">二甲苯</a>
+										</li>
+										<li>
+											<a href="#">四氯乙烷</a>
+										</li>
+										<li>
+											<a href="#">三氯乙烯</a>
+										</li>
+										<li>
+											<a href="#">乙醛</a>
+										</li>
+										<li>
+											<a href="#">醋酸</a>
+										</li>
+										<li>
+											<a href="#">煤焦油</a>
+										</li>
+										<li>
+											<a href="#">乙苯</a>
+										</li>
+										<div class="clearfix"></div>
+									</ul>
+									<a href="#" class="list-details-title">白色油</a>
+									<ul class="list-details-details">
+										<div class="clearfix"></div>
+									</ul>
+									<a href="#" class="list-details-title">黑色油</a>
+									<ul class="list-details-details">
+										<div class="clearfix"></div>
+									</ul>
+								</div>
+							</div>
+						</li>
+						<li>
+							<div class="banner-on-left-list-each">
+								<span class="nav-icon2 iconfont icon-shihuazhuanchang"></span>
+								<a href="#"> <span class="floatL">石化产品</span> <span class="floatR jiantou-span">></span>  </a>
+								<div class="clearfix"></div>
+								<div class="list-details">
+									<a href="#" class="list-details-title">无机化工原料</a>
+									<ul class="list-details-details">
+										<li>
+											<a href="#">氯化镁</a>
+										</li>
+										<li>
+											<a href="#">氯化钙</a>
+										</li>
+										<li>
+											<a href="#">氯化铵</a>
+										</li>
+										<li>
+											<a href="#">三氯化铁</a>
+										</li>
+										<li>
+											<a href="#">氯化锂</a>
+										</li>
+										<li>
+											<a href="#">氯化钾</a>
+										</li>
+										<li>
+											<a href="#">氯化亚锡</a>
+										</li>
+										<li>
+											<a href="#">工业盐</a>
+										</li>
+										<li>
+											<a href="#">乙二醇</a>
+										</li>
+										<li>
+											<a href="#">聚乙二醇</a>
+										</li>
+										<li>
+											<a href="#">三氯化磷</a>
+										</li>
+										<li>
+											<a href="#">磷酸三钠</a>
+										</li>
+										<div class="clearfix"></div>
+									</ul>
+									<a href="#" class="list-details-title">有机化工原料</a>
+									<ul class="list-details-details">
+										<li>
+											<a href="#">一氧化碳</a>
+										</li>
+										<li>
+											<a href="#">甲烷</a>
+										</li>
+										<li>
+											<a href="#">氯化铵</a>
+										</li>
+										<li>
+											<a href="#">乙烯</a>
+										</li>
+										<li>
+											<a href="#">乙炔</a>
+										</li>
+										<li>
+											<a href="#">丙烯</a>
+										</li>
+										<li>
+											<a href="#">脂肪烃</a>
+										</li>
+										<li>
+											<a href="#">苯</a>
+										</li>
+										<li>
+											<a href="#">甲苯</a>
+										</li>
+										<li>
+											<a href="#">二甲苯</a>
+										</li>
+										<li>
+											<a href="#">四氯乙烷</a>
+										</li>
+										<li>
+											<a href="#">三氯乙烯</a>
+										</li>
+										<li>
+											<a href="#">乙醛</a>
+										</li>
+										<li>
+											<a href="#">醋酸</a>
+										</li>
+										<li>
+											<a href="#">煤焦油</a>
+										</li>
+										<li>
+											<a href="#">乙苯</a>
+										</li>
+										<div class="clearfix"></div>
+									</ul>
+									<a href="#" class="list-details-title">塑料原料</a>
+									<ul class="list-details-details">
+										<div class="clearfix"></div>
+									</ul>
+									<a href="#" class="list-details-title">橡胶原料</a>
+									<ul class="list-details-details">
+										<div class="clearfix"></div>
+									</ul>
+								</div>
+							</div>
+						</li>
+						<li>
+							<div class="banner-on-left-list-each">
+								<span class="nav-icon2 iconfont icon-meitankaicai"></span>
+								<a href="#"> <span class="floatL">煤炭钢铁</span> <span class="floatR jiantou-span">></span>  </a>
+								<div class="clearfix"></div>
+								<div class="list-details">
+									<a href="#" class="list-details-title">原料用煤</a>
+									<ul class="list-details-details">
+										<li>
+											<a href="#">氯化镁</a>
+										</li>
+										<li>
+											<a href="#">氯化钙</a>
+										</li>
+										<li>
+											<a href="#">氯化铵</a>
+										</li>
+										<li>
+											<a href="#">三氯化铁</a>
+										</li>
+										<li>
+											<a href="#">氯化锂</a>
+										</li>
+										<li>
+											<a href="#">氯化钾</a>
+										</li>
+										<li>
+											<a href="#">氯化亚锡</a>
+										</li>
+										<li>
+											<a href="#">工业盐</a>
+										</li>
+										<li>
+											<a href="#">乙二醇</a>
+										</li>
+										<li>
+											<a href="#">聚乙二醇</a>
+										</li>
+										<li>
+											<a href="#">三氯化磷</a>
+										</li>
+										<li>
+											<a href="#">磷酸三钠</a>
+										</li>
+										<div class="clearfix"></div>
+									</ul>
+									<a href="#" class="list-details-title">H型钢</a>
+									<ul class="list-details-details">
+										<li>
+											<a href="#">一氧化碳</a>
+										</li>
+										<li>
+											<a href="#">甲烷</a>
+										</li>
+										<li>
+											<a href="#">氯化铵</a>
+										</li>
+										<li>
+											<a href="#">乙烯</a>
+										</li>
+										<li>
+											<a href="#">乙炔</a>
+										</li>
+										<li>
+											<a href="#">丙烯</a>
+										</li>
+										<li>
+											<a href="#">脂肪烃</a>
+										</li>
+										<li>
+											<a href="#">苯</a>
+										</li>
+										<li>
+											<a href="#">甲苯</a>
+										</li>
+										<li>
+											<a href="#">二甲苯</a>
+										</li>
+										<li>
+											<a href="#">四氯乙烷</a>
+										</li>
+										<li>
+											<a href="#">三氯乙烯</a>
+										</li>
+										<li>
+											<a href="#">乙醛</a>
+										</li>
+										<li>
+											<a href="#">醋酸</a>
+										</li>
+										<li>
+											<a href="#">煤焦油</a>
+										</li>
+										<li>
+											<a href="#">乙苯</a>
+										</li>
+										<div class="clearfix"></div>
+									</ul>
+									<a href="#" class="list-details-title">白色油</a>
+									<ul class="list-details-details">
+										<div class="clearfix"></div>
+									</ul>
+									<a href="#" class="list-details-title">黑色油</a>
+									<ul class="list-details-details">
+										<div class="clearfix"></div>
+									</ul>
+								</div>
+							</div>
+						</li>
+						<li>
+							<div class="banner-on-left-list-each">
+								<span class="nav-icon2 iconfont icon-gongye40"></span>
+								<a href="#"> <span class="floatL">工业设备</span><span class="floatR jiantou-span">></span>  </a>
+								<div class="clearfix"></div>
+								<div class="list-details">
+									<a href="#" class="list-details-title">交通运输设备</a>
+									<ul class="list-details-details">
+										<li>
+											<a href="#">氯化镁</a>
+										</li>
+										<li>
+											<a href="#">氯化钙</a>
+										</li>
+										<li>
+											<a href="#">氯化铵</a>
+										</li>
+										<li>
+											<a href="#">三氯化铁</a>
+										</li>
+										<li>
+											<a href="#">氯化锂</a>
+										</li>
+										<li>
+											<a href="#">氯化钾</a>
+										</li>
+										<li>
+											<a href="#">氯化亚锡</a>
+										</li>
+										<li>
+											<a href="#">工业盐</a>
+										</li>
+										<li>
+											<a href="#">乙二醇</a>
+										</li>
+										<li>
+											<a href="#">聚乙二醇</a>
+										</li>
+										<li>
+											<a href="#">三氯化磷</a>
+										</li>
+										<li>
+											<a href="#">磷酸三钠</a>
+										</li>
+										<div class="clearfix"></div>
+									</ul>
+									<a href="#" class="list-details-title">动力设备</a>
+									<ul class="list-details-details">
+										<li>
+											<a href="#">一氧化碳</a>
+										</li>
+										<li>
+											<a href="#">甲烷</a>
+										</li>
+										<li>
+											<a href="#">氯化铵</a>
+										</li>
+										<li>
+											<a href="#">乙烯</a>
+										</li>
+										<li>
+											<a href="#">乙炔</a>
+										</li>
+										<li>
+											<a href="#">丙烯</a>
+										</li>
+										<li>
+											<a href="#">脂肪烃</a>
+										</li>
+										<li>
+											<a href="#">苯</a>
+										</li>
+										<li>
+											<a href="#">甲苯</a>
+										</li>
+										<li>
+											<a href="#">二甲苯</a>
+										</li>
+										<li>
+											<a href="#">四氯乙烷</a>
+										</li>
+										<li>
+											<a href="#">三氯乙烯</a>
+										</li>
+										<li>
+											<a href="#">乙醛</a>
+										</li>
+										<li>
+											<a href="#">醋酸</a>
+										</li>
+										<li>
+											<a href="#">煤焦油</a>
+										</li>
+										<li>
+											<a href="#">乙苯</a>
+										</li>
+										<div class="clearfix"></div>
+									</ul>
+								</div>
+							</div>
+						</li>
+						<li>
+							<div class="banner-on-left-list-each">
+								<span class="nav-icon2 iconfont icon-yiqiyibiao"></span>
+								<a href="#"> <span class="floatL">仪器仪表</span><span class="floatR jiantou-span">></span> </a>
+								<div class="clearfix"></div>
+								<div class="list-details">
+									<a href="#" class="list-details-title">高压电子容器</a>
+									<ul class="list-details-details">
+										<li>
+											<a href="#">氯化镁</a>
+										</li>
+										<li>
+											<a href="#">氯化钙</a>
+										</li>
+										<li>
+											<a href="#">氯化铵</a>
+										</li>
+										<li>
+											<a href="#">三氯化铁</a>
+										</li>
+										<li>
+											<a href="#">氯化锂</a>
+										</li>
+										<li>
+											<a href="#">氯化钾</a>
+										</li>
+										<li>
+											<a href="#">氯化亚锡</a>
+										</li>
+										<li>
+											<a href="#">工业盐</a>
+										</li>
+										<li>
+											<a href="#">乙二醇</a>
+										</li>
+										<li>
+											<a href="#">聚乙二醇</a>
+										</li>
+										<li>
+											<a href="#">三氯化磷</a>
+										</li>
+										<li>
+											<a href="#">磷酸三钠</a>
+										</li>
+										<div class="clearfix"></div>
+									</ul>
+									<a href="#" class="list-details-title">信号电缆</a>
+									<ul class="list-details-details">
+										<li>
+											<a href="#">一氧化碳</a>
+										</li>
+										<li>
+											<a href="#">甲烷</a>
+										</li>
+										<li>
+											<a href="#">氯化铵</a>
+										</li>
+										<li>
+											<a href="#">乙烯</a>
+										</li>
+										<li>
+											<a href="#">乙炔</a>
+										</li>
+										<li>
+											<a href="#">丙烯</a>
+										</li>
+										<li>
+											<a href="#">脂肪烃</a>
+										</li>
+										<li>
+											<a href="#">苯</a>
+										</li>
+										<li>
+											<a href="#">甲苯</a>
+										</li>
+										<li>
+											<a href="#">二甲苯</a>
+										</li>
+										<li>
+											<a href="#">四氯乙烷</a>
+										</li>
+										<li>
+											<a href="#">三氯乙烯</a>
+										</li>
+										<li>
+											<a href="#">乙醛</a>
+										</li>
+										<li>
+											<a href="#">醋酸</a>
+										</li>
+										<li>
+											<a href="#">煤焦油</a>
+										</li>
+										<li>
+											<a href="#">乙苯</a>
+										</li>
+										<div class="clearfix"></div>
+									</ul>
+								</div>
+							</div>
+						</li>
+						<li>
+							<div class="banner-on-left-list-each">
+								<span class="nav-icon2 iconfont icon-tubiao245"></span>
+								<a href="#"> <span class="floatL">劳保用品</span> <span class="floatR jiantou-span">></span> </a>
+								<div class="clearfix"></div>
+								<div class="list-details">
+									<a href="#" class="list-details-title">安全帽</a>
+									<ul class="list-details-details">
+										<li>
+											<a href="#">氯化镁</a>
+										</li>
+										<li>
+											<a href="#">氯化钙</a>
+										</li>
+										<li>
+											<a href="#">氯化铵</a>
+										</li>
+										<li>
+											<a href="#">三氯化铁</a>
+										</li>
+										<li>
+											<a href="#">氯化锂</a>
+										</li>
+										<li>
+											<a href="#">氯化钾</a>
+										</li>
+										<li>
+											<a href="#">氯化亚锡</a>
+										</li>
+										<li>
+											<a href="#">工业盐</a>
+										</li>
+										<li>
+											<a href="#">乙二醇</a>
+										</li>
+										<li>
+											<a href="#">聚乙二醇</a>
+										</li>
+										<li>
+											<a href="#">三氯化磷</a>
+										</li>
+										<li>
+											<a href="#">磷酸三钠</a>
+										</li>
+										<div class="clearfix"></div>
+									</ul>
+									<a href="#" class="list-details-title">劳保服</a>
+									<ul class="list-details-details">
+										<li>
+											<a href="#">一氧化碳</a>
+										</li>
+										<li>
+											<a href="#">甲烷</a>
+										</li>
+										<li>
+											<a href="#">氯化铵</a>
+										</li>
+										<li>
+											<a href="#">乙烯</a>
+										</li>
+										<li>
+											<a href="#">乙炔</a>
+										</li>
+										<li>
+											<a href="#">丙烯</a>
+										</li>
+										<li>
+											<a href="#">脂肪烃</a>
+										</li>
+										<li>
+											<a href="#">苯</a>
+										</li>
+										<li>
+											<a href="#">甲苯</a>
+										</li>
+										<li>
+											<a href="#">二甲苯</a>
+										</li>
+										<li>
+											<a href="#">四氯乙烷</a>
+										</li>
+										<li>
+											<a href="#">三氯乙烯</a>
+										</li>
+										<li>
+											<a href="#">乙醛</a>
+										</li>
+										<li>
+											<a href="#">醋酸</a>
+										</li>
+										<li>
+											<a href="#">煤焦油</a>
+										</li>
+										<li>
+											<a href="#">乙苯</a>
+										</li>
+										<div class="clearfix"></div>
+									</ul>
+								</div>
+							</div>
+						</li>
+						<li>
+							<div class="banner-on-left-list-each">
+								<span class="nav-icon2 iconfont icon-bangong0"></span>
+								<a href="#"> <span class="floatL">办公用品</span> <span class="floatR jiantou-span">></span> </a>
+								<div class="clearfix"></div>
+								<div class="list-details">
+									<a href="#" class="list-details-title">打印纸</a>
+									<ul class="list-details-details">
+										<li>
+											<a href="#">氯化镁</a>
+										</li>
+										<li>
+											<a href="#">氯化钙</a>
+										</li>
+										<li>
+											<a href="#">氯化铵</a>
+										</li>
+										<li>
+											<a href="#">三氯化铁</a>
+										</li>
+										<li>
+											<a href="#">氯化锂</a>
+										</li>
+										<li>
+											<a href="#">氯化钾</a>
+										</li>
+										<li>
+											<a href="#">氯化亚锡</a>
+										</li>
+										<li>
+											<a href="#">工业盐</a>
+										</li>
+										<li>
+											<a href="#">乙二醇</a>
+										</li>
+										<li>
+											<a href="#">聚乙二醇</a>
+										</li>
+										<li>
+											<a href="#">三氯化磷</a>
+										</li>
+										<li>
+											<a href="#">磷酸三钠</a>
+										</li>
+										<div class="clearfix"></div>
+									</ul>
+									<a href="#" class="list-details-title">单据</a>
+									<ul class="list-details-details">
+										<li>
+											<a href="#">一氧化碳</a>
+										</li>
+										<li>
+											<a href="#">甲烷</a>
+										</li>
+										<li>
+											<a href="#">氯化铵</a>
+										</li>
+										<li>
+											<a href="#">乙烯</a>
+										</li>
+										<li>
+											<a href="#">乙炔</a>
+										</li>
+										<li>
+											<a href="#">丙烯</a>
+										</li>
+										<li>
+											<a href="#">脂肪烃</a>
+										</li>
+										<li>
+											<a href="#">苯</a>
+										</li>
+										<li>
+											<a href="#">甲苯</a>
+										</li>
+										<li>
+											<a href="#">二甲苯</a>
+										</li>
+										<li>
+											<a href="#">四氯乙烷</a>
+										</li>
+										<li>
+											<a href="#">三氯乙烯</a>
+										</li>
+										<li>
+											<a href="#">乙醛</a>
+										</li>
+										<li>
+											<a href="#">醋酸</a>
+										</li>
+										<li>
+											<a href="#">煤焦油</a>
+										</li>
+										<li>
+											<a href="#">乙苯</a>
+										</li>
+										<div class="clearfix"></div>
+									</ul>
+								</div>
+							</div>
+						</li>
+						<li>
+							<div class="banner-on-left-list-each">
+								<span class="nav-icon2 iconfont icon-diannao"></span>
+								<a href="#"> <span class="floatL">电脑数码</span> <span class="floatR jiantou-span">></span> </a>
+								<div class="clearfix"></div>
+								<div class="list-details">
+									<a href="#" class="list-details-title">笔记本电脑</a>
+									<ul class="list-details-details">
+										<li>
+											<a href="#">氯化镁</a>
+										</li>
+										<li>
+											<a href="#">氯化钙</a>
+										</li>
+										<li>
+											<a href="#">氯化铵</a>
+										</li>
+										<li>
+											<a href="#">三氯化铁</a>
+										</li>
+										<li>
+											<a href="#">氯化锂</a>
+										</li>
+										<li>
+											<a href="#">氯化钾</a>
+										</li>
+										<li>
+											<a href="#">氯化亚锡</a>
+										</li>
+										<li>
+											<a href="#">工业盐</a>
+										</li>
+										<li>
+											<a href="#">乙二醇</a>
+										</li>
+										<li>
+											<a href="#">聚乙二醇</a>
+										</li>
+										<li>
+											<a href="#">三氯化磷</a>
+										</li>
+										<li>
+											<a href="#">磷酸三钠</a>
+										</li>
+										<div class="clearfix"></div>
+									</ul>
+									<a href="#" class="list-details-title">服务器</a>
+									<ul class="list-details-details">
+										<li>
+											<a href="#">一氧化碳</a>
+										</li>
+										<li>
+											<a href="#">甲烷</a>
+										</li>
+										<li>
+											<a href="#">氯化铵</a>
+										</li>
+										<li>
+											<a href="#">乙烯</a>
+										</li>
+										<li>
+											<a href="#">乙炔</a>
+										</li>
+										<li>
+											<a href="#">丙烯</a>
+										</li>
+										<li>
+											<a href="#">脂肪烃</a>
+										</li>
+										<li>
+											<a href="#">苯</a>
+										</li>
+										<li>
+											<a href="#">甲苯</a>
+										</li>
+										<li>
+											<a href="#">二甲苯</a>
+										</li>
+										<li>
+											<a href="#">四氯乙烷</a>
+										</li>
+										<li>
+											<a href="#">三氯乙烯</a>
+										</li>
+										<li>
+											<a href="#">乙醛</a>
+										</li>
+										<li>
+											<a href="#">醋酸</a>
+										</li>
+										<li>
+											<a href="#">煤焦油</a>
+										</li>
+										<li>
+											<a href="#">乙苯</a>
+										</li>
+										<div class="clearfix"></div>
+									</ul>
+								</div>
+							</div>
+						</li>
+					</ul>
+				</div>
+				<div class="banner-on-right">
+					<div class="login-area">
+						<div class="img-head-area">
+							<img src="images/banner1.jpg" class="img-head floatL" />
+							<div class="floatR marRight20">
+								<div class="fontW color333">
+									Hi，下午好
+								</div>
+								<div class="color666">
+									欢迎您的到来
+								</div>
+							</div>
+							<div class="clearfix"></div>
+						</div>
+						<div class="button-area">
+							<span class="login-btn floatL"> <span class="iconfont icon-denglu color-fd7636"></span><a href="login.html" class="color333">登录</a> </span>
+							<span class="register-btn floatR"> <span class="iconfont icon-zhuce color-fd7636"></span><a href="zcym.html" class="color333">注册</a> </span>
+							<div class="clearfix"></div>
+						</div>
+					</div>
+					<div class="notice-area">
+						<div class="notice-title floatL">
+							通知
+						</div>
+						<div class="notice-title-blank floatL">
+							<a href="notice-list.html">更多 ></a>
+						</div>
+						<div class="clearfix"></div>
+						<ul class="notice-list">
+							<li>
+								<a href="#"> <span class="floatL font12">【通知】国庆节期间放假说明</span> <span class="floatR font12">2016-09-30</span> <div class="clearfix"></div> </a>
+								<div class="clearfix"></div>
+							</li>
+							<li>
+								<a href="#"> <span class="floatL font12">【通知】中秋节期间放假说明</span> <span class="floatR font12">2016-09-01</span> <div class="clearfix"></div> </a>
+								<div class="clearfix"></div>
+							</li>
+							<li>
+								<a href="#"> <span class="floatL font12">【通知】五一节期间放假说明</span> <span class="floatR font12">2016-09-01</span> <div class="clearfix"></div> </a>
+								<div class="clearfix"></div>
+							</li>
+						</ul>
+					</div>
+					<div class="news-area">
+						<div class="news-title floatL">
+							资讯
+						</div>
+						<div class="news-title-blank floatL">
+							<a href="news-list.html">更多 ></a>
+						</div>
+						<div class="clearfix"></div>
+						<ul class="news-list">
+							<li>
+								<a href="#"> <span class="floatL font12">延长石油荣获陕西科技奖</span> <span class="floatR font12">2016-09-09</span> <div class="clearfix"></div> </a>
+							</li>
+							<li>
+								<a href="#"> <span class="floatL font12">省人大主任在延长石油调研</span> <span class="floatR font12">2016-09-08</span> <div class="clearfix"></div> </a>
+							</li>
+							<li>
+								<a href="#"> <span class="floatL font12">“两学一做”关爱职工</span> <span class="floatR font12">2016-09-05</span> <div class="clearfix"></div> </a>
+							</li>							
+						</ul>
+					</div>
+					<!--<div class="tips-area">
+						<ul class="tips-list">
+							<li>
+								已上架单品数量<span class="color-f00 font12">2,042</span>万
+							</li>
+							<li>
+								昨日采购订单数量<span class="color-f00 font12">8</span>个
+							</li>
+							<li>
+								昨日新增用户数量<span class="color-f00 font12">8</span>个
+							</li>
+						</ul>
+					</div>-->
+				</div>
+			</div>
+	        <div class="swiper-wrapper">
+	        	<div class="swiper-slide" style="background-color: #fc810a;">
+	            	<a href="#"><img src="images/banner004.jpg" /></a>
+	            </div>
+	        	<div class="swiper-slide" style="background-color: #ffd101;">
+	            	<a href="#"><img src="images/banner003.jpg" /></a>
+	            </div>
+	            <div class="swiper-slide" style="background-color: #FFD028;">
+	            	<a href="#"><img src="images/banner002.jpg" /></a>
+	            </div>
+	            <div class="swiper-slide" style="background-color: #FF5D24;">
+	            	<a href="#"><img src="images/banner001.jpg" /></a>
+	            </div>
+	        </div>
+	        <!-- Add Pagination -->
+	        	<div class="swiper-page-left swiper-pagination swiper-pagination-white"></div>      	
+	        <!-- Add Arrows -->
+		         <div class="swiper-button-right swiper-button-next swiper-button-white"></div>
+		         <div class="swiper-button-left swiper-button-prev swiper-button-white"></div>	       
+	    </div>
+			<div style="clear:both"></div>
+			<div class="tuijian">
+				<div class="tj_rm">
+					<h3>热门推荐</h3>
+					<a href="goods-details.html" class="tj_rm1">
+					<p>
+						开业大礼
+					</p> <span>爆款直降</span> <img src="images/sm/dn2.jpg"> <em>马上抢购</em> </a>
+					<a href="goods-details.html" class="tj_rm1">
+					<p>
+						开业大礼
+					</p> <span>爆款直降</span> <img src="images/rmqg2.jpg"> <em>马上抢购</em> </a>
+					<a href="goods-details.html" class="tj_rm1">
+					<p>
+						开业大礼
+					</p> <span>爆款直降</span> <img src="images/sm/dn4.jpg"> <em>马上抢购</em> </a>
+				</div>
+				<div class="tj_rm2">
+					<h3>优惠促销</h3>
+					<a href="goods-details.html" class="tj_rm1">
+					<p>
+						开业大礼
+					</p> <span>爆款直降</span> <img src="images/sm/bg2.jpg"> <em>马上抢购</em> </a>
+					<a href="goods-details.html" class="tj_rm1">
+					<p>
+						开业大礼
+					</p> <span>爆款直降</span> <img src="images/sm/pj2.jpg"> <em>马上抢购</em> </a>
+					<a href="goods-details.html" class="tj_rm1">
+					<p>
+						开业大礼
+					</p> <span>爆款直降</span> <img src="images/sm/pj2.jpg"> <em>马上抢购</em> </a>
+				</div>
+			</div>
+			<div style="clear:both"></div>
+			<!---------楼层------------>
+			<div class="main" >
+				<!-------1F开始------>
+				<div id="item1" class="main_f1 item">
+					<div class="main_f1_left">
+						<h2 class="f_ys1"><span>1F</span><b><a href="#">办公设备</a></b></h2>
+						<div style="clear:both"></div>
+						<div class="tabPanel">
+							<ul>
+								<li class="hit">
+									品牌
+								</li>
+								<li>
+									品类
+								</li>
+							</ul>
+							<div class="panes">
+								<div class="pane" style="display:block;">
+									<a href="#"><img src="images/sm/pp1.jpg" width="64" height="30"/></a>
+									<a href="#"><img src="images/sm/pp1.jpg" width="64" height="30"/></a>
+									<a href="#"><img src="images/sm/pp1.jpg" width="64" height="30"/></a>
+								</div>
+								<div class="pane">
+									<a href="#"><img src="images/sm/pp1.jpg" width="64" height="30"/></a>
+								</div>
+							</div>
+						</div>
+						<div style="clear:both"></div>
+						<div class="ditu"><img src="images/sm/dt2.jpg" width="150" height="100" style="padding:10px 0;">
+						</div>
+					</div>
+					<div class="main_tu">
+						<div class="banner_1">
+							<ul class="banner_n_1">
+								<li>
+									<a href="#" target="_blank"><img src="images/sm/banner11.jpg" width="495" height="350"/></a>
+								</li>
+								<li>
+									<a href="#" target="_blank"><img src="images/sm/banner22.jpg" width="495" height="350"/></a>
+								</li>
+								<li>
+									<a href="#" target="_blank"><img src="images/sm/banner33.jpg" width="495" height="350"/></a>
+								</li>
+							</ul>
+							<a class="prev" href="javascript:void(0)"></a>
+							<a class="next" href="javascript:void(0)"></a>
+							<div class="num">
+								<ul></ul>
+							</div>
+						</div>
+						<script>
+							/*鼠标移过，左右按钮显示*/
+							$(".banner_1").hover(function() {
+								$(this).find(".prev,.next").fadeTo("show", 0.1);
+							}, function() {
+								$(this).find(".prev,.next").hide();
+							})
+							/*鼠标移过某个按钮 高亮显示*/
+							$(".prev,.next").hover(function() {
+								$(this).fadeTo("show", 0.7);
+							}, function() {
+								$(this).fadeTo("show", 0.1);
+							})
+							$(".banner_1").slide({
+								titCell : ".num ul",
+								mainCell : ".banner_n_1",
+								effect : "fold",
+								autoPlay : true,
+								delayTime : 700,
+								autoPage : true
+							});
+						</script>
+						<div class="banner_2">
+							<ul class="banner_n_2">
+								<li>
+									<a href="#" target="_blank"><img src="images/banner1.jpg" width="495" height="350"/></a>
+								</li>
+								<li>
+									<a href="#" target="_blank"><img src="images/banner1.jpg" width="495" height="350"/></a>
+								</li>
+								<li>
+									<a href="#" target="_blank"><img src="images/banner1.jpg" width="495" height="350"/></a>
+								</li>
+							</ul>
+							<a class="prev" href="javascript:void(0)"></a>
+							<a class="next" href="javascript:void(0)"></a>
+							<div class="num">
+								<ul></ul>
+							</div>
+						</div>
+						<script>
+							/*鼠标移过，左右按钮显示*/
+							$(".banner_2").hover(function() {
+								$(this).find(".prev,.next").fadeTo("show", 0.1);
+							}, function() {
+								$(this).find(".prev,.next").hide();
+							})
+							/*鼠标移过某个按钮 高亮显示*/
+							$(".prev,.next").hover(function() {
+								$(this).fadeTo("show", 0.7);
+							}, function() {
+								$(this).fadeTo("show", 0.1);
+							})
+							$(".banner_2").slide({
+								titCell : ".num ul",
+								mainCell : ".banner_n_2",
+								effect : "fold",
+								autoPlay : true,
+								delayTime : 700,
+								autoPage : true
+							});
+						</script>
+					</div>
+					<!--------最右--------->
+					<div class="f1_zuiyou">
+						<div class="f1_zuiyou_left">
+							<a href="goods-details.html" class="tj_rm"> 
+								<b>三星SL-230</b>
+								<p>碎纸机1111</p> 
+								<img src="images/sm/bg2.jpg"> 
+								<div class="jiage">¥ <span class="jiage-data">99.00</span> 元</div>
+							</a>
+							<a href="goods-details.html" class="tj_rm2"> 
+								<b>佳能-C125</b>
+								<p>高速扫描机</p> 
+								<img src="images/sm/bg1.jpg"> 
+								<!--<div class="jiage">¥ <span class="jiage-data">99.00</span> 元</div>-->
+							</a>
+						</div>
+						<div class="f1_zuiyou_right">
+							<a href="goods-details.html" class="tj_rm"> 
+								<b>爱普生</b>
+								<p>彩色打印机</p> 
+								<img src="images/sm/bg3.jpg">
+								<!--<div class="jiage">¥ <span class="jiage-data">99.00</span> 元</div>-->
+							</a>
+							<a href="goods-details.html" class="tj_rm"> <b>热门推荐</b>
+							<p>
+								开业大礼
+							</p> <span>爆款直降</span> <img src="images/sm/bg2.jpg"> </a>
+							<a href="goods-details.html" class="tj_rm"> <b>热门推荐</b>
+							<p>
+								开业大礼
+							</p> <span>爆款直降</span> <img src="images/sm/bg3.jpg"> </a>
+						</div>
+						<div style="clear:both"></div>
+					</div>
+				</div>
+				<!-------2F开始------>
+				<div style="clear:both" id="item2"></div>
+				<div class="main_f1">
+					<div class="main_f1_left">
+						<h2 class="f_ys2"><span>2F</span><b><a href="#">劳保用品</a></b></h2>
+						<div style="clear:both"></div>
+						<div class="tabPanel">
+							<ul>
+								<li class="hit">
+									品牌
+								</li>
+								<li>
+									品类
+								</li>
+							</ul>
+							<div class="panes">
+								<div class="pane" style="display:block;">
+									<a href="#"><img src="images/sm/pp4.jpg" width="64" height="30"/></a>
+									<a href="#"><img src="images/sm/pp5.jpg" width="64" height="30"/></a>
+									<a href="#"><img src="images/sm/pp6.jpg" width="64" height="30"/></a>
+									<div style="clear:both"></div>
+								</div>
+								<div class="pane">
+									<a href="#"><img src="images/sm/pp2.jpg" width="64" height="30"/></a>
+									<a href="#"><img src="images/sm/pp2.jpg" width="64" height="30"/></a>
+									<a href="#"><img src="images/sm/pp2.jpg" width="64" height="30"/></a>
+									<div style="clear:both"></div>
+								</div>
+							</div>
+						</div>
+						<div style="clear:both"></div>
+						<div class="ditu"><img src="images/sm/lb4.jpg" width="150" height="100" style="padding:10px 0;">
+						</div>
+						<!-- <div class="ditu"><img src="images/sm/dt1.jpg" width="100"></div>-->
+					</div>
+					<div class="main_tu">
+						<div class="banner_1">
+							<ul class="banner_n_1">
+								<li>
+									<a href="#" target="_blank"><img src="images/sm/banner111.jpg" width="495" height="350"/></a>
+								</li>
+								<li>
+									<a href="#" target="_blank"><img src="images/sm/banner222.jpg" width="495" height="350"/></a>
+								</li>
+								<li>
+									<a href="#" target="_blank"><img src="images/sm/banner333.jpg" width="495" height="350"/></a>
+								</li>
+							</ul>
+							<a class="prev" href="javascript:void(0)"></a>
+							<a class="next" href="javascript:void(0)"></a>
+							<div class="num">
+								<ul></ul>
+							</div>
+						</div>
+						<script>
+							/*鼠标移过，左右按钮显示*/
+							$(".banner_1").hover(function() {
+								$(this).find(".prev,.next").fadeTo("show", 0.1);
+							}, function() {
+								$(this).find(".prev,.next").hide();
+							})
+							/*鼠标移过某个按钮 高亮显示*/
+							$(".prev,.next").hover(function() {
+								$(this).fadeTo("show", 0.7);
+							}, function() {
+								$(this).fadeTo("show", 0.1);
+							})
+							$(".banner_1").slide({
+								titCell : ".num ul",
+								mainCell : ".banner_n_1",
+								effect : "fold",
+								autoPlay : true,
+								delayTime : 700,
+								autoPage : true
+							});
+						</script>
+						<div class="banner_2">
+							<ul class="banner_n_2">
+								<li>
+									<a href="#" target="_blank"><img src="images/banner1.jpg" width="495" height="350"/></a>
+								</li>
+								<li>
+									<a href="#" target="_blank"><img src="images/banner1.jpg" width="495" height="350"/></a>
+								</li>
+								<li>
+									<a href="#" target="_blank"><img src="images/banner1.jpg" width="495" height="350"/></a>
+								</li>
+							</ul>
+							<a class="prev" href="javascript:void(0)"></a>
+							<a class="next" href="javascript:void(0)"></a>
+							<div class="num">
+								<ul></ul>
+							</div>
+						</div>
+						<script>
+							/*鼠标移过，左右按钮显示*/
+							$(".banner_2").hover(function() {
+								$(this).find(".prev,.next").fadeTo("show", 0.1);
+							}, function() {
+								$(this).find(".prev,.next").hide();
+							})
+							/*鼠标移过某个按钮 高亮显示*/
+							$(".prev,.next").hover(function() {
+								$(this).fadeTo("show", 0.7);
+							}, function() {
+								$(this).fadeTo("show", 0.1);
+							})
+							$(".banner_2").slide({
+								titCell : ".num ul",
+								mainCell : ".banner_n_2",
+								effect : "fold",
+								autoPlay : true,
+								delayTime : 700,
+								autoPage : true
+							});
+						</script>
+					</div>
+					<!--------最右--------->
+					<div class="f1_zuiyou">
+						<div class="f1_zuiyou_left">
+							<a href="goods-details.html" class="tj_rm"> <b>三星SL-230</b>
+							<p>
+								碎纸机222
+							</p> <img src="images/sm/lb5.jpg"> </a>
+							<a href="goods-details.html" class="tj_rm2 tj_da"> <b>佳能-C125</b>
+							<p>
+								高速扫描机
+							</p> <img src="images/sm/lb1.jpg"> </a>
+						</div>
+						<div class="f1_zuiyou_right">
+							<a href="goods-details.html" class="tj_rm"> <b>爱普生</b>
+							<p>
+								彩色打印机
+							</p> <img src="images/sm/lb2.jpg"> </a>
+							<a href="goods-details.html" class="tj_rm"> <b>热门推荐</b>
+							<p>
+								开业大礼
+							</p> <span>爆款直降</span> <img src="images/sm/lb4.jpg"> </a>
+							<a href="goods-details.html" class="tj_rm"> <b>热门推荐</b>
+							<p>
+								开业大礼
+							</p> <span>爆款直降</span> <img src="images/sm/lb3.jpg"> </a>
+						</div>
+						<div style="clear:both"></div>
+					</div>
+				</div>
+				<div style="clear:both"></div>
+				<!-------3F开始------>
+				<div id="item3" class="main_f1 item">
+					<div class="main_f1_left">
+						<h2 class="f_ys3"><span>3F</span><b><a href="#">电脑数码</a></b></h2>
+						<div style="clear:both"></div>
+						<div class="tabPanel">
+							<ul>
+								<li class="hit">
+									品牌
+								</li>
+								<li>
+									品类
+								</li>
+							</ul>
+							<div class="panes">
+								<div class="pane" style="display:block;">
+									<a href="#"><img src="images/sm/pp1.jpg" width="64" height="30"/></a>
+									<a href="#"><img src="images/sm/pp2.jpg" width="64" height="30"/></a>
+									<a href="#"><img src="images/sm/pp3.jpg" width="64" height="30"/></a>
+									<div style="clear:both"></div>
+								</div>
+								<div class="pane">
+									<a href="#"><img src="images/sm/pp1.jpg" width="64" height="30"/></a>
+									<a href="#"><img src="images/sm/pp1.jpg" width="64" height="30"/></a>
+									<a href="#"><img src="images/sm/pp1.jpg" width="64" height="30"/></a>
+									<div style="clear:both"></div>
+								</div>
+							</div>
+						</div>
+						<div style="clear:both"></div>
+						<div class="ditu"><img src="images/sm/dt1.jpg" width="150" height="100" style="padding:10px 0;">
+						</div>
+					</div>
+					<div class="main_tu">
+						<div class="banner_1">
+							<ul class="banner_n_1">
+								<li>
+									<a href="#" target="_blank"><img src="images/sm/banner1111.jpg" width="495" height="350"/></a>
+								</li>
+								<li>
+									<a href="#" target="_blank"><img src="images/sm/banner2222.jpg" width="495" height="350"/></a>
+								</li>
+								<li>
+									<a href="#" target="_blank"><img src="images/sm/banner3333.jpg" width="495" height="350"/></a>
+								</li>
+							</ul>
+							<a class="prev" href="javascript:void(0)"></a>
+							<a class="next" href="javascript:void(0)"></a>
+							<div class="num">
+								<ul></ul>
+							</div>
+						</div>
+						<script>
+							/*鼠标移过，左右按钮显示*/
+							$(".banner_1").hover(function() {
+								$(this).find(".prev,.next").fadeTo("show", 0.1);
+							}, function() {
+								$(this).find(".prev,.next").hide();
+							})
+							/*鼠标移过某个按钮 高亮显示*/
+							$(".prev,.next").hover(function() {
+								$(this).fadeTo("show", 0.7);
+							}, function() {
+								$(this).fadeTo("show", 0.1);
+							})
+							$(".banner_1").slide({
+								titCell : ".num ul",
+								mainCell : ".banner_n_1",
+								effect : "fold",
+								autoPlay : true,
+								delayTime : 700,
+								autoPage : true
+							});
+						</script>
+						<div class="banner_2">
+							<ul class="banner_n_2">
+								<li>
+									<a href="#" target="_blank"><img src="images/banner1.jpg" width="495" height="350"/></a>
+								</li>
+								<li>
+									<a href="#" target="_blank"><img src="images/banner1.jpg" width="495" height="350"/></a>
+								</li>
+								<li>
+									<a href="#" target="_blank"><img src="images/banner1.jpg" width="495" height="350"/></a>
+								</li>
+							</ul>
+							<a class="prev" href="javascript:void(0)"></a>
+							<a class="next" href="javascript:void(0)"></a>
+							<div class="num">
+								<ul></ul>
+							</div>
+						</div>
+						<script>
+							/*鼠标移过，左右按钮显示*/
+							$(".banner_2").hover(function() {
+								$(this).find(".prev,.next").fadeTo("show", 0.1);
+							}, function() {
+								$(this).find(".prev,.next").hide();
+							})
+							/*鼠标移过某个按钮 高亮显示*/
+							$(".prev,.next").hover(function() {
+								$(this).fadeTo("show", 0.7);
+							}, function() {
+								$(this).fadeTo("show", 0.1);
+							})
+							$(".banner_2").slide({
+								titCell : ".num ul",
+								mainCell : ".banner_n_2",
+								effect : "fold",
+								autoPlay : true,
+								delayTime : 700,
+								autoPage : true
+							});
+						</script>
+					</div>
+					<!--------最右--------->
+					<div class="f1_zuiyou">
+						<div class="f1_zuiyou_left">
+							<a href="#" class="tj_rm"> <b>三星SL-230</b>
+							<p>
+								碎纸机
+							</p> <img src="images/sm/dn2.jpg"> </a>
+							<a href="#" class="tj_rm2"> <b>佳能-C125</b>
+							<p>
+								高速扫描机
+							</p> <img src="images/sm/dn1.jpg"> </a>
+						</div>
+						<div class="f1_zuiyou_right">
+							<a href="#" class="tj_rm"> <b>爱普生</b>
+							<p>
+								彩色打印机
+							</p> <img src="images/sm/dn3.jpg"> </a>
+							<a href="#" class="tj_rm"> <b>热门推荐</b>
+							<p>
+								开业大礼
+							</p> <span>爆款直降</span> <img src="images/sm/dn4.jpg"> </a>
+							<a href="#" class="tj_rm"> <b>热门推荐</b>
+							<p>
+								开业大礼
+							</p> <span>爆款直降</span> <img src="images/sm/dn2.jpg"> </a>
+						</div>
+						<div style="clear:both"></div>
+					</div>
+				</div>
+				<!-------4F开始------>
+				<div style="clear:both" id="item4"></div>
+				<div class="main_f1">
+					<div class="main_f1_left">
+						<h2 class="f_ys4"><span>4F</span><b><a href="#">配件及耗材</a></b></h2>
+						<div style="clear:both"></div>
+						<div class="tabPanel">
+							<ul>
+								<li class="hit">
+									品牌
+								</li>
+								<li>
+									品类
+								</li>
+							</ul>
+							<div class="panes">
+								<div class="pane" style="display:block;">
+									<a href="#"><img src="images/sm/pp11.jpg" width="64" height="30"/></a>
+									<a href="#"><img src="images/sm/pp22.jpg" width="64" height="30"/></a>
+									<a href="#"><img src="images/sm/pp33.jpg" width="64" height="30"/></a>
+									<div style="clear:both"></div>
+								</div>
+								<div class="pane">
+									<a href="#"><img src="images/sm/pp1.jpg" width="64" height="30"/></a>
+									<a href="#"><img src="images/sm/pp1.jpg" width="64" height="30"/></a>
+									<a href="#"><img src="images/sm/pp1.jpg" width="64" height="30"/></a>
+									<div style="clear:both"></div>
+								</div>
+							</div>
+						</div>
+						<div style="clear:both"></div>
+						<div class="ditu"><img src="images/sm/pj1.jpg" width="150" height="100" style="padding:10px 0;">
+						</div>
+						<!-- <div class="ditu"><img src="images/sm/dt1.jpg" width="100"></div>-->
+					</div>
+					<div class="main_tu">
+						<div class="banner_1">
+							<ul class="banner_n_1">
+								<li>
+									<a href="#" target="_blank"><img src="images/sm/banner11.jpg" width="495" height="350"/></a>
+								</li>
+								<li>
+									<a href="#" target="_blank"><img src="images/sm/banner22.jpg" width="495" height="350"/></a>
+								</li>
+								<li>
+									<a href="#" target="_blank"><img src="images/sm/banner33.jpg" width="495" height="350"/></a>
+								</li>
+							</ul>
+							<a class="prev" href="javascript:void(0)"></a>
+							<a class="next" href="javascript:void(0)"></a>
+							<div class="num">
+								<ul></ul>
+							</div>
+						</div>
+						<script>
+							/*鼠标移过，左右按钮显示*/
+							$(".banner_1").hover(function() {
+								$(this).find(".prev,.next").fadeTo("show", 0.1);
+							}, function() {
+								$(this).find(".prev,.next").hide();
+							})
+							/*鼠标移过某个按钮 高亮显示*/
+							$(".prev,.next").hover(function() {
+								$(this).fadeTo("show", 0.7);
+							}, function() {
+								$(this).fadeTo("show", 0.1);
+							})
+							$(".banner_1").slide({
+								titCell : ".num ul",
+								mainCell : ".banner_n_1",
+								effect : "fold",
+								autoPlay : true,
+								delayTime : 700,
+								autoPage : true
+							});
+						</script>
+						<div class="banner_2">
+							<ul class="banner_n_2">
+								<li>
+									<a href="#" target="_blank"><img src="images/banner1.jpg" width="495" height="350"/></a>
+								</li>
+								<li>
+									<a href="#" target="_blank"><img src="images/banner1.jpg" width="495" height="350"/></a>
+								</li>
+								<li>
+									<a href="#" target="_blank"><img src="images/banner1.jpg" width="495" height="350"/></a>
+								</li>
+							</ul>
+							<a class="prev" href="javascript:void(0)"></a>
+							<a class="next" href="javascript:void(0)"></a>
+							<div class="num">
+								<ul></ul>
+							</div>
+						</div>
+						<script>
+							/*鼠标移过，左右按钮显示*/
+							$(".banner_2").hover(function() {
+								$(this).find(".prev,.next").fadeTo("show", 0.1);
+							}, function() {
+								$(this).find(".prev,.next").hide();
+							})
+							/*鼠标移过某个按钮 高亮显示*/
+							$(".prev,.next").hover(function() {
+								$(this).fadeTo("show", 0.7);
+							}, function() {
+								$(this).fadeTo("show", 0.1);
+							})
+							$(".banner_2").slide({
+								titCell : ".num ul",
+								mainCell : ".banner_n_2",
+								effect : "fold",
+								autoPlay : true,
+								delayTime : 700,
+								autoPage : true
+							});
+						</script>
+					</div>
+					<!--------最右--------->
+					<div class="f1_zuiyou">
+						<div class="f1_zuiyou_left">
+							<a href="#" class="tj_rm"> <b>三星SL-230</b>
+							<p>
+								碎纸机
+							</p> <img src="images/sm/pj1.jpg"> </a>
+							<a href="#" class="tj_rm2"> <b>佳能-C125</b>
+							<p>
+								高速扫描机
+							</p> <img src="images/sm/pj5.jpg"> </a>
+						</div>
+						<div class="f1_zuiyou_right">
+							<a href="#" class="tj_rm"> <b>爱普生</b>
+							<p>
+								彩色打印机
+							</p> <img src="images/sm/pj2.jpg"> </a>
+							<a href="#" class="tj_rm"> <b>热门推荐</b>
+							<p>
+								开业大礼
+							</p> <span>爆款直降</span> <img src="images/sm/pj3.jpg"> </a>
+							<a href="#" class="tj_rm"> <b>热门推荐</b>
+							<p>
+								开业大礼
+							</p> <span>爆款直降</span> <img src="images/sm/pj4.jpg"> </a>
+						</div>
+						<div style="clear:both"></div>
+					</div>
+				</div>
+				<div style="clear:both"></div>
+			</div>
+			<div class="footer-bottom">
+				<p>地址：陕西省西安市雁塔区沣惠南路中华世纪城（东门）商住楼8号楼二层 电话：029-88990909 传真：029-89286898 邮编：710065 </p>
+				<p>上海石油交易所西部有限公司 版权所有 陕ICP备09004887号 <img src="images/police.png" class="police" />陕公网安备 61019002000027号</p>
+				<div class="foot-img-box">
+					<a><img src="images/foot-img1.jpg"></a>
+					<a><img src="images/foot-img2.jpg"></a>
+					<a><img src="images/foot-img3.jpg"></a>
+					<a><img src="images/foot-img4.jpg"></a>
+				</div>
+			</div>
+			<!--<div class="footer">
+				<div class="footer-nav">
+					<a href="#">首页</a>| <a href="#">关于我们</a>| <a href="#">帮助中心</a>| <a href="#">联系我们</a>
+				</div>
+				<div class="addr">
+					地址：陕西省西安市雁塔区沣惠南路中华世纪城（东门）商住楼8号楼二层 电话：029-88990909 传真：029-89286898 邮编：710065
+				</div>
+				<div class="copyright">
+					上海石油交易所西部有限公司 版权所有 陕ICP备09004887号<img src="images/police.png" class="police" />陕公网安备 61019002000027号
+				</div>
+			</div>-->
+			<div class="elevator">
+				<ul class="elevator-list">
+					<!--<li class="bgcolor-f00 border-none turn-top ">
+						<span class="color-fff font18" style=" line-height: 48px;">导航</span>
+					</li>-->
+					<li>
+						<a href="#" class="second">
+							<span class="iconfont icon-kefu color-fff"></span>
+						</a>
+						<a href="#" class="first">
+							客服
+						</a>
+					</li>
+					<li>
+						<a href="shop-car.html" class="first">
+							购物车
+						</a>
+						<a href="#" class="second"> 
+							<span class="iconfont icon-gouwuche color-fff"></span> 
+						</a>
+					</li>
+					<li>
+						<a href="#item1" class="first">
+							办公设备 
+						</a>
+						<a href="#item1" class="second"> 
+							<span class="iconfont icon-bangong color-fff"></span> 
+						</a>
+					</li>
+					<li>
+						<a href="#item2" class="first">
+							劳保用品
+						</a>
+						<a href="#item2" class="second"> 
+							<span class="iconfont icon-tubiao245 color-fff"></span> 
+						</a>
+					</li>
+					<li>
+						<a href="#item3" class="first">
+							电脑数码
+						</a>
+						<a href="#item3" class="second"> 
+							<span class="iconfont icon-shuma color-fff"></span> 
+						</a>
+					</li>
+					<li>
+						<a href="#item4" class="first">
+							配件及耗材
+						</a>
+						<a href="#item4" class="second"> 
+							<span class="iconfont icon-3cpeijian color-fff"></span> 
+						</a>
+					</li>
+					<li class="bgcolor-f00 border-none turn-top">
+						<a href="#floor-top" class="first">返回顶部</a>
+						<a href="#floor-top" class="second"><span class="iconfont icon-shang color-fff"></span></a>
+					</li>
+					<!--<li class="bgcolor-f00 border-none turn-top">
+						<a href="#floor-top" class="font18 color-fff" style=" line-height: 48px;">top</a>
+					</li>-->
+				</ul>
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript">
+		//导航详细菜单的显示和隐藏
+		$(".list-details").hide()
+		$(".banner-on-left-list>li").mouseenter(function() {
+			$(this).find(".list-details").show()
+		}).mouseleave(function() {
+			$(this).find(".list-details").hide()
+		})
+		//登录和注册按钮背景变化
+		$(".login-btn").mouseenter(function() {
+			$(this).find(".icon-denglu").removeClass("color-fd7636").addClass("color-fff")
+		}).mouseleave(function() {
+			$(this).find(".icon-denglu").removeClass("color-fff").addClass("color-fd7636")
+		})
+		$(".register-btn").mouseenter(function() {
+			$(this).find(".icon-zhuce").removeClass("color-fd7636").addClass("color-fff")
+		}).mouseleave(function() {
+			$(this).find(".icon-zhuce").removeClass("color-fff").addClass("color-fd7636")
+		})
+		//招标公告和招标结果按钮切换
+		$(".inner-title").click(function() {
+			$(this).addClass("inner-title-acitve").siblings().removeClass("inner-title-acitve")
+		})
+		$(".wide-inner-title").click(function() {
+			$(this).addClass("inner-title-acitve").siblings().removeClass("inner-title-acitve")
+		})
+		//电梯导航
+		$(".elevator-list>li").mouseenter(function() {
+			$(this).find(".second").css("background-color","#fd7636")
+			$(this).find(".first").animate({right: "36px"});
+		}).mouseleave(function() {
+			$(".elevator-list>li").find(".first").stop(true);
+			$(this).find(".second").css("background-color","#7a6e6e")
+			$(this).find(".first").animate({right: "-36px"},200).stop(false,true);
+		})
+	</script>
+	<script>
+	    var swiper = new Swiper('.swiper-container', {
+	        pagination: '.swiper-pagination',
+	        paginationClickable: true,
+	        nextButton: '.swiper-button-next',
+	        prevButton: '.swiper-button-prev',
+	        spaceBetween: 30,
+	        effect: 'fade',
+	        autoplay : 2000,
+	    });
+    </script>
+</html>

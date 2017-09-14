@@ -1,0 +1,1784 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>延长电商贸易平台</title>
+		<link rel="stylesheet" href="./css/iconfont.css" />
+		<link rel="stylesheet" href="./css/swiper.min.css" />
+		<link rel="stylesheet" type="text/css" href="./css/common.css">
+		<script type="text/javascript" src="./js/jquery.js"></script>
+		<script type="text/javascript" src="./js/swiper.min.js"></script>
+		<!------条件筛选----->
+		<!--<link rel="stylesheet" href="css/font-awesome.min.css">-->	
+		<link rel="stylesheet" href="./css/mycss1.css" />
+		<link rel="stylesheet" href="./css/style.css" />
+		<link rel="stylesheet" href="./css/index-style.css" />
+		<script type="text/javascript" src="js/main.js"></script>
+	</head>
+	<body>
+		<div class="topbar">
+			<div class="topbar-body">
+				<ul class="topbar-bd-l">
+					<li>
+						交易时间：<a style="color:#ec0000;">7:30-17:30（工作日）</a>
+					</li>
+					<li>
+						客服热线：029-88990909
+					</li>
+				</ul>
+				<ul class="topbar-bd-r">
+					<li class="login-info unlogin">
+						您好 ！欢迎来到延长电商贸易平台
+					</li>
+					<li class="unlogin">
+						<a class="tb-m-a2 blue user-login" href="login.html">请登录</a>
+					</li>
+					<li class="unlogin">
+						<a class="tb-m-a2 blue" href="register.html">免费注册</a>
+					</li>
+					<li>
+						<div class="menu-hd">
+							<a href="my-admin.html">我的平台</a><i><s>◇</s></i>
+						</div>
+						<div class="menu-bd">
+							<div class="menu-bd-panel menu-bd-panel1">
+								<div class="content1 ">
+									<a class="content1-infor1" href="#"><img src="images/banner1.jpg"></a>
+									<div class="content1-infor2 unlogin">
+										<div class="line1">
+											<a href="#">您好，请登录！</a>
+										</div>
+									</div>
+									<!--<div class="content1-infor2 logon">
+										<div class="line1">
+											Hi，<a class="user-name" href="#"></a>！
+										</div>
+										<a href="#" class="line2 user-tel"></a>
+									</div>-->
+								</div>
+								<div class="content2">
+									<div>
+										<a class="first" href="#" target="_top">我的订单</a><a href="" target="_top">积分管理</a>
+									</div>
+									<div>
+										<a class="first" href="#" target="_top">会员认证</a><a href="" target="_top">上传资源单</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="menu-hd">
+							<a href="#">我的设置</a><i><s>◇</s></i>
+						</div>
+						<div class="menu-bd">
+							<div class="menu-bd-panel menu-bd-panel3">
+								<a class="first" target="_top" href="#">订单管理</a><a target="_top" href="#">资源管理</a>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="menu-hd">
+							<a href="#">财物车</a><i><s>◇</s></i>
+						</div>
+						<div class="menu-bd">
+							<div class="menu-bd-panel menu-bd-panel3">
+								<a class="first" target="_top" href="#">任你花</a><a target="_top" href="#">帮你采</a>
+								<a target="_top" href="#">随你押</a>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="menu-hd">
+							<a href="#">帮助中心</a><i><s>◇</s></i>
+						</div>
+						<div class="menu-bd">
+							<div class="menu-bd-panel menu-bd-panel3">
+								<a class="first" target="_top" href="#">帮助中心</a><a target="_top" href="#">帮助中心</a><a class="first" target="_top" href="#">帮助中心</a><a target="_top" href="#">帮助中心</a>
+							</div>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class="header">
+			<div class="logo">
+				<a hidefocus="true" href="#"></a>
+			</div>
+			<div class="hd-search">
+				<div class="search-bd">
+					<div class="search-triggers">
+						<ul>
+							<li>
+								<a>超市 </a>
+							</li>
+							<li>
+								<a href="#">全部</a>
+							</li>
+							<li>
+								<a href="#">商城</a>
+							</li>
+							<li>
+								<a href="#">市场</a>
+							</li>
+						</ul>
+						<i></i>
+					</div>
+					<div class="search-i">
+						<form class="f-cb" method="post" onSubmit="return checkKwInput();" action="#" id="search" name="search">
+							<div class="search-button">
+								<button id="resSeachButton" class="btn-search s-search" type="submit">
+									搜一下
+								</button>
+							</div>
+							<div class="search-combobox">
+								<div class="search-combobox-input">
+									<input type="hidden" value="" name="ci" id="ci_code">
+									<input id="kwInput1" placeholder="请输入关键词查询" autocomplete="off" onFocus="this.style.color='#666';" onBlur="this.style.color='#666';" x-webkit-speech="" x-webkit-grammar="builtin:translate">
+									<input type="hidden" name="kw" id="kwInput2">
+								</div>
+							</div>
+						</form>
+					</div>
+					<div class="search-result">
+						<!-- 当前搜索  -->
+						<!-- 类似搜索  -->
+						<ul class="sear-res">
+							<li>
+								<a href="#"><span class="sear-res-l">螺纹钢</span></a>
+							</li>
+							<li>
+								<a href="#"><span class="sear-res-l">HRB400</span></a>
+							</li>
+							<li>
+								<a href="#"><span class="sear-res-l">HRB400E</span></a>
+							</li>
+							<li>
+								<a href="#"><span class="sear-res-l">Q235</span></a>
+							</li>
+							<li>
+								<a href="#"><span class="sear-res-l">Q235B</span></a>
+							</li>
+						</ul>
+						<!-- 搜索历史  -->
+						<ul class="sear-history">
+							<li>
+								<a href="#"><span class="sear-res-l">HRB400</span><span class="sear-res-r">搜索历史</span></a>
+							</li>
+							<li>
+								<a href="#"><span class="sear-res-l">HRB400B</span><span class="sear-res-r">搜索历史</span></a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="header-nav-btn">
+				<!--<a class="header-nav-btn1 mn-ico1" href="#"><i></i>积分商城</a>!-->
+				<a class="header-nav-btn1 mn-ico2" href="shop-car.html"><i></i>我的购物车<span class="count" id="rcart">0</span></a>
+				<div class="cart-panel">
+					<div class="cartlist">
+						共选中 <b class="orange"><span id="itemTotalTemp">0</span></b> 件货物（<b class="orange"><span id="averageQtyTotalTemp">0</span></b> 吨）&nbsp;
+						<br />
+						总价 <b><span id="priceTotalTemp">0</span></b>元
+					</div>
+					<a class="shop-car.html" href="cart_list.html">查看购物车</a>
+				</div>
+			</div>
+			<div class="header-app">
+				<div class="menu-bd-panel2">
+					<ul>
+						<li class="mrgR10"><img src="images/app.gif">
+						</li>
+						<li><img src="images/app.gif">
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div> 
+		<div class="m-nav">
+			<div class="auto">
+				<dl class="main-nav">
+					<dd class="nav-main">
+						<a href="index.html">首页</a>
+					</dd>
+					<dd class="nav-main">
+						<a href="big-company.html">大企业专场</a>
+					</dd>
+					<dd class="nav-main">
+						<a class="active-a" href="purchase-big.html">大宗商品市场</a>
+					</dd>
+					<dd class="nav-main">
+						<a href="gongyepin_market.html">工业品市场</a>
+					</dd>
+					<dd class="nav-main">
+						<a href="caigou_session.html">采购专场</a>
+					</dd>
+					<dd class="nav-main">
+						<a href="#">电子招投标</a>
+					</dd>
+					<dd class="nav-main">
+						<a href="supermarkets.html">电子商城</a>
+					</dd>
+					<dd class="nav-main">
+						<a href="purchase02.html">民生超市</a>
+					</dd>
+					<dd class="nav-main">
+						<a href="jrfw.html">金融服务</a>
+					</dd>
+					<dd class="nav-main">
+						<a href="sq-about.html">社区</a>
+					</dd>
+				</dl>
+			</div>
+		</div>
+		<div class="swiper-container">
+			<div class="banner-on">
+				<div class="banner-on-left">
+					<div class="nav-main product-menu">
+						<span class="nav-icon1 iconfont icon-suoyou color-f00"></span>所有商品分类
+					</div>
+					<ul class="banner-on-left-list">
+						<li>
+							<div class="banner-on-left-list-each">
+								<span class="nav-icon2 iconfont icon-shiyouxingye"></span>
+								<a href="#"> 									
+									<span class="floatL">石油产品</span><span class="floatR jiantou-span">></span> </a>
+								<div class="clearfix"></div>
+								<div class="list-details">
+									<a href="#" class="list-details-title">润滑油</a>
+									<ul class="list-details-details">
+										<li>
+											<a href="#">氯化镁</a>
+										</li>
+										<li>
+											<a href="#">氯化钙</a>
+										</li>
+										<li>
+											<a href="#">氯化铵</a>
+										</li>
+										<li>
+											<a href="#">三氯化铁</a>
+										</li>
+										<li>
+											<a href="#">氯化锂</a>
+										</li>
+										<li>
+											<a href="#">氯化钾</a>
+										</li>
+										<li>
+											<a href="#">氯化亚锡</a>
+										</li>
+										<li>
+											<a href="#">工业盐</a>
+										</li>
+										<li>
+											<a href="#">乙二醇</a>
+										</li>
+										<li>
+											<a href="#">聚乙二醇</a>
+										</li>
+										<li>
+											<a href="#">三氯化磷</a>
+										</li>
+										<li>
+											<a href="#">磷酸三钠</a>
+										</li>
+										<div class="clearfix"></div>
+									</ul>
+									<a href="#" class="list-details-title">燃料油</a>
+									<ul class="list-details-details">
+										<li>
+											<a href="#">一氧化碳</a>
+										</li>
+										<li>
+											<a href="#">甲烷</a>
+										</li>
+										<li>
+											<a href="#">氯化铵</a>
+										</li>
+										<li>
+											<a href="#">乙烯</a>
+										</li>
+										<li>
+											<a href="#">乙炔</a>
+										</li>
+										<li>
+											<a href="#">丙烯</a>
+										</li>
+										<li>
+											<a href="#">脂肪烃</a>
+										</li>
+										<li>
+											<a href="#">苯</a>
+										</li>
+										<li>
+											<a href="#">甲苯</a>
+										</li>
+										<li>
+											<a href="#">二甲苯</a>
+										</li>
+										<li>
+											<a href="#">四氯乙烷</a>
+										</li>
+										<li>
+											<a href="#">三氯乙烯</a>
+										</li>
+										<li>
+											<a href="#">乙醛</a>
+										</li>
+										<li>
+											<a href="#">醋酸</a>
+										</li>
+										<li>
+											<a href="#">煤焦油</a>
+										</li>
+										<li>
+											<a href="#">乙苯</a>
+										</li>
+										<div class="clearfix"></div>
+									</ul>
+									<a href="#" class="list-details-title">白色油</a>
+									<ul class="list-details-details">
+										<div class="clearfix"></div>
+									</ul>
+									<a href="#" class="list-details-title">黑色油</a>
+									<ul class="list-details-details">
+										<div class="clearfix"></div>
+									</ul>
+								</div>
+							</div>
+						</li>
+						<li>
+							<div class="banner-on-left-list-each">
+								<span class="nav-icon2 iconfont icon-shihuazhuanchang"></span>
+								<a href="#"> <span class="floatL">石化产品</span> <span class="floatR jiantou-span">></span>  </a>
+								<div class="clearfix"></div>
+								<div class="list-details">
+									<a href="#" class="list-details-title">无机化工原料</a>
+									<ul class="list-details-details">
+										<li>
+											<a href="#">氯化镁</a>
+										</li>
+										<li>
+											<a href="#">氯化钙</a>
+										</li>
+										<li>
+											<a href="#">氯化铵</a>
+										</li>
+										<li>
+											<a href="#">三氯化铁</a>
+										</li>
+										<li>
+											<a href="#">氯化锂</a>
+										</li>
+										<li>
+											<a href="#">氯化钾</a>
+										</li>
+										<li>
+											<a href="#">氯化亚锡</a>
+										</li>
+										<li>
+											<a href="#">工业盐</a>
+										</li>
+										<li>
+											<a href="#">乙二醇</a>
+										</li>
+										<li>
+											<a href="#">聚乙二醇</a>
+										</li>
+										<li>
+											<a href="#">三氯化磷</a>
+										</li>
+										<li>
+											<a href="#">磷酸三钠</a>
+										</li>
+										<div class="clearfix"></div>
+									</ul>
+									<a href="#" class="list-details-title">有机化工原料</a>
+									<ul class="list-details-details">
+										<li>
+											<a href="#">一氧化碳</a>
+										</li>
+										<li>
+											<a href="#">甲烷</a>
+										</li>
+										<li>
+											<a href="#">氯化铵</a>
+										</li>
+										<li>
+											<a href="#">乙烯</a>
+										</li>
+										<li>
+											<a href="#">乙炔</a>
+										</li>
+										<li>
+											<a href="#">丙烯</a>
+										</li>
+										<li>
+											<a href="#">脂肪烃</a>
+										</li>
+										<li>
+											<a href="#">苯</a>
+										</li>
+										<li>
+											<a href="#">甲苯</a>
+										</li>
+										<li>
+											<a href="#">二甲苯</a>
+										</li>
+										<li>
+											<a href="#">四氯乙烷</a>
+										</li>
+										<li>
+											<a href="#">三氯乙烯</a>
+										</li>
+										<li>
+											<a href="#">乙醛</a>
+										</li>
+										<li>
+											<a href="#">醋酸</a>
+										</li>
+										<li>
+											<a href="#">煤焦油</a>
+										</li>
+										<li>
+											<a href="#">乙苯</a>
+										</li>
+										<div class="clearfix"></div>
+									</ul>
+									<a href="#" class="list-details-title">塑料原料</a>
+									<ul class="list-details-details">
+										<div class="clearfix"></div>
+									</ul>
+									<a href="#" class="list-details-title">橡胶原料</a>
+									<ul class="list-details-details">
+										<div class="clearfix"></div>
+									</ul>
+								</div>
+							</div>
+						</li>
+						<li>
+							<div class="banner-on-left-list-each">
+								<span class="nav-icon2 iconfont icon-meitankaicai"></span>
+								<a href="#"> <span class="floatL">煤炭钢铁</span> <span class="floatR jiantou-span">></span>  </a>
+								<div class="clearfix"></div>
+								<div class="list-details">
+									<a href="#" class="list-details-title">原料用煤</a>
+									<ul class="list-details-details">
+										<li>
+											<a href="#">氯化镁</a>
+										</li>
+										<li>
+											<a href="#">氯化钙</a>
+										</li>
+										<li>
+											<a href="#">氯化铵</a>
+										</li>
+										<li>
+											<a href="#">三氯化铁</a>
+										</li>
+										<li>
+											<a href="#">氯化锂</a>
+										</li>
+										<li>
+											<a href="#">氯化钾</a>
+										</li>
+										<li>
+											<a href="#">氯化亚锡</a>
+										</li>
+										<li>
+											<a href="#">工业盐</a>
+										</li>
+										<li>
+											<a href="#">乙二醇</a>
+										</li>
+										<li>
+											<a href="#">聚乙二醇</a>
+										</li>
+										<li>
+											<a href="#">三氯化磷</a>
+										</li>
+										<li>
+											<a href="#">磷酸三钠</a>
+										</li>
+										<div class="clearfix"></div>
+									</ul>
+									<a href="#" class="list-details-title">H型钢</a>
+									<ul class="list-details-details">
+										<li>
+											<a href="#">一氧化碳</a>
+										</li>
+										<li>
+											<a href="#">甲烷</a>
+										</li>
+										<li>
+											<a href="#">氯化铵</a>
+										</li>
+										<li>
+											<a href="#">乙烯</a>
+										</li>
+										<li>
+											<a href="#">乙炔</a>
+										</li>
+										<li>
+											<a href="#">丙烯</a>
+										</li>
+										<li>
+											<a href="#">脂肪烃</a>
+										</li>
+										<li>
+											<a href="#">苯</a>
+										</li>
+										<li>
+											<a href="#">甲苯</a>
+										</li>
+										<li>
+											<a href="#">二甲苯</a>
+										</li>
+										<li>
+											<a href="#">四氯乙烷</a>
+										</li>
+										<li>
+											<a href="#">三氯乙烯</a>
+										</li>
+										<li>
+											<a href="#">乙醛</a>
+										</li>
+										<li>
+											<a href="#">醋酸</a>
+										</li>
+										<li>
+											<a href="#">煤焦油</a>
+										</li>
+										<li>
+											<a href="#">乙苯</a>
+										</li>
+										<div class="clearfix"></div>
+									</ul>
+									<a href="#" class="list-details-title">白色油</a>
+									<ul class="list-details-details">
+										<div class="clearfix"></div>
+									</ul>
+									<a href="#" class="list-details-title">黑色油</a>
+									<ul class="list-details-details">
+										<div class="clearfix"></div>
+									</ul>
+								</div>
+							</div>
+						</li>
+						<li>
+							<div class="banner-on-left-list-each">
+								<span class="nav-icon2 iconfont icon-gongye40"></span>
+								<a href="#"> <span class="floatL">工业设备</span><span class="floatR jiantou-span">></span>  </a>
+								<div class="clearfix"></div>
+								<div class="list-details">
+									<a href="#" class="list-details-title">交通运输设备</a>
+									<ul class="list-details-details">
+										<li>
+											<a href="#">氯化镁</a>
+										</li>
+										<li>
+											<a href="#">氯化钙</a>
+										</li>
+										<li>
+											<a href="#">氯化铵</a>
+										</li>
+										<li>
+											<a href="#">三氯化铁</a>
+										</li>
+										<li>
+											<a href="#">氯化锂</a>
+										</li>
+										<li>
+											<a href="#">氯化钾</a>
+										</li>
+										<li>
+											<a href="#">氯化亚锡</a>
+										</li>
+										<li>
+											<a href="#">工业盐</a>
+										</li>
+										<li>
+											<a href="#">乙二醇</a>
+										</li>
+										<li>
+											<a href="#">聚乙二醇</a>
+										</li>
+										<li>
+											<a href="#">三氯化磷</a>
+										</li>
+										<li>
+											<a href="#">磷酸三钠</a>
+										</li>
+										<div class="clearfix"></div>
+									</ul>
+									<a href="#" class="list-details-title">动力设备</a>
+									<ul class="list-details-details">
+										<li>
+											<a href="#">一氧化碳</a>
+										</li>
+										<li>
+											<a href="#">甲烷</a>
+										</li>
+										<li>
+											<a href="#">氯化铵</a>
+										</li>
+										<li>
+											<a href="#">乙烯</a>
+										</li>
+										<li>
+											<a href="#">乙炔</a>
+										</li>
+										<li>
+											<a href="#">丙烯</a>
+										</li>
+										<li>
+											<a href="#">脂肪烃</a>
+										</li>
+										<li>
+											<a href="#">苯</a>
+										</li>
+										<li>
+											<a href="#">甲苯</a>
+										</li>
+										<li>
+											<a href="#">二甲苯</a>
+										</li>
+										<li>
+											<a href="#">四氯乙烷</a>
+										</li>
+										<li>
+											<a href="#">三氯乙烯</a>
+										</li>
+										<li>
+											<a href="#">乙醛</a>
+										</li>
+										<li>
+											<a href="#">醋酸</a>
+										</li>
+										<li>
+											<a href="#">煤焦油</a>
+										</li>
+										<li>
+											<a href="#">乙苯</a>
+										</li>
+										<div class="clearfix"></div>
+									</ul>
+								</div>
+							</div>
+						</li>
+						<li>
+							<div class="banner-on-left-list-each">
+								<span class="nav-icon2 iconfont icon-yiqiyibiao"></span>
+								<a href="#"> <span class="floatL">仪器仪表</span><span class="floatR jiantou-span">></span> </a>
+								<div class="clearfix"></div>
+								<div class="list-details">
+									<a href="#" class="list-details-title">高压电子容器</a>
+									<ul class="list-details-details">
+										<li>
+											<a href="#">氯化镁</a>
+										</li>
+										<li>
+											<a href="#">氯化钙</a>
+										</li>
+										<li>
+											<a href="#">氯化铵</a>
+										</li>
+										<li>
+											<a href="#">三氯化铁</a>
+										</li>
+										<li>
+											<a href="#">氯化锂</a>
+										</li>
+										<li>
+											<a href="#">氯化钾</a>
+										</li>
+										<li>
+											<a href="#">氯化亚锡</a>
+										</li>
+										<li>
+											<a href="#">工业盐</a>
+										</li>
+										<li>
+											<a href="#">乙二醇</a>
+										</li>
+										<li>
+											<a href="#">聚乙二醇</a>
+										</li>
+										<li>
+											<a href="#">三氯化磷</a>
+										</li>
+										<li>
+											<a href="#">磷酸三钠</a>
+										</li>
+										<div class="clearfix"></div>
+									</ul>
+									<a href="#" class="list-details-title">信号电缆</a>
+									<ul class="list-details-details">
+										<li>
+											<a href="#">一氧化碳</a>
+										</li>
+										<li>
+											<a href="#">甲烷</a>
+										</li>
+										<li>
+											<a href="#">氯化铵</a>
+										</li>
+										<li>
+											<a href="#">乙烯</a>
+										</li>
+										<li>
+											<a href="#">乙炔</a>
+										</li>
+										<li>
+											<a href="#">丙烯</a>
+										</li>
+										<li>
+											<a href="#">脂肪烃</a>
+										</li>
+										<li>
+											<a href="#">苯</a>
+										</li>
+										<li>
+											<a href="#">甲苯</a>
+										</li>
+										<li>
+											<a href="#">二甲苯</a>
+										</li>
+										<li>
+											<a href="#">四氯乙烷</a>
+										</li>
+										<li>
+											<a href="#">三氯乙烯</a>
+										</li>
+										<li>
+											<a href="#">乙醛</a>
+										</li>
+										<li>
+											<a href="#">醋酸</a>
+										</li>
+										<li>
+											<a href="#">煤焦油</a>
+										</li>
+										<li>
+											<a href="#">乙苯</a>
+										</li>
+										<div class="clearfix"></div>
+									</ul>
+								</div>
+							</div>
+						</li>
+						<li>
+							<div class="banner-on-left-list-each">
+								<span class="nav-icon2 iconfont icon-tubiao245"></span>
+								<a href="#"> <span class="floatL">劳保用品</span> <span class="floatR jiantou-span">></span> </a>
+								<div class="clearfix"></div>
+								<div class="list-details">
+									<a href="#" class="list-details-title">安全帽</a>
+									<ul class="list-details-details">
+										<li>
+											<a href="#">氯化镁</a>
+										</li>
+										<li>
+											<a href="#">氯化钙</a>
+										</li>
+										<li>
+											<a href="#">氯化铵</a>
+										</li>
+										<li>
+											<a href="#">三氯化铁</a>
+										</li>
+										<li>
+											<a href="#">氯化锂</a>
+										</li>
+										<li>
+											<a href="#">氯化钾</a>
+										</li>
+										<li>
+											<a href="#">氯化亚锡</a>
+										</li>
+										<li>
+											<a href="#">工业盐</a>
+										</li>
+										<li>
+											<a href="#">乙二醇</a>
+										</li>
+										<li>
+											<a href="#">聚乙二醇</a>
+										</li>
+										<li>
+											<a href="#">三氯化磷</a>
+										</li>
+										<li>
+											<a href="#">磷酸三钠</a>
+										</li>
+										<div class="clearfix"></div>
+									</ul>
+									<a href="#" class="list-details-title">劳保服</a>
+									<ul class="list-details-details">
+										<li>
+											<a href="#">一氧化碳</a>
+										</li>
+										<li>
+											<a href="#">甲烷</a>
+										</li>
+										<li>
+											<a href="#">氯化铵</a>
+										</li>
+										<li>
+											<a href="#">乙烯</a>
+										</li>
+										<li>
+											<a href="#">乙炔</a>
+										</li>
+										<li>
+											<a href="#">丙烯</a>
+										</li>
+										<li>
+											<a href="#">脂肪烃</a>
+										</li>
+										<li>
+											<a href="#">苯</a>
+										</li>
+										<li>
+											<a href="#">甲苯</a>
+										</li>
+										<li>
+											<a href="#">二甲苯</a>
+										</li>
+										<li>
+											<a href="#">四氯乙烷</a>
+										</li>
+										<li>
+											<a href="#">三氯乙烯</a>
+										</li>
+										<li>
+											<a href="#">乙醛</a>
+										</li>
+										<li>
+											<a href="#">醋酸</a>
+										</li>
+										<li>
+											<a href="#">煤焦油</a>
+										</li>
+										<li>
+											<a href="#">乙苯</a>
+										</li>
+										<div class="clearfix"></div>
+									</ul>
+								</div>
+							</div>
+						</li>
+						<li>
+							<div class="banner-on-left-list-each">
+								<span class="nav-icon2 iconfont icon-bangong0"></span>
+								<a href="#"> <span class="floatL">办公用品</span> <span class="floatR jiantou-span">></span> </a>
+								<div class="clearfix"></div>
+								<div class="list-details">
+									<a href="#" class="list-details-title">打印纸</a>
+									<ul class="list-details-details">
+										<li>
+											<a href="#">氯化镁</a>
+										</li>
+										<li>
+											<a href="#">氯化钙</a>
+										</li>
+										<li>
+											<a href="#">氯化铵</a>
+										</li>
+										<li>
+											<a href="#">三氯化铁</a>
+										</li>
+										<li>
+											<a href="#">氯化锂</a>
+										</li>
+										<li>
+											<a href="#">氯化钾</a>
+										</li>
+										<li>
+											<a href="#">氯化亚锡</a>
+										</li>
+										<li>
+											<a href="#">工业盐</a>
+										</li>
+										<li>
+											<a href="#">乙二醇</a>
+										</li>
+										<li>
+											<a href="#">聚乙二醇</a>
+										</li>
+										<li>
+											<a href="#">三氯化磷</a>
+										</li>
+										<li>
+											<a href="#">磷酸三钠</a>
+										</li>
+										<div class="clearfix"></div>
+									</ul>
+									<a href="#" class="list-details-title">单据</a>
+									<ul class="list-details-details">
+										<li>
+											<a href="#">一氧化碳</a>
+										</li>
+										<li>
+											<a href="#">甲烷</a>
+										</li>
+										<li>
+											<a href="#">氯化铵</a>
+										</li>
+										<li>
+											<a href="#">乙烯</a>
+										</li>
+										<li>
+											<a href="#">乙炔</a>
+										</li>
+										<li>
+											<a href="#">丙烯</a>
+										</li>
+										<li>
+											<a href="#">脂肪烃</a>
+										</li>
+										<li>
+											<a href="#">苯</a>
+										</li>
+										<li>
+											<a href="#">甲苯</a>
+										</li>
+										<li>
+											<a href="#">二甲苯</a>
+										</li>
+										<li>
+											<a href="#">四氯乙烷</a>
+										</li>
+										<li>
+											<a href="#">三氯乙烯</a>
+										</li>
+										<li>
+											<a href="#">乙醛</a>
+										</li>
+										<li>
+											<a href="#">醋酸</a>
+										</li>
+										<li>
+											<a href="#">煤焦油</a>
+										</li>
+										<li>
+											<a href="#">乙苯</a>
+										</li>
+										<div class="clearfix"></div>
+									</ul>
+								</div>
+							</div>
+						</li>
+						<li>
+							<div class="banner-on-left-list-each">
+								<span class="nav-icon2 iconfont icon-diannao"></span>
+								<a href="#"> <span class="floatL">电脑数码</span> <span class="floatR jiantou-span">></span> </a>
+								<div class="clearfix"></div>
+								<div class="list-details">
+									<a href="#" class="list-details-title">笔记本电脑</a>
+									<ul class="list-details-details">
+										<li>
+											<a href="#">氯化镁</a>
+										</li>
+										<li>
+											<a href="#">氯化钙</a>
+										</li>
+										<li>
+											<a href="#">氯化铵</a>
+										</li>
+										<li>
+											<a href="#">三氯化铁</a>
+										</li>
+										<li>
+											<a href="#">氯化锂</a>
+										</li>
+										<li>
+											<a href="#">氯化钾</a>
+										</li>
+										<li>
+											<a href="#">氯化亚锡</a>
+										</li>
+										<li>
+											<a href="#">工业盐</a>
+										</li>
+										<li>
+											<a href="#">乙二醇</a>
+										</li>
+										<li>
+											<a href="#">聚乙二醇</a>
+										</li>
+										<li>
+											<a href="#">三氯化磷</a>
+										</li>
+										<li>
+											<a href="#">磷酸三钠</a>
+										</li>
+										<div class="clearfix"></div>
+									</ul>
+									<a href="#" class="list-details-title">服务器</a>
+									<ul class="list-details-details">
+										<li>
+											<a href="#">一氧化碳</a>
+										</li>
+										<li>
+											<a href="#">甲烷</a>
+										</li>
+										<li>
+											<a href="#">氯化铵</a>
+										</li>
+										<li>
+											<a href="#">乙烯</a>
+										</li>
+										<li>
+											<a href="#">乙炔</a>
+										</li>
+										<li>
+											<a href="#">丙烯</a>
+										</li>
+										<li>
+											<a href="#">脂肪烃</a>
+										</li>
+										<li>
+											<a href="#">苯</a>
+										</li>
+										<li>
+											<a href="#">甲苯</a>
+										</li>
+										<li>
+											<a href="#">二甲苯</a>
+										</li>
+										<li>
+											<a href="#">四氯乙烷</a>
+										</li>
+										<li>
+											<a href="#">三氯乙烯</a>
+										</li>
+										<li>
+											<a href="#">乙醛</a>
+										</li>
+										<li>
+											<a href="#">醋酸</a>
+										</li>
+										<li>
+											<a href="#">煤焦油</a>
+										</li>
+										<li>
+											<a href="#">乙苯</a>
+										</li>
+										<div class="clearfix"></div>
+									</ul>
+								</div>
+							</div>
+						</li>
+					</ul>
+				</div>				
+			</div>
+	        <div class="swiper-wrapper">
+	        	<div class="swiper-slide" style="background-color: #fc810a;">
+	            	<a href="#"><img src="images/banner004.jpg" style=" width: 990px; height: 400px;" /></a>
+	            </div>
+	        	<div class="swiper-slide" style="background-color: #ffd101;">
+	            	<a href="#"><img src="images/banner003.jpg" style=" width: 990px; height: 400px;" /></a>
+	            </div>
+	            <div class="swiper-slide" style="background-color: #FFD028;">
+	            	<a href="#"><img src="images/banner002.jpg" style=" width: 990px; height: 400px;" /></a>
+	            </div>
+	            <div class="swiper-slide" style="background-color: #FF5D24;">
+	            	<a href="#"><img src="images/banner001.jpg" style=" width: 990px; height: 400px;" /></a>
+	            </div>
+	        </div>
+	        <!-- Add Pagination -->
+	        	<div class="swiper-page-left swiper-pagination swiper-pagination-white" style=" margin-left: 81px;"></div>      	
+	        <!-- Add Arrows -->
+		         <div class="swiper-button-right02 swiper-button-next swiper-button-white"></div>
+		         <div class="swiper-button-left swiper-button-prev swiper-button-white"></div>	       
+	    </div>
+	    <!-----------筛选开始！----------->
+<div style="width:1200px; margin:20px auto;">
+    <div class="clearfix1">
+        <p class="shaixuan-tj floatLeft clearfix1">
+            <span><a href="/">全部结果</a></span>
+            <i class="icon-angle-right"></i>
+            <span><strong>“大企业商品”</strong></span>
+            <i class="icon-angle-right"></i>
+        </p>
+        <p id="sxbtn" class="shaixuan-btn clearfix1"><span><em>收起筛选</em><i class="icon-angle-up"></i></span></p>
+        <div style="clear:both ;"></div>
+    </div>
+    <div id="page-search-store" class="mb10 border sxcon">
+        <div class="search-by by-category relative">
+            <dl class="relative clearfix1">
+                <dt class="floatLeft"><a href="/">产品名称：</a></dt>
+                <dd class="floatLeft show-con">
+                    <a href="/" class="">聚乙烯</a>
+                    <a href="/" class="">聚丙烯</a>
+                    <a href="/" class="">聚α烯烃</a>
+                    <a href="/" class="">聚a烯烃</a>
+                    <a href="/" class="nzw12">聚α烯烃</a>
+                    <a href="/" class="">聚α烯烃</a>
+                    <a href="/" class="">聚α烯烃</a>
+                    <a href="/" class="">聚α烯烃</a>
+                    <a href="/" class="">聚α烯烃</a>
+                    <a href="/" class="">聚a烯烃</a>
+                    <a href="/" class="">聚a烯烃</a>
+                    <a href="/" class="">聚a烯烃</a>
+                    <a href="/" class="">聚a烯烃</a>
+                    <a href="/" class="">聚α烯烃</a>
+                    <a href="/" class="">聚α烯烃</a>
+                    <a href="/" class="">聚α烯烃</a>
+                    <a href="/" class="">聚α烯烃</a>
+                    <a href="/" class="">聚a烯烃</a>
+                    <a href="/" class="">聚a烯烃</a>
+                    <a href="/" class="">聚a烯烃</a>
+                    <a href="/" class="">聚a烯烃</a>
+                </dd>
+                <dd class="floatLeft show-more"><h3 class="pointer clearfix1"><span>更多</span><i class="icon-angle-down"></i></h3></dd>
+            </dl>
+            <dl class="relative">
+                <dt class="floatLeft"><a href="/">产品型号：</a></dt>
+                <dd class="floatLeft show-con">
+                    <a href="/" class="">10-15吨</a>
+                    <a href="/" class="">20-25吨</a>
+                </dd>
+                <dd class="floatLeft show-more"><h3 class="pointer clearfix1"><span>更多</span><i class="icon-angle-down"></i></h3></dd>
+            </dl>
+            <dl class="relative clearfix1">
+                <dt class="floatLeft"><a href="/">产品规格：</a></dt>
+                <dd class="floatLeft show-con">
+                    <a href="/" class="">160KG/桶</a>
+                    <a href="/" class="">190KG/桶</a>
+                    <a href="/" class="">240KG/桶</a>
+                </dd>
+                <dd class="floatLeft show-more"><h3 class="pointer clearfix1"><span>更多</span><i class="icon-angle-down"></i></h3></dd>
+            </dl>
+            <dl class="relative clearfix1">
+                <dt class="floatLeft"><a href="/">产品品牌：</a></dt>
+                <dd class="floatLeft show-con">
+                    <a href="/" class="">延长石油</a>
+                    <a href="/" class="">中石化</a>
+                    <a href="/" class="">中海油</a>
+                </dd>
+                <dd class="floatLeft show-more"><h3 class="pointer clearfix1"><span>更多</span><i class="icon-angle-down"></i></h3></dd>
+            </dl>
+            <dl class="relative clearfix1" style="border-bottom:0">
+                <dt class="floatLeft"><a href="/">产品产地：</a></dt>
+                <dd class="floatLeft show-con">
+                    <a href="/" class="">中国</a>
+                    <a href="/" class="">美国</a>
+                    <a href="/" class="">英国</a>
+                </dd>
+                <dd class="floatLeft show-more"><h3 class="pointer clearfix1"><span>更多</span><i class="icon-angle-down"></i></h3></dd>
+            </dl>
+        </div>
+    </div>
+</div>
+<div style="clear: both;"></div>
+<!--<script type="text/javascript" src="js/shanxuan.js"></script>
+<script type="text/javascript">
+$('.sx').sx({
+	nuv:".zj",//筛选结果
+	zi:"sx_child",//所有筛选范围内的子类
+	qingchu:'.qcqb',//清除全部
+	over:'on'//选中状态样式名称
+});
+</script>	-->
+          <!--------内容结束--------->  
+<!----------------排序下面------------------->	
+		<div class="condition">
+			<span class="make-list">排序：</span>
+			<ul class="condition-vary">
+				<li class="condition-vary-active">默认<span class="ver-aling-mid iconfont icon-shang color-fff"></span></li>
+				<li>价格<span class="iconfont icon-shang-copy-copy ver-aling-mid"></span></li>
+				<li>销量<span class="iconfont icon-shang-copy-copy ver-aling-mid"></span></li>				
+				<li>上架时间<span class="iconfont icon-shang-copy-copy ver-aling-mid"></span></li>
+			</ul>
+			<span class="check-area">				
+				<input type="checkbox" class="check-btn" />
+				我的合格供应商
+			</span>
+			<div class="clearfix"></div>
+		</div>
+		<table class="main_table marTop12" width="100%" cellspacing="0" cellpadding="0" border="0">
+				<tbody>
+				<tr>
+					<th width="18%">产品名称</th>
+					<th width="6%">产品型号</th>
+                    <th width="9%">产品规格</th>
+					<th width="6%">产品品牌</th>
+					<th width="6%">产地</th>
+					<th width="5%">数量</th>
+					<th width="13%">单价</th>
+					<th width="6%">仓库</th>
+					<th width="8%">挂牌日期</th>
+                    <th width="16%">商品描述</th>
+					<th width="9%">操作</th>
+				</tr>
+				</tbody>
+			</table>
+              
+			<table class="main_table" width="100%" cellspacing="0" cellpadding="0" border="0">
+				<tbody>
+				<tr class="tron">
+					<td width="18%">
+                    <a class="list_img" href="javascript:;" ><img src="images/p1.jpg" height="63" width="63"></a>
+					<ul class="list_01">
+						<li><a href="goods-details02.html" class="name">螺纹钢</a><strong>2.554吨</strong></li>
+						<li><a href="javascript:void(0)" onclick="mbnameCon('延长石油')" class="company">延长石油</a></li>
+                    </ul>
+                    </td>
+                    <td width="6%">20mm</td>
+					<td width="9%">180KG/桶</td>
+					<td width="6%"><a href="#"><b class="blue">延长石油</b></a></td>
+                    <td width="6%">中国</td>
+                    <td width="5%" class="orange">253</td>
+					<td width="13%">
+                    <ul>
+						<li class="price">¥5,000.00</li>
+						<li><span class="yj_btn">不议价</span></li>
+						<li style="text-decoration:line-through;">6,000.00</li>
+					</ul>
+              		</td>
+					<td width="6%"><a href="" class="blue">天津市</a></td>
+					<td width="8%">2016-11-15</td>
+                    <td width="16%">包钢物铁库包钢物铁库包<br>钢物铁库包钢物铁库</td>
+					<td class="list_11" id="buy_GP0000054643" style="text-align: center;" width="9%"><a href="javascript:void(0);" id="cgqd_GP0000054643" mergeid="GP0000054643" onclick="do_shopping('GP0000054643',0)" class="orangebt xg">选购</a></td>
+				</tr>
+                
+				<tr class="tron">
+					<td>
+                    <a class="list_img" href="javascript:;" onclick="doViewPubmsg('AC161206004','1');"><img src="images/p1.jpg" height="63" width="63"></a>
+					<ul class="list_01">
+						<li><a href="#" class="name">螺纹钢</a><strong>2.554吨</strong></li>
+						<li><a href="javascript:void(0)" onclick="mbnameCon('延长石油')" class="company">延长石油</a></li>
+                    </ul>
+                    </td>
+                    <td>20mm</td>
+					<td>180KG/桶</td>
+					<td><a href="#"><b class="blue">延长石油</b></a></td>
+					<td>中国</td>
+                    <td class="orange">253</td>
+					<td>
+                    <ul>
+						<li class="price">¥5,000.00</li>
+						<li><span class="yj_btn">不议价</span></li>
+						<li style="text-decoration:line-through;">6,000.00</li>
+					</ul>
+              		</td>
+					<td><a href="" class="blue">天津市</a></td>
+					<td>2016-11-15</td>
+                    <td>包钢物铁库包钢物铁库包<br>钢物铁库包钢物铁库</td>
+					<td class="list_11" id="buy_GP0000054643" style="text-align: center;"><a href="javascript:void(0);" id="cgqd_GP0000054643" mergeid="GP0000054643" onclick="do_shopping('GP0000054643',0)" class="orangebt xg">选购</a></td>
+				</tr>
+				<tr class="tron">
+					<td>
+                    <a class="list_img" href="javascript:;" onclick="doViewPubmsg('AC161206004','1');"><img src="images/p1.jpg" height="63" width="63"></a>
+					<ul class="list_01">
+						<li><a href="#" class="name">螺纹钢</a><strong>2.554吨</strong></li>
+						<li><a href="javascript:void(0)" onclick="mbnameCon('延长石油')" class="company">延长石油</a></li>
+                    </ul>
+                    </td>
+                    <td>20mm</td>
+					<td>180KG/桶</td>
+					<td><a href="#"><b class="blue">延长石油</b></a></td>
+					<td>中国</td>
+                    <td class="orange">253</td>
+					<td>
+                    <ul>
+						<li class="price">¥5,000.00</li>
+						<li><span class="yj_btn">不议价</span></li>
+						<li style="text-decoration:line-through;">6,000.00</li>
+					</ul>
+              		</td>
+					<td><a href="" class="blue">天津市</a></td>
+					<td>2016-11-15</td>
+                    <td>包钢物铁库包钢物铁库包<br>钢物铁库包钢物铁库</td>
+					<td class="list_11" id="buy_GP0000054643" style="text-align: center;"><a href="javascript:void(0);" id="cgqd_GP0000054643" mergeid="GP0000054643" onclick="do_shopping('GP0000054643',0)" class="orangebt xg">选购</a></td>
+				</tr>
+				<tr class="tron">
+					<td>
+                    <a class="list_img" href="javascript:;" onclick="doViewPubmsg('AC161206004','1');"><img src="images/p1.jpg" height="63" width="63"></a>
+					<ul class="list_01">
+						<li><a href="#" class="name">螺纹钢</a><strong>2.554吨</strong></li>
+						<li><a href="javascript:void(0)" onclick="mbnameCon('延长石油')" class="company">延长石油</a></li>
+                    </ul>
+                    </td>
+                    <td>20mm</td>
+					<td>180KG/桶</td>
+					<td><a href="#"><b class="blue">延长石油</b></a></td>
+					<td>中国</td>
+                    <td class="orange">253</td>
+					<td>
+                    <ul>
+						<li class="price">¥5,000.00</li>
+						<li><span class="yj_btn">不议价</span></li>
+						<li style="text-decoration:line-through;">6,000.00</li>
+					</ul>
+              		</td>
+					<td><a href="" class="blue">天津市</a></td>
+					<td>2016-11-15</td>
+                    <td>包钢物铁库包钢物铁库包<br>钢物铁库包钢物铁库</td>
+					<td class="list_11" id="buy_GP0000054643" style="text-align: center;"><a href="javascript:void(0);" id="cgqd_GP0000054643" mergeid="GP0000054643" onclick="do_shopping('GP0000054643',0)" class="orangebt xg">选购</a></td>
+				</tr>
+                <tr class="tron">
+					<td>
+                    <a class="list_img" href="javascript:;" onclick="doViewPubmsg('AC161206004','1');"><img src="images/p1.jpg" height="63" width="63"></a>
+					<ul class="list_01">
+						<li><a href="#" class="name">螺纹钢</a><strong>2.554吨</strong></li>
+						<li><a href="javascript:void(0)" onclick="mbnameCon('延长石油')" class="company">延长石油</a></li>
+                    </ul>
+                    </td>
+                    <td>20mm</td>
+					<td>180KG/桶</td>
+					<td><a href="#"><b class="blue">延长石油</b></a></td>
+					<td>中国</td>
+                    <td class="orange">253</td>
+					<td>
+                    <ul>
+						<li class="price">¥5,000.00</li>
+						<li><span class="yj_btn">不议价</span></li>
+						<li style="text-decoration:line-through;">6,000.00</li>
+					</ul>
+              		</td>
+					<td><a href="" class="blue">天津市</a></td>
+					<td>2016-11-15</td>
+                    <td>包钢物铁库包钢物铁库包<br>钢物铁库包钢物铁库</td>
+					<td class="list_11" id="buy_GP0000054643" style="text-align: center;"><a href="javascript:void(0);" id="cgqd_GP0000054643" mergeid="GP0000054643" onclick="do_shopping('GP0000054643',0)" class="orangebt xg">选购</a></td>
+				</tr>
+				<tr class="tron">
+					<td>
+                    <a class="list_img" href="javascript:;" onclick="doViewPubmsg('AC161206004','1');"><img src="images/p1.jpg" height="63" width="63"></a>
+					<ul class="list_01">
+						<li><a href="#" class="name">螺纹钢</a><strong>2.554吨</strong></li>
+						<li><a href="javascript:void(0)" onclick="mbnameCon('延长石油')" class="company">延长石油</a></li>
+                    </ul>
+                    </td>
+                    <td>20mm</td>
+					<td>180KG/桶</td>
+					<td><a href="#"><b class="blue">延长石油</b></a></td>
+					<td>中国</td>
+                    <td class="orange">253</td>
+					<td>
+                    <ul>
+						<li class="price">¥5,000.00</li>
+						<li><span class="yj_btn">不议价</span></li>
+						<li style="text-decoration:line-through;">6,000.00</li>
+					</ul>
+              		</td>
+					<td><a href="" class="blue">天津市</a></td>
+					<td>2016-11-15</td>
+                    <td>包钢物铁库包钢物铁库包<br>钢物铁库包钢物铁库</td>
+					<td class="list_11" id="buy_GP0000054643" style="text-align: center;"><a href="javascript:void(0);" id="cgqd_GP0000054643" mergeid="GP0000054643" onclick="do_shopping('GP0000054643',0)" class="orangebt xg">选购</a></td>
+				</tr>
+                <tr class="tron">
+					<td>
+                    <a class="list_img" href="javascript:;" onclick="doViewPubmsg('AC161206004','1');"><img src="images/p1.jpg" height="63" width="63"></a>
+					<ul class="list_01">
+						<li><a href="#" class="name">螺纹钢</a><strong>2.554吨</strong></li>
+						<li><a href="javascript:void(0)" onclick="mbnameCon('延长石油')" class="company">延长石油</a></li>
+                    </ul>
+                    </td>
+                    <td>20mm</td>
+					<td>180KG/桶</td>
+					<td><a href="#"><b class="blue">延长石油</b></a></td>
+					<td>中国</td>
+                    <td class="orange">253</td>
+					<td>
+                    <ul>
+						<li class="price">¥5,000.00</li>
+						<li><span class="yj_btn">不议价</span></li>
+						<li style="text-decoration:line-through;">6,000.00</li>
+					</ul>
+              		</td>
+					<td><a href="" class="blue">天津市</a></td>
+					<td>2016-11-15</td>
+                    <td>包钢物铁库包钢物铁库包<br>钢物铁库包钢物铁库</td>
+					<td class="list_11" id="buy_GP0000054643" style="text-align: center;"><a href="javascript:void(0);" id="cgqd_GP0000054643" mergeid="GP0000054643" onclick="do_shopping('GP0000054643',0)" class="orangebt xg">选购</a></td>
+				</tr>
+                </tbody>
+            </table>
+    
+            <div class="pagebar">
+                <div class="total fl">共665条记录，每页最多显示10条</div>
+                <div class="total_right fr">
+                    <ul class="total_ul fl">
+                        <span class="first_span fl"><a>第一页</a></span>
+                        <li><a href="">1</a></li>
+                        <li><a href="">2</a></li>
+                        <li><a href="">3</a></li>
+                        <li><a href="">4</a></li>
+                        <li><a href="">5</a></li>
+                        <span class="last_span fl"><a>最后一页</a></span>
+                    </ul>
+                    <span class="total_span fl">共67页</span>
+                    <span class="jump_span fl">跳转<input type="text">页</span>
+                    <a href="#" class="block fl"><button type="button" class="jump-btn">跳转</button></a>
+                </div>
+            </div>
+		<!--<table cellspacing="0" class="condition marTop12">
+			<tr>
+				<td height="40" width="112" class="padLeft12 border-left border-top">产品名称</td>
+				<td width="60" align="center" class="border-top">产品型号</td>
+				<td width="120" align="center" class="border-top">产品规格</td>
+				<td width="120" align="center" class="border-top">产品品牌</td>
+				<td width="80" align="center" class="border-top">产地</td>
+				<td width="80" align="center" class="border-top">数量</td>
+				<td width="120" align="center" class="border-top">单价</td>
+				<td width="200" align="center" class="border-top">挂牌企业</td>
+				<td width="60" align="center" class="border-top">仓库</td>
+				<td width="160" align="center" class="border-top">生产日期</td>
+				<td align="center" class="border-top border-right">操作</td>
+			</tr>
+		</table>
+		<table cellspacing="0" class="condition table table-striped table-bordered table-hover" >
+			<tr>
+				<td height="40" width="112" class="padLeft12 border-left border-top">
+					<a href="goods-details02.html" class="color-fd7636">聚乙烯</a>
+				</td>
+				<td width="60" align="center" class="border-top">-</td>
+				<td width="120" align="center" class="border-top">180 KG/桶</td>
+				<td width="120" align="center" class="border-top">延长石油</td>
+				<td width="80" align="center" class="border-top">中国</td>
+				<td width="80" align="center" class="border-top">253 吨</td>
+			    <td width="120" align="center" class="border-top">12405 元/吨</td>
+				<td width="200" align="center" class="border-top">延长石油炼化公司</td>
+				<td width="60" align="center" class="border-top">-</td>
+				<td width="160" align="center" class="border-top">2016-10-12</td>
+				<td align="center" class="border-top border-right">
+					<span class="iconfont icon-gouwuche"></span>
+				</td>
+			</tr>
+			<tr>
+				<td height="40" width="112" class="padLeft12 border-left border-top">
+					<a href="goods-details02.html" class="color-fd7636">聚丙烯</a>
+				</td>
+				<td width="60" align="center" class="border-top">-</td>
+				<td width="120" align="center" class="border-top">190 KG/桶</td>
+				<td width="120" align="center" class="border-top">延长石油</td>
+				<td width="80" align="center" class="border-top">中国</td>
+				<td width="80" align="center" class="border-top">1253 吨</td>
+				<td width="120" align="center" class="border-top">16000 元/吨</td>
+				<td width="200" align="center" class="border-top">延长石油炼化公司</td>
+				<td width="60" align="center" class="border-top">-</td>
+				<td width="160" align="center" class="border-top">2016-10-12</td>
+				<td align="center" class="border-top border-right">
+					<span class="iconfont icon-gouwuche"></span>
+				</td>
+			</tr>
+			<tr>
+				<td height="40" width="112" class="padLeft12 border-left border-top">
+					<a href="goods-details02.html" class="color-fd7636">聚乙烯烃</a>
+				</td>
+				<td width="60" align="center" class="border-top">-</td>
+				<td width="120" align="center" class="border-top">200 KG/桶</td>
+				<td width="120" align="center" class="border-top">延长石油</td>
+				<td width="80" align="center" class="border-top">中国</td>
+				<td width="80" align="center" class="border-top">853 吨</td>
+				<td width="120" align="center" class="border-top">18405 元/吨</td>
+				<td width="200" align="center" class="border-top">延长石油炼化公司</td>
+				<td width="60" align="center" class="border-top">-</td>
+				<td width="160" align="center" class="border-top">2016-10-12</td>
+				<td align="center" class="border-top border-right">
+					<span class="iconfont icon-gouwuche"></span>
+				</td>
+			</tr>
+			<tr>
+				<td height="40" width="112" class="padLeft12 border-left border-top">
+					<a href="goods-details02.html" class="color-fd7636">无定形聚烯烃</a>
+				</td>
+				<td width="60" align="center" class="border-top">-</td>
+				<td width="120" align="center" class="border-top">300 KG/桶</td>
+				<td width="120" align="center" class="border-top">延长石油</td>
+				<td width="80" align="center" class="border-top">中国</td>
+				<td width="80" align="center" class="border-top">1093 吨</td>
+				<td width="120" align="center" class="border-top">13905 元/吨</td>
+				<td width="200" align="center" class="border-top">延长石油炼化公司</td>
+				<td width="60" align="center" class="border-top">-</td>
+				<td width="160" align="center" class="border-top">2016-10-12</td>
+				<td align="center" class="border-top border-right">
+					<span class="iconfont icon-gouwuche"></span>
+				</td>
+			</tr>
+			<tr>
+				<td height="40" width="112" class="padLeft12 border-left border-top">
+					<a href="goods-details02.html" class="color-fd7636">氢化聚葵烯</a>
+				</td>
+				<td width="60" align="center" class="border-top">-</td>
+				<td width="120" align="center" class="border-top">240 KG/桶</td>
+				<td width="120" align="center" class="border-top">延长石油</td>
+				<td width="80" align="center" class="border-top">中国</td>
+				<td width="80" align="center" class="border-top">1533 吨</td>
+				<td width="120" align="center" class="border-top">14565 元/吨</td>
+				<td width="200" align="center" class="border-top">延长石油炼化公司</td>
+				<td width="60" align="center" class="border-top">-</td>
+				<td width="160" align="center" class="border-top">2016-10-12</td>
+				<td align="center" class="border-top border-right">
+					<span class="iconfont icon-gouwuche"></span>
+				</td>
+			</tr>
+			<tr>
+				<td height="40" width="112" class="padLeft12 border-left border-top">
+					<a href="goods-details02.html" class="color-fd7636">聚乙烯</a>
+				</td>
+				<td width="60" align="center" class="border-top">-</td>
+				<td width="120" align="center" class="border-top">180 KG/桶</td>
+				<td width="120" align="center" class="border-top">延长石油</td>
+				<td width="80" align="center" class="border-top">中国</td>
+				<td width="80" align="center" class="border-top">253 吨</td>
+				<td width="120" align="center" class="border-top">12405 元/吨</td>
+				<td width="200" align="center" class="border-top">延长石油炼化公司</td>
+				<td width="60" align="center" class="border-top">-</td>
+				<td width="160" align="center" class="border-top">2016-10-12</td>
+				<td align="center" class="border-top border-right">
+					<span class="iconfont icon-gouwuche"></span>
+				</td>
+			</tr>
+			<tr>
+				<td height="40" width="112" class="padLeft12 border-left border-top">
+					<a href="goods-details02.html" class="color-fd7636">聚丙烯</a>
+				</td>
+				<td width="60" align="center" class="border-top">-</td>
+				<td width="120" align="center" class="border-top">190 KG/桶</td>
+				<td width="120" align="center" class="border-top">延长石油</td>
+				<td width="80" align="center" class="border-top">中国</td>
+				<td width="80" align="center" class="border-top">1253 吨</td>
+				<td width="120" align="center" class="border-top">16000 元/吨</td>
+				<td width="200" align="center" class="border-top">延长石油炼化公司</td>
+				<td width="60" align="center" class="border-top">-</td>
+				<td width="160" align="center" class="border-top">2016-10-12</td>
+				<td align="center" class="border-top border-right">
+					<span class="iconfont icon-gouwuche"></span>
+				</td>
+			</tr>
+			<tr>
+				<td height="40" width="112" class="padLeft12 border-left border-top">
+					<a href="goods-details02.html" class="color-fd7636">聚乙烯烃</a>
+				</td>
+				<td width="60" align="center" class="border-top">-</td>
+				<td width="120" align="center" class="border-top">200 KG/桶</td>
+				<td width="120" align="center" class="border-top">延长石油</td>
+				<td width="80" align="center" class="border-top">中国</td>
+				<td width="80" align="center" class="border-top">853 吨</td>
+				<td width="120" align="center" class="border-top">18405 元/吨</td>
+				<td width="200" align="center" class="border-top">延长石油炼化公司</td>
+				<td width="60" align="center" class="border-top">-</td>
+				<td width="160" align="center" class="border-top">2016-10-12</td>
+				<td align="center" class="border-top border-right">
+					<span class="iconfont icon-gouwuche"></span>
+				</td>
+			</tr>
+			<tr>
+				<td height="40" width="112" class="padLeft12 border-left border-top">
+					<a href="goods-details02.html" class="color-fd7636">无定形聚烯烃</a>
+				</td>
+				<td width="60" align="center" class="border-top">-</td>
+				<td width="120" align="center" class="border-top">300 KG/桶</td>
+				<td width="120" align="center" class="border-top">延长石油</td>
+				<td width="80" align="center" class="border-top">中国</td>
+				<td width="80" align="center" class="border-top">1093 吨</td>
+				<td width="120" align="center" class="border-top">13905 元/吨</td>
+				<td width="200" align="center" class="border-top">延长石油炼化公司</td>
+				<td width="60" align="center" class="border-top">-</td>
+				<td width="160" align="center" class="border-top">2016-10-12</td>
+				<td align="center" class="border-top border-right">
+					<span class="iconfont icon-gouwuche"></span>
+				</td>
+			</tr>
+			<tr>
+				<td height="40" width="112" class="padLeft12 border-left border-top">
+					<a href="goods-details02.html" class="color-fd7636">氢化聚葵烯</a>
+				</td>
+				<td width="60" align="center" class="border-top">-</td>
+				<td width="120" align="center" class="border-top">240 KG/桶</td>
+				<td width="120" align="center" class="border-top">延长石油</td>
+				<td width="80" align="center" class="border-top">中国</td>
+				<td width="80" align="center" class="border-top">1533 吨</td>
+				<td width="120" align="center" class="border-top">14565 元/吨</td>
+				<td width="200" align="center" class="border-top">延长石油炼化公司</td>
+				<td width="60" align="center" class="border-top">-</td>
+				<td width="160" align="center" class="border-top">2016-10-12</td>
+				<td align="center" class="border-top border-right">
+					<span class="iconfont icon-gouwuche"></span>
+				</td>
+			</tr>
+		</table>
+		<table cellspacing="0" class="condition">
+			<tr>
+				<td height="40" class="border-left border-right"> 
+				</td>
+			</tr>
+		</table>
+		<table cellspacing="0" class="condition">
+			<tr>
+				<td width="60" height="40" class="padLeft12 border-left border-bottom"> 
+					每页显示
+				</td>
+				<td width="560" class="border-bottom">
+					<ul class="condition-each02">
+						<li class="condition-each02-active">10</li>
+						<li>20</li>
+						<li>30</li>
+					</ul>
+				</td>
+				<td class="border-right border-bottom">
+					<span class="other-es">上一页</span>
+					<ul class="condition-each02">
+						<li class="condition-each02-active">1</li>
+						<li>2</li>
+						<li>3</li>
+					</ul>
+					<span class="other-es"> 下一页</span>
+					<span class="other border-none">共100页</span>
+					<span class="other border-none">到</span>
+					<input type="text" class="other width40" />
+					<span class="other border-none">页</span>
+					<span class="other-es">确定</span>
+				</td>
+			</tr>
+		</table>-->
+		<div class="friends">
+			<div class="friends-title">合作伙伴</div>
+			<img src="images/partner01.jpg" />
+			<img src="images/partner02.jpg" />
+			<img src="images/partner03.jpg" />
+			<img src="images/partner04.jpg" />
+			<img src="images/partner05.jpg" />
+			<img src="images/partner06.jpg" />
+			<div class="clearfix"></div>
+		</div>
+		<div class="footer-bottom">
+			<p>地址：陕西省西安市雁塔区沣惠南路中华世纪城（东门）商住楼8号楼二层 电话：029-88990909 传真：029-89286898 邮编：710065 </p>
+			<p>上海石油交易所西部有限公司 版权所有 陕ICP备09004887号 <img src="images/police.png" class="police" />陕公网安备 61019002000027号</p>
+			<div class="foot-img-box">
+				<a><img src="images/foot-img1.jpg"></a>
+				<a><img src="images/foot-img2.jpg"></a>
+				<a><img src="images/foot-img3.jpg"></a>
+				<a><img src="images/foot-img4.jpg"></a>
+			</div>
+		</div>
+		<!--<div class="footer">
+			<div class="footer-nav">
+				<a href="#">首页</a>|
+				<a href="#">关于我们</a>|
+				<a href="#">帮助中心</a>|
+				<a href="#">联系我们</a>
+			</div>
+			<div class="addr">地址：陕西省西安市雁塔区沣惠南路中华世纪城（东门）商住楼8号楼二层 电话：029-88990909 传真：029-89286898 邮编：710065</div>
+			<div class="copyright">上海石油交易所西部交易中心 版权所有 陕ICP备09004887号 技术支持：高达软件 <img src="images/police.png" class="police" />陕公网安备 61019002000027号</div>
+		</div>-->
+	</body>
+	<script type="text/javascript">	
+		//导航详细菜单的显示和隐藏
+		$(".list-details").hide()
+		$(".banner-on-left-list>li").mouseenter(function(){
+			$(this).find(".list-details").show()
+		}).mouseleave(function(){
+			$(this).find(".list-details").hide()
+		})
+		
+		// 产品名称、产品型号等下面选项颜色改变
+		$(".condition-each>li").click(function(){
+			$(this).addClass("color-f00").siblings().removeClass("color-f00")
+		})
+		//排序选项颜色改变
+		$(".condition-vary>li").click(function(){
+			$(this).addClass("condition-vary-active").siblings().removeClass("condition-vary-active")
+		})
+		$(".condition-vary>li").click(function(){
+			$(this).siblings().find(".icon-shang").removeClass("icon-shang color-fff").addClass("icon-shang-copy-copy color333")
+			$(this).find(".icon-shang-copy-copy").removeClass("icon-shang-copy-copy").addClass("icon-shang color-fff")
+		})
+		//每页显示、分页选项颜色改变
+		$(".condition-each02>li").click(function(){
+			$(this).addClass("condition-each02-active").siblings().removeClass("condition-each02-active")
+		})
+	</script>
+	<script>
+	    var swiper = new Swiper('.swiper-container', {
+	        pagination: '.swiper-pagination',
+	        paginationClickable: true,
+	        nextButton: '.swiper-button-next',
+	        prevButton: '.swiper-button-prev',
+	        spaceBetween: 30,
+	        effect: 'fade',
+	        autoplay : 2000,
+	    });
+    </script>
+    <!---------筛选JS--------->
+    <script>
+    $(function(){
+        $(".shaixuan-tj span.crumb-select-item").live('hover',function(event){
+            if(event.type=='mouseenter'){ 
+            $(this).addClass("crumb-select-itemon");
+            }else{ 
+            $(this).removeClass("crumb-select-itemon");
+            } 
+        });
+        $(".shaixuan-tj span.crumb-select-item").live('click', function(event){
+            event.preventDefault();
+            $(this).remove();
+            var TTR = $(this).find("em").text();
+            $(".show-con a").each(function(){
+                var TT = $(this).text();
+                    THI = $(this);
+                    THIPP = $(this).parents("dl");
+                if(TTR==TT){
+                    THI.removeClass("nzw12");
+                    THIPP.css("display","block");
+                }
+            })
+        });
+        $(".show-con a").click(function(event){
+            event.preventDefault();
+                 THIP = $(this).parents("dl");
+            if($(this).hasClass("nzw12")){
+            }else{
+                $(this).addClass("nzw12");
+                var zhiclass = $(this).parents("dd").siblings("dt").find("a").text();
+                    zhicon = $(this).text();
+                    tianjaneir="<span class='crumb-select-item'><a href='/'><b>"+zhiclass+"</b><em>"+zhicon+"</em><i class='icon-remove'></i></a></span>"
+                $(".shaixuan-tj").children().last().after(tianjaneir);
+                THIP.css("display","none");
+            }
+        });
+        $(".show-more").click(function(event){
+            event.preventDefault();
+            var ticon = $(this).find("i");
+                tspan = $(this).find("span");
+                if($(this).hasClass("zk")){
+                    $(this).siblings(".show-con").css("height","30px");
+                    ticon.removeClass("icon-angle-up");
+                    ticon.addClass("icon-angle-down");
+                    tspan.html("更多");
+                    $(this).removeClass("zk")
+                }else{
+                    $(this).siblings(".show-con").css("height","auto");
+                    ticon.removeClass("icon-angle-down");
+                    ticon.addClass("icon-angle-up");
+                    tspan.html("收起");
+                    $(this).addClass("zk")
+                }
+        });
+        $("#sxbtn").click(function(event){
+            event.preventDefault();
+            var xicon = $(this).find("span i");
+                xspan = $(this).find("span em");
+            if($(this).hasClass("zkon")){
+                xspan.text("收起筛选");
+                xicon.removeClass("icon-angle-down");
+                xicon.addClass("icon-angle-up");
+                $(".sxcon").slideDown();
+                $(this).removeClass("zkon")
+            }else{
+                xspan.text("查看筛选");
+                xicon.removeClass("icon-angle-up");
+                xicon.addClass("icon-angle-down");
+                $(".sxcon").slideUp();
+                $(this).addClass("zkon")
+            }
+        })
+
+
+    })
+</script>
+</html>

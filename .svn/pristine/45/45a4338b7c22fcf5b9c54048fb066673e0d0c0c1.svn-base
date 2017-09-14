@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>延长电商贸易平台--公司介绍</title>
+		<link rel="stylesheet" href="./css/index-style.css" />
+		<link rel="stylesheet" href="./css/style.css" />
+		<link rel="stylesheet" href="./css/iconfont.css" />
+		<link rel="stylesheet" href="./css/swiper.min.css" />
+		<link rel="stylesheet" type="text/css" href="./css/common.css">
+		<script type="text/javascript" src="./js/jquery.js"></script>
+		<script type="text/javascript" src="./js/swiper.min.js"></script>
+		<script type="text/javascript" src="js/main.js"></script>
+		<script type="text/javascript" src="./js/jquery.kxbdMarquee.js"></script>	
+		<script>
+			$(document).ready(function() { 
+				var length, 
+				currentIndex = 0, 
+				interval, 
+		 		hasStarted = false, //是否已经开始轮播 
+				t = 3000; //轮播时间间隔 
+				length = $('.slider-panel').length; 
+				//将除了第一张图片隐藏 
+				$('.slider-panel:not(:first)').hide(); 
+				//将第一个slider-item设为激活状态 
+				$('.slider-item:first').addClass('slider-item-selected'); 
+				//隐藏向前、向后翻按钮 
+				$('.slider-page').hide(); 
+				//鼠标上悬时显示向前、向后翻按钮,停止滑动，鼠标离开时隐藏向前、向后翻按钮，开始滑动 
+				$('.slider-panel, .slider-pre, .slider-next').hover(function() { 
+					stop(); 
+					$('.slider-page').show(); 
+				}, function() { 
+					$('.slider-page').hide(); 
+					start(); 
+				}); 
+				$('.slider-item').hover(function(e) { 
+					stop(); 
+					var preIndex = $(".slider-item").filter(".slider-item-selected").index(); 
+					currentIndex = $(this).index(); 
+		 			play(preIndex, currentIndex); 
+				}, function() { 
+					start(); 
+				}); 
+				$('.slider-pre').unbind('click'); 
+				$('.slider-pre').bind('click', function() { 
+					pre(); 
+				}); 
+				$('.slider-next').unbind('click'); 
+				$('.slider-next').bind('click', function() { 
+					next(); 
+				}); 
+				/** 
+				* 向前翻页 
+				*/
+				function pre() { 
+					var preIndex = currentIndex; 
+					currentIndex = (--currentIndex + length) % length; 
+					play(preIndex, currentIndex); 
+				} 
+				/** 
+				* 向后翻页 
+				*/
+				function next() { 
+					var preIndex = currentIndex; 
+					currentIndex = ++currentIndex % length; 
+					play(preIndex, currentIndex); 
+				} 
+				/** 
+				* 从preIndex页翻到currentIndex页 
+				* preIndex 整数，翻页的起始页 
+				* currentIndex 整数，翻到的那页 
+				*/
+				function play(preIndex, currentIndex) { 
+					$('.slider-panel').eq(preIndex).fadeOut(500).parent().children().eq(currentIndex).fadeIn(1000); 
+					$('.slider-item').removeClass('slider-item-selected'); 
+		 			$('.slider-item').eq(currentIndex).addClass('slider-item-selected'); 
+				} 
+				/** 
+				* 开始轮播 
+				*/
+				function start() { 
+					if(!hasStarted) { 
+						hasStarted = true; 
+						interval = setInterval(next, t); 
+					} 
+				} 
+				/** 
+				* 停止轮播 
+				*/
+				function stop() { 
+					clearInterval(interval); 
+					hasStarted = false; 
+				} 
+				//开始轮播 
+				start(); 
+				
+				//控制商家登录、管理员登录切换
+				$(".entrance>.entranceName").click(
+					function(){
+						$(".entrance>.entranceName").removeClass("entranceName_current")
+						$(this).addClass("entranceName_current")
+					})
+				
+				//底部合作伙伴轮播
+				$("#marquee").kxbdMarquee(
+						{
+							isEqual:true,
+							loop:0,
+							direction:"left",
+							scrollAmount:1,
+							scrollDelay:20								
+						}							
+					);
+						
+			}); 
+	 
+		</script>
+	</head>
+	<body>
+		<div class="topbar">
+			<div class="topbar-body">
+				<ul class="topbar-bd-l">
+					<li>
+						<div class="menu-bd">
+							<div class="city-list">
+								<a href="#">上海</a><a href="#">南京</a><a href="#">苏州</a><a href="#">无锡</a><a href="#">全国</a>
+							</div>
+						</div>
+					</li>
+					<li>
+						交易时间：<a style="color:#ec0000;">7:30-17:30（工作日）</a>
+					</li>
+					<li>
+						客服热线：029-88990909
+					</li>
+				</ul>
+				<ul class="topbar-bd-r">
+					<li class="login-info unlogin">
+						您好 ！欢迎来到延长电商贸易平台
+					</li>
+					<li class="unlogin">
+						<a class="tb-m-a2 blue user-login" href="login.html">请登录</a>
+					</li>
+					<li class="unlogin">
+						<a class="tb-m-a2 blue" href="register.html">免费注册</a>
+					</li>
+					<li>
+						<div class="menu-hd">
+							<a href="my-admin.html">我的平台</a><i><s>◇</s></i>
+						</div>
+						<div class="menu-bd">
+							<div class="menu-bd-panel menu-bd-panel1">
+								<div class="content1 ">
+									<a class="content1-infor1" href="#"><img src="images/banner1.jpg"></a>
+									<div class="content1-infor2 unlogin">
+										<div class="line1">
+											<a href="#">您好，请登录！</a>
+										</div>
+									</div>
+									<!--<div class="content1-infor2 logon">
+										<div class="line1">
+											Hi，<a class="user-name" href="#"></a>！
+										</div>
+										<a href="#" class="line2 user-tel"></a>
+									</div>-->
+								</div>
+								<div class="content2">
+									<div>
+										<a class="first" href="#" target="_top">我的订单</a><a href="" target="_top">积分管理</a>
+									</div>
+									<div>
+										<a class="first" href="#" target="_top">会员认证</a><a href="" target="_top">上传资源单</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="menu-hd">
+							<a href="#">我的设置</a><i><s>◇</s></i>
+						</div>
+						<div class="menu-bd">
+							<div class="menu-bd-panel menu-bd-panel3">
+								<a class="first" target="_top" href="#">订单管理</a><a target="_top" href="#">资源管理</a>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="menu-hd">
+							<a href="#">财物车</a><i><s>◇</s></i>
+						</div>
+						<div class="menu-bd">
+							<div class="menu-bd-panel menu-bd-panel3">
+								<a class="first" target="_top" href="#">任你花</a><a target="_top" href="#">帮你采</a>
+								<a target="_top" href="#">随你押</a>
+							</div>
+						</div>
+					</li>
+					<!--<li class="tb-m-line">|</li>!-->
+					<li>
+						<div class="menu-hd">
+							<a href="#">帮助中心</a><i><s>◇</s></i>
+						</div>
+						<div class="menu-bd">
+							<div class="menu-bd-panel menu-bd-panel3">
+								<a class="first" target="_top" href="#">帮助中心</a><a target="_top" href="#">帮助中心</a><a class="first" target="_top" href="#">帮助中心</a><a target="_top" href="#">帮助中心</a>
+							</div>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class="header">
+			<div class="logo">
+				<a hidefocus="true" href="#"></a>
+			</div>
+			<div class="hd-search">
+				<div class="search-bd">
+					<div class="search-triggers">
+						<ul>
+							<li>
+								<a>超市 </a>
+							</li>
+							<li>
+								<a href="#">全部</a>
+							</li>
+							<li>
+								<a href="#">商城</a>
+							</li>
+							<li>
+								<a href="#">市场</a>
+							</li>
+						</ul>
+						<i></i>
+					</div>
+					<div class="search-i">
+						<form class="f-cb" method="post" onSubmit="return checkKwInput();" action="#" id="search" name="search">
+							<div class="search-button">
+								<button id="resSeachButton" class="btn-search s-search" type="submit">
+									搜一下
+								</button>
+							</div>
+							<div class="search-combobox">
+								<div class="search-combobox-input">
+									<input type="hidden" value="" name="ci" id="ci_code">
+									<input id="kwInput1" placeholder="请输入关键词查询" autocomplete="off" onFocus="this.style.color='#666';" onBlur="this.style.color='#666';" x-webkit-speech="" x-webkit-grammar="builtin:translate">
+									<input type="hidden" name="kw" id="kwInput2">
+								</div>
+							</div>
+						</form>
+					</div>
+					<div class="search-result">
+						<!-- 当前搜索  -->
+						<!-- 类似搜索  -->
+						<ul class="sear-res">
+							<li>
+								<a href="#"><span class="sear-res-l">螺纹钢</span></a>
+							</li>
+							<li>
+								<a href="#"><span class="sear-res-l">HRB400</span></a>
+							</li>
+							<li>
+								<a href="#"><span class="sear-res-l">HRB400E</span></a>
+							</li>
+							<li>
+								<a href="#"><span class="sear-res-l">Q235</span></a>
+							</li>
+							<li>
+								<a href="#"><span class="sear-res-l">Q235B</span></a>
+							</li>
+						</ul>
+						<!-- 搜索历史  -->
+						<ul class="sear-history">
+							<li>
+								<a href="#"><span class="sear-res-l">HRB400</span><span class="sear-res-r">搜索历史</span></a>
+							</li>
+							<li>
+								<a href="#"><span class="sear-res-l">HRB400B</span><span class="sear-res-r">搜索历史</span></a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="header-nav-btn">
+				<!--<a class="header-nav-btn1 mn-ico1" href="#"><i></i>积分商城</a>!-->
+				<a class="header-nav-btn1 mn-ico2" href="shop-car.html"><i></i>我的购物车<span class="count" id="rcart">0</span></a>
+				<div class="cart-panel">
+					<div class="cartlist">
+						共选中 <b class="orange"><span id="itemTotalTemp">0</span></b> 件货物（<b class="orange"><span id="averageQtyTotalTemp">0</span></b> 吨）&nbsp;
+						<br />
+						总价 <b><span id="priceTotalTemp">0</span></b>元
+					</div>
+					<a class="shop-car.html" href="cart_list.html">查看购物车</a>
+				</div>
+			</div>
+			<div class="header-app">
+				<div class="menu-bd-panel2">
+					<ul>
+						<li class="mrgR10"><img src="images/app.gif">
+						</li>
+						<li><img src="images/app.gif">
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="m-nav">
+			<div class="auto">
+				<dl class="main-nav">
+					<dd class="nav-main">
+						<a href="index.html" class="a4">电商平台</a>
+					</dd>
+					<dd class="nav-main">
+						<a href="purchase.html" class="a4">延长采购专区</a>
+					</dd>
+					<dd class="nav-main">
+						<a href="sell.html" class="a4">延长销售专区</a>
+					</dd>
+					<dd class="nav-main">
+						<a href="introduce.html" class="a4 active-a4">公司介绍</a>
+					</dd>
+				</dl>
+			</div>
+		</div>
+		<div class="banner-inner">
+			<div class="slider"> 
+				<ul class="slider-main"> 
+					<li class="slider-panel"> 
+						<a href="index_PC.html" target="_blank"><img src="images/banner-inner001.jpg"></a> 
+					</li> 
+					<li class="slider-panel"> 
+						<a href="index_PC.html" target="_blank"><img src="images/banner-inner002.jpg"></a> 
+					</li> 
+				</ul> 
+				<div class="slider-extra"> 
+					<ul class="slider-nav"> 
+						<li class="slider-item"></li> 
+						<li class="slider-item"></li> 
+					</ul> 
+					<div class="slider-page"> 
+						<a class="slider-pre" href="javascript:;;"><</a> 
+						<a class="slider-next" href="javascript:;;">></a> 
+				   </div> 
+				</div> 
+			</div> 
+		</div>
+		<div class="content">
+			<div class="contact">
+				<img src="images/contact.jpg" />
+				<div class="contact-list">
+					<div class="contact-list-title">公司名称：</div>
+					<div class="contact-list-content">延长石油产品经销公司</div>
+					<div class="clearfix"></div>
+				</div>
+				<div class="contact-list">
+					<div class="contact-list-title">地址：</div>
+					<div class="contact-list-content">西安市雁塔区高新2路10号</div>
+					<div class="clearfix"></div>
+				</div>
+				<div class="contact-list">
+					<div class="contact-list-title">联系人：</div>
+					<div class="contact-list-content">李先生</div>
+					<div class="clearfix"></div>
+				</div>
+				<div class="contact-list">
+					<div class="contact-list-title">电话：</div>
+					<div class="contact-list-content">029-87458255</div>
+					<div class="clearfix"></div>
+				</div>
+				<div class="contact-list">
+					<div class="contact-list-title">传真：</div>
+					<div class="contact-list-content">029-87458255</div>
+					<div class="clearfix"></div>
+				</div>
+				<div class="contact-list">
+					<div class="contact-list-title">手机：</div>
+					<div class="contact-list-content">18214159888</div>
+					<div class="clearfix"></div>
+				</div>
+			</div>
+			<div class="intro">
+				<div class="intro-title">公司简介</div>
+				<div class="intro-content">
+					       产品经销公司成立于2009年11月，是陕西延长石油（集团）有限责任公司所属的专业板块之一，主要负责延长石油集团成品油、天然气、化工产品的二级批发以及终端零售市场的开发与建设。公司注册及办公地址在西安市高新区光泰路1号。
+				</div>
+				<div class="intro-content">公司下设投资规划部、化工品销售部、油气销售部、安全环保质监部、企业管理部（法律事务部）、信息管理部、财务资产部、人力资源部、办公室、党群工作部、审计监察部、工会办公室12个职能部（室）和延安销售服务中心、榆林销售服务中心；监管5个全资公司：陕西延长新能源有限责任公司、陕西省石油化工工业贸易公司、延长石油化工销售（上海）有限公司、延长石油湖北销售有限公司、延长石油天津销售有限公司；4个控股公司：延长壳牌石油有限公司、延长壳牌（四川）石油有限公司、延长壳牌（广东）石油有限公司、上海石油交易所西部有限公司；3个参股公司：陕西高速延长石油有限责任公司、陕西交通延长石油有限公司及西安交通燃气有限责任公司。公司现有各类员工10167人。
+
+				</div>
+			</div>
+			<div class="clearfix"></div>
+		</div>
+		<div class="footer-bottom">
+			<p>地址：陕西省西安市雁塔区沣惠南路中华世纪城（东门）商住楼8号楼二层 电话：029-88990909 传真：029-89286898 邮编：710065 </p>
+			<p>上海石油交易所西部有限公司 版权所有 陕ICP备09004887号 <img src="images/police.png" class="police" />陕公网安备 61019002000027号</p>
+			<div class="foot-img-box">
+				<a><img src="images/foot-img1.jpg"></a>
+				<a><img src="images/foot-img2.jpg"></a>
+				<a><img src="images/foot-img3.jpg"></a>
+				<a><img src="images/foot-img4.jpg"></a>
+			</div>
+		</div>
+		<!--<div class="footer">
+			<div class="footer-nav">
+				<a href="#">首页</a>|
+				<a href="#">关于我们</a>|
+				<a href="#">帮助中心</a>|
+				<a href="#">联系我们</a>
+			</div>
+			<div class="addr">
+				地址：陕西省西安市雁塔区沣惠南路中华世纪城（东门）商住楼8号楼二层 电话：029-88990909 传真：029-89286898 邮编：710065
+			</div>
+			<div class="copyright">上海石油交易所西部交易中心 版权所有 陕ICP备09004887号 技术支持：高达软件 <img src="images/police.png" class="police" />陕公网安备 61019002000027号</div>
+		</div>-->
+	</body>
+</html>

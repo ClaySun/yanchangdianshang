@@ -1,0 +1,1184 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>延长商品订单信息</title>
+		<link rel="stylesheet" type="text/css" href="./css/common.css">
+	    <link rel="stylesheet" href="./css/mycss1.css" />
+	    <script type="text/javascript" src="js/qiehuan.js"></script>
+	    <script type="text/javascript" src="js/jquery.min.js"></script>
+	    
+	    
+		<!--<script type="text/javascript" charset="utf-8" src="js/ueditor.config.js"></script>-->
+	    <!--<script type="text/javascript" charset="utf-8" src="ueditor/jsp/editor_api.js"> </script>-->
+	    <!--建议手动加在语言，避免在ie下有时因为加载语言失败导致编辑器加载失败-->
+	    <!--这里加载的语言文件会覆盖你在配置项目里添加的语言类型，比如你在配置项目里配置的是英文，这里加载的中文，那最后就是中文-->
+	    <script type="text/javascript" charset="utf-8" src="js/zh-cn.js"></script>
+	    <!--<script type="text/javascript" charset="utf-8" src="ueditor/jsp/ueditor.all.js"></script>-->
+	    <script type="text/javascript" charset="utf-8" src="ueditor/jsp/ueditor.config.js"></script>
+	    <script type="text/javascript" charset="utf-8" src="ueditor/jsp/ueditor.all.min.js"></script>
+	    
+	    
+	    
+	    <script>
+	    	$(function(){
+
+				//初始化
+				initdq();
+				//点击全国全选与全不选
+				qdcheck("qg",".zb_tcmargin","");
+				//点击华北地区全选与全不选
+				dqclick("hb",".hbclass");
+				//点击东北地区全选与全不选
+				dqclick("db",".dbclass");
+				//点击华东地区全选与全不选
+				dqclick("hd",".hdclass");
+				//点击中南地区全选与全不选
+				dqclick("zn",".znclass");
+				//点击西南地区全选与全不选
+				dqclick("xn",".xnclass");
+				//点击西北地区全选与全不选
+				dqclick("xb",".xbclass");
+				//点击其他地区全选与全不选
+				dqclick("qt",".qtclass");
+
+				/*单个地区选中效果*/
+				$(".all-area dd").click(function(){
+					var id=$(this).attr("id");
+					if(id!="qg"&&id!="hb"&&id!="db"&&id!="hd"&&id!="zn"&&id!="xn"&&id!="xb"&&id!="qt"){
+						var arrClass = $(this).attr("class");
+						//没选中则选中
+						if (!arrClass || arrClass.indexOf("active-area") < 0){
+							$(this).addClass("active-area");
+						//选中则不选中
+						}else{
+							$(this).removeClass("active-area");
+						} 
+					}
+					//单个省份牵扯地区选中状态
+					dqstatus("hb",".hbclass",".hb");
+					dqstatus("db",".dbclass",".db");
+					dqstatus("hd",".hdclass",".hd");
+					dqstatus("zn",".znclass",".zn");
+					dqstatus("xn",".xnclass",".xn");
+					dqstatus("xb",".xbclass",".xb");
+					dqstatus("qt",".qtclass",".qt");
+					//地区选中与不选中牵扯全国选中状态
+					qgstatus();
+				});
+				
+				//区域选中效果
+				function dqclick(id,Class){
+					qdcheck(id,Class,qgstatus());
+				}
+				//选中效果
+				function qdcheck(id,Class,func){
+					$("#"+id).click(function(){
+						var arrClass = $(this).attr("class");
+						//之前没选中则全选
+						if (!arrClass ||arrClass.indexOf("active-area") < 0){
+							$(Class+" dd").each(function(){
+								if($(this).attr("id")=="qg" || $(this).attr("name")=="dq"){
+									$(this).addClass("active-area1");
+								}else{
+									$(this).addClass("active-area");
+								}
+							});
+						//之前选中则全不选
+						}else{
+							$(Class+" dd").each(function(){
+								if($(this).attr("id")=="qg" || $(this).attr("name")=="dq"){
+									$(this).removeClass("active-area1");
+								}else{
+									$(this).removeClass("active-area");
+								}
+							});
+						}
+						func;
+					});
+				}
+				//单个省份牵扯地区选中状态
+				function dqstatus(id,Class1,Class2){
+					//地区个数
+					var size =$(Class1 +" dd").size();
+					//选中个数
+					var xzgs=0;
+					
+					var tiaojian=id+" active-area"
+
+					$(Class2).each(
+						function(){
+							if($(this).attr("class")==tiaojian){
+								xzgs++;
+
+							}
+						}
+					);
+					if(xzgs < size-1){
+						$("#"+ id).removeClass("active-area1 active-area");
+					}else{
+						$("#"+ id).addClass("active-area1 active-area");
+					}
+				}
+				//地区选中与不选中牵扯全国选中状态
+				function qgstatus(){
+					//华北
+					var hbclass =$("#hb").attr("class");
+					//东北
+					var dbclass =$("#db").attr("class");
+					//华东
+					var hdclass =$("#hd").attr("class");
+					//中南
+					var znclass =$("#zn").attr("class");
+					//西南
+					var xnclass =$("#xn").attr("class");
+					//西北
+					var xbclass =$("#xb").attr("class");
+					//其他
+					var qtclass =$("#qt").attr("class");
+			
+					if (hbclass=="active-area1 active-area" && dbclass=="active-area1 active-area" && hdclass=="active-area1 active-area" && znclass=="active-area1 active-area" && xnclass=="active-area1 active-area" && xbclass=="active-area1 active-area" && qtclass=="active-area1 active-area"){
+						$("#qg").addClass("active-area1");
+					}else{
+						$("#qg").removeClass("active-area1");
+					}
+				}
+				//地区编辑时初始化
+				function initdq(){
+
+					//单个省份牵扯地区选中状态
+					dqstatus("hb",".hbclass",".hb");
+					dqstatus("db",".dbclass",".db");
+					dqstatus("hd",".hdclass",".hd");
+					dqstatus("zn",".znclass",".zn");
+					dqstatus("xn",".xnclass",".xn");
+					dqstatus("xb",".xbclass",".xb");
+					dqstatus("qt",".qtclass",".qt");
+					//地区选中与不选中牵扯全国选中状态
+					qgstatus();
+				}
+	    		
+	    		
+	    		$("#add01").click(function(){
+	    			$(this).parent("tr").before(
+	    				'<tr class="tr-add">'+
+							'<td><input class="input-attr" placeholder="基本配置" /></td>'+
+							'<td><input class="input-attr" placeholder="0" /></td>'+
+							'<td width="60" class="delete-btn">删除</td>'+
+						'</tr>'
+	    			)
+	    		})
+	    		
+	    		$("#add02").click(function(){
+	    			$(this).parent("tr").before(
+	    				'<tr class="tr-add">'+
+							'<td><input class="input-attr" placeholder="描述" /></td>'+
+							'<td><input class="input-attr" placeholder="调价幅度" /></td>'+
+							'<td width="60" class="delete-btn">删除</td>'+
+						'</tr>'
+	    			)
+	    		})
+	    		
+	    		$("#add03").click(function(){
+	    			$(this).parent("tr").before(
+	    				'<tr class="tr-add">'+
+							'<td><input class="input-attr" placeholder="描述" /></td>'+
+							'<td><input class="input-attr" placeholder="调价幅度" /></td>'+
+							'<td width="60" class="delete-btn">删除</td>'+
+						'</tr>'
+	    			)
+	    		})
+	    		
+	    		$(".delete-btn").live("click",function(){
+	    			$(this).parent("tr").remove()
+	    		})
+	    		
+	    		$("#add04").live("click",function(){
+	    			$(this).parents("td").append(
+	    				'<table style=" margin-top: 40px;" class="new-table">'+
+							'<tr>'+
+								'<td>定向会员：</td>'+
+								'<td><input class="input-attr" value="" /></td>'+
+								'<td>库存数量</td>'+
+								'<td><input class="input-attr" value="" /></td>'+
+								'<td width="60"></td>'+
+							'</tr>'+
+							'<tr>'+
+								'<td>定向价格：</td>'+
+								'<td><input class="input-attr" value="" /></td>'+
+								'<td>调价百分比</td>'+
+								'<td><input class="input-attr" value="" /></td>'+
+								'<td width="60" class="delete-btn02" id="add04">增加会员</td>'+
+							'</tr>'+
+							'<tr>'+
+								'<td>最大库存值：</td>'+
+								'<td><input class="input-attr" value="" /></td>'+
+								'<td>最小库存值</td>'+
+								'<td><input class="input-attr" value="" /></td>'+
+								'<td width="60" class="delete-btn01">删除会员</td>'+
+							'</tr>'+
+							'<tr>'+
+								'<td colspan="2"><input type="checkbox" checked />定向下属集团会员<span class="my-company">我的集团</span></td>'+
+							'</tr>'+
+						'</table>'
+	    			)
+	    		})
+	    		
+	    		$(".delete-btn01").live("click",function(){
+	    			$(this).parents(".new-table").remove()
+	    		})
+	    		
+	    		
+	    		$(".instruction li").click(function(){
+	    			$(this).addClass("instruction-active").siblings().removeClass("instruction-active")
+	    		})
+	    		
+	    		$("#editor02").hide()
+	    		$("#editor03").hide()
+	    		$("#editor04").hide()
+	    		$("#editor05").hide()
+	    		
+	    		$("#li01").click(function(){
+	    			$("#editor01").show()
+	    			$("#editor02").hide()
+		    		$("#editor03").hide()
+		    		$("#editor04").hide()
+		    		$("#editor05").hide()
+	    		})
+	    		
+	    		$("#li02").click(function(){
+	    			$("#editor02").show()
+	    			$("#editor01").hide()
+		    		$("#editor03").hide()
+		    		$("#editor04").hide()
+		    		$("#editor05").hide()
+	    		})
+	    		
+	    		$("#li03").click(function(){
+	    			$("#editor03").show()
+	    			$("#editor02").hide()
+		    		$("#editor01").hide()
+		    		$("#editor04").hide()
+		    		$("#editor05").hide()
+	    		})
+	    		
+	    		$("#li04").click(function(){
+	    			$("#editor04").show()
+	    			$("#editor02").hide()
+		    		$("#editor03").hide()
+		    		$("#editor01").hide()
+		    		$("#editor05").hide()
+	    		})
+	    		
+	    		$("#li05").click(function(){
+	    			$("#editor05").show()
+	    			$("#editor02").hide()
+		    		$("#editor03").hide()
+		    		$("#editor04").hide()
+		    		$("#editor01").hide()
+	    		})
+	    		
+	    		$("#btn-add").click(function(){
+	    			$("#empty-table").append(
+	    				'<tr class="newadd">'+
+							'<td align="center"><input style=" width: 60px; border: 1px solid #ccc !important;" /></td>'+
+							'<td align="center"><input style=" width: 60px; border: 1px solid #ccc !important;" /></td>'+
+							'<td align="center"><input style=" width: 60px; border: 1px solid #ccc !important;" /></td>'+
+							'<td align="center"><input style=" width: 60px; border: 1px solid #ccc !important;" /></td>'+
+							'<td align="center"><input style=" width: 60px; border: 1px solid #ccc !important;" /></td>'+
+							'<td align="center" width="160"><span class="table-btn">复制</span><span class="table-btn">删除</span></td>'+
+						'</tr>'
+	    			)
+	    		})
+	    		
+	    		$("#empty").click(function(){
+	    			$(".newadd").empty()
+	    		})
+	    	})
+	    </script>
+	    <style>
+	    	.color-f00 { color: #f00;}
+	    	.posi-re { position: relative;}
+	    	.brea-nav {
+	    		position: absolute;
+	    		right: 0;
+	    		top: 8px;
+	    	}
+	    	.table-btn {
+	    		padding: 4px 8px; 
+	    		margin: 0 8px; 
+	    		border: 1px solid #ddd;
+	    		border-radius: 4px;
+	    		cursor: pointer;
+	    	}
+	    	.table-btn:hover{
+	    		color: #f00;
+	    		border: 1px solid #f00;
+	    	}
+	    </style>
+	</head>
+	<body>
+	  		<!-----------侧边栏-------->
+<div class="topbar">
+	<div class="topbar-body">
+		<ul class="topbar-bd-l">
+			<li>
+				<div class="menu-hd city-item"><span><label>全国站</label></span><i><s>◇</s></i></div>
+				<div class="menu-bd">
+					<div class="city-list"><a href="#">上海</a> <a href="#">南京</a> <a href="#">苏州</a> <a href="#">无锡</a> <a href="#">全国</a></div>
+				</div>
+			</li>
+			<li>交易时间：<a style="color:#ec0000;">7:30-17:30（工作日）</a></li>
+			<li>客服热线：029-88990909</li>
+			
+		</ul>
+		<ul class="topbar-bd-r">
+			<li class="login-info unlogin">您好 ！欢迎来到延长电商贸易平台</li>
+			<li class="unlogin"><a class="tb-m-a2 blue user-login" href="login.html">请登录</a></li>
+			<li class="unlogin"><a class="tb-m-a2 blue" href="register.html">免费注册</a></li>
+			<li>
+				<div class="menu-hd">
+					<a href="my-admin.html">我的平台</a><i><s>◇</s></i>
+				</div>
+				<div class="menu-bd">
+					<div class="menu-bd-panel menu-bd-panel1">
+						<div class="content1 ">
+							<a class="content1-infor1" href="#"><img src="images/topbar_icon2.png"></a>
+							<div class="content1-infor2 unlogin">
+								<div class="line1">您好，请登录！</div>
+							</div>
+							<div class="content1-infor2 logon">
+								<div class="line1">Hi，<a class="user-name" href="#"></a>！</div>
+								<a href="#" class="line2 user-tel"></a>
+							</div>
+						</div>
+						<div class="content2">
+							<div><a class="first" href="#" target="_top">我的订单</a><a href="" target="_top">积分管理</a></div>
+							<div><a class="first" href="#" target="_top">会员认证</a><a href="" target="_top">上传资源单</a></div>
+						</div>
+					</div>
+				</div>
+			</li>
+
+			<li>
+				<div class="menu-hd"><a href="#">我的设置</a><i><s>◇</s></i></div>
+				<div class="menu-bd">
+					<div class="menu-bd-panel menu-bd-panel3">
+						<a class="first" target="_top" href="#">订单管理</a> <a target="_top" href="#">资源管理</a>
+					</div>
+				</div>
+			</li>
+			<li>
+				<div class="menu-hd"><a href="#">财物车</a><i><s>◇</s></i></div>
+				<div class="menu-bd">
+					<div class="menu-bd-panel menu-bd-panel3">
+						<a class="first" target="_top" href="#">任你花</a> <a target="_top" href="#">帮你采</a>
+						<a target="_top" href="#">随你押</a>
+					</div>
+				</div>
+			</li>
+			<!--<li class="tb-m-line">|</li>!-->
+			<li>
+				<div class="menu-hd"><a href="#">帮助中心</a><i><s>◇</s></i></div>
+				<div class="menu-bd">
+					<div class="menu-bd-panel menu-bd-panel3">
+						<a class="first" target="_top" href="#">帮助中心</a> <a target="_top" href="#">帮助中心</a> <a class="first" target="_top" href="#">帮助中心</a> <a target="_top" href="#">帮助中心</a>
+					</div>
+				</div>
+			</li>
+		</ul>
+
+	</div>
+</div>
+
+<div class="header">
+  <div class="logo"><a hidefocus="true" href="#"></a></div>
+  <div class="hd-search">
+    <div class="search-bd">
+      <div class="search-triggers">
+        <ul>
+          <li><a>超市  </a></li>
+          <li><a href="#">全部</a></li>
+          <li><a href="#">超市</a></li>
+          <li><a href="#">集市</a></li>
+        </ul>
+        <i></i>
+      </div>
+      <div class="search-i">
+        <form class="f-cb" method="post" onSubmit="return checkKwInput();" action="#" id="search" name="search">
+          <div class="search-button">
+            <button id="resSeachButton" class="btn-search s-search" type="submit">搜一下</button>
+          </div>
+          <div class="search-combobox">
+            <div class="search-combobox-input">
+              <input type="hidden" value="" name="ci" id="ci_code">
+              <input id="kwInput1" placeholder="请输入关键词查询" autocomplete="off" onFocus="this.style.color='#666';" onBlur="this.style.color='#666';" x-webkit-speech="" x-webkit-grammar="builtin:translate">
+              <input type="hidden" name="kw" id="kwInput2">
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="search-result">
+        <!-- 当前搜索  -->
+        <!-- 类似搜索  -->
+        	<ul class="sear-res">
+        		<li><a href="#"><span class="sear-res-l">螺纹钢</span></a></li>
+        		<li><a href="#"><span class="sear-res-l">HRB400</span></a></li>
+        		<li><a href="#"><span class="sear-res-l">HRB400E</span></a></li>
+        		<li><a href="#"><span class="sear-res-l">Q235</span></a></li>
+        		<li><a href="#"><span class="sear-res-l">Q235B</span></a></li>
+        	</ul>
+        	<!-- 搜索历史  -->
+        	<ul class="sear-history">
+        		<li><a href="#"><span class="sear-res-l">HRB400</span><span class="sear-res-r">搜索历史</span></a></li>
+        		<li><a href="#"><span class="sear-res-l">HRB400B</span><span class="sear-res-r">搜索历史</span></a></li>
+        	</ul>
+        </div>
+    </div>
+	</div>
+	<div class="header-nav-btn">
+		<!--<a class="header-nav-btn1 mn-ico1" href="#"><i></i>积分商城</a>!-->
+		<a class="header-nav-btn1 mn-ico2" href="shop-car.html"><i></i>我的购物车<span class="count" id="rcart">0</span></a>
+		<div class="cart-panel">
+	        <div class="cartlist"> 共选中 <b class="orange"><span id="itemTotalTemp">0</span></b> 件货物（<b class="orange"><span id="averageQtyTotalTemp">0</span></b> 吨）&nbsp;<br />总价 <b><span id="priceTotalTemp">0</span></b>元 </div>
+	        <a class="shop-car.html" href="cart_list.html">查看购物车</a>
+		</div>
+	</div>
+    
+   <div class="header-app">
+		<div class="menu-bd-panel2">
+        	<ul>
+            	<li class="mrgR10"><img src="images/app.gif"></li>
+        		<li><img src="images/app.gif"></li>
+            </ul>
+        </div>
+	</div>
+</div>
+
+
+<div class="m-nav">
+	<div class="auto">
+        <ul class="main-nav">
+            <li class="nav-main"><a href="index.html">首页</a></li>
+            <li class="nav-main"><a href="big-company.html">大企业专场</a></li>
+            <li class="nav-main"><a href="purchase-big.html">大宗商品专场</a></li>
+            <li class="nav-main"><a href="gongyepin_market.html">工业品市场</a></li>
+            <li class="nav-main"><a href="caigou_session.html">采购专场</a></li>
+            <li class="nav-main"><a class="nav-process" href="#">竞价专场</a></li>
+            <li class="nav-main"><a href="#">电子招投标</a></li>
+            <li class="nav-main"><a href="supermarkets.html">电子商城</a></li>
+            <li class="nav-main"><a href="purchase02.html">民生超市</a></li>
+            <li class="nav-main"><a href="#">金融服务</a></li>
+            <li class="nav-main"><a href="#">社区</a></li>
+        </ul>
+	</div>
+</div>
+	
+		<!-------------------我的平台------------------->
+		<div class="my-admin-body">
+		<!------------左侧导航开始！------------>				
+		<div class="my-admin-left">
+		<div class="menu_title"></div>
+			<div class="menu_label"><a href="#">钢铁交易</a></div>
+			<ul>
+				<h1>商铺管理</h1>
+				<li><a href="#">商铺管理</a></li>
+				<li><a href="#">信息维护</a></li>
+				<li><a href="#">留言管理</a></li>
+			</ul>	
+			<ul>
+				<h1>我是卖家</h1>
+				<li class="on"><a href="my-admin.html">商品管理</a></li>
+				<li><a href="my-daichuli.html">销售订单</a></li>
+				<li><a href="#">售后服务</a></li>
+				<li><a href="#">交易账户</a></li>
+				<li><a href="#">挂牌管理</a></li>
+				<li><a href="#">竞拍管理</a></li>
+				<li><a href="#">竞拍查看</a></li>
+				<li><a href="#">应标管理</a></li>
+				<li><a href="#">询价管理</a></li>
+				<li><a href="#">合同管理</a></li>
+				<li><a href="#">提单管理</a></li>
+				<li><a href="#">到款管理</a></li>
+				<li><a href="#">结算管理</a></li>
+				<li><a href="#">发票管理</a></li>
+				<li><a href="#">销售统计</a></li>
+			</ul>
+			<ul>
+				<h1>客户</h1>
+				<li><a href="#">商品选购</a></li>
+				<li><a href="#">采购订单</a></li>
+				<li><a href="#">售后服务</a></li>
+				<li><a href="#">交易账户</a></li>
+			</ul>
+			<ul>
+				<h1>物流商</h1>
+                    <li><a href="#">物流管理</a></li>
+				    <li><a href="#">交易账户</a></li>
+			</ul>
+			<ul>
+				<h1>招标管理</h1>
+				<li><a href="#">评标管理</a></li>
+				<li><a href="#">标书管理</a></li>
+				<li><a href="#">专家管理</a></li>
+				<li><a href="#">招标管理</a></li>
+				<li><a href="#">标书费用管理</a></li>
+				<li><a href="#">专家签到情况</a></li>
+			</ul>	
+			<ul>
+				<h1>基本设置</h1>
+				<li><a href="#">费用查询</a></li>
+			</ul>	
+			<ul>
+				<h1>供求设置</h1>
+				<li><a href="#">供应发布</a></li>
+				<li><a href="#">采购发布</a></li>
+			</ul>	
+			<div class="menu_label"><a href="#">资金中心</a></div>
+			<div class="menu_label"><a href="#">设置中心</a></div>
+			<div class="menu_label"><a href="#">运力平台</a></div>
+			</div>
+		<!------------右侧内容开始！------------>
+			<div class="my-admin-right">
+				<!-------新增商品-------->
+				<div class="htgl tab1" id="tab1">
+					<div class="menu posi-re">
+		                <ul>
+			                <li id="one4" class="one11 off" onclick="setTab('one',1)"><a href="#">添加产品</a></li>
+		                </ul>
+		                <div class="brea-nav">
+		                	您的位置：<a href="#">卖家中心</a>><a href="#">销售订单</a>><a href="#">添加产品</a>
+		                </div>
+	                </div>
+				<div class="goods-attr">商品属性：</div>
+				<table class="attr-each" border="0">
+					<tr>
+						<td width="160" height="24">
+							<div class="align-center">
+								<span class="color-f00">*</span>标题：
+							</div>							
+						</td>
+						<td width="810">
+							<input class="input-attr" /><span style=" margin-left: 12px; color: #999;">可以输入100个字符，当前已输入0字符(1个汉字等于2个字符)</span>
+						</td>
+					</tr>
+					<tr>
+						<td height="40">
+							<div class="align-center">
+								<span class="color-f00">*</span>商品名称（中文）：
+							</div>
+						</td>
+						<td>
+							<input class="input-attr" />
+						</td>
+					</tr>
+					<tr>
+						<td height="40">
+							<div class="align-center">
+								商品名称（英文）：
+							</div>
+						</td>
+						<td>
+							<input class="input-attr" />
+						</td>
+					</tr>
+					<tr>
+						<td height="40">
+							<div class="align-center">
+								<span class="color-f00">*</span>商品型号：
+							</div>
+						</td>
+						<td>
+							<input class="input-attr" />
+						</td>
+					</tr>
+					<tr>
+						<td height="40">
+							<div class="align-center">
+								<span class="color-f00">*</span>商品规格：
+							</div>
+						</td>
+						<td>
+							<input class="input-attr" />
+						</td>
+					</tr>
+					<tr>
+						<td height="40">
+							<div class="align-center">
+								商品标准：
+							</div>
+						</td>
+						<td>
+							<input class="input-attr" />
+						</td>
+					</tr>
+					<tr>
+						<td height="40">
+							<div class="align-center">
+								<span class="color-f00">*</span>计量单位：
+							</div>
+						</td>
+						<td>
+							<input class="input-attr" />
+						</td>
+					</tr>
+					<tr>
+						<td height="40">
+							<div class="align-center">
+								<span class="color-f00">*</span>品牌：
+							</div>
+						</td>
+						<td>
+							<input class="input-attr" />
+						</td>
+					</tr>
+					<tr>
+						<td height="40">
+							<div class="align-center">
+								<span class="color-f00">*</span>商品类型：
+							</div>
+						</td>
+						<td>
+							<input name="select" type="radio" value="定制" /><span style="margin-left: 4px;">定制</span>
+							<input name="select" type="radio" value="通用" checked="checked" style="margin-left: 20px;" /><span style="margin-left: 4px;">通用</span>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<div class="align-center">
+								<span class="color-f00">*</span>商品供应地区：
+							</div>
+						</td>
+						<td>
+							<dl class="all-area qgclass zb_tcmargin">
+								<dd class="special" id="qg" name="qg">全国</dd>
+							</dl>
+							<div class="clearfix"></div>
+							<dl class="all-area hbclass zb_tcmargin">
+								<dd id="hb" name="dq">华北地区</dd>
+								<dd class="hb">北京市</dd>
+								<dd class="hb">天津市</dd>
+								<dd class="hb">河北省</dd>
+								<dd class="hb">陕西省</dd>
+								<dd class="hb">内蒙古自治区</dd>
+							</dl>
+							<div class="clearfix"></div>
+							<dl class="all-area dbclass zb_tcmargin">
+								<dd id="db" name="dq">东北地区</dd>
+								<dd class="db">辽宁省</dd>
+								<dd class="db">吉林省</dd>
+								<dd class="db">黑龙江省</dd>
+							</dl>
+							<div class="clearfix"></div>
+							<dl class="all-area hdclass zb_tcmargin">
+								<dd id="hd" name="dq">华东地区</dd>
+								<dd class="hd">上海市</dd>
+								<dd class="hd">江苏省</dd>
+								<dd class="hd">浙江省</dd>
+								<dd class="hd">安徽省</dd>
+								<dd class="hd">福建省</dd>
+								<dd class="hd">江西省</dd>
+								<dd class="hd">山东省</dd>
+							</dl>
+							<div class="clearfix"></div>
+							<dl class="all-area znclass zb_tcmargin">
+								<dd id="zn" name="dq">中南地区</dd>
+								<dd class="zn">河南省</dd>
+								<dd class="zn">湖北省</dd>
+								<dd class="zn">湖南省</dd>
+								<dd class="zn">广东省</dd>
+								<dd class="zn">海南省</dd>
+								<dd class="zn">广西壮族自治区</dd>
+							</dl>
+							<div class="clearfix"></div>
+							<dl class="all-area xnclass zb_tcmargin">
+								<dd id="xn" name="dq">西南地区</dd>
+								<dd class="xn">重庆市</dd>
+								<dd class="xn">四川省</dd>
+								<dd class="xn">贵州省</dd>
+								<dd class="xn">云南省</dd>
+								<dd class="xn">西藏自治区</dd>
+							</dl>
+							<div class="clearfix"></div>
+							<dl class="all-area xbclass zb_tcmargin">
+								<dd id="xb" name="dq">西北地区</dd>
+								<dd class="xb">陕西省</dd>
+								<dd class="xb">甘肃省</dd>
+								<dd class="xb">青海省</dd>
+								<dd class="xb">宁夏回族自治区</dd>
+								<dd class="xb">新疆维吾尔自治区</dd>
+							</dl>
+							<div class="clearfix"></div>
+							<dl class="all-area qtclass zb_tcmargin">
+								<dd id="qt" name="dq">其他地区</dd>
+								<dd class="qt">香港特别行政区</dd>
+								<dd class="qt">澳门特别行政区</dd>
+								<dd class="qt">台湾省</dd>
+							</dl>
+							<div class="clearfix"></div>
+						</td>
+					</tr>
+				</table>
+				<div class="goods-attr">辅助属性：</div>
+				<table class="attr-each" border="0">
+					<tr>
+						<td width="160" height="24">
+							<div class="align-center">
+								品牌国别：
+							</div>
+						</td>
+						<td width="810">
+							<input class="input-attr" />
+						</td>
+					</tr>
+					<tr>
+						<td height="40">
+							<div class="align-center">
+								商品原产地：
+							</div>
+						</td>
+						<td>
+							<input class="input-attr" />
+						</td>
+					</tr>
+					<tr>
+						<td height="40">
+							<div class="align-center">
+								品牌电话：
+							</div>
+						</td>
+						<td>
+							<input class="input-attr" />
+						</td>
+					</tr>
+					<tr>
+						<td height="40">
+							<div class="align-center">
+								品牌地址：
+							</div>
+						</td>
+						<td>
+							<select class="area-select">
+								<option>=请选择=</option>
+								<option>北京市</option>
+								<option>上海市</option>
+								<option>河北省</option>
+							</select>
+							<select>
+								<option>=请选择=</option>
+								<option>上海市</option>
+								<option>南京市</option>
+								<option>济南市</option>
+								<option>合肥市</option>
+							</select>
+							<input class="input-attr" />
+						</td>
+					</tr>
+					<tr>
+						<td height="40">
+							<div class="align-center">
+								证书名称：
+							</div>
+						</td>
+						<td>
+							<input class="input-attr" />
+						</td>
+					</tr>
+					<tr>
+						<td height="40">
+							<div class="align-center">
+								商品标准：
+							</div>
+						</td>
+						<td>
+							<input class="input-attr" />
+						</td>
+					</tr>
+					<tr>
+						<td height="40">
+							<div class="align-center">
+								证书编号：
+							</div>
+						</td>
+						<td>
+							<input class="input-attr" />
+						</td>
+					</tr>
+					<tr>
+						<td height="40">
+							<div class="align-center">
+								发证单位：
+							</div>
+						</td>
+						<td>
+							<input class="input-attr" />
+						</td>
+					</tr>					
+				</table>
+				<div class="goods-attr">商品销售信息：</div>
+				<table class="attr-each">
+					<tr>
+						<td width="160" height="24">
+							<div class="align-center">
+								<span class="color-f00">*</span>总量：
+							</div>
+						</td>
+						<td width="810">
+							<input class="input-attr" />
+						</td>
+					</tr>
+					<tr>
+						<td height="40">
+							<div class="align-center">
+								自动值班：
+							</div>
+						</td>
+						<td>
+							<input name="select02" type="radio" value="" checked="checked" /><span style="margin-left: 4px;">否</span>
+							<input name="select02" type="radio" value="" style="margin-left: 20px;" /><span style="margin-left: 4px;">是</span>
+						</td>
+					</tr>
+					<tr>
+						<td height="40">
+							<div class="align-center">
+								商品属性：
+							</div>
+						</td>
+						<td>
+							<table style=" border-collapse: collapse;">
+								<tr>
+									<td width="140">
+										<div class="align-center02">
+											长度：
+										</div>
+									</td>
+									<td width="520">
+										<input name="select03" type="checkbox" value="" /><span style="margin-left: 4px; margin-right: 20px;">1.5米</span>
+										<input name="select03" type="checkbox" value="" /><span style="margin-left: 4px; margin-right: 20px;">1.6米</span>
+										<input name="select03" type="checkbox" value="" /><span style="margin-left: 4px; margin-right: 20px;">1.7米</span>
+										<input name="select03" type="checkbox" value="" /><span style="margin-left: 4px; margin-right: 20px;">1.8米</span>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<div class="align-center02">
+											厚度：
+										</div>
+									</td>
+									<td>
+										<select class="area-select2">
+											<option>=请选择=</option>
+											<option>10cm</option>
+											<option>11cm</option>
+											<option>12cm</option>
+											<option>13cm</option>
+										</select>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<div class="align-center02">
+											型号：
+										</div>
+									</td>
+									<td><input class="input-attr" /></td>
+								</tr>
+							</table>
+						</td>
+					</tr>
+					<tr>
+						<td height="40">
+							<div class="align-center">
+								商品规格：
+							</div>
+						</td>
+						<td>
+							<table style=" border-collapse: collapse;">
+								<tr>
+									<td style=" border: none;">库存总量：</td>
+									<td width="400" style=" border: none;">
+										<input class="input-attr" />
+									</td>
+									<!--<td style=" border: none;">
+										<span class="op-btn" id="btn-add">添加</span>
+									</td>
+									<td style=" border: none;">
+										<span class="op-btn" id="lots">导入</span>
+									</td>-->
+									<td style=" border: none;">
+										<span class="op-btn" id="btn-add">添加</span><span class="op-btn" id="lots">导入</span><span class="op-btn" id="empty">清空</span>
+									</td>
+								</tr>
+								<tr>
+									<td colspan="5" style=" border: none;">
+										<table id="empty-table" style=" border-collapse: collapse;">
+											<tr>
+												<td width="80" align="center">颜色</td>
+												<td width="80" align="center">尺码</td>
+												<td width="80" align="center">宽度</td>
+												<td width="100" align="center">价格（元）</td>
+												<td width="100" align="center">数量（件）</td>
+												<td width="160" align="center">操作</td>
+											</tr>
+										</table>
+									</td>
+								</tr>
+							</table>
+						</td>
+					</tr>
+					<tr>
+						<td height="40">
+							<div class="align-center">
+								<span class="color-f00">*</span>商品毛重：
+							</div>
+						</td>
+						<td><input class="input-attr" />&nbsp;&nbsp;&nbsp;kg</td>
+					</tr>
+					<tr>
+						<td height="40">
+							<div class="align-center">
+								<span class="color-f00">*</span>最小购买量：
+							</div>
+						</td>
+						<td><input class="input-attr" /></td>
+					</tr>
+					<tr>
+						<td height="40">
+							<div class="align-center">
+								<span class="color-f00">*</span>商品单价：
+							</div>
+						</td>
+						<td><input class="input-attr" />&nbsp;&nbsp;&nbsp;元</td>
+					</tr>
+					<tr>
+						<td height="40">
+							<div class="align-center">
+								参考价格：
+							</div>
+						</td>
+						<td>
+							<input class="input-attr" />&nbsp;&nbsp;&nbsp;元
+							<span style=" margin-left: 80px;">调整价格百分比</span><input class="input-attr" />%
+						</td>
+					</tr>
+					<tr>
+						<td height="40">
+							<div class="align-center">
+								配置：
+							</div>
+						</td>
+						<td>
+							<table>
+								<tr>
+									<td><input class="input-attr" placeholder="基本配置" /></td>
+									<td><input class="input-attr" placeholder="0" /></td>
+									<td width="60"></td>
+								</tr>
+								<tr>
+									<td colspan="3" class="add-some" id="add01">增加配置</td>
+								</tr>
+							</table>
+						</td>
+					</tr>
+					<tr>
+						<td height="40">
+							<div class="align-center">
+								支付类型：
+							</div>
+						</td>
+						<td>
+							<table>
+								<tr>
+									<td><input class="input-attr" placeholder="描述" /></td>
+									<td><input class="input-attr" placeholder="调价幅度" /></td>
+									<td width="60"></td>
+								</tr>
+								<tr>
+									<td colspan="3" class="add-some" id="add02">增加支付类型</td>
+								</tr>
+							</table>
+						</td>
+					</tr>
+					<tr>
+						<td height="40">
+							<div class="align-center">
+								服务：
+							</div>
+						</td>
+						<td>
+							<table>
+								<tr>
+									<td><input class="input-attr" placeholder="描述" /></td>
+									<td><input class="input-attr" placeholder="调价幅度" /></td>
+									<td width="60"></td>
+								</tr>
+								<tr>
+									<td colspan="3" class="add-some" id="add03">增加服务</td>
+								</tr>
+							</table>
+						</td>
+					</tr>
+					<tr>
+						<td height="40">
+							<div class="align-center">
+								定向会员：
+							</div>
+						</td>
+						<td>
+							<table>
+								<tr>
+									<td width="100">定向会员：</td>
+									<td><input class="input-attr02" value="" /></td>
+									<td width="100">库存数量：</td>
+									<td><input class="input-attr02" value="" /></td>
+									<td width="60"></td>
+								</tr>
+								<tr>
+									<td>定向价格：</td>
+									<td><input class="input-attr02" value="" /></td>
+									<td>调价百分比：</td>
+									<td><input class="input-attr02" value="" /></td>
+									<td width="60" class="delete-btn01" id="add04">增加会员</td>
+								</tr>
+								<tr>
+									<td>最大库存值：</td>
+									<td><input class="input-attr02" value="" /></td>
+									<td>最小库存值：</td>
+									<td><input class="input-attr02" value="" /></td>
+									<td width="60" class="delete-btn"></td>
+								</tr>
+								<tr>
+									<td colspan="2"><input type="checkbox" checked="checked" /><span style=" margin-left: 4px;">定向下属集团会员</span><span class="my-company">我的集团</span></td>
+								</tr>
+							</table>
+						</td>
+					</tr>
+					<tr>
+						<td height="40">
+							<div class="align-center">
+								<span class="color-f00">*</span>价格公示：
+							</div>
+						</td>
+						<td>
+							<input name="price" type="radio" value="定制" /><span style="margin-left: 4px;">隐私</span>
+							<input name="price" type="radio" value="通用" checked="checked" style="margin-left: 20px;" /><span style="margin-left: 4px;">公开</span>
+						</td>
+					</tr>
+					<tr>
+						<td height="40" class="align-center">
+							<div class="align-center">
+								<span class="color-f00">*</span>在线客服：
+							</div>
+						</td>
+						<td>
+							<input type="checkbox" /><span style="margin-left: 4px;">letsale</span>
+						</td>
+					</tr>
+				</table>
+				<div class="goods-attr">商品图片：</div>
+				<div style=" margin-top: 12px;">
+					<div class="marTop8">
+						<span class="img-up">上传图片</span>
+						<span class="img-store">图片库</span>
+						<span>为使图片清晰美观,建议上传像素为350×350的*.jpeg;*.png;*.jpg;*.gif正方形图片,图片大小在3MB内</span>
+					</div>
+					<ul class="img-goods">
+						<li>
+							<img src="images/zb_nopic.gif" />
+						</li>
+						<li>
+							<img src="images/zb_nopic.gif" />
+						</li>
+						<li>
+							<img src="images/zb_nopic.gif" />
+						</li>
+						<li>
+							<img src="images/zb_nopic.gif" />
+						</li>
+						<li>
+							<img src="images/zb_nopic.gif" />
+						</li>
+						<li>
+							<img src="images/zb_nopic.gif" />
+						</li>
+						<div class="clearfix"></div>
+					</ul>
+				</div>
+				<div class="goods-attr">二维码图片：</div>
+				<div style=" margin-top: 12px;">
+					<div class="marTop8">
+						<span class="img-up">上传图片</span>
+						<span>为使图片清晰美观,建议上传像素为350×350的*.jpeg;*.png;*.jpg;*.gif正方形图片,图片大小在3MB内</span>
+					</div>
+					<ul class="img-goods">
+						<li>
+							<img src="images/zb_nopic.gif" />
+						</li>
+						<li>
+							<img src="images/zb_nopic.gif" />
+						</li>
+						<li>
+							<img src="images/zb_nopic.gif" />
+						</li>
+						<div class="clearfix"></div>
+					</ul>
+				</div>
+				<ul class="instruction">
+					<li class="instruction-active" id="li01">商品介绍</li>
+					<li id="li02">规格参数</li>
+					<li id="li03">包装清单</li>
+					<li id="li04">物流配送</li>
+					<li id="li05">售后保障</li>
+					<div class="clearfix"></div>
+				</ul>
+				
+				<script id="editor01" type="text/plain" style=" width: 970px; height: 500px;">
+					商品介绍
+				</script>
+				
+				<script id="editor02" type="text/plain" style=" width: 970px; height: 500px;">
+					规格参数
+				</script>
+				
+				<script id="editor03" type="text/plain" style=" width: 970px; height: 500px;">
+					包装清单
+				</script>
+				
+				<script id="editor04" type="text/plain" style=" width: 970px; height: 500px;">
+					物流配送
+				</script>
+				
+				<script id="editor05" type="text/plain" style=" width: 970px; height: 500px;">
+					售后保障
+				</script>
+				
+				
+				<script type="text/javascript">
+
+				    //实例化编辑器
+				    //建议使用工厂方法getEditor创建和引用编辑器实例，如果在某个闭包下引用该编辑器，直接调用UE.getEditor('editor')就能拿到相关的实例
+				    var ue01 = UE.getEditor('editor01');
+				    var ue02 = UE.getEditor('editor02');
+				    var ue03 = UE.getEditor('editor03');
+				    var ue04 = UE.getEditor('editor04');
+				    var ue05 = UE.getEditor('editor05');
+				
+				</script>
+				<div class="marTop24">
+					<div class="floatR cancel-btn">取消</div>
+					<div class="floatR ok-btn">确定</div>
+					<div class="clearfix"></div>
+				</div>
+				</div>
+			</div>
+			<div class="clearfix"> </div>
+		</div>
+<!------------底部开始-------------->
+<div class="footer">
+	<div class="service-box">
+		<p align="center">地 址：陕西省西安市雁塔区沣惠南路中华世纪城（东门）商住楼8号楼二层　邮 编：710065　电 话：029-89199820 029-88990909</p>
+        <p align="center">上海石油交易所西部交易中心 版权所有　陕ICP备09004887号　技术支持：高达软件　陕公网安备61019002000027号</p>
+    </div>
+</div>		
+	</body>
+</html>

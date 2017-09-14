@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>金融服务</title>
+		<link rel="stylesheet" type="text/css" href="./css/common.css">
+		<link rel="stylesheet" href="./css/mycss1.css" />	
+		<script type="text/javascript" src="./js/jquery.js"></script>
+		<script type="text/javascript" src="js/main.js"></script>
+	</head>
+	<body>
+		<!-----------头部开始----------->
+<div class="topbar">
+	<div class="topbar-body">
+		<ul class="topbar-bd-l">
+			<li>
+				<!--<div class="menu-hd city-item"><span><label>全国站</label></span><i><s>◇</s></i></div>-->
+				<div class="menu-bd">
+					<div class="city-list"><a href="#">上海</a> <a href="#">南京</a> <a href="#">苏州</a> <a href="#">无锡</a> <a href="#">全国</a></div>
+				</div>
+			</li>
+			<li>交易时间：<a style="color:#ec0000;">7:30-17:30（工作日）</a></li>
+			<li>客服热线：029-88990909</li>
+			
+		</ul>
+		<ul class="topbar-bd-r">
+			<li class="login-info unlogin">您好 ！欢迎来到延长电商贸易平台</li>
+			<li class="unlogin"><a class="tb-m-a2 blue user-login" href="login.html">请登录</a></li>
+			<li class="unlogin"><a class="tb-m-a2 blue" href="register.html">免费注册</a></li>
+			<li>
+				<div class="menu-hd">
+					<a href="my-admin.html">我的平台</a><i><s>◇</s></i>
+				</div>
+				<div class="menu-bd">
+					<div class="menu-bd-panel menu-bd-panel1">
+						<div class="content1 ">
+							<a class="content1-infor1" href="#"><img src="images/banner1.jpg"></a>
+							<div class="content1-infor2 unlogin">
+								<div class="line1">
+									<a href="#">您好，请登录！</a>
+								</div>
+							</div>
+							<!--<div class="content1-infor2 logon">
+								<div class="line1">
+									Hi，<a class="user-name" href="#"></a>！
+								</div>
+								<a href="#" class="line2 user-tel"></a>
+							</div>-->
+						</div>
+						<div class="content2">
+							<div><a class="first" href="#" target="_top">我的订单</a><a href="" target="_top">积分管理</a></div>
+							<div><a class="first" href="#" target="_top">会员认证</a><a href="" target="_top">上传资源单</a></div>
+						</div>
+					</div>
+				</div>
+			</li>
+
+			<li>
+				<div class="menu-hd"><a href="#">我的设置</a><i><s>◇</s></i></div>
+				<div class="menu-bd">
+					<div class="menu-bd-panel menu-bd-panel3">
+						<a class="first" target="_top" href="#">订单管理</a> <a target="_top" href="#">资源管理</a>
+					</div>
+				</div>
+			</li>
+			<li>
+				<div class="menu-hd"><a href="#">财物车</a><i><s>◇</s></i></div>
+				<div class="menu-bd">
+					<div class="menu-bd-panel menu-bd-panel3">
+						<a class="first" target="_top" href="#">任你花</a> <a target="_top" href="#">帮你采</a>
+						<a target="_top" href="#">随你押</a>
+					</div>
+				</div>
+			</li>
+			<!--<li class="tb-m-line">|</li>!-->
+			<li>
+				<div class="menu-hd"><a href="#">帮助中心</a><i><s>◇</s></i></div>
+				<div class="menu-bd">
+					<div class="menu-bd-panel menu-bd-panel3">
+						<a class="first" target="_top" href="#">帮助中心</a> <a target="_top" href="#">帮助中心</a> <a class="first" target="_top" href="#">帮助中心</a> <a target="_top" href="#">帮助中心</a>
+					</div>
+				</div>
+			</li>
+		</ul>
+
+	</div>
+</div>
+
+<div class="header">
+  <div class="logo"><a hidefocus="true" href="#"></a></div>
+  <div class="hd-search">
+    <div class="search-bd">
+      <div class="search-triggers">
+        <ul>
+          <li><a>超市  </a></li>
+          <li><a href="#">全部</a></li>
+          <li><a href="#">超市</a></li>
+          <li><a href="#">集市</a></li>
+        </ul>
+        <i></i>
+      </div>
+      <div class="search-i">
+        <form class="f-cb" method="post" onSubmit="return checkKwInput();" action="#" id="search" name="search">
+          <div class="search-button">
+            <button id="resSeachButton" class="btn-search s-search" type="submit">搜一下</button>
+          </div>
+          <div class="search-combobox">
+            <div class="search-combobox-input">
+              <input type="hidden" value="" name="ci" id="ci_code">
+              <input id="kwInput1" placeholder="请输入关键词查询" autocomplete="off" onFocus="this.style.color='#666';" onBlur="this.style.color='#666';" x-webkit-speech="" x-webkit-grammar="builtin:translate">
+              <input type="hidden" name="kw" id="kwInput2">
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="search-result">
+        <!-- 当前搜索  -->
+        <!-- 类似搜索  -->
+        	<ul class="sear-res">
+        		<li><a href="#"><span class="sear-res-l">螺纹钢</span></a></li>
+        		<li><a href="#"><span class="sear-res-l">HRB400</span></a></li>
+        		<li><a href="#"><span class="sear-res-l">HRB400E</span></a></li>
+        		<li><a href="#"><span class="sear-res-l">Q235</span></a></li>
+        		<li><a href="#"><span class="sear-res-l">Q235B</span></a></li>
+        	</ul>
+        	<!-- 搜索历史  -->
+        	<ul class="sear-history">
+        		<li><a href="#"><span class="sear-res-l">HRB400</span><span class="sear-res-r">搜索历史</span></a></li>
+        		<li><a href="#"><span class="sear-res-l">HRB400B</span><span class="sear-res-r">搜索历史</span></a></li>
+        	</ul>
+        </div>
+    </div>
+	</div>
+	<div class="header-nav-btn">
+		<!--<a class="header-nav-btn1 mn-ico1" href="#"><i></i>积分商城</a>!-->
+		<a class="header-nav-btn1 mn-ico2" href="shop-car.html"><i></i>我的购物车<span class="count" id="rcart">0</span></a>
+		<div class="cart-panel">
+	        <div class="cartlist"> 共选中 <b class="orange"><span id="itemTotalTemp">0</span></b> 件货物（<b class="orange"><span id="averageQtyTotalTemp">0</span></b> 吨）&nbsp;<br />总价 <b><span id="priceTotalTemp">0</span></b>元 </div>
+	        <a class="shop-car.html" href="cart_list.html">查看购物车</a>
+		</div>
+	</div>
+    
+   <div class="header-app">
+		<div class="menu-bd-panel2">
+        	<ul>
+            	<li class="mrgR10"><img src="images/app.gif"></li>
+        		<li><img src="images/app.gif"></li>
+            </ul>
+        </div>
+	</div>
+</div>
+
+
+<div class="m-nav">
+	<div class="auto">
+        <ul class="main-nav">
+            <li class="nav-main"><a href="index.html">首页</a></li>
+            <li class="nav-main"><a href="big-company.html">大企业专场</a></li>
+            <li class="nav-main"><a href="purchase-big.html">大宗商品专场</a></li>
+            <li class="nav-main"><a href="gongyepin_market.html">工业品市场</a></li>
+            <li class="nav-main"><a href="caigou_session.html">采购专场</a></li>
+            <!--<li class="nav-main"><a class="nav-process" href="#">竞价专场</a></li>-->
+            <li class="nav-main"><a href="#">电子招投标</a></li>
+            <li class="nav-main"><a href="supermarkets.html">电子商城</a></li>
+            <li class="nav-main"><a href="purchase02.html">民生超市</a></li>
+            <li class="nav-main"><a href="jrfw.html">金融服务</a></li>
+            <li class="nav-main"><a href="sq-about.html">社区</a></li>
+        </ul>
+	</div>
+</div>
+<!-----------头部结束------------>
+  <div class="jr-banner">
+  	<div class="jr-banner-cen">
+  	<img src="images/jr_banner1.jpg" width="1200" height="260" alt="金融服务"/>
+  	</div>
+  </div>
+  <!---金融服务1开始-->
+  <div class="jr-fu1">
+  	<div class="jr-fu1-cen">
+  	<h3><strong>金融服务  —</strong>线上线下企业供应链融资服务</h3>
+  	<p>根据公司主营业务现有模式，交易所成为了“企业供应链金融”中的主导者。实现以交易所为核心企业抓住供应链上、下游中小企业互相协作，形成可持续发展“生态圈”目标的实现为融资会员提供低门槛，低成本，高效快捷的新型融资模式。</p>
+  	</div>
+  </div>
+  <!-----金融服务2开始---->
+  <div class="jr-fu2">
+  	<div class="jr-fu2-cen">
+  	<div class="jr-fu2-left">
+  		<dl>
+  			<dt><strong>订单融资</strong>服务特点</dt>
+  			<dd>（1）交易会员双方在本交易平台上生成电子合同。<dd>
+  			<dd>（2）本中心平台对质物进行评估并锁定卖方仓单。<dd>
+  			<dd>（3）本中心将合同、融资信息发送合作银行。<dd>
+  			<dd>（4）合作银行评估审核通过，操作融资过程。<dd>
+  		</dl>
+  	</div>
+  	</div>
+  </div>
+  <!-----金融服务3开始---->
+    <div class="jr-fu3">
+  	<div class="jr-fu3-cen">
+  	<div class="jr-fu3-right">
+  		<dl>
+  			<dt><strong>仓单融资</strong>服务特点</dt>
+  			<dd>（1）是一种自偿性贷款、周期短、安全性高、流动性强。<dd>
+  			<dd>（2）适用范围广、能够有效地解决企业融资担保难的问题。<dd>
+  			<dd>（3）质押物受限制程度低、对企业经营的影响也较小。<dd>
+  			<dd>（4）要求银行有较高的奉献监控能力和较高的操作技能。<dd>
+  		</dl>
+  	</div>
+  	</div>
+  </div>
+    <!-----金融服务4开始---->
+  <div class="jr-fu4">
+  	<div class="jr-fu4-cen">
+  	<div class="jr-fu4-left">
+  		<dl>
+  			<dt><strong>保理融资</strong>服务特点</dt>
+  			<dd>（1）链接产连上下游、促进买卖交易达成。<dd>
+  			<dd>（2）收购卖方应收账款、为卖方提供资金支持。<dd>
+  			<dd>（3）进行买方评估处理、让买方赊购更加便利。<dd>
+  			<dd>（4）阶梯式渐进融资方案、降低成本、提高收益。<dd>
+  		</dl>
+  	</div>
+  	</div>
+  </div>
+  <!------------底部开始-------------->
+<div class="footer">
+	<div class="service-box">
+		<p align="center">地 址：陕西省西安市雁塔区沣惠南路中华世纪城（东门）商住楼8号楼二层　邮 编：710065　电 话：029-89199820 029-88990909</p>
+        <p align="center">上海石油交易所西部交易中心 版权所有　陕ICP备09004887号　技术支持：高达软件　陕公网安备61019002000027号</p>
+    </div>
+</div>
+	</body>
+</html>

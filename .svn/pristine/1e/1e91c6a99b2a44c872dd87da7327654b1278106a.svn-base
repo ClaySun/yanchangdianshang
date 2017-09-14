@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>确认客户收货</title>
+		<link rel="stylesheet" type="text/css" href="./css/common.css">
+	    <link rel="stylesheet" href="./css/mycss1.css" />
+	    <link href="./css/public-style.css" rel="stylesheet" type="text/css">
+     <link href="./css/tradaccount.css" rel="stylesheet" type="text/css">
+	     <script type="text/javascript" src="js/jquery.min.js"></script>
+        <script type="text/javascript" src="js/qiehuan.js"></script>
+	    <script type="text/javascript" src="layer/layer.js"></script>
+     <!------查看保密协议------->
+     	    <script>
+	    	$(function(){
+				//初始化
+				initdq();
+				//地区编辑时初始化
+				function initdq(){}
+
+                /*----------查看订单--------*/
+	    		$(".ckdd1").click(function(){
+	    			layer.open({
+						type: 1,
+						title:'<h2 style=" width:100%; height: 40px;line-height: 40px;font-size: 18px;font-weight: bold; text-align:center; color: #fff;background-color: #f00;">'+'查看订单'+'</h2>',
+						area: ['900px', '450px'], //宽高
+						content: $('.chakan1')
+					});
+	    		})
+
+	    		
+	    		$("#vip-cancel").live("click",function(){
+	    			layer.closeAll()
+	    		})
+	    		
+	    		$("#vip-ok").live("click",function(){
+	    			layer.closeAll()
+	    		})
+	    		
+	    		$(".layui-layer-close").live("click",function(){
+	    			layer.closeAll()
+	    		})
+	
+	    	})
+	    </script>
+	</head>
+	<body>
+<div class="topbar">
+	<div class="topbar-body">
+		<ul class="topbar-bd-l">
+			<li>
+				<div class="menu-hd city-item"><span><label>全国站</label></span><i><s>◇</s></i></div>
+				<div class="menu-bd">
+					<div class="city-list"><a href="#">上海</a> <a href="#">南京</a> <a href="#">苏州</a> <a href="#">无锡</a> <a href="#">全国</a></div>
+				</div>
+			</li>
+			<li>交易时间：<a style="color:#ec0000;">7:30-17:30（工作日）</a></li>
+			<li>客服热线：029-88990909</li>
+			
+		</ul>
+		<ul class="topbar-bd-r">
+			<li class="login-info unlogin">您好 ！欢迎来到延长电商贸易平台</li>
+			<li class="unlogin"><a class="tb-m-a2 blue user-login" href="login.html">请登录</a></li>
+			<li class="unlogin"><a class="tb-m-a2 blue" href="register.html">免费注册</a></li>
+			<li>
+				<div class="menu-hd">
+					<a href="my-admin.html">我的平台</a><i><s>◇</s></i>
+				</div>
+				<div class="menu-bd">
+					<div class="menu-bd-panel menu-bd-panel1">
+						<div class="content1 ">
+							<a class="content1-infor1" href="#"><img src="images/topbar_icon2.png"></a>
+							<div class="content1-infor2 unlogin">
+								<div class="line1">您好，请登录！</div>
+							</div>
+							<div class="content1-infor2 logon">
+								<div class="line1">Hi，<a class="user-name" href="#"></a>！</div>
+								<a href="#" class="line2 user-tel"></a>
+							</div>
+						</div>
+						<div class="content2">
+							<div><a class="first" href="#" target="_top">我的订单</a><a href="" target="_top">积分管理</a></div>
+							<div><a class="first" href="#" target="_top">会员认证</a><a href="" target="_top">上传资源单</a></div>
+						</div>
+					</div>
+				</div>
+			</li>
+
+			<li>
+				<div class="menu-hd"><a href="#">我的设置</a><i><s>◇</s></i></div>
+				<div class="menu-bd">
+					<div class="menu-bd-panel menu-bd-panel3">
+						<a class="first" target="_top" href="#">订单管理</a> <a target="_top" href="#">资源管理</a>
+					</div>
+				</div>
+			</li>
+			<li>
+				<div class="menu-hd"><a href="#">财物车</a><i><s>◇</s></i></div>
+				<div class="menu-bd">
+					<div class="menu-bd-panel menu-bd-panel3">
+						<a class="first" target="_top" href="#">任你花</a> <a target="_top" href="#">帮你采</a>
+						<a target="_top" href="#">随你押</a>
+					</div>
+				</div>
+			</li>
+			<!--<li class="tb-m-line">|</li>!-->
+			<li>
+				<div class="menu-hd"><a href="#">帮助中心</a><i><s>◇</s></i></div>
+				<div class="menu-bd">
+					<div class="menu-bd-panel menu-bd-panel3">
+						<a class="first" target="_top" href="#">帮助中心</a> <a target="_top" href="#">帮助中心</a> <a class="first" target="_top" href="#">帮助中心</a> <a target="_top" href="#">帮助中心</a>
+					</div>
+				</div>
+			</li>
+		</ul>
+
+	</div>
+</div>
+
+<div class="header">
+  <div class="logo"><a hidefocus="true" href="#"></a></div>
+  <div class="hd-search">
+    <div class="search-bd">
+      <div class="search-triggers">
+        <ul>
+          <li><a>超市  </a></li>
+          <li><a href="#">全部</a></li>
+          <li><a href="#">超市</a></li>
+          <li><a href="#">集市</a></li>
+        </ul>
+        <i></i>
+      </div>
+      <div class="search-i">
+        <form class="f-cb" method="post" onSubmit="return checkKwInput();" action="#" id="search" name="search">
+          <div class="search-button">
+            <button id="resSeachButton" class="btn-search s-search" type="submit">搜一下</button>
+          </div>
+          <div class="search-combobox">
+            <div class="search-combobox-input">
+              <input type="hidden" value="" name="ci" id="ci_code">
+              <input id="kwInput1" placeholder="请输入关键词查询" autocomplete="off" onFocus="this.style.color='#666';" onBlur="this.style.color='#666';" x-webkit-speech="" x-webkit-grammar="builtin:translate">
+              <input type="hidden" name="kw" id="kwInput2">
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="search-result">
+        <!-- 当前搜索  -->
+        <!-- 类似搜索  -->
+        	<ul class="sear-res">
+        		<li><a href="#"><span class="sear-res-l">螺纹钢</span></a></li>
+        		<li><a href="#"><span class="sear-res-l">HRB400</span></a></li>
+        		<li><a href="#"><span class="sear-res-l">HRB400E</span></a></li>
+        		<li><a href="#"><span class="sear-res-l">Q235</span></a></li>
+        		<li><a href="#"><span class="sear-res-l">Q235B</span></a></li>
+        	</ul>
+        	<!-- 搜索历史  -->
+        	<ul class="sear-history">
+        		<li><a href="#"><span class="sear-res-l">HRB400</span><span class="sear-res-r">搜索历史</span></a></li>
+        		<li><a href="#"><span class="sear-res-l">HRB400B</span><span class="sear-res-r">搜索历史</span></a></li>
+        	</ul>
+        </div>
+    </div>
+	</div>
+	<div class="header-nav-btn">
+		<!--<a class="header-nav-btn1 mn-ico1" href="#"><i></i>积分商城</a>!-->
+		<a class="header-nav-btn1 mn-ico2" href="shop-car.html"><i></i>我的购物车<span class="count" id="rcart">0</span></a>
+		<div class="cart-panel">
+	        <div class="cartlist"> 共选中 <b class="orange"><span id="itemTotalTemp">0</span></b> 件货物（<b class="orange"><span id="averageQtyTotalTemp">0</span></b> 吨）&nbsp;<br />总价 <b><span id="priceTotalTemp">0</span></b>元 </div>
+	        <a class="shop-car.html" href="cart_list.html">查看购物车</a>
+		</div>
+	</div>
+    
+   <div class="header-app">
+		<div class="menu-bd-panel2">
+        	<ul>
+            	<li class="mrgR10"><img src="images/app.gif"></li>
+        		<li><img src="images/app.gif"></li>
+            </ul>
+        </div>
+	</div>
+</div>
+
+
+<div class="m-nav">
+	<div class="auto">
+        <ul class="main-nav">
+            <li class="nav-main"><a href="index.html">首页</a></li>
+            <li class="nav-main"><a href="big-company.html">大企业专场</a></li>
+            <li class="nav-main"><a href="purchase-big.html">大宗商品专场</a></li>
+            <li class="nav-main"><a href="gongyepin_market.html">工业品市场</a></li>
+            <li class="nav-main"><a href="caigou_session.html">采购专场</a></li>
+            <!--<li class="nav-main"><a class="nav-process" href="#">竞价专场</a></li>-->
+            <li class="nav-main"><a href="#">电子招投标</a></li>
+            <li class="nav-main"><a href="supermarkets.html">电子商城</a></li>
+            <li class="nav-main"><a href="purchase02.html">民生超市</a></li>
+            <li class="nav-main"><a href="#">金融服务</a></li>
+            <li class="nav-main"><a href="#">社区</a></li>
+        </ul>
+	</div>
+</div>
+	
+		<!-------------------我的平台------------------->
+		<div class="my-admin-body">
+		<!------------左侧导航开始！------------>				
+			<div class="my-admin-left">
+		<div class="menu_title"></div>
+			<div class="menu_label"><a href="#">钢铁交易</a></div>
+			<ul>
+				<h1>商铺管理</h1>
+				<li><a href="#">商铺管理</a></li>
+				<li><a href="#">信息维护</a></li>
+				<li><a href="#">留言管理</a></li>
+			</ul>	
+			<ul>
+				<h1>我是卖家</h1>
+				<li><a href="my-admin.html">商品管理</a></li>
+				<li><a href="my-daichuli.html">销售订单</a></li>
+				<li class="on"><a href="my-service.html">售后服务</a></li>
+				<li><a href="my-zhanghu-admin.html">交易账户</a></li>
+				<li><a href="#">挂牌管理</a></li>
+				<li><a href="#">竞拍管理</a></li>
+				<li><a href="#">竞拍查看</a></li>
+				<li><a href="#">应标管理</a></li>
+				<li><a href="#">询价管理</a></li>
+				<li><a href="#">合同管理</a></li>
+				<li><a href="#">提单管理</a></li>
+				<li><a href="#">到款管理</a></li>
+				<li><a href="#">结算管理</a></li>
+				<li><a href="#">发票管理</a></li>
+				<li><a href="#">销售统计</a></li>
+			</ul>
+			<ul>
+				<h1>客户</h1>
+				<li><a href="supermarkets.html">商品选购</a></li>
+				<li><a href="my-shop.html">采购订单</a></li>
+				<li><a href="my-shop-shouhou.html">售后服务</a></li>
+				<li><a href="my-zhanghu-shop.html">交易账户</a></li>
+			</ul>
+			<ul>
+				<h1>物流商</h1>
+                    <li><a href="my-wuliu.html">物流管理</a></li>
+				    <li><a href="my-zhanghu-wuliu.html">交易账户</a></li>
+			</ul>
+			<ul>
+				<h1>招标管理</h1>
+				<li><a href="#">评标管理</a></li>
+				<li><a href="#">标书管理</a></li>
+				<li><a href="#">专家管理</a></li>
+				<li><a href="#">招标管理</a></li>
+				<li><a href="#">标书费用管理</a></li>
+				<li><a href="#">专家签到情况</a></li>
+			</ul>	
+			<ul>
+				<h1>基本设置</h1>
+				<li><a href="#">费用查询</a></li>
+			</ul>	
+			<ul>
+				<h1>供求设置</h1>
+				<li><a href="#">供应发布</a></li>
+				<li><a href="#">采购发布</a></li>
+			</ul>	
+			<div class="menu_label"><a href="#">资金中心</a></div>
+			<div class="menu_label"><a href="#">设置中心</a></div>
+			<div class="menu_label"><a href="#">运力平台</a></div>
+			</div>
+		<!------------右侧内容开始！------------>
+			<div class="my-admin-right">
+			<!-------合同管理-------->
+				<div class="htgl tab1" id="tab1">
+					<div class="menu posi-re">
+		                <ul>
+			                <li id="one4" class="one11 off" onclick="setTab('one',1)"><a href="#">换货</a></li>
+		                </ul>
+		                <div class="brea-nav">
+		                	您的位置：<a href="my-service.html">售后服务</a>>换货<a href="my-admin-xz.html" style=" margin-left: 24px; margin-right: 12px; color: #f00;"></a>
+		                </div>    
+	                </div>
+	                </div>
+	            <div class="menudiv">
+	            	<div id="con_one_1">
+                    <div class="chaxun-lie">
+	                    <input id="spbg111" type="text" placeholder="换货编号、订单编号、商品名称" alt=""/>
+	                    <input id="button11" class="button11" type="button">
+	                    <input id="button22" class="button22" type="button">
+	                <div style="clear: both;"></div>
+	                </div>
+                            <table  width="100%" cellpadding="0" cellspacing="0" style="table-layout:fixed; word-break:break-all" class=" table1">
+                                <thead>
+                                    <tr>
+                                    	<th width="20%">换货编号</th>
+                                        <th width="20%">订单编号</th>
+                                        <th width="15%">商品名称</th>
+                                        <th width="15%">申请时间</th>
+                                        <th width="15%">状态</th>
+                                        <th width="15%">操作</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>WT161107000010</td>
+                                        <td><a href="javascript:;" class="ckdd1">455224566</a></td>
+                                        <td class="spbt">螺旋手里剑</td>
+                                        <td>2016-11-13 11:40</td>
+                                        <td>已拒绝</td>
+                                        <td>
+                                          <dl class="dl-dd">
+                                          	<dt><a href="my-service-sq.html">查看详情</a></dt>
+                                          </dl>
+                                        </td>
+                                    </tr>  
+                                    <tr>
+                                        <td>WT161107000010</td>
+                                        <td><a href="javascript:;" class="ckdd1">455224566</a></td>
+                                        <td class="spbt">螺旋手里剑</td>
+                                        <td>2016-11-13 11:40</td>
+                                        <td>已同意</td>
+                                        <td>
+                                          <dl class="dl-dd">
+                                          	<dt><a href="my-service-sq.html">查看详情</a></dt>
+                                          </dl>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>WT161107000010</td>
+                                        <td><a href="javascript:;" class="ckdd1">455224566</a></td>
+                                        <td class="spbt">螺旋手里剑</td>
+                                        <td>2016-11-13 11:40</td>
+                                        <td>作废</td>
+                                        <td>
+                                          <dl class="dl-dd">
+                                          	<dt><a href="my-service-sq.html">查看详情</a></dt>
+                                          </dl>
+                                        </td>
+                                    </tr>                                    
+                                    
+                                </tbody>
+                            </table>
+                            			<!-------页码------->
+			<table cellspacing="0" class="condition" id="condition1">
+			<tr>
+				<td width="60" height="40" class="padLeft12"> 
+					每页显示
+				</td>
+				<td width="360">
+					<ul class="condition-each02">
+						<li class="condition-each02-active">10</li>
+						<li>20</li>
+						<li>30</li>
+					</ul>
+				</td>
+				<td>
+					<span class="other-es">上一页</span>
+					<ul class="condition-each02">
+						<li class="condition-each02-active">1</li>
+						<li>2</li>
+						<li>3</li>
+					</ul>
+					<span class="other-es"> 下一页</span>
+					<span class="other border-none">共100页</span>
+					<span class="other border-none">到</span>
+					<input type="text" class="other width40" />
+					<span class="other border-none">页</span>
+					<span class="other-es">确定</span>
+				</td>
+			</tr>
+		</table>
+			<!------页码结束------>  
+	             </div>
+                </div>
+                </div>
+		<!-------------右侧结束------------>	
+		</div>
+		<div class="clearfix"> </div>
+		</div>
+<!------------底部开始-------------->
+<div class="footer">
+	<div class="service-box">
+		<p align="center">地 址：陕西省西安市雁塔区沣惠南路中华世纪城（东门）商住楼8号楼二层　邮 编：710065　电 话：029-89199820 029-88990909</p>
+        <p align="center">上海石油交易所西部交易中心 版权所有　陕ICP备09004887号　技术支持：高达软件　陕公网安备61019002000027号</p>
+    </div>
+</div>
+
+<!------查看订单1------>
+<div class="chakan1" style="display: none;">
+   <div class="tabPanel">
+		<ul>
+			<li class="hit">订单信息</li>
+		</ul>
+		<div class="panes">
+			<div class="pane" style="display:block;">
+				<div class="wlpsxx3">
+		            <div class="wlpsxx-tit3"><a href="#">订单信息</a></div>
+		               <div class="wlpsxx-fhr">
+	    	                <dl>
+	    		                <dt>订单号：45522456</dt>
+	    	                </dl>
+	                    </div>
+	                    <div class="wlpsxx-fhr">
+	    	                <dl>
+	    		                <dt>单位信息</dt>
+	    		                    <dd>供应商名称：卖家003</dd>
+	    		                    <dd>买&nbsp;方&nbsp;名&nbsp;称：张先生</dd>
+	    	                </dl>
+	                    </div>	
+	     <!-------------------配送信息------------------->
+	                    <div class="wlpsxx-fhr">
+	    	                <dl>
+	    		                <dt>收货人信息</dt>
+	    		                <dd>收&nbsp;货&nbsp;人&nbsp;：阿斌</dd>
+	    		                <dd>交货地址：北京 北京市 昌平区12</dd>
+	    		                <dd>联系电话：1324554485</dd>
+	    	                </dl>
+	                    </div>	
+	     <!-------------------收货人信息------------------->
+	                    <div class="wlpsxx-fhr">
+	    	                <dl>
+	    		                <dt>汇款路径及账号 </dt>
+	    		                <dd>开&nbsp;&nbsp;&nbsp;户&nbsp;&nbsp;&nbsp;名 ：卖家0001</dd>
+	    		                <dd>账&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;号：4545154515452452451</dd>
+	    		                <dd>开&nbsp;户&nbsp;银&nbsp;行：中信银行营业部</dd>
+	    		                <dd>支付联行号：3012524554215</dd>
+	    	                </dl>
+	                    </div>	
+	     <!-------------------物流方式------------------->
+	                    <div class="wlpsxx-fhr">
+	    	                <dl>
+	    		                <dt>支付及配送方式 </dt>
+	    		                <dd>支&nbsp;&nbsp;付&nbsp;&nbsp;方&nbsp;&nbsp;式：线下支付</dd>
+	    		                <dd>运&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;费：<span>￥1.00</span></dd>
+	    		                <dd>要求到货时间：2016-10-11 20:30:00</dd>
+	    	                </dl>
+	                    </div>
+	    <!-------------------物流方式------------------->
+	                    <div class="wlpsxx-fhr">
+	    	                <dl>
+	    		                <dt>发票信息 </dt>
+	    		                <dd>发&nbsp;&nbsp;票 &nbsp; 类&nbsp;&nbsp;型 ：普通发票</dd>
+	    		                <dd>发&nbsp;&nbsp;票 &nbsp; 抬&nbsp;&nbsp;头 ：彬彬有限公司</dd>
+	    		                <dd>发&nbsp;&nbsp;票 &nbsp; 内&nbsp;&nbsp;容 ：明细</dd>
+	    		                <dd>收 票人 姓 名&nbsp;&nbsp;：彬彬</dd>
+	    		                <dd>收票人手机号&nbsp;：1234545645</dd>
+	    		                <dd>送&nbsp;&nbsp;票 &nbsp; 地&nbsp;&nbsp;址 ：1345454</dd>
+	    	                </dl>
+	                    </div>                
+	    <!-------------------商品清单------------------->	
+	                    <div class="wlpsxx-qd">
+	    	                <h4>商品清单</h4>
+    	                    <table class="shop-table1" border="0" cellspacing="0" cellpadding="0">
+				                <tr>
+					                <th width="30%">商品信息</th>
+					                <th width="20%">规格</th>
+					                <th width="15%">单价</th>
+					                <th width="15%">数量</th>
+					                <th width="20%">小计</th>
+				                </tr>
+				                <tr>
+					                <td class="biao-tu" style="text-align:center"><img src="images/goods01.png" >Casio/卡西欧 EX-TR350EX/</td>
+					                <td>笔记本电脑</td>
+					                <td>7800.00元</td>
+                                    <td>1台</td>
+					                <td>7800.00元</td>
+				                </tr>
+			                </table>
+
+		                    <div class="cgf">
+		 	                    <p>采购方备注：</p>
+		 	                    <p>供应商备注：</p>
+		                    </div>	
+	                    </div>
+	 	        <div class="wlpsxx-fhr">
+	             <div class="view_div">
+				<div class="fl">
+					<div class="view_dd">
+						<span>总商品金额：</span><em><span>￥</span>0.24</em>
+					</div>
+					<div class="view_dd">	</div>
+					
+					<div class="view_dd">
+						<span>+运费：</span><em><span>￥</span>0.00
+							</em>
+					</div>
+					<div style="clear: both;"></div>
+				</div>
+				<div class="fl">
+					<div class="view_dd">
+						<span>订单总金额：</span><em><span>￥</span>0.24</em>
+					</div>
+					<div style="clear: both;"></div>
+				</div>
+            </div>
+            <div style="clear: both;"></div>
+			</div>
+			
+	 <!--------------总额提交-------------------->	
+                        <div class="tijiao">
+	                        <dl>
+		                        <dt></dt>
+		                        <dd><a class="fhgwc" href="my-daichuli.html">关闭</a></dd>
+	                            </dl>
+	                            <div style="clear: both;"></div>
+                        </div>   
+	                </div>
+			</div>
+		
+		
+		</div>
+    </div>
+</div>
+	</body>
+</html>

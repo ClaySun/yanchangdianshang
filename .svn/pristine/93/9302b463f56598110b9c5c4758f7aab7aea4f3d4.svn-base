@@ -1,0 +1,776 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>延长电商贸易平台</title>
+		<link rel="stylesheet" href="./css/style.css" />
+		<link rel="stylesheet" href="./css/iconfont.css" />
+		<link rel="stylesheet" href="./css/swiper.min.css" />
+		<link rel="stylesheet" type="text/css" href="./css/common.css">
+		<link rel="stylesheet" href="./css/mycss1.css" />
+		<script type="text/javascript" src="./js/jquery.js"></script>
+		<script type="text/javascript" src="js/jquery.Spinner.js"></script>
+		<script type="text/javascript" src="js/demo.js"></script>
+		<!--放大镜-->
+		<script type="text/javascript" src="js/jquery.imagezoom.min.js"></script>
+		<!--放大镜-->
+		<!--飞入购物车-->
+		<script type="text/javascript" src="js/jquery.fly.min.js"></script>
+		<script type="text/javascript" src="js/requestAnimationFrame.js"></script>
+		<script type="text/javascript" src="js/main.js"></script>
+		<!--飞入购物车-->
+		<style type="text/css">
+			.Spinner a {
+				height: 32px !important;
+			}
+			.Spinner a i {
+				margin-top: 10px;
+			}
+			.Spinner input {
+				height: 24px !important;
+			}
+			/*放大镜*/
+			.box {
+				width: 400px;
+			}
+			.tb-pic a {
+				display: table-cell;
+				text-align: center;
+				vertical-align: middle;
+			}
+			.tb-booth img {
+				width: 400px !important;
+				height: 300px !important;
+			}
+			.tb-pic img {
+				vertical-align: middle;
+				width: 68px;
+				height: 58px;
+			}
+			.tb-pic a {
+				*display: block;
+				*font-family: Arial;
+				*line-height: 1;
+			}
+			.tb-thumb {
+				margin: 10px 0 0;
+				overflow: hidden;
+			}
+			.tb-thumb li {
+				background: none repeat scroll 0 0 transparent;
+				float: left;
+				height: 70px;
+				margin-left: 8px;
+				overflow: hidden;
+			}
+			.tb-s310, .tb-s310 a {
+				height: 300px;
+				width: 400px;
+			}
+			.tb-s310, .tb-s310 img {
+				max-height: 300px;
+				max-width: 400px;
+			}
+			.tb-s310 a {
+				*font-size: 271px;
+			}
+			.tb-s40 a {
+				*font-size: 35px;
+			}
+			.tb-s40, .tb-s40 a {
+				height: 58px;
+				width: 68px;
+			}
+			.tb-booth {
+				border: 1px solid #CDCDCD;
+				position: relative;
+				z-index: 1;
+			}
+			.tb-thumb .tb-selected {
+				background: none repeat scroll 0 0 #bdbdbd;
+				height: 58px;
+				padding: 2px;
+			}
+			.tb-thumb .tb-selected div {
+				background-color: #FFFFFF;
+				border: medium none;
+			}
+			.tb-thumb li div {
+				border: 1px solid #CDCDCD;
+			}
+			div.zoomDiv {
+				z-index: 999;
+				position: absolute;
+				top: 0px;
+				right: 0px;
+				width: 400px !important;
+				height: 360px !important;
+				background: #ffffff;
+				border: 1px solid #CCCCCC;
+				display: none;
+				text-align: center;
+				overflow: hidden;
+				margin-left: 20px;
+			}
+			div.zoomMask {
+				position: absolute;
+				background: url(./images/mask.png) repeat scroll 0 0 transparent;
+				cursor: move;
+				z-index: 1;
+			}
+			/*放大镜*/
+			.u-flyer {
+				display: block;
+				width: 50px;
+				height: 50px;
+				border-radius: 50px;
+				position: fixed;
+				z-index: 9999;
+			}
+		</style>
+		<script>
+			$(document).ready(function() {
+				var imgul = '<a href="javascript:void(0)"><img src="images/goods02.jpg" rel="images/goods02.jpg" class="jqzoom details-img-big" style=" position: relative;" /></a>' + '<ul class="tb-thumb" id="thumblist">' + '	<li class="tb-selected"><div class="tb-pic tb-s40"><a href="javascript:void(0)"><img src="images/goods02.jpg" mid="images/goods02.jpg" big="images/goods02.jpg"></a></div></li>' + '	<li><div class="tb-pic tb-s40"><a href="javascript:void(0)"><img src="images/goods03.jpg" mid="images/goods03.jpg" big="images/goods03.jpg"></a></div></li>' + '	<li><div class="tb-pic tb-s40"><a href="javascript:void(0)"><img src="images/goods02.jpg" mid="images/goods02.jpg" big="images/goods02.jpg"></a></div></li>' + '	<li><div class="tb-pic tb-s40"><a href="javascript:void(0)"><img src="images/goods03.jpg" mid="images/goods03.jpg" big="images/goods03.jpg"></a></div></li>' + '	<li><div class="tb-pic tb-s40"><a href="javascript:void(0)"><img src="images/goods02.jpg" mid="images/goods02.jpg" big="images/goods02.jpg"></a></div></li>' + '</ul>';
+				$(".display-area").append(imgul);
+				$(".jqzoom").imagezoom();
+				$("#thumblist li a").live("click", function() {
+					$(this).parents("li").addClass("tb-selected").siblings().removeClass("tb-selected");
+					$(".jqzoom").attr('src', $(this).find("img").attr("mid"));
+					$(".jqzoom").attr('rel', $(this).find("img").attr("big"));
+				});
+				$("#d").Spinner();
+				$("#d1").Spinner();
+				$("#d2").Spinner();
+				$("#d3").Spinner();
+				var offset = $("#end").offset();
+				$(".addcar").click(function(event) {
+					var addcar = $(this);
+					var img = $(".display-area").find('img:first').attr('src');
+					var flyer = $('<img class="u-flyer" src="' + img + '">');
+					flyer.fly({
+						start : {
+							left : event.pageX,
+							top : event.pageY
+						},
+						end : {
+							left : offset.left + 10,
+							top : offset.top + 10,
+							width : 0,
+							height : 0
+						},
+						onEnd : function() {
+							$("#msg").show().animate({
+								width : '250px'
+							}, 200).fadeOut(1000);
+							addcar.css("cursor", "default").removeClass('orange').unbind('click');
+							this.destory();
+						}
+					});
+					var carnum = $("#rcart").text();
+					carnum++;
+					$("#rcart").text(carnum)
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<div class="topbar">
+			<div class="topbar-body">
+				<ul class="topbar-bd-l">
+					<li>
+						交易时间：<a style="color:#ec0000;">7:30-17:30（工作日）</a>
+					</li>
+					<li>
+						客服热线：029-88990909
+					</li>
+				</ul>
+				<ul class="topbar-bd-r">
+					<li class="login-info unlogin">
+						您好 ！欢迎来到延长电商贸易平台
+					</li>
+					<li class="unlogin">
+						<a class="tb-m-a2 blue user-login" href="login.html">请登录</a>
+					</li>
+					<li class="unlogin">
+						<a class="tb-m-a2 blue" href="register.html">免费注册</a>
+					</li>
+					<li>
+						<div class="menu-hd">
+							<a href="my-admin.html">我的平台</a><i><s>◇</s></i>
+						</div>
+						<div class="menu-bd">
+							<div class="menu-bd-panel menu-bd-panel1">
+								<div class="content1 ">
+									<a class="content1-infor1" href="#"><img src="images/banner1.jpg"></a>
+									<div class="content1-infor2 unlogin">
+										<div class="line1">
+											<a href="#">您好，请登录！</a>
+										</div>
+									</div>
+									<!--<div class="content1-infor2 logon">
+									<div class="line1">
+									Hi，<a class="user-name" href="#"></a>！
+									</div>
+									<a href="#" class="line2 user-tel"></a>
+									</div>-->
+								</div>
+								<div class="content2">
+									<div>
+										<a class="first" href="#" target="_top">我的订单</a><a href="" target="_top">积分管理</a>
+									</div>
+									<div>
+										<a class="first" href="#" target="_top">会员认证</a><a href="" target="_top">上传资源单</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="menu-hd">
+							<a href="#">我的设置</a><i><s>◇</s></i>
+						</div>
+						<div class="menu-bd">
+							<div class="menu-bd-panel menu-bd-panel3">
+								<a class="first" target="_top" href="#">订单管理</a><a target="_top" href="#">资源管理</a>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="menu-hd">
+							<a href="#">财物车</a><i><s>◇</s></i>
+						</div>
+						<div class="menu-bd">
+							<div class="menu-bd-panel menu-bd-panel3">
+								<a class="first" target="_top" href="#">任你花</a><a target="_top" href="#">帮你采</a>
+								<a target="_top" href="#">随你押</a>
+							</div>
+						</div>
+					</li>
+					<!--<li class="tb-m-line">|</li>!-->
+					<li>
+						<div class="menu-hd">
+							<a href="#">帮助中心</a><i><s>◇</s></i>
+						</div>
+						<div class="menu-bd">
+							<div class="menu-bd-panel menu-bd-panel3">
+								<a class="first" target="_top" href="#">帮助中心</a><a target="_top" href="#">帮助中心</a><a class="first" target="_top" href="#">帮助中心</a><a target="_top" href="#">帮助中心</a>
+							</div>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class="header">
+			<div class="logo">
+				<a hidefocus="true" href="#"></a>
+			</div>
+			<div class="hd-search">
+				<div class="search-bd">
+					<div class="search-triggers">
+						<ul>
+							<li>
+								<a>超市 </a>
+							</li>
+							<li>
+								<a href="#">全部</a>
+							</li>
+							<li>
+								<a href="#">商城</a>
+							</li>
+							<li>
+								<a href="#">市场</a>
+							</li>
+						</ul>
+						<i></i>
+					</div>
+					<div class="search-i">
+						<form class="f-cb" method="post" onSubmit="return checkKwInput();" action="#" id="search" name="search">
+							<div class="search-button">
+								<button id="resSeachButton" class="btn-search s-search" type="submit">
+									搜一下
+								</button>
+							</div>
+							<div class="search-combobox">
+								<div class="search-combobox-input">
+									<input type="hidden" value="" name="ci" id="ci_code">
+									<input id="kwInput1" placeholder="请输入关键词查询" autocomplete="off" onFocus="this.style.color='#666';" onBlur="this.style.color='#666';" x-webkit-speech="" x-webkit-grammar="builtin:translate">
+									<input type="hidden" name="kw" id="kwInput2">
+								</div>
+							</div>
+						</form>
+					</div>
+					<div class="search-result">
+						<!-- 当前搜索  -->
+						<!-- 类似搜索  -->
+						<ul class="sear-res">
+							<li>
+								<a href="#"><span class="sear-res-l">螺纹钢</span></a>
+							</li>
+							<li>
+								<a href="#"><span class="sear-res-l">HRB400</span></a>
+							</li>
+							<li>
+								<a href="#"><span class="sear-res-l">HRB400E</span></a>
+							</li>
+							<li>
+								<a href="#"><span class="sear-res-l">Q235</span></a>
+							</li>
+							<li>
+								<a href="#"><span class="sear-res-l">Q235B</span></a>
+							</li>
+						</ul>
+						<!-- 搜索历史  -->
+						<ul class="sear-history">
+							<li>
+								<a href="#"><span class="sear-res-l">HRB400</span><span class="sear-res-r">搜索历史</span></a>
+							</li>
+							<li>
+								<a href="#"><span class="sear-res-l">HRB400B</span><span class="sear-res-r">搜索历史</span></a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="header-nav-btn">
+				<!--<a class="header-nav-btn1 mn-ico1" href="#"><i></i>积分商城</a>!-->
+				<a class="header-nav-btn1 mn-ico2" id="end" href="shop-car.html"><i></i>我的购物车<span class="count" id="rcart">0</span></a>
+				<div class="cart-panel">
+					<div class="cartlist">
+						共选中 <b class="orange"><span id="itemTotalTemp">0</span></b> 件货物（<b class="orange"><span id="averageQtyTotalTemp">0</span></b> 吨）&nbsp;
+						<br />
+						总价 <b><span id="priceTotalTemp">0</span></b>元
+					</div>
+					<a class="shop-car.html" href="cart_list.html">查看购物车</a>
+				</div>
+			</div>
+			<div class="header-app">
+				<div class="menu-bd-panel2">
+					<ul>
+						<li class="mrgR10"><img src="images/app.gif">
+						</li>
+						<li><img src="images/app.gif">
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="m-nav">
+			<div class="auto">
+				<ul class="main-nav">
+					<li class="nav-main">
+						<a href="index.html">首页</a>
+					</li>
+					<li class="nav-main">
+						<a href="big-company.html">大企业专场</a>
+					</li>
+					<li class="nav-main">
+						<a href="purchase-big.html">大宗商品市场</a>
+					</li>
+					<li class="nav-main">
+						<a href="gongyepin_market.html">工业品市场</a>
+					</li>
+					<li class="nav-main">
+						<a href="caigou_session.html">采购专场</a>
+					</li>
+					<!--<li class="nav-main"><a class="nav-process" href="#">竞价专场</a></li>-->
+					<li class="nav-main">
+						<a href="#">电子招投标</a>
+					</li>
+					<li class="nav-main">
+						<a href="supermarkets.html">电子商城</a>
+					</li>
+					<li class="nav-main">
+						<a href="purchase02.html">民生超市</a>
+					</li>
+					<li class="nav-main">
+						<a href="#">金融服务</a>
+					</li>
+					<li class="nav-main">
+						<a href="#">社区</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class="bread-nav">
+			<a href="#" class="fontW">全部结果 </a> > <a href="#">粮油副食</a> > <a href="#">大米</a> > 金龙鱼大米
+		</div>
+		<div class="content-details">
+			<div class="display-area floatL"></div>
+			<div class="content-area floatL">
+				<div class="font16 fontW">
+					金龙鱼 东北大米 蟹稻共生 盘锦大米5KG
+				</div>
+				<div style=" background-color: #f0f0f0; padding-bottom: 12px; padding-top: 12px; padding-left: 8px; margin-top: 12px;">
+					<dl class="floatL">
+						<dt>
+							<div>
+								原&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;价：<span style=" color: #999; text-decoration: line-through;">¥90.00</span>
+							</div>
+						</dt>
+						<dd>
+							<div class="marTop8">
+								销&nbsp;&nbsp;售&nbsp;价：<span class="font18 fontW color-f00">¥30.00</span>
+							</div>
+						</dd>
+					</dl>
+					<dl class="floatR marRight8 marLeft8">
+						<dt style=" color: #999; text-align: center;">
+							13734
+						</dt>
+						<dd style=" color: #999; text-align: center;">
+							交易成功
+						</dd>
+					</dl>
+					<dl class="floatR marRight8 marLeft8">
+						<dt style=" color: #999; text-align: center;">
+							23734
+						</dt>
+						<dd style=" color: #999; text-align: center;">
+							累计评论
+						</dd>
+					</dl>
+					<div class="clearfix"></div>
+				</div>
+				<div class="marTop8">
+					<span class="title-span">浏览次数：</span><span class="font16 color999">998</span>
+				</div>
+				<div class="marTop8">
+					<span class="title-span">上月成交：</span><span class="font16 color999">256</span>
+				</div>
+				<div class="marTop8">
+					<span class="title-span">商品评分：</span><span class="font16 color999">5.6分</span>
+				</div>
+				<div class="marTop8">
+					<span class="title-span">上架时间：</span><span class="font16 color999">2016-10-13 10:36:40</span>
+				</div>
+				<!--<div class="marTop8">
+				<span class="title-span">配送：</span>
+				<span >陕西省西安市配送至</span>
+				<select>
+				<option>北京</option>
+				<option>上海</option>
+				<option>深圳</option>
+				</select>
+				<select>
+				<option>快递 免运费</option>
+				<option>顺丰 12元</option>
+				</select>
+				<div class="clearfix"></div>
+				</div>-->
+				<div class="marTop8">
+					<span class="floatL padTop4 title-span">支付类型：</span>
+					<ul class="condition-vary">
+						<li class="condition-vary-active">
+							在线支付
+						</li>
+						<li>
+							网银转账
+						</li>
+						<li>
+							货到付款
+						</li>
+					</ul>
+					<div class="clearfix"></div>
+				</div>
+				<div class="marTop8">
+					<span class="floatL padTop4 title-span">服务：</span>
+					<ul class="condition-vary">
+						<li class="condition-vary-active">
+							一年内换新
+						</li>
+						<li>
+							两年内换新
+						</li>
+					</ul>
+					<div class="clearfix"></div>
+				</div>
+				<div class="marTop8">
+					<span class="floatL padTop4 title-span">购买数量：</span>
+					<!--<div class="coperation-btn floatL marLeft8 border-right-none">-</div>-->
+					<div id="d" class="Spinner"></div>
+					<!--<input type="text" class="num-input floatL" id="d" value="1" />-->
+					<!--<span class="coperation-btn floatL border-left-none">+</span>-->
+					<div class="color999 marLeft20 padTop4">
+						2000把可售
+					</div>
+					<div class="clearfix"></div>
+				</div>
+				<div style=" margin-top: 20px;">
+					<a href="shop-car.html" class="purchase marRight8">立即购买</a>
+					<a href="#" class="get-in addcar">加入购物车</a>
+				</div>
+			</div>
+			<div class="clearfix"></div>
+		</div>
+		<table style=" width: 1200px; margin: 0 auto;">
+			<thead style=" background-color: #eee;">
+				<tr>
+					<td align="center" class=" border-all-ddd">序号</td>
+					<td align="center" class=" border-all-ddd">名称</td>
+					<td align="center" class=" border-all-ddd">材质</td>
+					<td align="center" class=" border-all-ddd">规格型号</td>
+					<td align="center" class=" border-all-ddd">规格</td>
+					<td align="center" class=" border-all-ddd">其他参数</td>
+					<td align="center" class=" border-all-ddd">单品编号</td>
+					<td align="center" class=" border-all-ddd">单品描述</td>
+					<td align="center" class=" border-all-ddd">采购数量</td>
+					<td align="center" class=" border-all-ddd">计量单位</td>
+					<td align="center" class=" border-all-ddd">单价</td>
+				</tr>
+				<tr>
+					<td align="center" height="28" class=" border-all-ddd"></td>
+					<td align="center" class=" border-all-ddd">
+					<select>
+						<option>全部</option>
+						<option></option>
+						<option></option>
+					</select></td>
+					<td align="center" class=" border-all-ddd">
+					<select>
+						<option>全部</option>
+						<option></option>
+						<option></option>
+					</select></td>
+					<td align="center" class=" border-all-ddd">
+					<select>
+						<option>全部</option>
+						<option></option>
+						<option></option>
+					</select></td>
+					<td align="center" class=" border-all-ddd">
+					<select>
+						<option>全部</option>
+						<option></option>
+						<option></option>
+					</select></td>
+					<td align="center" class=" border-all-ddd">
+					<select>
+						<option>全部</option>
+						<option></option>
+						<option></option>
+					</select></td>
+					<td align="center" class=" border-all-ddd">
+					<select>
+						<option>全部</option>
+						<option></option>
+						<option></option>
+					</select></td>
+					<td align="center" class=" border-all-ddd">
+					<select>
+						<option>全部</option>
+						<option></option>
+						<option></option>
+					</select></td>
+					<td align="center" class=" border-all-ddd"></td>
+					<td align="center" class=" border-all-ddd"></td>
+					<td align="center" class=" border-all-ddd"></td>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td align="center" height="40" class=" border-all-ddd">1</td>
+					<td align="center" class=" border-all-ddd">车削刀具</td>
+					<td align="center" class=" border-all-ddd">HRB400</td>
+					<td align="center" class=" border-all-ddd">18</td>
+					<td align="center" class=" border-all-ddd">-</td>
+					<td align="center" class=" border-all-ddd">-</td>
+					<td align="center" class=" border-all-ddd">1</td>
+					<td align="center" class=" border-all-ddd">刀具</td>
+					<td align="center" class=" border-all-ddd" style=" position: relative;"><div id="d1" class="Spinner" style=" position: absolute; top: 2px; left: 50%; margin-left: -45px;"></div></td>
+					<td align="center" class=" border-all-ddd">把</td>
+					<td align="center" class="color-f00 border-all-ddd">120元/把</td>
+				</tr>
+				<tr>
+					<td align="center" height="40" class=" border-all-ddd">2</td>
+					<td align="center" class=" border-all-ddd">车削刀具</td>
+					<td align="center" class=" border-all-ddd">HRB400</td>
+					<td align="center" class=" border-all-ddd">18</td>
+					<td align="center" class=" border-all-ddd">-</td>
+					<td align="center" class=" border-all-ddd">-</td>
+					<td align="center" class=" border-all-ddd">1</td>
+					<td align="center" class=" border-all-ddd">刀具</td>
+					<td align="center" class=" border-all-ddd" style=" position: relative;"><div id="d2" class="Spinner" style=" position: absolute; top: 2px; left: 50%; margin-left: -45px;"></div></td>
+					<td align="center" class=" border-all-ddd">把</td>
+					<td align="center" class="color-f00 border-all-ddd">120元/把</td>
+				</tr>
+				<tr>
+					<td align="center" height="40" class=" border-all-ddd">3</td>
+					<td align="center" class=" border-all-ddd">车削刀具</td>
+					<td align="center" class=" border-all-ddd">HRB400</td>
+					<td align="center" class=" border-all-ddd">18</td>
+					<td align="center" class=" border-all-ddd">-</td>
+					<td align="center" class=" border-all-ddd">-</td>
+					<td align="center" class=" border-all-ddd">1</td>
+					<td align="center" class=" border-all-ddd">刀具</td>
+					<td align="center" class=" border-all-ddd" style=" position: relative;"><div id="d3" class="Spinner" style=" position: absolute; top: 2px; left: 50%; margin-left: -45px;"></div></td>
+					<td align="center" class=" border-all-ddd">把</td>
+					<td align="center" class="color-f00 border-all-ddd">120元/把</td>
+				</tr>
+			</tbody>
+		</table>
+		<div class="content-down">
+			<!--<div class="content-down-left floatL">
+			<div class="content-down-left-title">相似产品</div>
+			<dl class="goods-list">
+			<dt>
+			<img src="images/u158.jpg" style=" display: inline;">
+			</dt>
+			<dd>新米 真道东北大米稻花香大米5kg 10斤米当期</dd>
+			<dd>¥58.00</dd>
+			</dl>
+			<dl class="goods-list">
+			<dt>
+			<img src="images/u158.jpg" style=" display: inline;">
+			</dt>
+			<dd>新米 真道东北大米稻花香大米5kg 10斤米当期</dd>
+			<dd>¥58.00</dd>
+			</dl>
+			</div>-->
+			<div class="border-all-ddd">
+				<ul class="content-down-condition">
+					<li class="content-down-condition-active">
+						商品介绍
+					</li>
+					<li>
+						规格参数
+					</li>
+					<li>
+						包装清单
+					</li>
+					<li>
+						物流配送
+					</li>
+					<li>
+						售后保障
+					</li>
+					<div class="clearfix"></div>
+				</ul>
+				<div class="goods-list-each">
+					<ul class="goods-each-attr">
+						<li>
+							<dl>
+								<dt>
+									商品名称：
+								</dt>
+								<dd>
+									金龙鱼大米
+								</dd>
+							</dl>
+						</li>
+						<li>
+							<dl>
+								<dt>
+									品牌：
+								</dt>
+								<dd>
+									延长
+								</dd>
+							</dl>
+						</li>
+						<li>
+							<dl>
+								<dt>
+									上架时间：
+								</dt>
+								<dd>
+									2016-12-05 14:31:00
+								</dd>
+							</dl>
+						</li>
+						<div class="clearfix"></div>
+					</ul>
+					<ul class="goods-each-attr">
+						<li>
+							<dl>
+								<dt>
+									商品毛重：
+								</dt>
+								<dd>
+									20kg
+								</dd>
+							</dl>
+						</li>
+						<li>
+							<dl>
+								<dt>
+									商品产地：
+								</dt>
+								<dd>
+									中国陕西
+								</dd>
+							</dl>
+						</li>
+						<div class="clearfix"></div>
+					</ul>
+				</div>
+				<div class="goods-list-introduce">
+					<img src="images/u160.png" />
+					<!--<img src="images/u162.png" />
+					<img src="images/u166.png" />-->
+				</div>
+			</div>
+			<div class="clearfix"></div>
+		</div>
+		<div class="friends">
+			<div class="friends-title">
+				合作伙伴
+			</div>
+			<img src="images/partner01.jpg" />
+			<img src="images/partner02.jpg" />
+			<img src="images/partner03.jpg" />
+			<img src="images/partner04.jpg" />
+			<img src="images/partner05.jpg" />
+			<img src="images/partner06.jpg" />
+			<div class="clearfix"></div>
+		</div>
+		<div class="footer-bottom">
+			<p>地址：陕西省西安市雁塔区沣惠南路中华世纪城（东门）商住楼8号楼二层 电话：029-88990909 传真：029-89286898 邮编：710065 </p>
+			<p>上海石油交易所西部有限公司 版权所有 陕ICP备09004887号 <img src="images/police.png" class="police" />陕公网安备 61019002000027号</p>
+			<div class="foot-img-box">
+				<a><img src="images/foot-img1.jpg"></a>
+				<a><img src="images/foot-img2.jpg"></a>
+				<a><img src="images/foot-img3.jpg"></a>
+				<a><img src="images/foot-img4.jpg"></a>
+			</div>
+		</div>
+		<!--<div class="footer">
+			<div class="footer-nav">
+				<a href="#">首页</a>| <a href="#">关于我们</a>| <a href="#">帮助中心</a>| <a href="#">联系我们</a>
+			</div>
+			<div class="addr">
+				地址：陕西省西安市雁塔区沣惠南路中华世纪城（东门）商住楼8号楼二层 电话：029-88990909 传真：029-89286898 邮编：710065
+			</div>
+			<div class="copyright">
+				上海石油交易所西部有限公司 版权所有 陕ICP备09004887号 <img src="images/police.png" class="police" />陕公网安备 61019002000027号
+			</div>
+		</div>-->
+	</body>
+	<script type="text/javascript">
+		// 产品名称、产品型号等下面选项颜色改变
+		$(".cell-style").click(function() {
+			$(this).addClass("border-f00").siblings().removeClass("border-f00")
+		})
+		//排序选项颜色改变
+		$(".content-down-condition>li").click(function() {
+			$(this).addClass("content-down-condition-active").siblings().removeClass("content-down-condition-active")
+		})
+		$(".condition-vary>li").click(function() {
+			$(this).addClass("condition-vary-active").siblings().removeClass("condition-vary-active")
+		})
+		$(".condition-vary>li").click(function() {
+			$(this).siblings().find(".icon-shang").removeClass("icon-shang color-fff").addClass("icon-shang-copy-copy color333")
+			$(this).find(".icon-shang-copy-copy").removeClass("icon-shang-copy-copy").addClass("icon-shang color-fff")
+		})
+		//每页显示、分页选项颜色改变
+		$(".condition-each02>li").click(function() {
+			$(this).addClass("condition-each02-active").siblings().removeClass("condition-each02-active")
+		})
+		//好评星星的变化
+		$("#num>span").click(function() {
+			$(this).removeClass("icon-wujiaoxing")
+			$(this).siblings().removeClass("icon-wujiaoxing")
+			$(this).addClass("icon-wujiaoxing")
+			$(this).prevAll().addClass("icon-wujiaoxing")
+		})
+	</script>
+</html>

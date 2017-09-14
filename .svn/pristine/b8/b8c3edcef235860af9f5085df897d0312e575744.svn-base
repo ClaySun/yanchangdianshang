@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>确认客户收货</title>
+		<link rel="stylesheet" href="./css/index-style.css" />
+		<link rel="stylesheet" type="text/css" href="./css/common.css">
+		<link rel="stylesheet" href="./css/mycss1.css" />
+		<link href="./css/tradaccount.css" rel="stylesheet" type="text/css">
+		<script type="text/javascript" src="js/jquery.min.js"></script>
+		<script type="text/javascript" src="layer/layer.js"></script>
+		<script type="text/javascript" src="js/main.js"></script>
+		<!------查看保密协议------->
+		<script>
+			$(function() {
+				//初始化
+				initdq();
+				//地区编辑时初始化
+				function initdq() {
+				}
+
+				/*--------查看订单--------*/
+				$(".goods-pf").click(function() {
+					layer.confirm('请先选择描述相符程度！', {
+						btn : ['<span id="vip-ok">确定</span>', '<span id="vip-cancel">取消</span>'] //按钮
+					}, function() {
+						layer.msg('删除成功', {
+							icon : 1
+						});
+					}, function() {
+						layer.msg('删除成功', {
+							time : 2000, //20s后自动关闭
+							btn : ['知道了', '关闭']
+						});
+					});
+				});
+				$("#vip-cancel").live("click", function() {
+					layer.closeAll()
+				})
+				$("#vip-ok").live("click", function() {
+					layer.closeAll()
+				})
+				$(".layui-layer-close").live("click", function() {
+					layer.closeAll()
+				})
+				//	    		$(".table-vip td").live("mouseenter",function(){
+				//	    			$(".table-vip tr").removeClass("bg-eee")
+				//	    			$(this).parent("tr").addClass("bg-eee")
+				//	    		})
+				$(".table-vip td").live("click", function() {
+					$(".table-vip tr").removeClass("bg-eee")
+					$(this).parent("tr").addClass("bg-eee")
+					$(this).parent("tr").find("input").attr("checked", "checked")
+				})
+				$(".table-vip #title-talbevip").live("click", function() {
+					$(".table-vip tr").removeClass("bg-ddd")
+					$(this).parent("tr").addClass("bg-ddd")
+				})
+			})
+		</script>
+	</head>
+	<body>
+		<div class="topbar">
+			<div class="topbar-body">
+				<ul class="topbar-bd-l">
+					<li>
+						交易时间：<a style="color:#ec0000;">7:30-17:30（工作日）</a>
+					</li>
+					<li>
+						客服热线：029-88990909
+					</li>
+				</ul>
+				<ul class="topbar-bd-r">
+					<li class="login-info unlogin">
+						您好 ！欢迎来到延长电商贸易平台
+					</li>
+					<li class="unlogin">
+						<a class="tb-m-a2 blue user-login" href="login.html">请登录</a>
+					</li>
+					<li class="unlogin">
+						<a class="tb-m-a2 blue" href="register.html">免费注册</a>
+					</li>
+					<li>
+						<div class="menu-hd">
+							<a href="my-admin.html">我的平台</a><i><s>◇</s></i>
+						</div>
+						<div class="menu-bd">
+							<div class="menu-bd-panel menu-bd-panel1">
+								<div class="content1 ">
+									<a class="content1-infor1" href="#"><img src="images/banner1.jpg"></a>
+									<div class="content1-infor2 unlogin">
+										<div class="line1">
+											<a href="#">您好，请登录！</a>
+										</div>
+									</div>
+									<!--<div class="content1-infor2 logon">
+										<div class="line1">
+											Hi，<a class="user-name" href="#"></a>！
+										</div>
+										<a href="#" class="line2 user-tel"></a>
+									</div>-->
+								</div>
+								<div class="content2">
+									<div>
+										<a class="first" href="#" target="_top">我的订单</a><a href="" target="_top">积分管理</a>
+									</div>
+									<div>
+										<a class="first" href="#" target="_top">会员认证</a><a href="" target="_top">上传资源单</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="menu-hd">
+							<a href="#">我的设置</a><i><s>◇</s></i>
+						</div>
+						<div class="menu-bd">
+							<div class="menu-bd-panel menu-bd-panel3">
+								<a class="first" target="_top" href="#">订单管理</a><a target="_top" href="#">资源管理</a>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="menu-hd">
+							<a href="#">财物车</a><i><s>◇</s></i>
+						</div>
+						<div class="menu-bd">
+							<div class="menu-bd-panel menu-bd-panel3">
+								<a class="first" target="_top" href="#">任你花</a><a target="_top" href="#">帮你采</a>
+								<a target="_top" href="#">随你押</a>
+							</div>
+						</div>
+					</li>
+					<!--<li class="tb-m-line">|</li>!-->
+					<li>
+						<div class="menu-hd">
+							<a href="#">帮助中心</a><i><s>◇</s></i>
+						</div>
+						<div class="menu-bd">
+							<div class="menu-bd-panel menu-bd-panel3">
+								<a class="first" target="_top" href="#">帮助中心</a><a target="_top" href="#">帮助中心</a><a class="first" target="_top" href="#">帮助中心</a><a target="_top" href="#">帮助中心</a>
+							</div>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class="header">
+			<div class="logo">
+				<a hidefocus="true" href="#"></a>
+			</div>
+			<div class="hd-search">
+				<div class="search-bd">
+					<div class="search-triggers">
+						<ul>
+							<li>
+								<a>超市 </a>
+							</li>
+							<li>
+								<a href="#">全部</a>
+							</li>
+							<li>
+								<a href="#">超市</a>
+							</li>
+							<li>
+								<a href="#">集市</a>
+							</li>
+						</ul>
+						<i></i>
+					</div>
+					<div class="search-i">
+						<form class="f-cb" method="post" onSubmit="return checkKwInput();" action="#" id="search" name="search">
+							<div class="search-button">
+								<button id="resSeachButton" class="btn-search s-search" type="submit">
+									搜一下
+								</button>
+							</div>
+							<div class="search-combobox">
+								<div class="search-combobox-input">
+									<input type="hidden" value="" name="ci" id="ci_code">
+									<input id="kwInput1" placeholder="请输入关键词查询" autocomplete="off" onFocus="this.style.color='#666';" onBlur="this.style.color='#666';" x-webkit-speech="" x-webkit-grammar="builtin:translate">
+									<input type="hidden" name="kw" id="kwInput2">
+								</div>
+							</div>
+						</form>
+					</div>
+					<div class="search-result">
+						<!-- 当前搜索  -->
+						<!-- 类似搜索  -->
+						<ul class="sear-res">
+							<li>
+								<a href="#"><span class="sear-res-l">螺纹钢</span></a>
+							</li>
+							<li>
+								<a href="#"><span class="sear-res-l">HRB400</span></a>
+							</li>
+							<li>
+								<a href="#"><span class="sear-res-l">HRB400E</span></a>
+							</li>
+							<li>
+								<a href="#"><span class="sear-res-l">Q235</span></a>
+							</li>
+							<li>
+								<a href="#"><span class="sear-res-l">Q235B</span></a>
+							</li>
+						</ul>
+						<!-- 搜索历史  -->
+						<ul class="sear-history">
+							<li>
+								<a href="#"><span class="sear-res-l">HRB400</span><span class="sear-res-r">搜索历史</span></a>
+							</li>
+							<li>
+								<a href="#"><span class="sear-res-l">HRB400B</span><span class="sear-res-r">搜索历史</span></a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="header-nav-btn">
+				<!--<a class="header-nav-btn1 mn-ico1" href="#"><i></i>积分商城</a>!-->
+				<a class="header-nav-btn1 mn-ico2" href="shop-car.html"><i></i>我的购物车<span class="count" id="rcart">0</span></a>
+				<div class="cart-panel">
+					<div class="cartlist">
+						共选中 <b class="orange"><span id="itemTotalTemp">0</span></b> 件货物（<b class="orange"><span id="averageQtyTotalTemp">0</span></b> 吨）&nbsp;
+						<br />
+						总价 <b><span id="priceTotalTemp">0</span></b>元
+					</div>
+					<a class="shop-car.html" href="cart_list.html">查看购物车</a>
+				</div>
+			</div>
+			<div class="header-app">
+				<div class="menu-bd-panel2">
+					<ul>
+						<li class="mrgR10"><img src="images/app.gif">
+						</li>
+						<li><img src="images/app.gif">
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="m-nav">
+			<div class="auto">
+				<ul class="main-nav">
+					<li class="nav-main">
+						<a href="index.html">首页</a>
+					</li>
+					<li class="nav-main">
+						<a href="big-company.html">大企业专场</a>
+					</li>
+					<li class="nav-main">
+						<a href="purchase-big.html">大宗商品专场</a>
+					</li>
+					<li class="nav-main">
+						<a href="gongyepin_market.html">工业品市场</a>
+					</li>
+					<li class="nav-main">
+						<a href="caigou_session.html">采购专场</a>
+					</li>
+					<!--<li class="nav-main"><a class="nav-process" href="#">竞价专场</a></li>-->
+					<li class="nav-main">
+						<a href="#">电子招投标</a>
+					</li>
+					<li class="nav-main">
+						<a href="supermarkets.html">电子商城</a>
+					</li>
+					<li class="nav-main">
+						<a href="purchase02.html">民生超市</a>
+					</li>
+					<li class="nav-main">
+						<a href="#">金融服务</a>
+					</li>
+					<li class="nav-main">
+						<a href="#">社区</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<!-------------------我的平台------------------->
+		<div class="my-admin-body">
+			<!------------左侧导航开始！------------>
+			<div class="my-admin-left">
+				<div class="menu_title"></div>
+				<div class="menu_label">
+					<a href="#">钢铁交易</a>
+				</div>
+				<ul>
+					<h1>商铺管理</h1>
+					<li>
+						<a href="#">商铺管理</a>
+					</li>
+					<li>
+						<a href="#">信息维护</a>
+					</li>
+					<li>
+						<a href="#">留言管理</a>
+					</li>
+				</ul>
+				<ul>
+					<h1>我是卖家</h1>
+					<li>
+						<a href="my-admin.html">商品管理</a>
+					</li>
+					<li>
+						<a href="my-daichuli.html">销售订单</a>
+					</li>
+					<li>
+						<a href="my-service.html">售后服务</a>
+					</li>
+					<li>
+						<a href="my-zhanghu-admin.html">交易账户</a>
+					</li>
+					<li>
+						<a href="#">挂牌管理</a>
+					</li>
+					<li>
+						<a href="#">竞拍管理</a>
+					</li>
+					<li>
+						<a href="#">竞拍查看</a>
+					</li>
+					<li>
+						<a href="#">应标管理</a>
+					</li>
+					<li>
+						<a href="#">询价管理</a>
+					</li>
+					<li>
+						<a href="#">合同管理</a>
+					</li>
+					<li>
+						<a href="#">提单管理</a>
+					</li>
+					<li>
+						<a href="#">到款管理</a>
+					</li>
+					<li>
+						<a href="#">结算管理</a>
+					</li>
+					<li>
+						<a href="#">发票管理</a>
+					</li>
+					<li>
+						<a href="#">销售统计</a>
+					</li>
+				</ul>
+				<ul>
+					<h1>客户</h1>
+					<li>
+						<a href="supermarkets.html">商品选购</a>
+					</li>
+					<li class="on">
+						<a href="my-shop.html">采购订单</a>
+					</li>
+					<li>
+						<a href="my-shop-shouhou.html">售后服务</a>
+					</li>
+					<li>
+						<a href="my-zhanghu-shop.html">交易账户</a>
+					</li>
+				</ul>
+				<ul>
+					<h1>物流商</h1>
+					<li>
+						<a href="my-wuliu.html">物流管理</a>
+					</li>
+					<li>
+						<a href="my-zhanghu-wuliu.html">交易账户</a>
+					</li>
+				</ul>
+				<ul>
+					<h1>招标管理</h1>
+					<li>
+						<a href="#">评标管理</a>
+					</li>
+					<li>
+						<a href="#">标书管理</a>
+					</li>
+					<li>
+						<a href="#">专家管理</a>
+					</li>
+					<li>
+						<a href="#">招标管理</a>
+					</li>
+					<li>
+						<a href="#">标书费用管理</a>
+					</li>
+					<li>
+						<a href="#">专家签到情况</a>
+					</li>
+				</ul>
+				<ul>
+					<h1>基本设置</h1>
+					<li>
+						<a href="#">费用查询</a>
+					</li>
+				</ul>
+				<ul>
+					<h1>供求设置</h1>
+					<li>
+						<a href="#">供应发布</a>
+					</li>
+					<li>
+						<a href="#">采购发布</a>
+					</li>
+				</ul>
+				<div class="menu_label">
+					<a href="#">资金中心</a>
+				</div>
+				<div class="menu_label">
+					<a href="#">设置中心</a>
+				</div>
+				<div class="menu_label">
+					<a href="#">运力平台</a>
+				</div>
+			</div>
+			<!------------右侧内容开始！------------>
+			<div class="my-admin-right">
+				<!-------合同管理-------->
+				<div class="htgl tab1" id="tab1">
+					<div class="menu posi-re">
+						<ul>
+							<li id="one4" class="one11 off" onclick="setTab('one',1)">
+								<a href="#">商品评分</a>
+							</li>
+						</ul>
+						<div class="brea-nav">
+							您的位置：<a href="my-shop.html">采购订单</a>><a href="my-shop.html">已完成订单</a>>商品评分<a href="my-admin-xz.html" style=" margin-left: 24px; margin-right: 12px; color: #f00;"></a>
+						</div>
+					</div>
+					<div class="menudiv">
+						<!-------------------订单详细------------------->
+						<div class="wlpsxx2">
+							<!--<div class="wlpsxx-tit2"><a href="#">订单信息</a></div>-->
+							<!-------------------单位信息------------------->
+							<div class="wlpsxx-qd">
+								<h4>商品清单</h4>
+								<table class="shop-table5" border="0" cellspacing="0" cellpadding="0">
+									<thead>
+										<tr>
+											<th>
+											<input class="gouxuan" type="checkbox">
+											</th>
+											<th>订单号</th>
+											<th>订单商品</th>
+											<th class="gg" width="260">规格</th>
+											<th>成交价</th>
+											<th>数量</th>
+											<th>操作</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>
+											<input class="gouxuan" type="checkbox">
+											</td>
+											<td class="ddh">455224566</td>
+											<td class="spbt"><a href="#"><img src="images/goods01.jpg" width="50" height="50"><img src="images/goods01.jpg" width="50" height="50"></a></td>
+											<td>联想笔记本联想笔记本联想笔记本
+											<br>
+											配置： 基本配置
+											<br>
+											支付类型： 类型1</td>
+											<td>2.00</td>
+											<td class="wsj">1</td>
+											<td class="caozuo">
+											<dl class="dl-dd">
+												<dd>
+													<a href="javascript:;" class="goods-pf">评分</a>
+												</dd>
+											</dl></td>
+										</tr>
+										<tr>
+											<td>
+											<input class="gouxuan" type="checkbox">
+											</td>
+											<td class="ddh">455224566</td>
+											<td class="spbt"><a href="#"><img src="images/goods01.jpg" width="50" height="50"><img src="images/goods01.jpg" width="50" height="50"></a></td>
+											<td>联想笔记本联想笔记本联想笔记本
+											<br>
+											配置： 基本配置
+											<br>
+											支付类型： 类型1</td>
+											<td>2.00</td>
+											<td class="wsj">3</td>
+											<td class="caozuo">
+											<dl class="dl-dd">
+												<dd>
+													<a href="javascript:;" class="goods-pf">评分</a>
+												</dd>
+											</dl></td>
+										</tr>
+										<tr>
+											<td>
+											<input class="gouxuan" type="checkbox">
+											</td>
+											<td class="ddh">455224566</td>
+											<td class="spbt"><a href="#"><img src="images/goods01.jpg" width="50" height="50"><img src="images/goods01.jpg" width="50" height="50"></a></td>
+											<td>联想笔记本联想笔记本联想笔记本
+											<br>
+											配置： 基本配置
+											<br>
+											支付类型： 类型1</td>
+											<td>2.00</td>
+											<td class="wsj">2</td>
+											<td class="caozuo">
+											<dl class="dl-dd">
+												<dd>
+													<a href="javascript:;" class="goods-pf">评分</a>
+												</dd>
+											</dl></td>
+										</tr>
+									</tbody>
+								</table>
+								<div class="aftersal_stardl">
+									<div class="aftersal_stardt">
+										<em>*</em>评&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;分：
+									</div>
+									<div class="aftersal_stardd">
+										<ul>
+											<li>
+												<dl>
+													<dt style="width: 135px">
+														<p class="spanFloat" title="描述相符程度" style="letter-spacing: 3px; word-spacing: 3px; margin-left: 3px;">
+															描述相符程度
+															:
+														</p>
+													</dt>
+													<dd>
+														<span>
+															<input name="fs0" alt="描述相符程度" title="非常满意" id="fs0_4" value="5" type="radio">
+															<label for="fs0_4"> <img src="http://files.ourebuy.com/images/cngc/newPage/stara.jpg" alt="非常满意" title="非常满意"> <img src="http://files.ourebuy.com/images/cngc/newPage/stara.jpg" alt="非常满意" title="非常满意"> <img src="http://files.ourebuy.com/images/cngc/newPage/stara.jpg" alt="非常满意" title="非常满意"> <img src="http://files.ourebuy.com/images/cngc/newPage/stara.jpg" alt="非常满意" title="非常满意"> <img src="http://files.ourebuy.com/images/cngc/newPage/stara.jpg" alt="非常满意" title="非常满意"> </label> <em>(5分)</em> </span>
+														<span>
+															<input name="fs0" alt="描述相符程度" title="满意" id="fs0_3" value="4" type="radio">
+															<label for="fs0_3"> <img src="http://files.ourebuy.com/images/cngc/newPage/stara.jpg" alt="满意" title="满意"> <img src="http://files.ourebuy.com/images/cngc/newPage/stara.jpg" alt="满意" title="满意"> <img src="http://files.ourebuy.com/images/cngc/newPage/stara.jpg" alt="满意" title="满意"> <img src="http://files.ourebuy.com/images/cngc/newPage/stara.jpg" alt="满意" title="满意"> <img src="http://files.ourebuy.com/images/cngc/newPage/starb.jpg" alt="满意" title="满意"> </label> <em>(4分)</em></span>
+														<span>
+															<input name="fs0" alt="描述相符程度" title="一般" id="fs0_2" value="3" type="radio">
+															<label for="fs0_2"> <img src="http://files.ourebuy.com/images/cngc/newPage/stara.jpg" alt="一般" title="一般"> <img src="http://files.ourebuy.com/images/cngc/newPage/stara.jpg" alt="一般" title="一般"> <img src="http://files.ourebuy.com/images/cngc/newPage/stara.jpg" alt="一般" title="一般"> <img src="http://files.ourebuy.com/images/cngc/newPage/starb.jpg" alt="一般" title="一般"> <img src="http://files.ourebuy.com/images/cngc/newPage/starb.jpg" alt="一般" title="一般"> </label> <em>(3分)</em></span>
+														<span>
+															<input name="fs0" alt="描述相符程度" title="不满意" id="fs0_1" value="2" type="radio">
+															<label for="fs0_1"> <img src="http://files.ourebuy.com/images/cngc/newPage/stara.jpg" alt="不满意" title="不满意"> <img src="http://files.ourebuy.com/images/cngc/newPage/stara.jpg" alt="不满意" title="不满意"> <img src="http://files.ourebuy.com/images/cngc/newPage/starb.jpg" alt="不满意" title="不满意"> <img src="http://files.ourebuy.com/images/cngc/newPage/starb.jpg" alt="不满意" title="不满意"> <img src="http://files.ourebuy.com/images/cngc/newPage/starb.jpg" alt="不满意" title="不满意"> </label> <em>(2分)</em> </span>
+														<span>
+															<input name="fs0" alt="描述相符程度" title="很不满意" id="fs0_0" value="1" type="radio">
+															<label for="fs0_0"> <img src="http://files.ourebuy.com/images/cngc/newPage/stara.jpg" alt="很不满意" title="很不满意"> <img src="http://files.ourebuy.com/images/cngc/newPage/starb.jpg" alt="很不满意" title="很不满意"> <img src="http://files.ourebuy.com/images/cngc/newPage/starb.jpg" alt="很不满意" title="很不满意"> <img src="http://files.ourebuy.com/images/cngc/newPage/starb.jpg" alt="很不满意" title="很不满意"> <img src="http://files.ourebuy.com/images/cngc/newPage/starb.jpg" alt="很不满意" title="很不满意"> </label> <em>(1分)</em> </span>
+													</dd>
+												</dl>
+											</li>
+											<li>
+												<dl>
+													<dt style="width: 135px">
+														<p class="spanFloat" title="商家服务态度" style="letter-spacing: 3px; word-spacing: 3px; margin-left: 3px;">
+															商家服务态度
+															:
+														</p>
+													</dt>
+													<dd>
+														<span>
+															<input name="fs1" alt="商家服务态度" title="非常满意" id="fs1_4" value="5" type="radio">
+															<label for="fs1_4"> <img src="http://files.ourebuy.com/images/cngc/newPage/stara.jpg" alt="非常满意" title="非常满意"> <img src="http://files.ourebuy.com/images/cngc/newPage/stara.jpg" alt="非常满意" title="非常满意"> <img src="http://files.ourebuy.com/images/cngc/newPage/stara.jpg" alt="非常满意" title="非常满意"> <img src="http://files.ourebuy.com/images/cngc/newPage/stara.jpg" alt="非常满意" title="非常满意"> <img src="http://files.ourebuy.com/images/cngc/newPage/stara.jpg" alt="非常满意" title="非常满意"> </label> <em>(5分)</em> </span>
+														<span>
+															<input name="fs1" alt="商家服务态度" title="满意" id="fs1_3" value="4" type="radio">
+															<label for="fs1_3"> <img src="http://files.ourebuy.com/images/cngc/newPage/stara.jpg" alt="满意" title="满意"> <img src="http://files.ourebuy.com/images/cngc/newPage/stara.jpg" alt="满意" title="满意"> <img src="http://files.ourebuy.com/images/cngc/newPage/stara.jpg" alt="满意" title="满意"> <img src="http://files.ourebuy.com/images/cngc/newPage/stara.jpg" alt="满意" title="满意"> <img src="http://files.ourebuy.com/images/cngc/newPage/starb.jpg" alt="满意" title="满意"> </label> <em>(4分)</em></span>
+														<span>
+															<input name="fs1" alt="商家服务态度" title="一般" id="fs1_2" value="3" type="radio">
+															<label for="fs1_2"> <img src="http://files.ourebuy.com/images/cngc/newPage/stara.jpg" alt="一般" title="一般"> <img src="http://files.ourebuy.com/images/cngc/newPage/stara.jpg" alt="一般" title="一般"> <img src="http://files.ourebuy.com/images/cngc/newPage/stara.jpg" alt="一般" title="一般"> <img src="http://files.ourebuy.com/images/cngc/newPage/starb.jpg" alt="一般" title="一般"> <img src="http://files.ourebuy.com/images/cngc/newPage/starb.jpg" alt="一般" title="一般"> </label> <em>(3分)</em></span>
+														<span>
+															<input name="fs1" alt="商家服务态度" title="不满意" id="fs1_1" value="2" type="radio">
+															<label for="fs1_1"> <img src="http://files.ourebuy.com/images/cngc/newPage/stara.jpg" alt="不满意" title="不满意"> <img src="http://files.ourebuy.com/images/cngc/newPage/stara.jpg" alt="不满意" title="不满意"> <img src="http://files.ourebuy.com/images/cngc/newPage/starb.jpg" alt="不满意" title="不满意"> <img src="http://files.ourebuy.com/images/cngc/newPage/starb.jpg" alt="不满意" title="不满意"> <img src="http://files.ourebuy.com/images/cngc/newPage/starb.jpg" alt="不满意" title="不满意"> </label> <em>(2分)</em> </span>
+														<span>
+															<input name="fs1" alt="商家服务态度" title="很不满意" id="fs1_0" value="1" type="radio">
+															<label for="fs1_0"> <img src="http://files.ourebuy.com/images/cngc/newPage/stara.jpg" alt="很不满意" title="很不满意"> <img src="http://files.ourebuy.com/images/cngc/newPage/starb.jpg" alt="很不满意" title="很不满意"> <img src="http://files.ourebuy.com/images/cngc/newPage/starb.jpg" alt="很不满意" title="很不满意"> <img src="http://files.ourebuy.com/images/cngc/newPage/starb.jpg" alt="很不满意" title="很不满意"> <img src="http://files.ourebuy.com/images/cngc/newPage/starb.jpg" alt="很不满意" title="很不满意"> </label> <em>(1分)</em> </span>
+													</dd>
+												</dl>
+											</li>
+											<li>
+												<dl>
+													<dt style="width: 135px">
+														<p class="spanFloat" title="商家发货速度" style="letter-spacing: 3px; word-spacing: 3px; margin-left: 3px;">
+															商家发货速度
+															:
+														</p>
+													</dt>
+													<dd>
+														<span>
+															<input name="fs2" alt="商家发货速度" title="非常满意" id="fs2_4" value="5" type="radio">
+															<label for="fs2_4"> <img src="http://files.ourebuy.com/images/cngc/newPage/stara.jpg" alt="非常满意" title="非常满意"> <img src="http://files.ourebuy.com/images/cngc/newPage/stara.jpg" alt="非常满意" title="非常满意"> <img src="http://files.ourebuy.com/images/cngc/newPage/stara.jpg" alt="非常满意" title="非常满意"> <img src="http://files.ourebuy.com/images/cngc/newPage/stara.jpg" alt="非常满意" title="非常满意"> <img src="http://files.ourebuy.com/images/cngc/newPage/stara.jpg" alt="非常满意" title="非常满意"> </label> <em>(5分)</em> </span>
+														<span>
+															<input name="fs2" alt="商家发货速度" title="满意" id="fs2_3" value="4" type="radio">
+															<label for="fs2_3"> <img src="http://files.ourebuy.com/images/cngc/newPage/stara.jpg" alt="满意" title="满意"> <img src="http://files.ourebuy.com/images/cngc/newPage/stara.jpg" alt="满意" title="满意"> <img src="http://files.ourebuy.com/images/cngc/newPage/stara.jpg" alt="满意" title="满意"> <img src="http://files.ourebuy.com/images/cngc/newPage/stara.jpg" alt="满意" title="满意"> <img src="http://files.ourebuy.com/images/cngc/newPage/starb.jpg" alt="满意" title="满意"> </label> <em>(4分)</em></span>
+														<span>
+															<input name="fs2" alt="商家发货速度" title="一般" id="fs2_2" value="3" type="radio">
+															<label for="fs2_2"> <img src="http://files.ourebuy.com/images/cngc/newPage/stara.jpg" alt="一般" title="一般"> <img src="http://files.ourebuy.com/images/cngc/newPage/stara.jpg" alt="一般" title="一般"> <img src="http://files.ourebuy.com/images/cngc/newPage/stara.jpg" alt="一般" title="一般"> <img src="http://files.ourebuy.com/images/cngc/newPage/starb.jpg" alt="一般" title="一般"> <img src="http://files.ourebuy.com/images/cngc/newPage/starb.jpg" alt="一般" title="一般"> </label> <em>(3分)</em></span>
+														<span>
+															<input name="fs2" alt="商家发货速度" title="不满意" id="fs2_1" value="2" type="radio">
+															<label for="fs2_1"> <img src="http://files.ourebuy.com/images/cngc/newPage/stara.jpg" alt="不满意" title="不满意"> <img src="http://files.ourebuy.com/images/cngc/newPage/stara.jpg" alt="不满意" title="不满意"> <img src="http://files.ourebuy.com/images/cngc/newPage/starb.jpg" alt="不满意" title="不满意"> <img src="http://files.ourebuy.com/images/cngc/newPage/starb.jpg" alt="不满意" title="不满意"> <img src="http://files.ourebuy.com/images/cngc/newPage/starb.jpg" alt="不满意" title="不满意"> </label> <em>(2分)</em> </span>
+														<span>
+															<input name="fs2" alt="商家发货速度" title="很不满意" id="fs2_0" value="1" type="radio">
+															<label for="fs2_0"> <img src="http://files.ourebuy.com/images/cngc/newPage/stara.jpg" alt="很不满意" title="很不满意"> <img src="http://files.ourebuy.com/images/cngc/newPage/starb.jpg" alt="很不满意" title="很不满意"> <img src="http://files.ourebuy.com/images/cngc/newPage/starb.jpg" alt="很不满意" title="很不满意"> <img src="http://files.ourebuy.com/images/cngc/newPage/starb.jpg" alt="很不满意" title="很不满意"> <img src="http://files.ourebuy.com/images/cngc/newPage/starb.jpg" alt="很不满意" title="很不满意"> </label> <em>(1分)</em> </span>
+													</dd>
+												</dl>
+											</li>
+											<li>
+												<dl>
+													<dt style="width: 135px">
+														<p class="spanFloat" title="商品物流速度" style="letter-spacing: 3px; word-spacing: 3px; margin-left: 3px;">
+															商品物流速度
+															:
+														</p>
+													</dt>
+													<dd>
+														<span>
+															<input name="fs3" alt="商品物流速度" title="非常满意" id="fs3_4" value="5" type="radio">
+															<label for="fs3_4"> <img src="http://files.ourebuy.com/images/cngc/newPage/stara.jpg" alt="非常满意" title="非常满意"> <img src="http://files.ourebuy.com/images/cngc/newPage/stara.jpg" alt="非常满意" title="非常满意"> <img src="http://files.ourebuy.com/images/cngc/newPage/stara.jpg" alt="非常满意" title="非常满意"> <img src="http://files.ourebuy.com/images/cngc/newPage/stara.jpg" alt="非常满意" title="非常满意"> <img src="http://files.ourebuy.com/images/cngc/newPage/stara.jpg" alt="非常满意" title="非常满意"> </label> <em>(5分)</em> </span>
+														<span>
+															<input name="fs3" alt="商品物流速度" title="满意" id="fs3_3" value="4" type="radio">
+															<label for="fs3_3"> <img src="http://files.ourebuy.com/images/cngc/newPage/stara.jpg" alt="满意" title="满意"> <img src="http://files.ourebuy.com/images/cngc/newPage/stara.jpg" alt="满意" title="满意"> <img src="http://files.ourebuy.com/images/cngc/newPage/stara.jpg" alt="满意" title="满意"> <img src="http://files.ourebuy.com/images/cngc/newPage/stara.jpg" alt="满意" title="满意"> <img src="http://files.ourebuy.com/images/cngc/newPage/starb.jpg" alt="满意" title="满意"> </label> <em>(4分)</em></span>
+														<span>
+															<input name="fs3" alt="商品物流速度" title="一般" id="fs3_2" value="3" type="radio">
+															<label for="fs3_2"> <img src="http://files.ourebuy.com/images/cngc/newPage/stara.jpg" alt="一般" title="一般"> <img src="http://files.ourebuy.com/images/cngc/newPage/stara.jpg" alt="一般" title="一般"> <img src="http://files.ourebuy.com/images/cngc/newPage/stara.jpg" alt="一般" title="一般"> <img src="http://files.ourebuy.com/images/cngc/newPage/starb.jpg" alt="一般" title="一般"> <img src="http://files.ourebuy.com/images/cngc/newPage/starb.jpg" alt="一般" title="一般"> </label> <em>(3分)</em></span>
+														<span>
+															<input name="fs3" alt="商品物流速度" title="不满意" id="fs3_1" value="2" type="radio">
+															<label for="fs3_1"> <img src="http://files.ourebuy.com/images/cngc/newPage/stara.jpg" alt="不满意" title="不满意"> <img src="http://files.ourebuy.com/images/cngc/newPage/stara.jpg" alt="不满意" title="不满意"> <img src="http://files.ourebuy.com/images/cngc/newPage/starb.jpg" alt="不满意" title="不满意"> <img src="http://files.ourebuy.com/images/cngc/newPage/starb.jpg" alt="不满意" title="不满意"> <img src="http://files.ourebuy.com/images/cngc/newPage/starb.jpg" alt="不满意" title="不满意"> </label> <em>(2分)</em> </span>
+														<span>
+															<input name="fs3" alt="商品物流速度" title="很不满意" id="fs3_0" value="1" type="radio">
+															<label for="fs3_0"> <img src="http://files.ourebuy.com/images/cngc/newPage/stara.jpg" alt="很不满意" title="很不满意"> <img src="http://files.ourebuy.com/images/cngc/newPage/starb.jpg" alt="很不满意" title="很不满意"> <img src="http://files.ourebuy.com/images/cngc/newPage/starb.jpg" alt="很不满意" title="很不满意"> <img src="http://files.ourebuy.com/images/cngc/newPage/starb.jpg" alt="很不满意" title="很不满意"> <img src="http://files.ourebuy.com/images/cngc/newPage/starb.jpg" alt="很不满意" title="很不满意"> </label> <em>(1分)</em> </span>
+													</dd>
+												</dl>
+											</li>
+											<li>
+												<dl>
+													<dt style="width: 135px">
+														<p class="spanFloat" title="发票物流程度" style="letter-spacing: 3px; word-spacing: 3px; margin-left: 3px;">
+															发票物流程度
+															:
+														</p>
+													</dt>
+													<dd>
+														<span>
+															<input name="fs4" alt="发票物流程度" title="非常满意" id="fs4_4" value="5" type="radio">
+															<label for="fs4_4"> <img src="http://files.ourebuy.com/images/cngc/newPage/stara.jpg" alt="非常满意" title="非常满意"> <img src="http://files.ourebuy.com/images/cngc/newPage/stara.jpg" alt="非常满意" title="非常满意"> <img src="http://files.ourebuy.com/images/cngc/newPage/stara.jpg" alt="非常满意" title="非常满意"> <img src="http://files.ourebuy.com/images/cngc/newPage/stara.jpg" alt="非常满意" title="非常满意"> <img src="http://files.ourebuy.com/images/cngc/newPage/stara.jpg" alt="非常满意" title="非常满意"> </label> <em>(5分)</em> </span>
+														<span>
+															<input name="fs4" alt="发票物流程度" title="满意" id="fs4_3" value="4" type="radio">
+															<label for="fs4_3"> <img src="http://files.ourebuy.com/images/cngc/newPage/stara.jpg" alt="满意" title="满意"> <img src="http://files.ourebuy.com/images/cngc/newPage/stara.jpg" alt="满意" title="满意"> <img src="http://files.ourebuy.com/images/cngc/newPage/stara.jpg" alt="满意" title="满意"> <img src="http://files.ourebuy.com/images/cngc/newPage/stara.jpg" alt="满意" title="满意"> <img src="http://files.ourebuy.com/images/cngc/newPage/starb.jpg" alt="满意" title="满意"> </label> <em>(4分)</em></span>
+														<span>
+															<input name="fs4" alt="发票物流程度" title="一般" id="fs4_2" value="3" type="radio">
+															<label for="fs4_2"> <img src="http://files.ourebuy.com/images/cngc/newPage/stara.jpg" alt="一般" title="一般"> <img src="http://files.ourebuy.com/images/cngc/newPage/stara.jpg" alt="一般" title="一般"> <img src="http://files.ourebuy.com/images/cngc/newPage/stara.jpg" alt="一般" title="一般"> <img src="http://files.ourebuy.com/images/cngc/newPage/starb.jpg" alt="一般" title="一般"> <img src="http://files.ourebuy.com/images/cngc/newPage/starb.jpg" alt="一般" title="一般"> </label> <em>(3分)</em></span>
+														<span>
+															<input name="fs4" alt="发票物流程度" title="不满意" id="fs4_1" value="2" type="radio">
+															<label for="fs4_1"> <img src="http://files.ourebuy.com/images/cngc/newPage/stara.jpg" alt="不满意" title="不满意"> <img src="http://files.ourebuy.com/images/cngc/newPage/stara.jpg" alt="不满意" title="不满意"> <img src="http://files.ourebuy.com/images/cngc/newPage/starb.jpg" alt="不满意" title="不满意"> <img src="http://files.ourebuy.com/images/cngc/newPage/starb.jpg" alt="不满意" title="不满意"> <img src="http://files.ourebuy.com/images/cngc/newPage/starb.jpg" alt="不满意" title="不满意"> </label> <em>(2分)</em> </span>
+														<span>
+															<input name="fs4" alt="发票物流程度" title="很不满意" id="fs4_0" value="1" type="radio">
+															<label for="fs4_0"> <img src="http://files.ourebuy.com/images/cngc/newPage/stara.jpg" alt="很不满意" title="很不满意"> <img src="http://files.ourebuy.com/images/cngc/newPage/starb.jpg" alt="很不满意" title="很不满意"> <img src="http://files.ourebuy.com/images/cngc/newPage/starb.jpg" alt="很不满意" title="很不满意"> <img src="http://files.ourebuy.com/images/cngc/newPage/starb.jpg" alt="很不满意" title="很不满意"> <img src="http://files.ourebuy.com/images/cngc/newPage/starb.jpg" alt="很不满意" title="很不满意"> </label> <em>(1分)</em> </span>
+													</dd>
+												</dl>
+											</li>
+										</ul>
+									</div>
+								</div>
+								<div class="aftersal_stardt">
+									<em>*</em>商品评分：
+								</div>
+								<div class="aftersal_stardl">
+									<div class="aftersal_stardt">
+										<em>*</em>商品评论：
+									</div>
+									<div class="aftersal_stardd">
+										<textarea name="remark" id="remark" cols="100" rows="5"></textarea>
+										<input alt="订单" name="fphm" id="fphm" value="HT15111800032" type="hidden">
+										<input name="htxh" id="htxh" value="3" type="hidden">
+										<input name="htxhsstr" id="htxhsstr" value="" type="hidden">
+										<input name="ptyp" id="ptyp" value="1" type="hidden">
+									</div>
+								</div>
+								<div style="clear:both ;"></div>
+							</div>
+							<!--------------总额提交-------------------->
+							<div class="tijiao">
+								<dl>
+									<dt>
+										订单已付款金额：<span>￥7800.00</span>
+									</dt>
+									<dd>
+										<a class="tj" href="my-shop.html">批量评分</a>
+									</dd>
+									<dd>
+										<a class="fhgwc" href="my-shop.html">返回订单</a>
+									</dd>
+								</dl>
+								<div style="clear: both;"></div>
+							</div>
+							<!------结束------->
+						</div>
+					</div>
+				</div>
+				<!-------------右侧结束------------>
+			</div>
+			<div class="clearfix"></div>
+		</div>
+		<!------------底部开始-------------->
+		<div class="footer">
+			<div class="footer-nav">
+				<a href="#">首页</a>| <a href="#">关于我们</a>| <a href="#">帮助中心</a>| <a href="#">联系我们</a>
+			</div>
+			<div class="addr">
+				地址：陕西省西安市雁塔区沣惠南路中华世纪城（东门）商住楼8号楼二层 电话：029-88990909 传真：029-89286898 邮编：710065
+			</div>
+			<div class="copyright">
+				上海石油交易所西部有限公司 版权所有 陕ICP备09004887号<img src="images/police.png" class="police" />陕公网安备 61019002000027号
+			</div>
+		</div>
+		<!--<div class="footer">
+			<div class="service-box">
+				<p align="center">
+					地 址：陕西省西安市雁塔区沣惠南路中华世纪城（东门）商住楼8号楼二层　邮 编：710065　电 话：029-89199820 029-88990909
+				</p>
+				<p align="center">
+					上海石油交易所西部交易中心 版权所有　陕ICP备09004887号　技术支持：高达软件　陕公网安备61019002000027号
+				</p>
+			</div>
+		</div>-->
+	</body>
+</html>

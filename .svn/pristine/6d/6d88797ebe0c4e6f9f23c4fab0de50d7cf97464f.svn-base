@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>延长电商贸易平台</title>
+		<link rel="stylesheet" href="./css/style.css" />
+		<link rel="stylesheet" href="./css/iconfont.css" />
+		<link rel="stylesheet" href="./css/swiper.min.css" />
+		<script type="text/javascript" src="./js/jquery.js"></script>
+		<script type="text/javascript" src="./js/swiper.min.js"></script>
+		<style>
+			.floor3-title li{
+				width: 80px;
+				text-align: center;
+			}
+			.tr-height td{
+				width: 80px;
+				text-align: center;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="top">
+			<div class="top-content">
+				<div class="top-content-left">
+					<span class="marRight8 font12">您好！欢迎来到延长电商贸易平台</span>
+					<a href="#" class="marRight8 font12">请登录</a>
+					<a href="#" class="marRight8 font12">免费注册</a>
+				</div>
+				<div class="top-content-right">
+					<a href="#" class="marLeft8 font12">我的平台</a>
+					<a href="#" class="marLeft8 font12">个人中心</a>
+					<a href="#" class="marLeft8 font12">购物车</a>
+					<a href="#" class="marLeft8 font12">帮助中心</a>
+					<span class="marLeft8 font12">联系客服：029-88990909</span>
+				</div>
+				<div class="clearfix"></div>
+			</div>
+		</div>
+		<div class="header">
+			<img src="images/logo2.jpg" class="logo">
+			<div class="search">
+				<div class="input-area">
+					<input type="text" class="input-index" placeholder="请输入您要查询的商品" />
+					<div class="input-search">搜索</div>
+					<div class="clearfix"></div>
+					<div class="input-index-down">						
+						<a href="#">化工品</a>|
+						<a href="#">打印机</a>|
+						<a href="#">笔记本电脑</a>|
+						<a href="#">安全帽</a>
+					</div>
+				</div>
+			</div>
+			<div class="code">
+				<img src="images/code.jpg" class="code-area">
+				<img src="images/code.jpg" class="code-area">
+				<div class="clearfix"></div>
+			</div>
+			<div class="clearfix"></div>
+		</div>
+		<div class="nav">
+			<dl class="nav-content">
+				<dt>所有商品分类</dt>
+				<dd><a href="index.html">首页</a></dd>
+				<dd><a href="big-company.html">大企业专场</a></dd>
+				<dd><a href="purchase-big.html">大宗商品专场</a></dd>
+				<dd><a href="gongyepin_market.html">工业品市场</a></dd>
+				<dd><a href="caigou_session.html">采购专场</a></dd>
+				<dd><a href="jingjia_session.html">竞价专场</a></dd>
+				<dd><a href="#">电子招投标</a></dd>
+				<dd><a href="supermarkets.html">电子商城</a></dd>
+				<dd><a href="purchase02.html">民生超市</a></dd>
+				<dd><a href="#">金融服务</a></dd>
+				<dd><a href="#">社区</a></dd>
+				<div class="clearfix"></div>
+			</dl>
+		</div>
+		<!--banner-->
+		<div class="banner-kong">
+			<div class="floatL"><img src="images/jingjia_banner.jpg" width="880" height="400"></div>
+			<div class="banner-on-right" style="border: 1px solid #fd7636;">
+				<div class="notice-area" style="width: 280px;padding-left: 10px;padding-right: 10px; padding-bottom: 24px">
+					<div class="notice-title floatL" style="width: 60px;">我的资金</div>
+					<div class="clearfix"></div>
+					<ul class="notice-list">
+						<li>资金余额:&nbsp;&nbsp;<span style="color: #dd254d;">206,000,00</span></li>
+						<li>冻结金额:&nbsp;&nbsp;<span style="color: #dd254d;">6,000,00</span></li>
+						<li>可用余额:&nbsp;&nbsp;<span style="color: #dd254d;">200,000,00</span></li>
+						<li style="margin-top: 10px;"><a href="#"><button type="button" class="btn01" style="width: 200px">￥进入资金中心>></button></a></li>
+					</ul>
+				</div>
+				<div class="notice-area" style="width: 300px; margin-top: 16px">
+					<div class="notice-title floatL" style="width: 60px;">出价详情</div>
+					<div class="clearfix"></div>
+					<ul class="notice-list">
+						<table style="width: 300px;">
+							<tr>
+								<td style="width: 40px;text-align: center;font-size: 12px;">序号</td>
+								<td style="width: 60px;text-align: center;font-size: 12px;">出价编号</td>
+								<td style="width: 40px;text-align: center;font-size: 12px;">报价</td>
+								<td style="width: 40px;text-align: center;font-size: 12px;">数量</td>
+								<td style="width: 60px;text-align: center;font-size: 12px;">有效数量</td>
+								<td style="width: 60px;text-align: center;font-size: 12px;">出价时间</td>
+							</tr>
+							<tr>
+								<td style="width: 30px;text-align: center;font-size: 12px;">1</td>
+								<td style="width: 70px;text-align: center;font-size: 12px;">101</td>
+								<td style="width: 30px;text-align: center;font-size: 12px;">1060</td>
+								<td style="width: 30px;text-align: center;font-size: 12px;">50</td>
+								<td style="width: 70px;text-align: center;font-size: 12px;">24</td>
+								<td style="width: 70px;text-align: center;font-size: 12px;">17:54:00</td>
+							</tr>
+							<tr>
+								<td style="width: 30px;text-align: center;font-size: 12px;">2</td>
+								<td style="width: 70px;text-align: center;font-size: 12px;">102</td>
+								<td style="width: 30px;text-align: center;font-size: 12px;">1080</td>
+								<td style="width: 30px;text-align: center;font-size: 12px;">40</td>
+								<td style="width: 70px;text-align: center;font-size: 12px;">35</td>
+								<td style="width: 70px;text-align: center;font-size: 12px;">18:08:00</td>
+							</tr>
+							<tr>
+								<td style="width: 30px;text-align: center;font-size: 12px;">3</td>
+								<td style="width: 70px;text-align: center;font-size: 12px;">103</td>
+								<td style="width: 30px;text-align: center;font-size: 12px;">1080</td>
+								<td style="width: 30px;text-align: center;font-size: 12px;">60</td>
+								<td style="width: 70px;text-align: center;font-size: 12px;">20</td>
+								<td style="width: 70px;text-align: center;font-size: 12px;">18:14:00</td>
+							</tr>
+							<tr>
+								<td style="width: 30px;text-align: center;font-size: 12px;">4</td>
+								<td style="width: 70px;text-align: center;font-size: 12px;">104</td>
+								<td style="width: 30px;text-align: center;font-size: 12px;">1080</td>
+								<td style="width: 30px;text-align: center;font-size: 12px;">55</td>
+								<td style="width: 70px;text-align: center;font-size: 12px;">14</td>
+								<td style="width: 70px;text-align: center;font-size: 12px;">18:05:00</td>
+							</tr>
+							<tr>
+								<td style="width: 30px;text-align: center;font-size: 12px;">5</td>
+								<td style="width: 70px;text-align: center;font-size: 12px;">105</td>
+								<td style="width: 30px;text-align: center;font-size: 12px;">1080</td>
+								<td style="width: 30px;text-align: center;font-size: 12px;">82</td>
+								<td style="width: 70px;text-align: center;font-size: 12px;">10</td>
+								<td style="width: 70px;text-align: center;font-size: 12px;">18:28:00</td>
+							</tr>
+						</table>
+					</ul>
+				</div>
+			</div>
+		</div>
+		
+		<!--banner-->
+		<!--main-->
+		<div class="floor">
+			<div class="bijia_kong">
+				<ul class="xunbijia-title_kong">
+					<li style="padding-left: 24px;width:160px;">
+						<span class="floatL">场次号：16100400110</span>
+					</li>					
+					<li style="width:230px;">
+						<span class="floatL">标段号&nbsp;&nbsp;</span>
+						<span class="floatL"><input type="text"></span>
+					</li>					
+					<li style="width:90px;"><span class="floatL"><button type="button" class="btn01">查询</button></span></li>
+					<li style="width:120px;">
+						<span class="floatL">开始时间：14:20</span>
+					</li>
+					<li style="width:120px;">
+						<span class="floatL">结束时间：14:20</span>
+					</li>
+					<li style="width:120px;">
+						<span class="floatL">状态：竞价中</span>
+					</li>
+					<li style="width:120px;">
+						<span class="floatL">出价员：文晓飞</span>
+					</li>
+					<li style="width:216px;">
+						<span class="floatL">当前服务器时间：18:10:42</span>
+					</li>
+					<div class="clearfix"></div>
+				</ul>
+				<ul class="floor3-title" style="background:#fd7636;">
+					<li style="width: 150px;color: #fff;">标段号</li>					
+					<li style="color: #fff;">产品名称</li>
+					<li style="color: #fff;">型号</li>
+					<li style="color: #fff;">规格</li>
+					<li style="color: #fff;">品牌</li>
+					<li style="width: 70px;color: #fff;">产地</li>
+					<li style="color: #fff;">挂单量</li>
+					<li style="width: 50px;color: #fff;">单位</li>
+					<li style="width: 50px;color: #fff;">成交量</li>
+					<li style="color: #fff;">首报价</li>
+					<li style="color: #fff;">当前最低价</li>
+					<li style="color: #fff;">当前最高价</li>
+					<li style="color: #fff;">商品详情</li>
+					<li style="color: #fff;">操作</li>
+					<li style="color: #fff;">倒计时</li>
+					<div class="clearfix"></div>
+				</ul>
+				<table class="table-list">
+					<tr class="tr-height">
+						<td style="width: 150px;">1600040010</td>
+						<td>聚丙烯</td>
+						<td>xxx</td>
+						<td>xxx</td>
+						<td>xxx</td>
+						<td style="width: 70px">陕延</td>
+						<td>100</td>
+						<td style="width: 50px">吨</td>
+						<td style="width: 50px">20</td>
+						<td>1000</td>
+						<td>1002</td>
+						<td>1050</td>
+						<td>查看</td>
+						<td><button class="btn01">下单</button></td>
+						<td style="color: #dd254d;">
+							10:59
+						</td>
+					</tr>
+					<tr class="tr-height">
+						<td style="width: 150px;">1600040011</td>
+						<td>石油</td>
+						<td>xxx</td>
+						<td>xxx</td>
+						<td>xxx</td>
+						<td style="width: 70px">陕延</td>
+						<td>100</td>
+						<td style="width: 50px">吨</td>
+						<td style="width: 50px">20</td>
+						<td>1000</td>
+						<td>1002</td>
+						<td>1050</td>
+						<td>查看</td>
+						<td><button class="btn01">下单</button></td>
+						<td style="color: #dd254d;">
+							10:59
+						</td>
+					</tr>
+					<tr class="tr-height">
+						<td style="width: 150px;">1600040012</td>
+						<td>液化气</td>
+						<td>xxx</td>
+						<td>xxx</td>
+						<td>xxx</td>
+						<td style="width: 70px">江西</td>
+						<td>100</td>
+						<td style="width: 50px">吨</td>
+						<td style="width: 50px">20</td>
+						<td>1000</td>
+						<td>1002</td>
+						<td>1050</td>
+						<td>查看</td>
+						<td><button class="btn01">下单</button></td>
+						<td style="color: #dd254d;">
+							10:59
+						</td>
+					</tr>
+				</table>
+			</div>
+			<div class="bijia_kong">
+				<ul class="xunbijia-title_kong">
+					<h3 style="font-size: 18px;">我的竞价</h3>
+					<div class="clearfix"></div>
+				</ul>
+				<ul class="floor3-title" style="background:#fd7636;">
+					<li style="width: 100px;color: #fff;">委托号</li>	
+					<li style="width: 150px;color: #fff;">标段号</li>					
+					<li style="width: 100px;color: #fff;">产品名称</li>
+					<li style="width: 100px;color: #fff;">报价</li>
+					<li style="width: 100px;color: #fff;">数量</li>
+					<li style="width: 100px;color: #fff;">单位</li>
+					<li style="width: 100px;color: #fff;">有效数量</li>
+					<li style="width: 100px;color: #fff;">提交时间</li>
+					<li style="width: 100px;color: #fff;">减价幅度</li>
+					<li style="width: 100px;color: #fff;">延时减价幅度</li>
+					<li style="width: 150px;color: #fff;">操作</li>
+					<div class="clearfix"></div>
+				</ul>
+				<table class="table-list">
+					<tr class="tr-height">
+						<td style="width: 100px;">111</td>
+						<td style="width: 150px;">1600040013</td>
+						<td style="width: 100px;">聚丙烯</td>
+						<td style="width: 100px;">1000</td>
+						<td style="width: 100px;">10</td>
+						<td style="width: 100px;">吨</td>
+						<td style="width: 100px;">10</td>
+						<td style="width: 100px;">18:44</td>
+						<td style="width: 100px;">10~20</td>
+						<td style="width: 100px;">20</td>
+						<td style="width: 150px;"><span class="floatL"><input type="text" style="width: 100px;"></span><span class="floatL" style="color: #dd254d;">&nbsp;&nbsp;出价</span></td>
+					</tr>
+					<tr class="tr-height">
+						<td style="width: 100px;">113</td>
+						<td style="width: 150px;">1600040014</td>
+						<td style="width: 100px;">聚丙烯</td>
+						<td style="width: 100px;">1000</td>
+						<td style="width: 100px;">10</td>
+						<td style="width: 100px;">吨</td>
+						<td style="width: 100px;">10</td>
+						<td style="width: 100px;">18:48</td>
+						<td style="width: 100px;">10~20</td>
+						<td style="width: 100px;">20</td>
+						<td style="width: 150px;"><span class="floatL"><input type="text" style="width: 100px;"></span><span class="floatL" style="color: #dd254d;">&nbsp;&nbsp;出价</span></td>
+					</tr>
+					<tr class="tr-height">
+						<td style="width: 100px;">113</td>
+						<td style="width: 150px;">1600040015</td>
+						<td style="width: 100px;">聚丙烯</td>
+						<td style="width: 100px;">1000</td>
+						<td style="width: 100px;">10</td>
+						<td style="width: 100px;">吨</td>
+						<td style="width: 100px;">10</td>
+						<td style="width: 100px;">18:50</td>
+						<td style="width: 100px;">10~20</td>
+						<td style="width: 100px;">20</td>
+						<td style="width: 150px;"><span class="floatL"><input type="text" style="width: 100px;"></span><span class="floatL" style="color: #dd254d;">&nbsp;&nbsp;出价</span></td>
+					</tr>
+				</table>
+			</div>
+		</div>
+		<!--main-->
+		
+		<div class="friends">
+			<div class="friends-title">合作伙伴</div>
+			<img src="images/partner01.jpg" />
+			<img src="images/partner02.jpg" />
+			<img src="images/partner03.jpg" />
+			<img src="images/partner04.jpg" />
+			<img src="images/partner05.jpg" />
+			<img src="images/partner06.jpg" />
+			<div class="clearfix"></div>
+			<img src="images/partner07.jpg" />
+			<img src="images/partner08.jpg" />
+			<img src="images/partner09.jpg" />
+			<img src="images/partner10.jpg" />
+			<img src="images/partner11.jpg" />
+			<img src="images/partner12.jpg" />
+			<div class="clearfix"></div>
+		</div>
+		<div class="footer">
+			<div class="footer-nav">
+				<a href="#">首页</a>|
+				<a href="#">关于我们</a>|
+				<a href="#">帮助中心</a>|
+				<a href="#">联系我们</a>
+			</div>
+			<div class="addr">地址：陕西省西安市雁塔区沣惠南路中华世纪城（东门）商住楼8号楼二层 邮编：710065 电话：029-89199820 029-88990909</div>
+			<div class="copyright">上海石油交易所西部交易中心 版权所有 陕ICP备09004887号 技术支持：高达软件 <img src="images/police.png" class="police" />陕公网安备 61019002000027号</div>
+		</div>
+	</body>
+	<script type="text/javascript">
+		//导航详细菜单的显示和隐藏
+		$(".list-details").hide()
+		$(".banner-on-left-list>li").mouseenter(function(){
+			$(this).find(".list-details").show()
+		}).mouseleave(function(){
+			$(this).find(".list-details").hide()
+		})
+		
+		//登录和注册按钮背景变化
+		$(".login-btn").mouseenter(function(){
+			$(this).find(".icon-denglu").removeClass("color-fd7636").addClass("color-fff")
+		}).mouseleave(function(){
+			$(this).find(".icon-denglu").removeClass("color-fff").addClass("color-fd7636")
+		})
+		$(".register-btn").mouseenter(function(){
+			$(this).find(".icon-zhuce").removeClass("color-fd7636").addClass("color-fff")
+		}).mouseleave(function(){
+			$(this).find(".icon-zhuce").removeClass("color-fff").addClass("color-fd7636")
+		})
+		
+		//招标公告和招标结果按钮切换
+		$(".inner-title").click(function(){
+			$(this).addClass("inner-title-acitve").siblings().removeClass("inner-title-acitve")
+		})
+		$(".wide-inner-title").click(function(){
+			$(this).addClass("inner-title-acitve").siblings().removeClass("inner-title-acitve")
+		})
+	</script>
+</html>

@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>延长电商贸易平台</title>
+		<link rel="stylesheet" href="./css/index-style.css" />
+		<link rel="stylesheet" href="./css/style.css" />
+		<link rel="stylesheet" href="./css/iconfont.css" />
+		<link rel="stylesheet" href="./css/swiper.min.css" />
+		<link rel="stylesheet" type="text/css" href="./css/common.css">
+		<script type="text/javascript" src="./js/jquery.js"></script>
+		<script type="text/javascript" src="./js/swiper.min.js"></script>
+		<script type="text/javascript" src="js/main.js"></script>
+		
+	</head>
+	<body>
+		<div class="topbar">
+			<div class="topbar-body">
+				<ul class="topbar-bd-l">
+					<li>
+						<div class="menu-bd">
+							<div class="city-list">
+								<a href="#">上海</a><a href="#">南京</a><a href="#">苏州</a><a href="#">无锡</a><a href="#">全国</a>
+							</div>
+						</div>
+					</li>
+					<li>
+						交易时间：<a style="color:#ec0000;">7:30-17:30（工作日）</a>
+					</li>
+					<li>
+						客服热线：029-88990909
+					</li>
+				</ul>
+				<ul class="topbar-bd-r">
+					<li class="login-info unlogin">
+						您好 ！欢迎来到延长电商贸易平台
+					</li>
+					<li class="unlogin">
+						<a class="tb-m-a2 blue user-login" href="login.html">请登录</a>
+					</li>
+					<li class="unlogin">
+						<a class="tb-m-a2 blue" href="register.html">免费注册</a>
+					</li>
+					<li>
+						<div class="menu-hd">
+							<a href="my-admin.html">我的平台</a><i><s>◇</s></i>
+						</div>
+						<div class="menu-bd">
+							<div class="menu-bd-panel menu-bd-panel1">
+								<div class="content1 ">
+									<a class="content1-infor1" href="#"><img src="images/banner1.jpg"></a>
+									<div class="content1-infor2 unlogin">
+										<div class="line1">
+											<a href="#">您好，请登录！</a>
+										</div>
+									</div>
+									<!--<div class="content1-infor2 logon">
+										<div class="line1">
+											Hi，<a class="user-name" href="#"></a>！
+										</div>
+										<a href="#" class="line2 user-tel"></a>
+									</div>-->
+								</div>
+								<div class="content2">
+									<div>
+										<a class="first" href="#" target="_top">我的订单</a><a href="" target="_top">积分管理</a>
+									</div>
+									<div>
+										<a class="first" href="#" target="_top">会员认证</a><a href="" target="_top">上传资源单</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="menu-hd">
+							<a href="#">我的设置</a><i><s>◇</s></i>
+						</div>
+						<div class="menu-bd">
+							<div class="menu-bd-panel menu-bd-panel3">
+								<a class="first" target="_top" href="#">订单管理</a><a target="_top" href="#">资源管理</a>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="menu-hd">
+							<a href="#">财物车</a><i><s>◇</s></i>
+						</div>
+						<div class="menu-bd">
+							<div class="menu-bd-panel menu-bd-panel3">
+								<a class="first" target="_top" href="#">任你花</a><a target="_top" href="#">帮你采</a>
+								<a target="_top" href="#">随你押</a>
+							</div>
+						</div>
+					</li>
+					<!--<li class="tb-m-line">|</li>!-->
+					<li>
+						<div class="menu-hd">
+							<a href="#">帮助中心</a><i><s>◇</s></i>
+						</div>
+						<div class="menu-bd">
+							<div class="menu-bd-panel menu-bd-panel3">
+								<a class="first" target="_top" href="#">帮助中心</a><a target="_top" href="#">帮助中心</a><a class="first" target="_top" href="#">帮助中心</a><a target="_top" href="#">帮助中心</a>
+							</div>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class="header">
+			<div class="logo">
+				<a hidefocus="true" href="#"></a>
+			</div>
+			<div class="hd-search">
+				<div class="search-bd">
+					<div class="search-triggers">
+						<ul>
+							<li>
+								<a>超市 </a>
+							</li>
+							<li>
+								<a href="#">全部</a>
+							</li>
+							<li>
+								<a href="#">超市</a>
+							</li>
+							<li>
+								<a href="#">集市</a>
+							</li>
+						</ul>
+						<i></i>
+					</div>
+					<div class="search-i">
+						<form class="f-cb" method="post" onSubmit="return checkKwInput();" action="#" id="search" name="search">
+							<div class="search-button">
+								<button id="resSeachButton" class="btn-search s-search" type="submit">
+									搜一下
+								</button>
+							</div>
+							<div class="search-combobox">
+								<div class="search-combobox-input">
+									<input type="hidden" value="" name="ci" id="ci_code">
+									<input id="kwInput1" placeholder="请输入关键词查询" autocomplete="off" onFocus="this.style.color='#666';" onBlur="this.style.color='#666';" x-webkit-speech="" x-webkit-grammar="builtin:translate">
+									<input type="hidden" name="kw" id="kwInput2">
+								</div>
+							</div>
+						</form>
+					</div>
+					<div class="search-result">
+						<!-- 当前搜索  -->
+						<!-- 类似搜索  -->
+						<ul class="sear-res">
+							<li>
+								<a href="#"><span class="sear-res-l">螺纹钢</span></a>
+							</li>
+							<li>
+								<a href="#"><span class="sear-res-l">HRB400</span></a>
+							</li>
+							<li>
+								<a href="#"><span class="sear-res-l">HRB400E</span></a>
+							</li>
+							<li>
+								<a href="#"><span class="sear-res-l">Q235</span></a>
+							</li>
+							<li>
+								<a href="#"><span class="sear-res-l">Q235B</span></a>
+							</li>
+						</ul>
+						<!-- 搜索历史  -->
+						<ul class="sear-history">
+							<li>
+								<a href="#"><span class="sear-res-l">HRB400</span><span class="sear-res-r">搜索历史</span></a>
+							</li>
+							<li>
+								<a href="#"><span class="sear-res-l">HRB400B</span><span class="sear-res-r">搜索历史</span></a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="header-nav-btn">
+				<!--<a class="header-nav-btn1 mn-ico1" href="#"><i></i>积分商城</a>!-->
+				<a class="header-nav-btn1 mn-ico2" href="shop-car.html"><i></i>我的购物车<span class="count" id="rcart">0</span></a>
+				<div class="cart-panel">
+					<div class="cartlist">
+						共选中 <b class="orange"><span id="itemTotalTemp">0</span></b> 件货物（<b class="orange"><span id="averageQtyTotalTemp">0</span></b> 吨）&nbsp;
+						<br />
+						总价 <b><span id="priceTotalTemp">0</span></b>元
+					</div>
+					<a class="shop-car.html" href="cart_list.html">查看购物车</a>
+				</div>
+			</div>
+			<div class="header-app">
+				<div class="menu-bd-panel2">
+					<ul>
+						<li class="mrgR10"><img src="images/app.gif">
+						</li>
+						<li><img src="images/app.gif">
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="m-nav">
+			<div class="auto">
+				<dl class="main-nav">
+					<dd class="nav-main">
+						<a href="#" class="a4">电商平台</a>
+					</dd>
+					<dd class="nav-main">
+						<a href="purchase.html" class="a4">延长采购专区</a>
+					</dd>
+					<dd class="nav-main">
+						<a href="sell.html" class="a4">延长销售专区</a>
+					</dd>
+					<dd class="nav-main">
+						<a href="introduce.html" class="a4">公司介绍</a>
+					</dd>
+				</dl>
+			</div>
+		</div>
+		<div class="banner">
+			
+		</div>
+		<table cellspacing="0" class="condition marTop24">
+			<tr>
+				<td width="120" height="40" class="padLeft12 border-left border-top">分类：</td>
+				<td class="border-top">
+					<ul class="condition-each">
+						<li>一般工具配件(19)</li>
+						<li>丝锥(1)</li>
+						<li>其他一般工具(3)</li>
+						<li>其他加油工具(4)</li>
+						<li>其他园艺工具(2)</li>
+					</ul>
+				</td>
+				<td width="40" class="border-top color-f00">更多</td>
+				<td width="40" class="border-right border-top color-f00">多选</td>
+			</tr>
+			<tr>
+				<td height="40" class="padLeft12 border-left border-top">品牌：</td>
+				<td class="border-top">
+					<ul class="condition-each">
+						<li>史丹利(4)</li>
+						<li>咸亨国际(4)</li>
+						<li>易尔拓(2)</li>
+					</ul>
+				</td>
+				<td class="border-top color-f00">更多</td>
+				<td class="border-right border-top color-f00">多选</td>
+			</tr>
+			<tr>
+				<td height="40" class="padLeft12 border-left border-top">公英制：</td>
+				<td class="border-top">
+					<ul class="condition-each">
+						<li>公制</li>
+						<li>公英制</li>
+						<li>英制</li>
+					</ul>
+				</td>
+				<td class="border-top color-f00">更多</td>
+				<td class="border-right border-top color-f00">多选</td>
+			</tr>
+			<tr>
+				<td height="40" class="padLeft12 border-left border-top">其他参数：</td>
+				<td class="border-top">
+					<ul class="condition-each">
+						<li>0.01mm/m(1)</li>
+						<li>0.02mm/m(1)</li>
+						<li>100#(1)</li>
+						<li>10000psi(1)</li>
+						<li>1000v(1)</li>
+						<li>1000℃(1)</li>
+						<li>1000目(1)</li>
+					</ul>
+				</td>
+				<td class="border-top color-f00">更多</td>
+				<td class="border-right border-top color-f00">多选</td>
+			</tr>
+			<tr>
+				<td height="40" class="padLeft12 border-left border-top">其他参数：</td>
+				<td class="border-top">
+					<ul class="condition-each">
+						<li>T12A(1)</li>
+						<li>不锈钢(1)</li>
+						<li>尖(1)</li>
+						<li>尼龙(1)</li>
+						<li>平头(1)</li>
+						<li>空(1)</li>
+					</ul>
+				</td>
+				<td class="border-top color-f00">更多</td>
+				<td class="border-top color-f00">多选</td>
+			</tr>
+			<tr>
+				<td height="40" class="padLeft12 border-left border-top border-bottom">分度值：</td>
+				<td class="border-top">
+					<ul class="condition-each">
+						<li>10(1)</li>
+						<li>2(1)</li>
+						<li>20(2)</li>
+						<li>200(1)</li>
+						<li>5(1)</li>
+						<li>5(3)</li>
+					</ul>
+				</td>
+				<td class="border-top color-f00">更多</td>
+				<td class="border-right border-top color-f00">多选</td>
+			</tr>
+			<tr>
+				<td height="40" class="padLeft12 border-left border-top border-bottom">分割厚度：</td>
+				<td class="border-top">
+					<ul class="condition-each">
+						<li>1-3(1)</li>
+						<li>3-15(1)</li>
+						<li>3-6(2)</li>
+						<li>6-15(1)</li>
+					</ul>
+				</td>
+				<td class="border-top color-f00">更多</td>
+				<td class="border-right border-top color-f00">多选</td>
+			</tr>
+			<tr>
+				<td height="40" class="padLeft12 border-left border-top border-bottom">名称：</td>
+				<td class="border-top">
+					<ul class="condition-each">
+						<li>C型大力钳(2)</li>
+						<li>F型扳手(1)</li>
+						<li>G型夹(2)</li>
+						<li>L型中孔六角形扳手(1)</li>
+					</ul>
+				</td>
+				<td class="border-top color-f00">更多</td>
+				<td class="border-right border-top color-f00">多选</td>
+			</tr>
+			<tr>
+				<td height="40" class="padLeft12 border-left border-top border-bottom">喷嘴直径：</td>
+				<td class="border-top">
+					<ul class="condition-each">
+						<li>2.00mm(1)</li>
+					</ul>
+				</td>
+				<td class="border-top color-f00">更多</td>
+				<td class="border-right border-top color-f00">多选</td>
+			</tr>
+			<tr>
+				<td height="40" class="padLeft12 border-left border-top border-bottom">型号：</td>
+				<td class="border-top">
+					<ul class="condition-each">
+						<li>E0862/30(1)</li>
+						<li>E0863/100(1)</li>
+						<li>E0864/300(2)</li>
+						<li>E0866/6(1)</li>
+						<li>E0867/12(1)</li>
+						<li>H01-20(3)</li>
+					</ul>
+				</td>
+				<td class="border-top color-f00">更多</td>
+				<td class="border-right border-top color-f00">多选</td>
+			</tr>
+			<tr>
+				<td height="40" class="padLeft12 border-left border-top border-bottom">最大称重量：</td>
+				<td class="border-top border-bottom">
+					<ul class="condition-each">
+						<li>100(1)</li>
+						<li>300(1)</li>
+						<li>500(1)</li>
+					</ul>
+				</td>
+				<td class="border-top  border-bottom color-f00">更多</td>
+				<td class="border-right border-top  border-bottom color-f00">多选</td>
+			</tr>
+			<tr>
+				<td height="40" colspan="4" align="center" class="border-right border-left border-bottom">收起</td>
+			</tr>
+		</table>
+		<div class="condition marTop24">
+			<span class="make-list">排序：</span>
+			<ul class="condition-vary">
+				<li class="condition-vary-active">默认<span class="ver-aling-mid iconfont icon-shang color-fff"></span></li>
+				<li>价格<span class="iconfont icon-shang-copy-copy ver-aling-mid"></span></li>
+				<li>销量<span class="iconfont icon-shang-copy-copy ver-aling-mid"></span></li>				
+				<li>上架时间<span class="iconfont icon-shang-copy-copy ver-aling-mid"></span></li>
+			</ul>
+			<span class="check-area">				
+				<input type="checkbox" class="check-btn" />
+				我的合格供应商
+			</span>
+			<div class="clearfix"></div>
+		</div>
+		<table cellspacing="0" class="condition marTop12">			
+			<tr>
+				<td height="200" width="240" class="padLeft12 border-left border-top border-bottom-dash">
+					<a href="#" class="color-fd7636">
+						<img src="images/u20.png" />
+					</a>
+				</td>
+				<td width="600" class="border-top border-bottom-dash">
+					<div class="color-f00">双金属锯条</div>
+					<div class="marTop4">凯文贸易有限责任公司</div>
+					<div class="marTop4">市场价：¥5.25</div>
+					<div class="marTop4">已售出：2410</div>
+					<div class="marTop4">商品位置：电子超市</div>
+					<div class="marTop4">产品简介：</div>
+					<div class="marTop4 comment02">名称：双金属锯条，规格：12*18齿，其他参数：空，……</div>
+				</td>
+				<td align="center" class="border-top border-right border-bottom-dash">
+					<div class="buy-btn">立即购买</div>
+				</td>
+			</tr>
+			<tr>
+				<td height="200" width="240" class="padLeft12 border-left border-top border-bottom-dash">
+					<a href="#" class="color-fd7636">
+						<img src="images/u18.png" />
+					</a>
+				</td>
+				<td width="600" class="border-top border-bottom-dash">
+					<div class="color-f00">纱布</div>
+					<div class="marTop4">凯文贸易有限责任公司</div>
+					<div class="marTop4">市场价：¥5.25</div>
+					<div class="marTop4">已售出：2410</div>
+					<div class="marTop4">商品位置：电子超市</div>
+					<div class="marTop4">产品简介：</div>
+					<div class="marTop4 comment02">名称：纱布，规格：230*280mm，其他参数：120目，……</div>
+				</td>
+				<td align="center" class="border-top border-right border-bottom-dash">
+					<div class="buy-btn">立即购买</div>
+				</td>
+			</tr>
+			<tr>
+				<td height="200" width="240" class="padLeft12 border-left border-top border-bottom-dash">
+					<a href="#" class="color-fd7636">
+						<img src="images/u16.png" />
+					</a>
+				</td>
+				<td width="600" class="border-top border-bottom-dash">
+					<div class="color-f00">木柄油漆刷（猪鬃）</div>
+					<div class="marTop4">凯文贸易有限责任公司</div>
+					<div class="marTop4">市场价：¥5.25</div>
+					<div class="marTop4">已售出：2410</div>
+					<div class="marTop4">商品位置：电子超市</div>
+					<div class="marTop4">产品简介：</div>
+					<div class="marTop4 comment02">名称：油漆刷，规格：25m，其他参数：猪鬃，……</div>
+				</td>
+				<td align="center" class="border-top border-right border-bottom-dash">
+					<div class="buy-btn">立即购买</div>
+				</td>
+			</tr>
+			<tr>
+				<td height="200" width="240" class="padLeft12 border-left border-top border-bottom-dash">
+					<a href="#" class="color-fd7636">
+						<img src="images/u14.png" />
+					</a>
+				</td>
+				<td width="600" class="border-top border-bottom-dash">
+					<div class="color-f00">直柄高速钢含Co麻花钻</div>
+					<div class="marTop4">凯文贸易有限责任公司</div>
+					<div class="marTop4">市场价：¥5.25</div>
+					<div class="marTop4">已售出：2410</div>
+					<div class="marTop4">商品位置：电子超市</div>
+					<div class="marTop4">产品简介：</div>
+					<div class="marTop4 comment02">名称：直柄麻花钻头，规格：1mm，其他参数：含钴高速钢，……</div>
+				</td>
+				<td align="center" class="border-top border-right border-bottom-dash">
+					<div class="buy-btn">立即购买</div>
+				</td>
+			</tr>
+			<tr>
+				<td height="200" width="240" class="padLeft12 border-left border-top border-bottom-dash">
+					<a href="#" class="color-fd7636">
+						<img src="images/u12.png" />
+					</a>
+				</td>
+				<td width="600" class="border-top border-bottom-dash">
+					<div class="color-f00">钢锯条</div>
+					<div class="marTop4">凯文贸易有限责任公司</div>
+					<div class="marTop4">市场价：¥5.25</div>
+					<div class="marTop4">已售出：2410</div>
+					<div class="marTop4">商品位置：电子超市</div>
+					<div class="marTop4">产品简介：</div>
+					<div class="marTop4 comment02">名称：钢锯条，规格：300mm*18齿，其他参数：空，……</div>
+				</td>
+				<td align="center" class="border-top border-right border-bottom-dash">
+					<div class="buy-btn">立即购买</div>
+				</td>
+			</tr>
+			<tr>
+				<td height="200" width="240" class="padLeft12 border-left border-top border-bottom-dash">
+					<a href="#" class="color-fd7636">
+						<img src="images/u10.png" />
+					</a>
+				</td>
+				<td width="600" class="border-top border-bottom-dash">
+					<div class="color-f00">直柄镀钛高速麻花钻</div>
+					<div class="marTop4">凯文贸易有限责任公司</div>
+					<div class="marTop4">市场价：¥5.25</div>
+					<div class="marTop4">已售出：2410</div>
+					<div class="marTop4">商品位置：电子超市</div>
+					<div class="marTop4">产品简介：</div>
+					<div class="marTop4 comment02">名称：直柄麻花钻头，规格：1mm，其他参数：镀钛高速钢，……</div>
+				</td>
+				<td align="center" class="border-top border-right border-bottom-dash">
+					<div class="buy-btn">立即购买</div>
+				</td>
+			</tr>
+		</table>
+		<table cellspacing="0" class="condition">
+			<tr>
+				<td height="40" class="border-left border-right"> 
+				</td>
+			</tr>
+		</table>
+		<table cellspacing="0" class="condition">
+			<tr>
+				<td width="60" height="40" class="padLeft12 border-left border-bottom"> 
+					
+				</td>
+				<td width="560" class="border-bottom">
+					
+				</td>
+				<td class="border-right border-bottom">
+					<span class="other-es">上一页</span>
+					<ul class="condition-each02">
+						<li class="condition-each02-active">1</li>
+						<li>2</li>
+						<li>3</li>
+					</ul>
+					<span class="other-es"> 下一页</span>
+					<span class="other border-none">共500条</span>
+					<span class="other border-none">共100页</span>
+					<span class="other border-none">到</span>
+					<input type="text" class="other width40" />
+					<span class="other border-none">页</span>
+					<span class="other-es">确定</span>
+				</td>
+			</tr>
+		</table>
+		<div class="friends">
+			<div class="friends-title">合作伙伴</div>
+			<img src="images/partner01.jpg" />
+			<img src="images/partner02.jpg" />
+			<img src="images/partner03.jpg" />
+			<img src="images/partner04.jpg" />
+			<img src="images/partner05.jpg" />
+			<img src="images/partner06.jpg" />
+			<div class="clearfix"></div>
+			<img src="images/partner07.jpg" />
+			<img src="images/partner08.jpg" />
+			<img src="images/partner09.jpg" />
+			<img src="images/partner10.jpg" />
+			<img src="images/partner11.jpg" />
+			<img src="images/partner12.jpg" />
+			<div class="clearfix"></div>
+		</div>
+		<div class="footer">
+			<div class="footer-nav">
+				<a href="#">首页</a>|
+				<a href="#">关于我们</a>|
+				<a href="#">帮助中心</a>|
+				<a href="#">联系我们</a>
+			</div>
+			<div class="addr">
+				地址：陕西省西安市雁塔区沣惠南路中华世纪城（东门）商住楼8号楼二层 电话：029-88990909 传真：029-89286898 邮编：710065
+			</div>
+			<div class="copyright">上海石油交易所西部交易中心 版权所有 陕ICP备09004887号 技术支持：高达软件 <img src="images/police.png" class="police" />陕公网安备 61019002000027号</div>
+		</div>
+	</body>
+	<script type="text/javascript">		
+		// 产品名称、产品型号等下面选项颜色改变
+		$(".condition-each>li").click(function(){
+			$(this).toggleClass("color-f00")
+		})
+		//排序选项颜色改变
+		$(".condition-vary>li").click(function(){
+			$(this).addClass("condition-vary-active").siblings().removeClass("condition-vary-active")
+		})
+		$(".condition-vary>li").click(function(){
+			$(this).siblings().find(".icon-shang").removeClass("icon-shang color-fff").addClass("icon-shang-copy-copy color333")
+			$(this).find(".icon-shang-copy-copy").removeClass("icon-shang-copy-copy").addClass("icon-shang color-fff")
+		})
+		//每页显示、分页选项颜色改变
+		$(".condition-each02>li").click(function(){
+			$(this).addClass("condition-each02-active").siblings().removeClass("condition-each02-active")
+		})
+	</script>
+</html>

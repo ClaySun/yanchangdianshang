@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>延长商品列表</title>
+		<link rel="stylesheet" type="text/css" href="./css/common.css">
+        <link rel="stylesheet" href="./css/mycss1.css" />
+        <link rel="stylesheet" href="./css/style2.css" />
+        <link rel="stylesheet" href="./css/iconfont.css" />
+        <script type="text/javascript" src="js/jquery-1_002.js" ></script>
+        <script type="text/javascript" src="js/product.js" ></script>
+        <script type="text/javascript" src="js/more.js" ></script>
+        <!--<script type="text/javascript" src="./js/myscript.js" ></script>-->
+        <script type="text/javascript">
+            $(document).ready(function(){
+            $(".more11").click(function(){
+            $(".sx1").toggle("display:none");
+            });
+            });
+        </script>
+	</head>
+	<body>
+	  		<!-----------侧边栏-------->
+	  		<!-----------侧边栏-------->
+<div class="topbar">
+	<div class="topbar-body">
+		<ul class="topbar-bd-l">
+			<li>
+				<div class="menu-hd city-item"><span><label>全国站</label></span><i><s>◇</s></i></div>
+				<div class="menu-bd">
+					<div class="city-list"><a href="#">上海</a> <a href="#">南京</a> <a href="#">苏州</a> <a href="#">无锡</a> <a href="#">全国</a></div>
+				</div>
+			</li>
+			<li>交易时间：<a style="color:#ec0000;">7:30-17:30（工作日）</a></li>
+			<li>客服热线：029-88990909</li>
+			
+		</ul>
+		<ul class="topbar-bd-r">
+			<li class="login-info unlogin">您好 ！欢迎来到延长电商贸易平台</li>
+			<li class="unlogin"><a class="tb-m-a2 blue user-login" href="login.html">请登录</a></li>
+			<li class="unlogin"><a class="tb-m-a2 blue" href="register.html">免费注册</a></li>
+			<li>
+				<div class="menu-hd">
+					<a href="my-admin.html">我的平台</a><i><s>◇</s></i>
+				</div>
+				<div class="menu-bd">
+					<div class="menu-bd-panel menu-bd-panel1">
+						<div class="content1 ">
+							<a class="content1-infor1" href="#"><img src="images/topbar_icon2.png"></a>
+							<div class="content1-infor2 unlogin">
+								<div class="line1">您好，请登录！</div>
+							</div>
+							<div class="content1-infor2 logon">
+								<div class="line1">Hi，<a class="user-name" href="#"></a>！</div>
+								<a href="#" class="line2 user-tel"></a>
+							</div>
+						</div>
+						<div class="content2">
+							<div><a class="first" href="#" target="_top">我的订单</a><a href="" target="_top">积分管理</a></div>
+							<div><a class="first" href="#" target="_top">会员认证</a><a href="" target="_top">上传资源单</a></div>
+						</div>
+					</div>
+				</div>
+			</li>
+
+			<li>
+				<div class="menu-hd"><a href="#">我的设置</a><i><s>◇</s></i></div>
+				<div class="menu-bd">
+					<div class="menu-bd-panel menu-bd-panel3">
+						<a class="first" target="_top" href="#">订单管理</a> <a target="_top" href="#">资源管理</a>
+					</div>
+				</div>
+			</li>
+			<li>
+				<div class="menu-hd"><a href="#">财物车</a><i><s>◇</s></i></div>
+				<div class="menu-bd">
+					<div class="menu-bd-panel menu-bd-panel3">
+						<a class="first" target="_top" href="#">任你花</a> <a target="_top" href="#">帮你采</a>
+						<a target="_top" href="#">随你押</a>
+					</div>
+				</div>
+			</li>
+			<!--<li class="tb-m-line">|</li>!-->
+			<li>
+				<div class="menu-hd"><a href="#">帮助中心</a><i><s>◇</s></i></div>
+				<div class="menu-bd">
+					<div class="menu-bd-panel menu-bd-panel3">
+						<a class="first" target="_top" href="#">帮助中心</a> <a target="_top" href="#">帮助中心</a> <a class="first" target="_top" href="#">帮助中心</a> <a target="_top" href="#">帮助中心</a>
+					</div>
+				</div>
+			</li>
+		</ul>
+
+	</div>
+</div>
+
+<div class="header">
+  <div class="logo"><a hidefocus="true" href="#"></a></div>
+  <div class="hd-search">
+    <div class="search-bd">
+      <div class="search-triggers">
+        <ul>
+          <li><a>超市  </a></li>
+          <li><a href="#">全部</a></li>
+          <li><a href="#">超市</a></li>
+          <li><a href="#">集市</a></li>
+        </ul>
+        <i></i>
+      </div>
+      <div class="search-i">
+        <form class="f-cb" method="post" onSubmit="return checkKwInput();" action="#" id="search" name="search">
+          <div class="search-button">
+            <button id="resSeachButton" class="btn-search s-search" type="submit">搜一下</button>
+          </div>
+          <div class="search-combobox">
+            <div class="search-combobox-input">
+              <input type="hidden" value="" name="ci" id="ci_code">
+              <input id="kwInput1" placeholder="请输入关键词查询" autocomplete="off" onFocus="this.style.color='#666';" onBlur="this.style.color='#666';" x-webkit-speech="" x-webkit-grammar="builtin:translate">
+              <input type="hidden" name="kw" id="kwInput2">
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="search-result">
+        <!-- 当前搜索  -->
+        <!-- 类似搜索  -->
+        	<ul class="sear-res">
+        		<li><a href="#"><span class="sear-res-l">螺纹钢</span></a></li>
+        		<li><a href="#"><span class="sear-res-l">HRB400</span></a></li>
+        		<li><a href="#"><span class="sear-res-l">HRB400E</span></a></li>
+        		<li><a href="#"><span class="sear-res-l">Q235</span></a></li>
+        		<li><a href="#"><span class="sear-res-l">Q235B</span></a></li>
+        	</ul>
+        	<!-- 搜索历史  -->
+        	<ul class="sear-history">
+        		<li><a href="#"><span class="sear-res-l">HRB400</span><span class="sear-res-r">搜索历史</span></a></li>
+        		<li><a href="#"><span class="sear-res-l">HRB400B</span><span class="sear-res-r">搜索历史</span></a></li>
+        	</ul>
+        </div>
+    </div>
+	</div>
+	<div class="header-nav-btn">
+		<!--<a class="header-nav-btn1 mn-ico1" href="#"><i></i>积分商城</a>!-->
+		<a class="header-nav-btn1 mn-ico2" href="shop-car.html"><i></i>我的购物车<span class="count" id="rcart">0</span></a>
+		<div class="cart-panel">
+	        <div class="cartlist"> 共选中 <b class="orange"><span id="itemTotalTemp">0</span></b> 件货物（<b class="orange"><span id="averageQtyTotalTemp">0</span></b> 吨）&nbsp;<br />总价 <b><span id="priceTotalTemp">0</span></b>元 </div>
+	        <a class="shop-car.html" href="cart_list.html">查看购物车</a>
+		</div>
+	</div>
+    
+   <div class="header-app">
+		<div class="menu-bd-panel2">
+        	<ul>
+            	<li class="mrgR10"><img src="images/app.gif"></li>
+        		<li><img src="images/app.gif"></li>
+            </ul>
+        </div>
+	</div>
+</div>
+
+
+<div class="m-nav">
+	<div class="auto">
+        <ul class="main-nav">
+            <li class="nav-main"><a href="index.html">首页</a></li>
+            <li class="nav-main"><a href="big-company.html">大企业专场</a></li>
+            <li class="nav-main"><a href="purchase-big.html">大宗商品专场</a></li>
+            <li class="nav-main"><a href="gongyepin_market.html">工业品市场</a></li>
+            <li class="nav-main"><a href="caigou_session.html">采购专场</a></li>
+            <!--<li class="nav-main"><a class="nav-process" href="#">竞价专场</a></li>-->
+            <li class="nav-main"><a href="#">电子招投标</a></li>
+            <li class="nav-main"><a href="supermarkets.html">电子商城</a></li>
+            <li class="nav-main"><a href="purchase02.html">民生超市</a></li>
+            <li class="nav-main"><a href="#">金融服务</a></li>
+            <li class="nav-main"><a href="#">社区</a></li>
+        </ul>
+	</div>
+</div>
+	
+		<!-------------------我的平台------------------->
+		<!-------------------筛选分类------------------->
+		<div class="breadcrumbNav">
+		<a href="supermarkets.html">电子商城</a>
+		<span class="bGray">></span>
+		<span class="bGray">订单信息</span>
+		</div>	
+<!--<div class="demo">
+ 	<div class="zj">
+		<span>全部结果 ><i>电脑</i></span>
+		<p class="qcqb">清除全部</p>
+	</div>
+
+	<div class="sx">
+		<span class="select-all selected">品牌 : </span>
+		<a class="sx_child" name="aaa" href="javascript:;">联想</a>
+		<a rel="2" class="sx_child" name="aaa" href="javascript:;">华硕</a>
+		<a rel="3" class="sx_child" name="aaa" href="javascript:;">联想</a>
+		<a rel="4" class="sx_child" name="aaa" href="javascript:;">戴尔</a>
+		<a rel="5" class="sx_child" name="aaa" href="javascript:;">宏碁</a>
+		<a rel="6" class="sx_child" name="aaa" href="javascript:;">神州</a>
+	</div>
+	
+	<div class="sx">
+		<span class="select-all selected">相关分类 : </span>
+		<a rel="1" class="sx_child" name="bbb" href="javascript:;">笔记本</a>
+		<a rel="2" class="sx_child" name="bbb" href="javascript:;">台式电脑</a>
+		<a rel="3" class="sx_child" name="bbb" href="javascript:;">组装电脑</a>
+		<a rel="4" class="sx_child" name="bbb" href="javascript:;">一体机</a>
+	</div>
+
+	<div class="sx sx1">
+		<span class="select-all selected">价格 : </span>
+		<a rel="1" class="sx_child" name="ccc" href="javascript:;">0-2500</a>
+		<a rel="2" class="sx_child" name="ccc" href="javascript:;">2500-3000</a>
+		<a rel="3" class="sx_child" name="ccc" href="javascript:;">3000-3500</a>
+		<a rel="4" class="sx_child" name="ccc" href="javascript:;">3500-4000</a>
+	</div>
+
+	<div class="sx sx1">
+		<span class="select-all selected">内存容量 : </span>
+		<a rel="1" class="sx_child" name="ddd" href="javascript:;">ⅠⅠ</a>
+		<a rel="2" class="sx_child" name="ddd" href="javascript:;">ⅡⅡ</a>
+		<a rel="3" class="sx_child" name="ddd" href="javascript:;">ⅢⅢ</a>
+		<a rel="4" class="sx_child" name="ddd" href="javascript:;">ⅣⅣ</a>
+	</div>	
+</div>--->
+<div class="demo">
+ <ul class="screen_con">
+      <li class="select-list clearfix">
+           <span class="select_title">品   牌：</span>
+           <dl class="clearfix  sx">
+              <dd><a rel="a" class="sx_child" name="aaa" href="javascript:;">华硕</a></dd>
+              <dd><a rel="b" class="sx_child" name="aaa" href="javascript:;">联想</a></dd>
+              <dd><a rel="3" class="sx_child" name="aaa" href="javascript:;">戴尔</a></dd>
+              <dd><a rel="4" class="sx_child" name="aaa" href="javascript:;">宏碁</a></dd>
+              <dd><a rel="5" class="sx_child" name="aaa" href="javascript:;">神州</a></dd>
+              <dd><a rel="6" class="sx_child" name="aaa" href="javascript:;">华硕</a></dd>
+              <dd><a rel="7" class="sx_child" name="aaa" href="javascript:;">联想</a></dd>
+              <dd><a rel="8" class="sx_child" name="aaa" href="javascript:;">戴尔</a></dd>
+              <dd><a rel="9" class="sx_child" name="aaa" href="javascript:;">宏碁</a></dd>
+              <dd><a rel="10" class="sx_child" name="aaa" href="javascript:;">神州</a></dd>
+              <dd><a rel="11" class="sx_child" name="aaa" href="javascript:;">华硕</a></dd>
+              <dd><a rel="12" class="sx_child" name="aaa" href="javascript:;">联想</a></dd>
+              <dd><a rel="13" class="sx_child" name="aaa" href="javascript:;">戴尔</a></dd>
+              <dd><a rel="14" class="sx_child" name="aaa" href="javascript:;">宏碁</a></dd>
+              <dd><a rel="15" class="sx_child" name="aaa" href="javascript:;">神州</a></dd>
+              <dd><a rel="16" class="sx_child" name="aaa" href="javascript:;">华硕</a></dd>
+              <dd><a rel="17" class="sx_child" name="aaa" href="javascript:;">联想</a></dd>
+              <dd><a rel="18" class="sx_child" name="aaa" href="javascript:;">戴尔</a></dd>
+              <dd><a rel="19" class="sx_child" name="aaa" href="javascript:;">宏碁</a></dd>
+              <dd><a rel="20" class="sx_child" name="aaa" href="javascript:;">神州</a></dd>
+
+           </dl>
+           <a href="javascript:;" class="more_box">更多</a>  
+           <div style="clear: both;"></div>
+       </li>
+       <li class="select-list clearfix ">
+           <span class="select_title">品   类：</span>
+           <dl class="clearfix  sx">
+              <dd><a rel="a" class="sx_child" name="bbb" href="javascript:;">笔记本</a></dd>
+              <dd><a rel="b" class="sx_child" name="bbb" href="javascript:;">台式机</a></dd>
+           </dl>
+           <a href="javascript:;" class="more_box">更多</a>  
+           <div style="clear: both;"></div>
+       </li>
+       <li class="select-list clearfix sx1">
+           <span class="select_title">价   格：</span>
+           <dl class="clearfix  sx">
+              <dd><a rel="a" class="sx_child" name="ccc" href="javascript:;">2000-4000</a></dd>
+              <dd><a rel="b" class="sx_child" name="ccc" href="javascript:;">4000-6000</a></dd>
+           </dl>
+           <a href="javascript:;" class="more_box">更多</a>  
+           <div style="clear: both;"></div>
+       </li>     
+       <li class="select-list clearfix sx1">
+           <span class="select_title">容  量：</span>
+           <dl class="clearfix  sx">
+              <dd><a rel="a" class="sx_child" name="ddd" href="javascript:;">500G</a></dd>
+              <dd><a rel="b" class="sx_child" name="ddd" href="javascript:;">1T</a></dd>
+           </dl>
+           <a href="javascript:;" class="more_box">更多</a>  
+           <div style="clear: both;"></div>
+       </li>       
+      <li class="select-list clearfix ">
+           <span class="select_title">已 选：</span>
+           <dl class="clearfix select-result zj">
+            <span class="qcqb">清除全部</span>
+           </dl>
+          <div style="clear: both;"></div> 
+       </li>
+      </ul>
+    </div>  
+<div class="more11"><button type="button" class="more1">更多选项</button></div>
+<div style="clear: both;"></div>
+<script type="text/javascript" src="js/shanxuan.js"></script>
+<script type="text/javascript">
+$('.sx').sx({
+	nuv:".zj",//筛选结果
+	zi:"sx_child",//所有筛选范围内的子类
+	qingchu:'.qcqb',//清除全部
+	over:'on'//选中状态样式名称
+});
+</script>	
+          <!--------内容结束--------->  
+     <div class="xuanze">
+			<span class="make-list">排序：</span>
+			<ul class="condition-vary">
+				<li class="condition-vary-active">默认<span class="ver-aling-mid iconfont icon-shang color-fff"></span></li>
+				<li>价格<span class="iconfont icon-shang-copy-copy ver-aling-mid"></span></li>
+				<li>销量<span class="iconfont icon-shang-copy-copy ver-aling-mid"></span></li>				
+				<li>上架时间<span class="iconfont icon-shang-copy-copy ver-aling-mid"></span></li>
+			</ul>
+         <div class="mo5">
+收货地：
+         <select id="fbyxq">
+                     <option value="one">陕西</option>
+                     <option value="two">上海</option>
+                     <option value="three">北京</option>
+                     <option value="fore">深圳</option>
+                     <option value="free">河南</option>
+                     <option value="six">安徽</option>
+                     <option value="seven">东北</option>
+                  </select>
+
+        </div>          
+         <div style="clear: both;"></div>
+     </div> 
+<!------------------商品列表------------------->
+     <div class="lbg_list_all">
+		<ul class="lbg_list_ul">
+			<li class="marRight20">
+						<dl class="goods-content">
+							<dt>
+								<img src="images/goods01.jpg"/>
+							</dt>
+							<dd class="marTop12">
+								<div class="float_left">
+									<span>¥6099.00</span>
+									<!--<span class="post">包邮</span>-->
+								</div>
+								<div class="clearfix"></div>
+							</dd>
+							<dd>
+								<a href="goods-detail.html" class="tit12 font1">联想14英寸  超极本电脑  （I5-6200U 8G 258G）</a>
+							</dd>
+							<dd>
+								<div class="float_left">
+									<a href="#" class="qjd font1">lenovo官方旗舰店</a>
+								</div>
+								<div class="float_right font1">
+									该款月成交量：<span>1.6万</span>
+								</div>
+								<div class="clearfix"></div>
+							</dd>							
+						</dl>
+					</li>
+			<li class="marRight20">
+						<dl class="goods-content">
+							<dt>
+								<img src="images/goods01.jpg"/>
+							</dt>
+							<dd class="marTop12">
+								<div class="float_left">
+									<span>¥6099.00</span>
+									<!--<span class="post">包邮</span>-->
+								</div>
+								<div class="clearfix"></div>
+							</dd>
+							<dd>
+								<a href="goods-detail.html" class="tit12 font1">联想14英寸  超极本电脑  （I5-6200U 8G 258G）</a>
+							</dd>
+							<dd>
+								<div class="float_left">
+									<a href="#" class="qjd font1">lenovo官方旗舰店</a>
+								</div>
+								<div class="float_right font1">
+									该款月成交量：<span>1.6万</span>
+								</div>
+								<div class="clearfix"></div>
+							</dd>							
+						</dl>
+					</li>
+			<li class="marRight20">
+						<dl class="goods-content">
+							<dt>
+								<img src="images/goods01.jpg"/>
+							</dt>
+							<dd class="marTop12">
+								<div class="float_left">
+									<span>¥6099.00</span>
+									<!--<span class="post">包邮</span>-->
+								</div>
+								<div class="clearfix"></div>
+							</dd>
+							<dd>
+								<a href="goods-detail.html" class="tit12 font1">联想14英寸  超极本电脑  （I5-6200U 8G 258G）</a>
+							</dd>
+							<dd>
+								<div class="float_left">
+									<a href="#" class="qjd font1">lenovo官方旗舰店</a>
+								</div>
+								<div class="float_right font1">
+									该款月成交量：<span>1.6万</span>
+								</div>
+								<div class="clearfix"></div>
+							</dd>							
+						</dl>
+					</li>
+			<li class="marRight20">
+						<dl class="goods-content">
+							<dt>
+								<img src="images/goods01.jpg"/>
+							</dt>
+							<dd class="marTop12">
+								<div class="float_left">
+									<span>¥6099.00</span>
+									<!--<span class="post">包邮</span>-->
+								</div>
+								<div class="clearfix"></div>
+							</dd>
+							<dd>
+								<a href="goods-detail.html" class="tit12 font1">联想14英寸  超极本电脑  （I5-6200U 8G 258G）</a>
+							</dd>
+							<dd>
+								<div class="float_left">
+									<a href="#" class="qjd font1">lenovo官方旗舰店</a>
+								</div>
+								<div class="float_right font1">
+									该款月成交量：<span>1.6万</span>
+								</div>
+								<div class="clearfix"></div>
+							</dd>							
+						</dl>
+					</li>
+			<li class="marRight20">
+						<dl class="goods-content">
+							<dt>
+								<img src="images/goods01.jpg"/>
+							</dt>
+							<dd class="marTop12">
+								<div class="float_left">
+									<span>¥6099.00</span>
+									<!--<span class="post">包邮</span>-->
+								</div>
+								<div class="clearfix"></div>
+							</dd>
+							<dd>
+								<a href="goods-detail.html" class="tit12 font1">联想14英寸  超极本电脑  （I5-6200U 8G 258G）</a>
+							</dd>
+							<dd>
+								<div class="float_left">
+									<a href="#" class="qjd font1">lenovo官方旗舰店</a>
+								</div>
+								<div class="float_right font1">
+									该款月成交量：<span>1.6万</span>
+								</div>
+								<div class="clearfix"></div>
+							</dd>							
+						</dl>
+					</li>					
+            <li class="marRight20">
+						<dl class="goods-content">
+							<dt>
+								<img src="images/goods01.jpg"/>
+							</dt>
+							<dd class="marTop12">
+								<div class="float_left">
+									<span>¥6099.00</span>
+									<!--<span class="post">包邮</span>-->
+								</div>
+								<div class="clearfix"></div>
+							</dd>
+							<dd>
+								<a href="goods-detail.html" class="tit12 font1">联想14英寸  超极本电脑  （I5-6200U 8G 258G）</a>
+							</dd>
+							<dd>
+								<div class="float_left">
+									<a href="#" class="qjd font1">lenovo官方旗舰店</a>
+								</div>
+								<div class="float_right font1">
+									该款月成交量：<span>1.6万</span>
+								</div>
+								<div class="clearfix"></div>
+							</dd>							
+						</dl>
+					</li>
+			<li class="marRight20">
+						<dl class="goods-content">
+							<dt>
+								<img src="images/goods01.jpg"/>
+							</dt>
+							<dd class="marTop12">
+								<div class="float_left">
+									<span>¥6099.00</span>
+									<!--<span class="post">包邮</span>-->
+								</div>
+								<div class="clearfix"></div>
+							</dd>
+							<dd>
+								<a href="goods-detail.html" class="tit12 font1">联想14英寸  超极本电脑  （I5-6200U 8G 258G）</a>
+							</dd>
+							<dd>
+								<div class="float_left">
+									<a href="#" class="qjd font1">lenovo官方旗舰店</a>
+								</div>
+								<div class="float_right font1">
+									该款月成交量：<span>1.6万</span>
+								</div>
+								<div class="clearfix"></div>
+							</dd>							
+						</dl>
+					</li>
+			<li class="marRight20">
+						<dl class="goods-content">
+							<dt>
+								<img src="images/goods01.jpg"/>
+							</dt>
+							<dd class="marTop12">
+								<div class="float_left">
+									<span>¥6099.00</span>
+									<!--<span class="post">包邮</span>-->
+								</div>
+								<div class="clearfix"></div>
+							</dd>
+							<dd>
+								<a href="goods-detail.html" class="tit12 font1">联想14英寸  超极本电脑  （I5-6200U 8G 258G）</a>
+							</dd>
+							<dd>
+								<div class="float_left">
+									<a href="#" class="qjd font1">lenovo官方旗舰店</a>
+								</div>
+								<div class="float_right font1">
+									该款月成交量：<span>1.6万</span>
+								</div>
+								<div class="clearfix"></div>
+							</dd>							
+						</dl>
+					</li>
+			<li class="marRight20">
+						<dl class="goods-content">
+							<dt>
+								<img src="images/goods01.jpg"/>
+							</dt>
+							<dd class="marTop12">
+								<div class="float_left">
+									<span>¥6099.00</span>
+									<!--<span class="post">包邮</span>-->
+								</div>
+								<div class="clearfix"></div>
+							</dd>
+							<dd>
+								<a href="goods-detail.html" class="tit12 font1">联想14英寸  超极本电脑  （I5-6200U 8G 258G）</a>
+							</dd>
+							<dd>
+								<div class="float_left">
+									<a href="#" class="qjd font1">lenovo官方旗舰店</a>
+								</div>
+								<div class="float_right font1">
+									该款月成交量：<span>1.6万</span>
+								</div>
+								<div class="clearfix"></div>
+							</dd>							
+						</dl>
+					</li>
+		    <li class="marRight20">
+						<dl class="goods-content">
+							<dt>
+								<img src="images/goods01.jpg"/>
+							</dt>
+							<dd class="marTop12">
+								<div class="float_left">
+									<span>¥6099.00</span>
+									<!--<span class="post">包邮</span>-->
+								</div>
+								<div class="clearfix"></div>
+							</dd>
+							<dd>
+								<a href="goods-detail.html" class="tit12 font1">联想14英寸  超极本电脑  （I5-6200U 8G 258G）</a>
+							</dd>
+							<dd>
+								<div class="float_left">
+									<a href="#" class="qjd font1">lenovo官方旗舰店</a>
+								</div>
+								<div class="float_right font1">
+									该款月成交量：<span>1.6万</span>
+								</div>
+								<div class="clearfix"></div>
+							</dd>							
+						</dl>
+					</li>				
+		</ul>
+	 </div>	
+	 <div style="clear: both;"></div>
+<!--------------------分页------------------->	
+			<!--分页-->
+			<div class="pagebar">
+				<div class="total_left">
+					共665条记录，每页最多显示10条
+				</div>
+				<div class="total_right">
+					<ul class="total_ul">
+						<span class="first_span">第一页</span>
+						<li>
+							<a href="">1</a>
+						</li>
+						<li>
+							<a href="">2</a>
+						</li>
+						<li>
+							<a href="">3</a>
+						</li>
+						<li>
+							<a href="">4</a>
+						</li>
+						<li>
+							<a href="">5</a>
+						</li>
+						<span class="last_span">最后一页</span>
+					</ul>
+					<span class="total_span">共67页</span>
+					<span class="jump_span">跳转
+						<input type="text">
+						页</span>
+				</div>
+			</div>
+			<!--分页-->
+<!------------底部开始-------------->
+<div class="footer">
+	<div class="service-box">
+		<p align="center">地 址：陕西省西安市雁塔区沣惠南路中华世纪城（东门）商住楼8号楼二层　邮 编：710065　电 话：029-89199820 029-88990909</p>
+        <p align="center">上海石油交易所西部交易中心 版权所有　陕ICP备09004887号　技术支持：高达软件　陕公网安备61019002000027号</p>
+    </div>
+</div>
+	</body>
+	<script type="text/javascript">
+		//导航详细菜单的显示和隐藏
+		$(".list-details").hide()
+		$(".banner-on-left-list>li").mouseenter(function(){
+			$(this).find(".list-details").show()
+		}).mouseleave(function(){
+			$(this).find(".list-details").hide()
+		})
+		
+		//登录和注册按钮背景变化
+		$(".login-btn").mouseenter(function(){
+			$(this).find(".icon-denglu").removeClass("color-fd7636").addClass("color-fff")
+		}).mouseleave(function(){
+			$(this).find(".icon-denglu").removeClass("color-fff").addClass("color-fd7636")
+		})
+		$(".register-btn").mouseenter(function(){
+			$(this).find(".icon-zhuce").removeClass("color-fd7636").addClass("color-fff")
+		}).mouseleave(function(){
+			$(this).find(".icon-zhuce").removeClass("color-fff").addClass("color-fd7636")
+		})
+		
+		//招标公告和招标结果按钮切换
+		$(".inner-title").click(function(){
+			$(this).addClass("inner-title-acitve").siblings().removeClass("inner-title-acitve")
+		})
+		$(".wide-inner-title").click(function(){
+			$(this).addClass("inner-title-acitve").siblings().removeClass("inner-title-acitve")
+		})
+		
+		//产品切换
+		$(document).ready(function(){
+			//产品名称切换
+			$(".chanpin").click(function(){
+				$(".chanpin").removeClass("on");
+				$(this).addClass("on");
+			});
+			//产品型号切换
+			$(".xinghao").click(function(){
+				$(".xinghao").removeClass("on");
+				$(this).addClass("on");
+			});
+			//产品规格切换
+			$(".guige").click(function(){
+				$(".guige").removeClass("on");
+				$(this).addClass("on");
+			});
+			//产品品牌切换
+			$(".pinpai").click(function(){
+				$(".pinpai").removeClass("on");
+				$(this).addClass("on");
+			});
+			//产地切换
+			$(".chandi").click(function(){
+				$(".chandi").removeClass("on");
+				$(this).addClass("on");
+			});
+			//排序切换
+			$(".paixu3").click(function(){
+				$(".paixu3").removeClass("paixu1");
+				$(this).addClass("paixu1");
+			})
+		});
+			
+			
+		// 产品名称、产品型号等下面选项颜色改变
+		$(".condition-each>li").click(function(){
+			$(this).addClass("color-f00").siblings().removeClass("color-f00")
+		})
+		//排序选项颜色改变
+		$(".condition-vary>li").click(function(){
+			$(this).addClass("condition-vary-active").siblings().removeClass("condition-vary-active")
+		})
+		$(".condition-vary>li").click(function(){
+			$(this).siblings().find(".icon-shang").removeClass("icon-shang color-fff").addClass("icon-shang-copy-copy color333")
+			$(this).find(".icon-shang-copy-copy").removeClass("icon-shang-copy-copy").addClass("icon-shang color-fff")
+		})
+		//每页显示、分页选项颜色改变
+		$(".condition-each02>li").click(function(){
+			$(this).addClass("condition-each02-active").siblings().removeClass("condition-each02-active")
+		})
+	
+		
+	</script>	
+</html>

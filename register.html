@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>延长电商贸易平台</title>
+		<link rel="stylesheet" href="./css/style.css" />
+		<link rel="stylesheet" href="./css/iconfont.css" />
+		<link rel="stylesheet" href="./css/swiper.min.css" />
+		<link rel="stylesheet" type="text/css" href="./css/common.css">
+		<link rel="stylesheet" href="./css/mycss1.css" />
+		<script type="text/javascript" src="./js/jquery.js"></script>
+		<script type="text/javascript" src="js/main.js"></script>
+		<script type="text/javascript" src="./js/jquery.kxbdMarquee.js"></script>	
+		<script>
+			$(document).ready(function() { 				
+				//底部合作伙伴轮播
+				$("#marquee").kxbdMarquee(
+						{
+							isEqual:true,
+							loop:0,
+							direction:"left",
+							scrollAmount:1,
+							scrollDelay:20								
+						}							
+				);						
+			}); 	 
+		</script>
+	</head>
+	<body>
+		<div style=" border-bottom: 1px solid #ddd;">
+			<div class="header">
+				<div class="logo">
+					<a hidefocus="true" href="#" style=" margin-top: 12px;"></a>
+				</div>
+				<div class="welcome" style=" margin-top: 12px;">欢迎登陆</div>
+			</div>
+		</div>
+		<div class="login-bg">
+			<div class="login-main">
+				<div class="login-left">
+					<img src="images/login001.jpg" />
+				</div>
+				<div class="login-right">
+					<div class="login-title">
+						<span>账户登录</span>
+					</div>
+					<div class="input-blank">
+						<span class="iconfont icon-iconuser"></span>
+						<input type="text" placeholder="邮箱/用户名/已验证手机" />
+						<div class="clearfix"></div>
+					</div>
+					<div class="input-blank">
+						<span class="iconfont icon-mima"></span>
+						<input type="password" placeholder="密码" />
+						<div class="clearfix"></div>
+					</div>
+					<div class="input-blank input-down">
+						<div class="floatL">
+							<span class="iconfont icon-yanzhengma"></span>
+							<input type="text" placeholder="验证码" class="yanzheng" />
+						</div>
+						<div class="floatR">
+							<img src="images/login1Win.jpg" class="yanzheng-pic" />
+						</div>
+						<div class="clearfix"></div>
+					</div>
+					<div class="input-blank input-down">
+						<div class="floatL">
+							<input type="checkbox" class="auto-login" /><span>自动登录</span>
+						</div>
+						<a class="floatR" href="#">忘记密码</a>
+						<div class="clearfix"></div>
+					</div>
+					<a class="login-button" href="#">登&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;录</a>
+					<div class="input-blank input-down">
+						<a class="floatR regis" href="#">立即注册 >></a>
+						<div class="clearfix"></div>
+					</div>
+				</div>
+				<div class="clearfix"></div>
+			</div>
+		</div>
+		<div class="friends">
+			<div class="friends-title">
+				合作伙伴
+			</div>
+			<div id="marquee">
+    			<ul class="partnerLists">	                
+	                <li><a href="#"><img src="images/partner01.jpg"></a></li>
+	                <li><a href="#"><img src="images/partner02.jpg"></a></li>
+	                <li><a href="#"><img src="images/partner03.jpg"></a></li>
+	                <li><a href="#"><img src="images/partner04.jpg"></a></li>
+	                <li><a href="#"><img src="images/partner05.jpg"></a></li>
+	                <li><a href="#"><img src="images/partner06.jpg"></a></li>
+	                <li><a href="#"><img src="images/partner07.jpg"></a></li>
+	                <li><a href="#"><img src="images/partner08.jpg"></a></li>
+	                <li><a href="#"><img src="images/partner09.jpg"></a></li>
+	                <li><a href="#"><img src="images/partner10.jpg"></a></li>
+	            </ul>
+    		</div>
+			<div class="clearfix"></div>
+		</div>
+		<div class="footer-bottom">
+			<p>地址：陕西省西安市雁塔区沣惠南路中华世纪城（东门）商住楼8号楼二层 电话：029-88990909 传真：029-89286898 邮编：710065 </p>
+			<p>上海石油交易所西部有限公司 版权所有 陕ICP备09004887号 <img src="images/police.png" class="police" />陕公网安备 61019002000027号</p>
+			<div class="foot-img-box">
+				<a><img src="images/foot-img1.jpg"></a>
+				<a><img src="images/foot-img2.jpg"></a>
+				<a><img src="images/foot-img3.jpg"></a>
+				<a><img src="images/foot-img4.jpg"></a>
+			</div>
+		</div>
+	</body>
+</html>

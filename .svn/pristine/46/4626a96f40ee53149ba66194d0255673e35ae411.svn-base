@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>延长电商贸易平台</title>
+		<link rel="stylesheet" href="./css/style.css" />
+		<link rel="stylesheet" href="./css/iconfont.css" />
+		<link rel="stylesheet" href="./css/swiper.min.css" />
+		<link rel="stylesheet" type="text/css" href="./css/common.css">
+		<link rel="stylesheet" href="./css/mycss1.css" />
+		<script type="text/javascript" src="./js/jquery.js"></script>
+		<script type="text/javascript" src="js/main.js"></script>
+		<script type="text/javascript" src="./js/jquery.kxbdMarquee.js"></script>	
+		<script>
+			$(document).ready(function() { 				
+				//底部合作伙伴轮播
+				$("#marquee").kxbdMarquee(
+						{
+							isEqual:true,
+							loop:0,
+							direction:"left",
+							scrollAmount:1,
+							scrollDelay:20								
+						}							
+				);						
+			}); 	 
+		</script>
+	</head>
+	<body>
+		<div class="topbar">
+			<div class="topbar-body">
+				<ul class="topbar-bd-l">
+					<li>
+						交易时间：<a style="color:#ec0000;">7:30-17:30（工作日）</a>
+					</li>
+					<li>
+						客服热线：029-88990909
+					</li>
+				</ul>
+				<ul class="topbar-bd-r">
+					<li class="login-info unlogin">
+						您好 ！欢迎来到延长电商贸易平台
+					</li>
+					<li class="unlogin">
+						<a class="tb-m-a2 blue user-login" href="login.html">请登录</a>
+					</li>
+					<li class="unlogin">
+						<a class="tb-m-a2 blue" href="register.html">免费注册</a>
+					</li>
+					<li>
+						<div class="menu-hd">
+							<a href="my-admin.html">我的平台</a><i><s>◇</s></i>
+						</div>
+						<div class="menu-bd">
+							<div class="menu-bd-panel menu-bd-panel1">
+								<div class="content1 ">
+									<a class="content1-infor1" href="#"><img src="images/banner1.jpg"></a>
+									<div class="content1-infor2 unlogin">
+										<div class="line1">
+											<a href="#">您好，请登录！</a>
+										</div>
+									</div>
+								</div>
+								<div class="content2">
+									<div>
+										<a class="first" href="#" target="_top">我的订单</a><a href="" target="_top">积分管理</a>
+									</div>
+									<div>
+										<a class="first" href="#" target="_top">会员认证</a><a href="" target="_top">上传资源单</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="menu-hd">
+							<a href="#">我的设置</a><i><s>◇</s></i>
+						</div>
+						<div class="menu-bd">
+							<div class="menu-bd-panel menu-bd-panel3">
+								<a class="first" target="_top" href="#">订单管理</a><a target="_top" href="#">资源管理</a>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="menu-hd">
+							<a href="#">财物车</a><i><s>◇</s></i>
+						</div>
+						<div class="menu-bd">
+							<div class="menu-bd-panel menu-bd-panel3">
+								<a class="first" target="_top" href="#">任你花</a><a target="_top" href="#">帮你采</a>
+								<a target="_top" href="#">随你押</a>
+							</div>
+						</div>
+					</li>
+					<!--<li class="tb-m-line">|</li>!-->
+					<li>
+						<div class="menu-hd">
+							<a href="#">帮助中心</a><i><s>◇</s></i>
+						</div>
+						<div class="menu-bd">
+							<div class="menu-bd-panel menu-bd-panel3">
+								<a class="first" target="_top" href="#">帮助中心</a><a target="_top" href="#">帮助中心</a><a class="first" target="_top" href="#">帮助中心</a><a target="_top" href="#">帮助中心</a>
+							</div>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class="header">
+			<div class="logo">
+				<a hidefocus="true" href="#"></a>
+			</div>
+			<div class="hd-search">
+				<div class="search-bd">
+					<div class="search-triggers">
+						<ul>
+							<li>
+								<a>超市 </a>
+							</li>
+							<li>
+								<a href="#">全部</a>
+							</li>
+							<li>
+								<a href="#">商城</a>
+							</li>
+							<li>
+								<a href="#">市场</a>
+							</li>
+						</ul>
+						<i></i>
+					</div>
+					<div class="search-i">
+						<form class="f-cb" method="post" onSubmit="return checkKwInput();" action="#" id="search" name="search">
+							<div class="search-button">
+								<button id="resSeachButton" class="btn-search s-search" type="submit">
+									搜一下
+								</button>
+							</div>
+							<div class="search-combobox">
+								<div class="search-combobox-input">
+									<input type="hidden" value="" name="ci" id="ci_code">
+									<input id="kwInput1" placeholder="请输入关键词查询" autocomplete="off" onFocus="this.style.color='#666';" onBlur="this.style.color='#666';" x-webkit-speech="" x-webkit-grammar="builtin:translate">
+									<input type="hidden" name="kw" id="kwInput2">
+								</div>
+							</div>
+						</form>
+					</div>
+					<div class="search-result">
+						<!-- 当前搜索  -->
+						<!-- 类似搜索  -->
+						<ul class="sear-res">
+							<li>
+								<a href="#"><span class="sear-res-l">螺纹钢</span></a>
+							</li>
+							<li>
+								<a href="#"><span class="sear-res-l">HRB400</span></a>
+							</li>
+							<li>
+								<a href="#"><span class="sear-res-l">HRB400E</span></a>
+							</li>
+							<li>
+								<a href="#"><span class="sear-res-l">Q235</span></a>
+							</li>
+							<li>
+								<a href="#"><span class="sear-res-l">Q235B</span></a>
+							</li>
+						</ul>
+						<!-- 搜索历史  -->
+						<ul class="sear-history">
+							<li>
+								<a href="#"><span class="sear-res-l">HRB400</span><span class="sear-res-r">搜索历史</span></a>
+							</li>
+							<li>
+								<a href="#"><span class="sear-res-l">HRB400B</span><span class="sear-res-r">搜索历史</span></a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="header-nav-btn">
+				<!--<a class="header-nav-btn1 mn-ico1" href="#"><i></i>积分商城</a>!-->
+				<a class="header-nav-btn1 mn-ico2" id="end" href="shop-car.html"><i></i>我的购物车<span class="count" id="rcart">0</span></a>
+				<div class="cart-panel">
+					<div class="cartlist">
+						共选中 <b class="orange"><span id="itemTotalTemp">0</span></b> 件货物（<b class="orange"><span id="averageQtyTotalTemp">0</span></b> 吨）&nbsp;
+						<br />
+						总价 <b><span id="priceTotalTemp">0</span></b>元
+					</div>
+					<a class="shop-car.html" href="cart_list.html">查看购物车</a>
+				</div>
+			</div>
+			<div class="header-app">
+				<div class="menu-bd-panel2">
+					<ul>
+						<li class="mrgR10"><img src="images/app.gif">
+						</li>
+						<li><img src="images/app.gif">
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="m-nav">
+			<div class="auto">
+				<ul class="main-nav">
+					<li class="nav-main">
+						<a href="index.html">首页</a>
+					</li>
+					<li class="nav-main">
+						<a href="big-company.html">大企业专场</a>
+					</li>
+					<li class="nav-main">
+						<a href="purchase-big.html">大宗商品市场</a>
+					</li>
+					<li class="nav-main">
+						<a href="gongyepin_market.html">工业品市场</a>
+					</li>
+					<li class="nav-main">
+						<a href="caigou_session.html">采购专场</a>
+					</li>
+					<!--<li class="nav-main"><a class="nav-process" href="#">竞价专场</a></li>-->
+					<li class="nav-main">
+						<a href="#">电子招投标</a>
+					</li>
+					<li class="nav-main">
+						<a href="supermarkets.html">电子商城</a>
+					</li>
+					<li class="nav-main">
+						<a href="purchase02.html">民生超市</a>
+					</li>
+					<li class="nav-main">
+						<a href="#">金融服务</a>
+					</li>
+					<li class="nav-main">
+						<a href="#">社区</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class="bread-nav">
+			您所在的位置：<a href="index.html">首页</a> > 通知
+		</div>
+		<div class="notice-list-title">
+			通知
+		</div>
+		<ul class="notice-lists">
+			<li>
+				<a href="notice-content.html">
+					<div class="floatL">【通知】五一放假说明</div>
+					<div class="floatR color999">2016-12-12 20:56:56</div>
+					<div class="clearfix"></div>
+				</a>
+			</li>
+			<li>
+				<a href="notice-content.html">
+					<div class="floatL">【通知】五一放假说明</div>
+					<div class="floatR color999">2016-12-12 20:56:56</div>
+					<div class="clearfix"></div>
+				</a>
+			</li>
+			<li>
+				<a href="notice-content.html">
+					<div class="floatL">【通知】五一放假说明</div>
+					<div class="floatR color999">2016-12-12 20:56:56</div>
+					<div class="clearfix"></div>
+				</a>
+			</li>
+			<li>
+				<a href="notice-content.html">
+					<div class="floatL">【通知】五一放假说明</div>
+					<div class="floatR color999">2016-12-12 20:56:56</div>
+					<div class="clearfix"></div>
+				</a>
+			</li>
+			<li>
+				<a href="notice-content.html">
+					<div class="floatL">【通知】五一放假说明</div>
+					<div class="floatR color999">2016-12-12 20:56:56</div>
+					<div class="clearfix"></div>
+				</a>
+			</li>
+			<li>
+				<a href="notice-content.html">
+					<div class="floatL">【通知】五一放假说明</div>
+					<div class="floatR color999">2016-12-12 20:56:56</div>
+					<div class="clearfix"></div>
+				</a>
+			</li>
+			<li>
+				<a href="notice-content.html">
+					<div class="floatL">【通知】五一放假说明</div>
+					<div class="floatR color999">2016-12-12 20:56:56</div>
+					<div class="clearfix"></div>
+				</a>
+			</li>
+			<li>
+				<a href="notice-content.html">
+					<div class="floatL">【通知】五一放假说明</div>
+					<div class="floatR color999">2016-12-12 20:56:56</div>
+					<div class="clearfix"></div>
+				</a>
+			</li>
+			<li>
+				<a href="notice-content.html">
+					<div class="floatL">【通知】五一放假说明</div>
+					<div class="floatR color999">2016-12-12 20:56:56</div>
+					<div class="clearfix"></div>
+				</a>
+			</li>
+			<li>
+				<a href="notice-content.html">
+					<div class="floatL">【通知】五一放假说明</div>
+					<div class="floatR color999">2016-12-12 20:56:56</div>
+					<div class="clearfix"></div>
+				</a>
+			</li>
+		</ul>
+		<table cellspacing="0" class="condition">
+			<tr>
+				<td width="160" height="40"></td>
+				<td width="560"></td>
+				<td>
+					<span class="other-es">上一页</span>
+					<ul class="condition-each02">
+						<li class="condition-each02-active">
+							1
+						</li>
+						<li>
+							2
+						</li>
+						<li>
+							3
+						</li>
+					</ul>
+					<span class="other-es"> 下一页</span><span class="other">共100页</span><span class="other">到</span>
+					<input type="text" class="other width40" />
+					<span class="other">页</span><span class="other-es">确定</span>
+				</td>
+			</tr>
+		</table>
+		<div class="friends">
+			<div class="friends-title">
+				合作伙伴
+			</div>
+			<div id="marquee">
+    			<ul class="partnerLists">	                
+	                <li><a href="#"><img src="images/partner01.jpg"></a></li>
+	                <li><a href="#"><img src="images/partner02.jpg"></a></li>
+	                <li><a href="#"><img src="images/partner03.jpg"></a></li>
+	                <li><a href="#"><img src="images/partner04.jpg"></a></li>
+	                <li><a href="#"><img src="images/partner05.jpg"></a></li>
+	                <li><a href="#"><img src="images/partner06.jpg"></a></li>
+	                <li><a href="#"><img src="images/partner07.jpg"></a></li>
+	                <li><a href="#"><img src="images/partner08.jpg"></a></li>
+	                <li><a href="#"><img src="images/partner09.jpg"></a></li>
+	                <li><a href="#"><img src="images/partner10.jpg"></a></li>
+	            </ul>
+    		</div>
+			<div class="clearfix"></div>
+		</div>
+		<div class="footer-bottom">
+			<p>地址：陕西省西安市雁塔区沣惠南路中华世纪城（东门）商住楼8号楼二层 电话：029-88990909 传真：029-89286898 邮编：710065 </p>
+			<p>上海石油交易所西部有限公司 版权所有 陕ICP备09004887号 <img src="images/police.png" class="police" />陕公网安备 61019002000027号</p>
+			<div class="foot-img-box">
+				<a><img src="images/foot-img1.jpg"></a>
+				<a><img src="images/foot-img2.jpg"></a>
+				<a><img src="images/foot-img3.jpg"></a>
+				<a><img src="images/foot-img4.jpg"></a>
+			</div>
+		</div>
+		<!--<div class="footer">
+			<div class="footer-nav">
+				<a href="#">首页</a>| <a href="#">关于我们</a>| <a href="#">帮助中心</a>| <a href="#">联系我们</a>
+			</div>
+			<div class="addr">
+				地址：陕西省西安市雁塔区沣惠南路中华世纪城（东门）商住楼8号楼二层 电话：029-88990909 传真：029-89286898 邮编：710065
+			</div>
+			<div class="copyright">
+				上海石油交易所西部有限公司 版权所有 陕ICP备09004887号 <img src="images/police.png" class="police" />陕公网安备 61019002000027号
+			</div>
+		</div>-->
+	</body>
+</html>

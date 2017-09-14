@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>延长商品列表</title>
+		<link rel="stylesheet" href="./css/index-style.css" />
+		<link rel="stylesheet" type="text/css" href="./css/common.css">
+		<link rel="stylesheet" href="./css/mycss1.css" />
+		<!--    <link rel="stylesheet" href="./css/style2.css" />-->
+		<!--<script type="text/javascript" src="./js/myscript.js" ></script>-->
+		<link href="./css/tradaccount.css" rel="stylesheet" type="text/css">
+		<!-----------购物车加减------------>
+		<script type="text/javascript" src="js/jquery.min.js"></script>
+		<script type="text/javascript" src="js/jquery.Spinner.js"></script>
+		<script type="text/javascript" src="js/main.js"></script>
+		<script type="text/javascript">
+			$(function() {
+				/*	$("#a").Spinner({value:868, min:10, len:3, max:1000});
+				 $("#b").Spinner({value:99});
+				 $("#c").Spinner({value:66});*/
+				$("#a,#b,#c,#d").Spinner();
+			});
+		</script>
+		<!-------------全选------------->
+		<script type="text/javascript" src="js/demo.js"></script>
+	</head>
+	<body>
+		<!-----------侧边栏-------->
+		<div class="topbar">
+			<div class="topbar-body">
+				<ul class="topbar-bd-l">
+					<li>
+						交易时间：<a style="color:#ec0000;">7:30-17:30（工作日）</a>
+					</li>
+					<li>
+						客服热线：029-88990909
+					</li>
+				</ul>
+				<ul class="topbar-bd-r">
+					<li class="login-info unlogin">
+						您好 ！欢迎来到延长电商贸易平台
+					</li>
+					<li class="unlogin">
+						<a class="tb-m-a2 blue user-login" href="login.html">请登录</a>
+					</li>
+					<li class="unlogin">
+						<a class="tb-m-a2 blue" href="register.html">免费注册</a>
+					</li>
+					<li>
+						<div class="menu-hd">
+							<a href="my-admin.html">我的平台</a><i><s>◇</s></i>
+						</div>
+						<div class="menu-bd">
+							<div class="menu-bd-panel menu-bd-panel1">
+								<div class="content1 ">
+									<a class="content1-infor1" href="#"><img src="images/banner1.jpg"></a>
+									<div class="content1-infor2 unlogin">
+										<div class="line1">
+											<a href="#">您好，请登录！</a>
+										</div>
+									</div>
+									<!--<div class="content1-infor2 logon">
+										<div class="line1">
+											Hi，<a class="user-name" href="#"></a>！
+										</div>
+										<a href="#" class="line2 user-tel"></a>
+									</div>-->
+								</div>
+								<div class="content2">
+									<div>
+										<a class="first" href="#" target="_top">我的订单</a><a href="" target="_top">积分管理</a>
+									</div>
+									<div>
+										<a class="first" href="#" target="_top">会员认证</a><a href="" target="_top">上传资源单</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="menu-hd">
+							<a href="#">我的设置</a><i><s>◇</s></i>
+						</div>
+						<div class="menu-bd">
+							<div class="menu-bd-panel menu-bd-panel3">
+								<a class="first" target="_top" href="#">订单管理</a><a target="_top" href="#">资源管理</a>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="menu-hd">
+							<a href="#">财物车</a><i><s>◇</s></i>
+						</div>
+						<div class="menu-bd">
+							<div class="menu-bd-panel menu-bd-panel3">
+								<a class="first" target="_top" href="#">任你花</a><a target="_top" href="#">帮你采</a>
+								<a target="_top" href="#">随你押</a>
+							</div>
+						</div>
+					</li>
+					<!--<li class="tb-m-line">|</li>!-->
+					<li>
+						<div class="menu-hd">
+							<a href="#">帮助中心</a><i><s>◇</s></i>
+						</div>
+						<div class="menu-bd">
+							<div class="menu-bd-panel menu-bd-panel3">
+								<a class="first" target="_top" href="#">帮助中心</a><a target="_top" href="#">帮助中心</a><a class="first" target="_top" href="#">帮助中心</a><a target="_top" href="#">帮助中心</a>
+							</div>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class="header">
+			<div class="logo">
+				<a hidefocus="true" href="#"></a>
+			</div>
+			<div class="hd-search">
+				<div class="search-bd">
+					<div class="search-triggers">
+						<ul>
+							<li>
+								<a>超市 </a>
+							</li>
+							<li>
+								<a href="#">全部</a>
+							</li>
+							<li>
+								<a href="#">商城</a>
+							</li>
+							<li>
+								<a href="#">市场</a>
+							</li>
+						</ul>
+						<i></i>
+					</div>
+					<div class="search-i">
+						<form class="f-cb" method="post" onSubmit="return checkKwInput();" action="#" id="search" name="search">
+							<div class="search-button">
+								<button id="resSeachButton" class="btn-search s-search" type="submit">
+									搜一下
+								</button>
+							</div>
+							<div class="search-combobox">
+								<div class="search-combobox-input">
+									<input type="hidden" value="" name="ci" id="ci_code">
+									<input id="kwInput1" placeholder="请输入关键词查询" autocomplete="off" onFocus="this.style.color='#666';" onBlur="this.style.color='#666';" x-webkit-speech="" x-webkit-grammar="builtin:translate">
+									<input type="hidden" name="kw" id="kwInput2">
+								</div>
+							</div>
+						</form>
+					</div>
+					<div class="search-result">
+						<!-- 当前搜索  -->
+						<!-- 类似搜索  -->
+						<ul class="sear-res">
+							<li>
+								<a href="#"><span class="sear-res-l">螺纹钢</span></a>
+							</li>
+							<li>
+								<a href="#"><span class="sear-res-l">HRB400</span></a>
+							</li>
+							<li>
+								<a href="#"><span class="sear-res-l">HRB400E</span></a>
+							</li>
+							<li>
+								<a href="#"><span class="sear-res-l">Q235</span></a>
+							</li>
+							<li>
+								<a href="#"><span class="sear-res-l">Q235B</span></a>
+							</li>
+						</ul>
+						<!-- 搜索历史  -->
+						<ul class="sear-history">
+							<li>
+								<a href="#"><span class="sear-res-l">HRB400</span><span class="sear-res-r">搜索历史</span></a>
+							</li>
+							<li>
+								<a href="#"><span class="sear-res-l">HRB400B</span><span class="sear-res-r">搜索历史</span></a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="header-nav-btn">
+				<!--<a class="header-nav-btn1 mn-ico1" href="#"><i></i>积分商城</a>!-->
+				<a class="header-nav-btn1 mn-ico2" href="shop-car.html"><i></i>我的购物车<span class="count" id="rcart">0</span></a>
+				<div class="cart-panel">
+					<div class="cartlist">
+						共选中 <b class="orange"><span id="itemTotalTemp">0</span></b> 件货物（<b class="orange"><span id="averageQtyTotalTemp">0</span></b> 吨）&nbsp;
+						<br />
+						总价 <b><span id="priceTotalTemp">0</span></b>元
+					</div>
+					<a class="shop-car.html" href="cart_list.html">查看购物车</a>
+				</div>
+			</div>
+			<div class="header-app">
+				<div class="menu-bd-panel2">
+					<ul>
+						<li class="mrgR10"><img src="images/app.gif">
+						</li>
+						<li><img src="images/app.gif">
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="m-nav">
+			<div class="auto">
+				<ul class="main-nav">
+					<li class="nav-main">
+						<a href="index.html">首页</a>
+					</li>
+					<li class="nav-main">
+						<a href="big-company.html">大企业专场</a>
+					</li>
+					<li class="nav-main">
+						<a href="purchase-big.html">大宗商品市场</a>
+					</li>
+					<li class="nav-main">
+						<a href="gongyepin_market.html">工业品市场</a>
+					</li>
+					<li class="nav-main">
+						<a href="caigou_session.html">采购专场</a>
+					</li>
+					<!--<li class="nav-main"><a class="nav-process" href="#">竞价专场</a></li>-->
+					<li class="nav-main">
+						<a href="#">电子招投标</a>
+					</li>
+					<li class="nav-main">
+						<a href="supermarkets.html">电子商城</a>
+					</li>
+					<li class="nav-main">
+						<a href="purchase02.html">民生超市</a>
+					</li>
+					<li class="nav-main">
+						<a href="#">金融服务</a>
+					</li>
+					<li class="nav-main">
+						<a href="#">社区</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<!-------------------我的平台------------------->
+		<!-------------------筛选分类------------------->
+		<!--header end-->
+		<div class="breadcrumbNav">
+			<a href="supermarkets.html">电子商城</a>
+			<span class="bGray">></span>
+			<a href="sm-list.html">商品列表</a>
+			<span class="bGray">></span>
+			<span class="bGray">购物车</span>
+			<div style="clear: both;"></div>
+		</div>
+		<div class="mrg">
+			<div class="cart_tit mrgT30">
+				<p class="gwc-tu">
+					我的购物车
+				</p>
+				<i>2</i>
+				<div class="fr cart_tit_site">
+					<a class="cart_tit_sitecur" title="查看购物车">查看购物车</a>
+					<span></span>
+					<a title="生成订单">生成订单</a>
+					<span></span>
+					<a title="提交订单">提交订单</a>
+					<span></span>
+					<a title="供应商确认订单">供应商确认订单</a>
+					<span></span>
+					<a title="支付货款">支付货款</a>
+					<span></span>
+					<a title="货物跟踪">货物跟踪</a>
+				</div>
+			</div>
+		</div>
+		<div class="sun-wrod-all">
+			<div class="shop-box-all">
+				<div class="xjjs">
+					<div class="maijia">
+						商品总金额<span>(不含运费) :<strong>78,00.00</strong></span>
+					</div>
+					<div class="jiesuan">
+						<a href="shop-dd.html">结算</a>
+					</div>
+					<div style="clear: both;"></div>
+				</div>
+				<div style="clear: both;"></div>
+				<!--<table class="shop-table " id="cartTable" border="0" cellspacing="0" cellpadding="0">
+				<tr>
+				<th class="first-td"><label><input class="check-all check" type='checkbox'/>&nbsp;全选<span class="spxx">商品信息</span></label></th>
+				<th></th>
+				<th >单价</th>
+				<th >数量</th>
+				<th >小计</th>
+				<th >操作</th>
+				</tr>
+				<tr class="kehu-m">
+				<td class="first-td1 checkbox"><input class="check-one check" type='checkbox'/>&nbsp;客户0001</td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				</tr>
+				<tr>
+				<td class="goods checkbox"><input class="check-one check" type='checkbox'/><img src="images/logo.jpg" alt=""/><span>Casio/卡西欧 EX-TR350</span></td>
+				<td class="first-td"></td>
+				<td>2600.00</td>
+				<td><div id="d" class="Spinner"></div></td>
+				<td><b>2600.00</b></td>
+				<td>
+				<a href="" class="delete">删除</a>
+				</td>
+				</tr>
+				<tr>
+				<td class="goods checkbox"><input class="check-one check" type="checkbox" /><img src="images/logo.jpg" alt=""/><span>Casio/卡西欧 EX-TR350</span></td>
+				<td class="first-td"></td>
+				<td>2600.00</td>
+				<td><div id="a" class="Spinner"></div></td>
+				<td><b>2600.00</b></td>
+				<td>
+				<a href="" class="delete">删除</a>
+				</td>
+				</tr>
+				</table>-->
+				<!--<div class="catbox">
+				<!--	<table id="cartTable"  border="0" cellspacing="0" cellpadding="0">
+				<thead>
+				<tr>
+				<th class="quanxuan" width="420"><label><input class="check-all check" type="checkbox"/>&nbsp;全选<span class="spxx">商品信息</span></label></th>
+				<th></th>
+				<th width="200">单价</th>
+				<th>数量</th>
+				<th>小计</th>
+				<th>操作</th>
+				</tr>
+				</thead>
+				<tbody>
+				<tr>
+				<td class="goumairen"><input class="" type="checkbox"/>Casio/卡西欧 EX-TR350EX</td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				</tr>
+				<tr>
+				<td class="checkbox goods"><input class="check-one check" type="checkbox"/><img src="./images/1.jpg" alt=""/><span>Casio/卡西欧 EX-TR350EX/卡西欧/卡西欧/卡西欧</span></td>
+				<td class="guige"><span>颜色：天然磨光炫酷银色</span><br/><span>现货</span></br><span>尺码：单反数码相机1.5</span>
+				</td>
+				<td class="price">7800.00</td>
+				<td class="count"><span class="reduce">-</span><input class="count-input" type="text" value="1"/><span class="add">+</span></td>
+				<td class="subtotal">7800.00</td>
+				<td class="operation"><span class="delete">删除</span></td>
+				</tr>
+				</tbody>
+				</table>-->
+				<div class="catbox">
+					<div class="gwc-tit">
+						<div class="quanxuan">
+							<input class="check-all check" type="checkbox"/>
+							&nbsp;全选<span class="spxx">商品信息</span>
+						</div>
+						<div class="shuju">
+							规格
+						</div>
+						<div class="danjia">
+							单价
+						</div>
+						<div class="shuliang">
+							数量
+						</div>
+						<div class="ji">
+							小计
+						</div>
+						<div class="caozuo">
+							操作
+						</div>
+						<div style=" clear: both;"></div>
+					</div>
+					<div class="gwc-nr">
+						<div class="goumairen">
+							<input class="" type="checkbox"/>
+							Casio/卡西欧 EX-TR350EX
+						</div>
+						<div class="list-wen">
+							<div class="list-wen1">
+								<div class="goods">
+									<input class="check-one check" type="checkbox"/>
+									<img src="./images/1.jpg" alt=""/><span>Casio/卡西欧 EX-TR350EX/卡西欧/卡西欧/卡西欧/卡西欧/卡西欧</span>
+								</div>
+								<div class="guige">
+									<span>颜色：天然磨光炫酷银色</span>
+									<br/>
+									<span>现货</span></br><span>尺码：单反数码相机1.5</span>
+								</div>
+								<div class="price">
+									7800.00
+								</div>
+								<div id="d" class="Spinner"></div>
+								<div class="subtotal">
+									7800.00
+								</div>
+								<div class="operation">
+									<span class="delete"><a id="delete" href="javascript:;">删除</a></span>
+								</div>
+								<div style="clear: both;"></div>
+							</div>
+							<div class="list-wen1">
+								<div class="goods">
+									<input class="check-one check" type="checkbox"/>
+									<img src="./images/1.jpg" alt=""/><span>Casio/卡西欧 EX-TR350EX/卡西欧/卡西欧/卡西欧/卡西欧/卡西欧</span>
+								</div>
+								<div class="guige">
+									<span>颜色：天然磨光炫酷银色</span>
+									<br/>
+									<span>现货</span></br><span>尺码：单反数码相机1.5</span>
+								</div>
+								<div class="price">
+									7800.00
+								</div>
+								<div id="d" class="Spinner"></div>
+								<div class="subtotal">
+									7800.00
+								</div>
+								<div class="operation">
+									<span class="delete"><a id="delete" href="javascript:;">删除</a></span>
+								</div>
+								<div style="clear: both;"></div>
+							</div>
+						</div>
+						<div class="xiaoji">
+							<p>
+								小计金额：<strong>￥7800.00</strong>
+							</p>
+						</div>
+						<div style="clear: both;"></div>
+					</div>
+					<!--footer上面的-->
+					<div class="foot" id="foot">
+						<label class="fl select-all">
+							<input type="checkbox" class="check-all check"/>
+							&nbsp;全选</label>
+						<a class="fl delete" id="deleteAll" href="javascript:;">删除</a>
+						<div class="fr closing">
+							<a href="shop-dd.html">结 算</a>
+						</div>
+						<div class="fr total">
+							合计：￥<span id="priceTotal">0.00</span>
+						</div>
+						<div class="fr selected" id="selected">
+							已选商品<span id="selectedTotal">0</span>件<span class="arrow up">∧</span><span class="arrow down">∨</span>
+						</div>
+						<div class="selected-view">
+							<div id="selectedViewList" class="clearfix">
+								<div><img src="images/1.jpg"><span>取消选择</span>
+								</div>
+							</div>
+							<span class="arrow">◆<span>◆</span></span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!------------底部开始-------------->
+		<div class="tianchong"></div>
+		<div class="footer">
+			<div class="footer-nav">
+				<a href="#">首页</a>| <a href="#">关于我们</a>| <a href="#">帮助中心</a>| <a href="#">联系我们</a>
+			</div>
+			<div class="addr">
+				地址：陕西省西安市雁塔区沣惠南路中华世纪城（东门）商住楼8号楼二层 电话：029-88990909 传真：029-89286898 邮编：710065
+			</div>
+			<div class="copyright">
+				上海石油交易所西部有限公司 版权所有 陕ICP备09004887号<img src="images/police.png" class="police" />陕公网安备 61019002000027号
+			</div>
+		</div>
+			<!--<div class="footer">
+				<div class="service-box">
+					<p align="center">
+						地 址：陕西省西安市雁塔区沣惠南路中华世纪城（东门）商住楼8号楼二层　邮 编：710065　电 话：029-89199820 029-88990909
+					</p>
+					<p align="center">
+						上海石油交易所西部交易中心 版权所有　陕ICP备09004887号　技术支持：高达软件　陕公网安备61019002000027号
+					</p>
+				</div>
+			</div>-->
+		<script>
+			if(document.body.style.overflow!="hidden"&&document.body.scroll!="no"&&
+			    document.body.scrollHeight>document.body.offsetHeight)
+			{
+			 	alert("有滚动条");
+			}else 
+			{ 
+			 	alert("无滚动条");
+				$(function(){
+					$(".footer").addClass("posi-fix")
+				})
+			}
+		</script>
+	</body>
+</html>

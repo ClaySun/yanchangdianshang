@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="./css/common.css">
+		<style>
+			.bg-eee {
+				background-color: #eee !important;
+			}
+			.bg-ddd {
+				background-color: #ddd !important;
+			}
+			.bg-f0f0f0 {
+				background-color: #f0f0f0;
+			}
+			.color-f00 {
+				color: #f00;
+			}
+			.posi-re {
+				position: relative;
+			}
+			.brea-nav {
+				position: absolute;
+				right: 0;
+				top: 8px;
+			}
+			.table-btn {
+				padding: 4px 8px;
+				margin: 0 8px;
+				/*border: 1px solid #ddd;*/
+				/*border-radius: 4px;*/
+				cursor: pointer;
+			}
+			.table-btn:hover {
+				color: #f00;
+				/*border: 1px solid #f00;*/
+			}
+			.search-btn {
+				margin-left: 12px;
+				padding: 4px 8px;
+				border: 1px solid #ddd;
+				cursor: pointer;
+				border-radius: 4px;
+			}
+			.search-btn:hover {
+				color: #fff;
+				background-color: #f00;
+				border: 1px solid #f00;
+			}
+			.td-bg {
+				background-color: #f0f0f0;
+			}
+			.table-viptitle {
+				height: 40px;
+				line-height: 40px;
+				font-size: 18px;
+				font-weight: bold;
+				text-align: center;
+				color: #fff;
+				background-color: #f00;
+			}
+			.table-vip {
+				margin: 20px auto;
+				width: 600px;
+			}
+			.table-vip td {
+				height: 32px;
+				text-align: center;
+				border: 1px solid #ddd;
+			}
+			.table-vip tr:hover {
+				background-color: #f0f0f0;
+			}
+			.table-vip #title-talbevip {
+				background-color: #f0f0f0;
+			}
+			.table-vip #title-talbevip:hover {
+				background-color: #f0f0f0;
+			}
+			.page-table {
+				margin: 12px auto;
+				width: 600px;
+			}
+			.page-table ul {
+				float: right;
+			}
+			.page-table ul li {
+				float: left;
+				margin: 0 4px;
+				padding: 4px 8px;
+				border: 1px solid #ddd;
+				cursor: pointer;
+			}
+			.page-table ul li:hover {
+				color: #fff;
+				background-color: #f00;
+				border: 1px solid #f00;
+			}
+		</style>
+	</head>
+	<body>
+		<table class="table-vip">
+			<tr id="title-talbevip" class="bg-ddd">
+				<td width="60">选择</td>
+				<td width="120">会员代码</td>
+				<td width="470">会员名称</td>
+			</tr>
+			<tr>
+				<td><input type="radio" name="vip" value="四川延长石油销售有限公司"/></td>
+				<td>009</td>
+				<td>四川延长石油销售有限公司</td>
+			</tr>
+			<tr>
+				<td><input type="radio" name="vip" value="四川延长石油销售有限公司9"/></td>
+				<td>008</td>
+				<td>长城日华钢材制品有限公司</td>
+			</tr>
+			<tr>
+				<td><input type="radio" name="vip" /></td>
+				<td>007</td>
+				<td>四川延长石油销售有限公司四川延长石油销售有限公司</td>
+			</tr>
+			<tr>
+				<td><input type="radio" name="vip" /></td>
+				<td>006</td>
+				<td>四川延长石油销售有限公司</td>
+			</tr>
+			<tr>
+				<td><input type="radio" name="vip" /></td>
+				<td>005</td>
+				<td>长城日华钢材制品有限公司长城日华钢材制品有限公司</td>
+			</tr>
+			<tr>
+				<td><input type="radio" name="vip" /></td>
+				<td>004</td>
+				<td>长城日华钢材制品有限公司</td>
+			</tr>
+			<tr>
+				<td><input type="radio" name="vip" /></td>
+				<td>003</td>
+				<td>四川延长石油销售有限公司</td>
+			</tr>
+			<tr>
+				<td><input type="radio" name="vip" /></td>
+				<td>002</td>
+				<td>四川延长石油销售有限公司</td>
+			</tr>
+			<tr>
+				<td><input type="radio" name="vip" /></td>
+				<td>001</td>
+				<td>四川延长石油销售有限公司</td>
+			</tr>
+			<tr>
+				<td><input type="radio" name="vip" /></td>
+				<td>000</td>
+				<td>四川延长石油销售有限公司</td>
+			</tr>
+		</table>
+		<div class="page-table">
+			<ul style=" margin-right: 21px; margin-left: 20px;">
+				<li>上一页</li>
+				<li>尾页</li>
+			</ul>
+			<ul>
+				<li>1</li>
+				<li>2</li>
+				<li>3</li>
+				<li>4</li>
+			</ul>
+			<ul style=" margin-right: 20px; margin-left: 20px;">
+				<li>首页</li>
+				<li>下一页</li>
+			</ul>
+			<div class="clearfix"></div>
+		</div>
+		<div style=" margin-left: 20px; margin-top: 8px;">
+			<span>过滤：</span>
+			<input style=" padding: 3px 0;" />
+			<span style=" margin: 0 4px; padding: 4px 8px; color: #fff; background-color: #f00; cursor: pointer;">查询</span>
+			<span style=" margin: 0 4px; padding: 4px 8px; color: #fff; background-color: #999; cursor: pointer;">清空</span>
+		</div>
+		<div style=" margin-right: 25px; margin-top: 8px;">
+			<span id="vip-cancel" style=" float: right; padding: 4px 16px; color: #fff; background-color: #f00; cursor: pointer;">取消</span>
+			<span id="vip-ok" style=" float: right; margin-right: 16px; padding: 4px 16px; color: #fff; background-color: #f00; cursor: pointer;">确定</span>
+		</div>
+	</body>
+	<script type="text/javascript" src="cbcss/jquery-1.8.0.min.js" ></script>
+	<script type="text/javascript" src="js/layer.js" ></script>
+	
+	<script>
+		var index = parent.layer.getFrameIndex(window.name);		
+		$("#vip-ok").click(function(){
+			var a = new Array();
+			$("input[name='vip']:checked").each(function(){
+				a.push($(this).val());				
+			});
+			
+			parent.$('#textVip').val(a.toString());
+			parent.layer.close(index)
+		})
+		
+		$("#vip-cancel").live("click", function() {
+			parent.layer.close(index)
+		})
+		$(".table-vip td").live("click", function() {
+			$(".table-vip tr").removeClass("bg-eee")
+			$(this).parent("tr").addClass("bg-eee")
+			$(this).parent("tr").find("input").attr("checked", "checked")
+		})
+		$(".table-vip #title-talbevip").live("click", function() {
+			$(".table-vip tr").removeClass("bg-ddd")
+			$(this).parent("tr").addClass("bg-ddd")
+		})
+	</script>
+</html>
